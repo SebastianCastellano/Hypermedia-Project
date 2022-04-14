@@ -1,3 +1,3 @@
 # Hypermedia-Project
- Repository for hypermedia course project
- Example to see commits
+ Repository for Hypermedia Applications project - Polimi 04/2022
+
