@@ -9,6 +9,7 @@ const database = new Sequelize("postgres://postgres:postgres@localhost:5432/hyp"
 // Function that will initialize the connection to the database
 async function initializeDatabaseConnection() {
     await database.authenticate()
+
     const Event = database.define("event", {
         name: DataTypes.STRING,
         date: DataTypes.DATE,
@@ -19,7 +20,8 @@ async function initializeDatabaseConnection() {
         videos: DataTypes.ARRAY(DataTypes.STRING),
         shortDescription: DataTypes.STRING,
     })
-    const PointOfInterest = database.define("pointOfInterest", {
+
+    const PointOfInterest = database.define("poi", {
         name: DataTypes.STRING,
         location: DataTypes.STRING,
         times: DataTypes.STRING,
@@ -29,6 +31,7 @@ async function initializeDatabaseConnection() {
         videos: DataTypes.ARRAY(DataTypes.STRING),
         shortDescription: DataTypes.STRING,
     })
+    console.log("abcde" + database.models)
     await database.sync({ force: true })
     return {
         Event, PointOfInterest
@@ -94,6 +97,8 @@ const pageContentObject = {
 
 async function runMainApi() {
     const models = await initializeDatabaseConnection()
+    //await initialize(models.Event)
+    //await initialize(models.PointOfInterest)
     await initialize(models)
 
     app.get('/page-info/:topic', (req, res) => {
@@ -114,7 +119,7 @@ async function runMainApi() {
         return res.json(result)
     })
 
-    // HTTP GET api that returns all the cats in our fake database
+    // HTTP GET api that returns all the events in our fake database
     app.get("/event", async (req, res) => {
         const result = await models.Event.findAll()
         const filtered = []
@@ -134,7 +139,7 @@ async function runMainApi() {
         return res.json(filtered)
     })
 
-    // HTTP GET api that returns all the cats in our fake database
+    // HTTP GET api that returns all the point of interest in our fake database
     app.get("/pointOfInterest", async (req, res) => {
         const result = await models.PointOfInterest.findAll()
         const filtered = []

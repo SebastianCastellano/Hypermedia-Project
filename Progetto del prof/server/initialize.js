@@ -1,37 +1,48 @@
-
-
 export default async (models) => {
-    const catList = [
+    const eventList = [
         {
-            name: "Cat 1",
-            breed: "Siberian",
-            description: "Details about cat 1",
-            img: "https://fs.i3lab.group/hypermedia/cats/siberian.jpg",
+            name: "event1",
+            date: new Date(2018, 11, 24),
+            location: "loc1",
+            price: 15,
+            description: "descriptiooooonnnnn",
+            images: ["https://fs.i3lab.group/hypermedia/cats/siberian.jpg","secondaimmagine"],
+            videos: ["video1","video2"],
+            shortDescription: "short description",
         },
         {
-            name: "Cat 2",
-            breed: "Birman",
-            description: "Details about cat 2",
-            img: "https://fs.i3lab.group/hypermedia/cats/birman.jpg",
-        },
-        {
-            name: "Cat 3",
-            breed: "Bombay",
-            description: "Details about cat 3",
-            img: "https://fs.i3lab.group/hypermedia/cats/bombay.jpg",
-        },
-        {
-            name: "Cat 4",
-            breed: "Calico",
-            description: "Details about cat 4",
-            img: "https://fs.i3lab.group/hypermedia/cats/calico.jpg",
-        },
-        {
-            name: "Cat 5",
-            breed: "Maine Coon",
-            description: "Details about cat 5",
-            img: "https://fs.i3lab.group/hypermedia/cats/maine-coon.jpg",
+            name: "event2",
+            date: new Date(2019, 11, 24),
+            location: "loc1",
+            price: 15,
+            description: "descriptiooooonnnnn",
+            images: ["https://fs.i3lab.group/hypermedia/cats/siberian.jpg","secondaimmagine"],
+            videos: ["video1","video2"],
+            shortDescription: "short description",
         },
     ]
-    await models.Cat.bulkCreate(catList)
+    const pointOfInterestList = [
+        {
+            name: "event1",
+            location: "loc1",
+            times: "00:00 - 23:59",
+            price: 15,
+            description: "descriptiooooonnnnn",
+            images: ["https://fs.i3lab.group/hypermedia/cats/siberian.jpg","secondaimmagine"],
+            videos: ["video1","video2"],
+            shortDescription: "short description",
+        },
+        {
+            name: "event2",
+            location: "loc1",
+            times: "00:00 - 23:59",
+            price: 15,
+            description: "descriptiooooonnnnn",
+            images: ["https://fs.i3lab.group/hypermedia/cats/siberian.jpg","secondaimmagine"],
+            videos: ["video1","video2"],
+            shortDescription: "short description",
+        },
+    ]
+    await models.Event.bulkCreate(eventList)
+    await models.PointOfInterest.bulkCreate(pointOfInterestList)
 }
