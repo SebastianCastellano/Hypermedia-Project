@@ -1,6 +1,6 @@
 <template>
   <nav class="navbar navbar-expand-lg navbar-light px-3 header">
-    <a class="navbar-brand" href="/">The Cat Shelter</a>
+    <a class="navbar-brand" href="/">Mantova</a>
     <button
       class="navbar-toggler"
       type="button"
@@ -50,12 +50,20 @@ export default {
           path: '/',
         },
         {
-          name: 'List',
-          path: '/list',
+          name: 'Events',
+          path: '/events',
         },
         {
-          name: 'About',
-          path: '/about',
+          name: 'Points of interest',
+          path: '/pointsOfInterests',
+        },
+        {
+          name: 'Itineraries',
+          path: '/itineraries',
+        },
+        {
+          name: 'Services',
+          path: '/services',
         },
       ],
     }

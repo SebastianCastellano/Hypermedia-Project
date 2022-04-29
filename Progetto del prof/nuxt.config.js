@@ -8,7 +8,7 @@ export default {
     }
   ],
   head: {
-    title: 'lesson15',
+    title: 'Mantova',
     htmlAttrs: {
       lang: 'en',
     },
