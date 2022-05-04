@@ -1,5 +1,5 @@
 <template>
-  <custom-page :title="title" :image="image" :description="description" />
+  <custom-page :title="title" :image="image" :short-overview="shortOverview" />
 </template>
 
 <script>
@@ -13,10 +13,10 @@ export default {
     const { data } = await $axios.get('/api/page-info/index')
     const title = data.title
     const image = data.image
-    const description = data.description
+    const shortOverview = data.shortOverview
     return {
       title,
-      description,
+      shortOverview,
       image,
     }
   },

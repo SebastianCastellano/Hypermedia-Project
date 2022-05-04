@@ -10,7 +10,7 @@
       <p class="card-text">
         {{ shortDescription }}
       </p>
-      <div @click="goToDetails()" class="btn btn-primary btn-orange">
+      <div class="btn btn-primary btn-orange" @click="goToDetails()" >
         Go to event
       </div>
     </div>
@@ -51,7 +51,7 @@ export default {
       required: true,
     },
     date: {
-      type: Date,
+      type: String,
       required: true,
     },
     shortDescription: {

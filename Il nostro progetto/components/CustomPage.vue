@@ -2,9 +2,9 @@
   <div class="container mt-5">
     <div class="jumbotron">
       <h1 class="display-4">{{ title }}</h1>
-      <img :src="image" alt="" />
+      <img :src="image" alt="prova" />
       <hr class="my-4" />
-      <p class="lead">{{ description }}</p>
+      <p class="lead">{{ shortOverview }}</p>
     </div>
   </div>
 </template>
@@ -36,7 +36,7 @@ export default {
       type: String,
       required: true,
     },
-    description: {
+    shortOverview: {
       type: String,
       required: true,
     },
