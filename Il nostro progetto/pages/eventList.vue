@@ -1,6 +1,6 @@
 <template>
   <div class="page container mt-5">
-    <h1 class="display-4">List page</h1>
+    <h1 class="display-4">All events</h1>
     <div class="row mt-3">
       <card-event
         v-for="(event, eventIndex) of eventList"
@@ -10,6 +10,7 @@
         :name="event.name"
         :date="event.date"
         :shortDescription="event.shortDescription"
+        :image="event.images[0]"
       />
     </div>
   </div>

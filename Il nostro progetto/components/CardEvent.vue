@@ -2,15 +2,16 @@
   <div class="card" style="width: 18rem">
     <div
       class="card-img-top card-image"
-      :style="{ 'background-image': 'url(' + img + ')' }"
+      :style="{ 'background-image': 'url(' + image + ')' }"
     ></div>
     <div class="card-body">
       <h5 class="card-title">{{ name }}</h5>
+      <h4 class="card-title">{{ date }}</h4>
       <p class="card-text">
-        {{ breed }}
+        {{ shortDescription }}
       </p>
       <div @click="goToDetails()" class="btn btn-primary btn-orange">
-        See Details
+        Go to event
       </div>
     </div>
   </div>
@@ -36,6 +37,8 @@
 </style>
 
 <script>
+// const aaa: Date
+// aaa.getMonth.toString
 export default {
   name: 'CardComponent',
   props: {
@@ -48,10 +51,14 @@ export default {
       required: true,
     },
     date: {
-      type: String,
+      type: Date,
       required: true,
     },
     shortDescription: {
+      type: String,
+      required: true,
+    },
+    image: {
       type: String,
       required: true,
     },

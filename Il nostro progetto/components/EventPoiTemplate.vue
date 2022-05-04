@@ -2,7 +2,8 @@
     <div>
         <h1 class="name">{{ name }}</h1>
         <h2 class="breadcrump">{{ breadcrump }}</h2>
-        <h3 class="info">{{ info }}</h3>
+        <h3 class="description">{{ description }}</h3>
+        <p>{{date}}</p> <p>{{location}}</p> <p>{{price}}</p> <p>{{images}}</p> <p>{{videos}}</p>
     </div>
 </template>
 
@@ -18,7 +19,27 @@ export default {
       type: String,
       required: true,
     },
-    info: {
+    description: {
+      type: String,
+      required: true,
+    },
+    date: {
+      type: String,
+      required: true,
+    },
+    location: {
+      type: String,
+      required: true,
+    },
+    price: {
+      type: String,
+      required: true,
+    },
+    images: {
+      type: String,
+      required: true,
+    },
+    videos: {
       type: String,
       required: true,
     },
