@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1 class="name">{{ title }}</h1>
+        <h1 class="name">{{ name }}</h1>
         <h2 class="breadcrump">{{ breadcrump }}</h2>
         <h3 class="info">{{ info }}</h3>
     </div>

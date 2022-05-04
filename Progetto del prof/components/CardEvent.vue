@@ -39,26 +39,26 @@
 export default {
   name: 'CardComponent',
   props: {
-    name: {
-      type: String,
-      required: true,
-    },
-    img: {
-      type: String,
-      required: true,
-    },
     id: {
       type: Number,
       required: true,
     },
-    breed: {
+    name: {
+      type: String,
+      required: true,
+    },
+    date: {
+      type: String,
+      required: true,
+    },
+    shortDescription: {
       type: String,
       required: true,
     },
   },
   methods: {
     goToDetails() {
-      this.$router.push(`/details/${this.id}`)
+      this.$router.push(`/events/${this.id}`)
     },
   },
 }

@@ -81,7 +81,7 @@ async function runMainApi() {
     })
 
     // HTTP GET api that returns all the events in our fake database
-    app.get("/event", async (req, res) => {
+    app.get("/events", async (req, res) => {
         const result = await models.Event.findAll()
         const filtered = []
         for (const element of result) {

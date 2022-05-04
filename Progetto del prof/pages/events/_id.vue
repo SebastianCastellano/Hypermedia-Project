@@ -5,7 +5,7 @@
 <script>
 import EventPoiTemplate from '~/components/EventPoiTemplate.vue'
 export default {
-  name: 'EventPoiTemplate',
+  name: 'EventPage',
   components: {
     EventPoiTemplate,
   },

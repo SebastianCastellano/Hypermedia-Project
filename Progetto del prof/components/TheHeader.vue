@@ -51,7 +51,7 @@ export default {
         },
         {
           name: 'Events',
-          path: '/events',
+          path: '/eventList',
         },
         {
           name: 'Points of interest',
