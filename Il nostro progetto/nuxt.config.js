@@ -8,7 +8,7 @@ export default {
     }
   ],
   head: {
-    title: 'Mantova',
+    title: 'VisitMantova',
     htmlAttrs: {
       lang: 'en',
     },
@@ -19,8 +19,10 @@ export default {
       { name: 'format-detection', content: 'telephone=no' },
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: "stylesheet", href: "https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" }
+      { rel: 'icon', type: 'image/x-icon', href: '/Mantova-Stemma.ico' },
+      { rel: "stylesheet", href: "https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" },
+      { rel: "stylesheet", href: "https://fonts.googleapis.com/css?family=Cinzel+Decorative"},
+      { rel: "stylesheet", href: "https://fonts.googleapis.com/css?family=Gentium+Basic"}
     ],
     script: [
       { src: "https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" }
@@ -28,7 +30,9 @@ export default {
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [],
+  css: [
+    '~/static/style/main.css'
+  ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [],

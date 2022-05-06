@@ -1,0 +1,12 @@
+:root {
+    --color1: rgb(178, 34, 34);
+    --color2: white;
+    --color3: Aqua;
+    --title-font: "Cinzel Decorative";
+    --main-font: "Gentium Basic";
+  }
+
+body
+{
+  font-family: var(--main-font);
+}

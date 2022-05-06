@@ -1,6 +1,8 @@
 <template>
   <nav class="navbar navbar-expand-lg navbar-light px-3 header">
-    <a class="navbar-brand" href="/">Mantova</a>
+    <a class="navbar-brand" id="home-link" href="/">
+      <span class="capital-letter">V</span>isit<span class="capital-letter">M</span>antova
+    </a>
     <button
       class="navbar-toggler"
       type="button"
@@ -21,7 +23,7 @@
           class="nav-item"
         >
           <nuxt-link :to="navItem.path" class="nav-link">
-            {{ navItem.name }}
+              {{ navItem.name }}
           </nuxt-link>
         </li>
       </ul>
@@ -30,12 +32,41 @@
 </template>
 
 <style scoped>
+    
+@import '~/static/style/main.css';
+
 .header {
-  background: orange;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  background: var(--color1);
 }
-.logo {
-  color: white;
-  font-size: 32px;
+
+#home-link {
+  font-family: var(--title-font);
+  color: var(--color2);
+  font-size: 150%;
+  margin-left: 1vw;
+}
+
+#home-link:hover {
+  text-decoration: underline;
+}
+
+.capital-letter {
+  font-size: 150%;
+}
+
+li {
+  margin-left: 8.5vw;
+}
+
+.nav-link {
+  color: var(--color2) !important;
+  font-size: 150%;
+}
+
+li:hover .nav-link {
+  text-decoration: underline;
 }
 </style>
 
@@ -45,10 +76,12 @@ export default {
   data() {
     return {
       headerList: [
+        /*
         {
           name: 'Home',
           path: '/',
         },
+        */
         {
           name: 'Events',
           path: '/eventList',
