@@ -31,7 +31,7 @@ async function initializeDatabaseConnection() {
         videos: DataTypes.ARRAY(DataTypes.STRING),
         shortDescription: DataTypes.STRING,
     })
-    console.log("abcde" + database.models)
+    
     await database.sync({ force: true })
     return {
         Event, PointOfInterest
@@ -77,7 +77,6 @@ async function runMainApi() {
     app.get('/event/:id', async (req, res) => {
         const id = +req.params.id
         const result = await models.Event.findOne({ where: { id } })
-        // result.date = result.date.toLocaleDateString() da sistemare la visualizzazione della data del specifico evento
         return res.json(result)
     })
 
