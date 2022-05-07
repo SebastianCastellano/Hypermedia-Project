@@ -9,6 +9,7 @@ export default async (models) => {
             images: ["https://www.rockon.it/wp-content/uploads/2021/08/mantova-live.jpg","https://www.ojeventi.it/wp-content/uploads/2018/07/unnamed-min.jpg"],
             videos: ["video1","video2"],
             shortDescription: "short description 1",
+            poiId: 1,
         },
         {
             name: "event2",
@@ -19,6 +20,7 @@ export default async (models) => {
             images: ["https://fs.i3lab.group/hypermedia/cats/siberian.jpg","secondaimmagine"],
             videos: ["video1","video2"],
             shortDescription: "short description 2",
+            poiId: 1,
         },
     ]
     const pointOfInterestList = [
@@ -43,6 +45,6 @@ export default async (models) => {
             shortDescription: "short description 2",
         },
     ]
-    await models.Event.bulkCreate(eventList)
     await models.PointOfInterest.bulkCreate(pointOfInterestList)
+    await models.Event.bulkCreate(eventList)
 }

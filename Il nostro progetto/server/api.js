@@ -31,6 +31,9 @@ async function initializeDatabaseConnection() {
         videos: DataTypes.ARRAY(DataTypes.STRING),
         shortDescription: DataTypes.STRING,
     })
+
+    PointOfInterest.hasMany(Event)
+    Event.belongsTo(PointOfInterest)
     
     await database.sync({ force: true })
     return {
