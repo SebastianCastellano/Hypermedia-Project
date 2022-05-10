@@ -6,7 +6,7 @@
     ></div>
     <div class="card-body">
       <h5 class="card-title">{{ name }}</h5>
-      <h4 class="card-title">{{ price }}</h4>
+      <h4 class="card-title">Price: {{ price }} Eur</h4>
       <p class="card-text">
         {{ shortDescription }}
       </p>
