@@ -79,6 +79,6 @@ export default async (models) => {
     ]
     await models.PointOfInterest.bulkCreate(pointOfInterestList)
     await models.Event.bulkCreate(eventList)
-    // await models.Itinerary.bulkCreate(itineraryList)
-    // await models.Service.bulkCreate(serviceList)
+    await models.Itinerary.bulkCreate(itineraryList)
+    await models.Service.bulkCreate(serviceList)
 }

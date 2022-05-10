@@ -56,7 +56,7 @@ async function initializeDatabaseConnection() {
     
     await database.sync({ force: true })
     return {
-        Event, PointOfInterest
+        Event, PointOfInterest, Itinerary, Service
     }
 }
 
@@ -102,13 +102,42 @@ async function runMainApi() {
         return res.json(result)
     })
 
+    app.get('/eventAndAssociatedPointOfInterest/:id', async (req, res) => {
+        const id1 = +req.params.id
+        const result1 = await models.Event.findOne({ where: { id: id1 } })
+        const id2 = result1.poiId
+        const result2 = await models.PointOfInterest.findOne({ where: { id: id2 } })
+        const result = [result1, result2]
+        return res.json(result)
+    })
+
     app.get('/pointOfInterest/:id', async (req, res) => {
         const id = +req.params.id
         const result = await models.PointOfInterest.findOne({ where: { id } })
         return res.json(result)
     })
 
-    // HTTP GET api that returns all the events in our fake database
+    app.get('/pointOfInterestAndAssociatedEvent/:id', async (req, res) => {
+        const id1 = +req.params.id
+        const result1 = await models.PointOfInterest.findOne({ where: { id: id1 } })
+        const result2temp = await models.Event.findAll()
+        const result2 = result2temp.filter(el => el.poiId == id1)
+        const result = [result1, result2]
+        return res.json(result)
+    })
+
+    app.get('/itinerary/:id', async (req, res) => {
+        const id = +req.params.id
+        const result = await models.Itinerary.findOne({ where: { id } })
+        return res.json(result)
+    })
+
+    app.get('/service/:id', async (req, res) => {
+        const id = +req.params.id
+        const result = await models.Service.findOne({ where: { id } })
+        return res.json(result)
+    })
+
     app.get("/events", async (req, res) => {
         const result = await models.Event.findAll()
         const filtered = []
@@ -128,7 +157,6 @@ async function runMainApi() {
         return res.json(filtered)
     })
 
-    // HTTP GET api that returns all the point of interest in our fake database
     app.get("/pointOfInterest", async (req, res) => {
         const result = await models.PointOfInterest.findAll()
         const filtered = []
@@ -143,6 +171,36 @@ async function runMainApi() {
                 videos: element.videos,
                 shortDescription: element.shortDescription,
                 id: element.id,
+            })
+        }
+        return res.json(filtered)
+    })
+
+    app.get("/itineraries", async (req, res) => {
+        const result = await models.Itinerary.findAll()
+        const filtered = []
+        for (const element of result) {
+            filtered.push({
+                name: element.name,
+                duration: element.duration,
+                length: element.length,
+                description: element.description,
+                map: element.map,
+                shortDescription: element.shortDescription,
+            })
+        }
+        return res.json(filtered)
+    })
+
+    app.get("/services", async (req, res) => {
+        const result = await models.Service.findAll()
+        const filtered = []
+        for (const element of result) {
+            filtered.push({
+                type: element.type,
+                name: element.name,
+                address: element.address,
+                times: element.times,
             })
         }
         return res.json(filtered)
