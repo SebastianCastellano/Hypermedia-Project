@@ -117,7 +117,7 @@ async function runMainApi() {
         return res.json(result)
     })
 
-    app.get('/pointOfInterestAndAssociatedEvent/:id', async (req, res) => {
+    app.get('/pointOfInterestAndAssociatedEvents/:id', async (req, res) => {
         const id1 = +req.params.id
         const result1 = await models.PointOfInterest.findOne({ where: { id: id1 } })
         const result2temp = await models.Event.findAll()

@@ -1,11 +1,12 @@
 <template>
     <div>
-        <nuxt-link :to="'/pointsOfInterest/'+poiId" class="btn btn-primary btn-orange">
-              Go to {{namePoi}}
+        <nuxt-link :to="'/events/'+eventId" class="btn btn-primary btn-orange">
+              Go to {{nameEvent}}
           </nuxt-link>
-          <p>{{shortDescriptionPoi}}</p>
+          <p>{{shortDescriptionEvent}}</p>
+          <p>{{periodEvent}}</p>
           <div>
-            <p>{{thumbnailPoi}}</p>
+            <p>{{thumbnailEvent}}</p>
             <!-- <img src= {{ thumbnailPoi }} > C'È UN PROBLEMA NEL VISUALIZZARE QUESTA IMMAGINE COME IMMAGINE
             sennò il testo dell'url dell'immagine lo visualizza -->
           </div>
@@ -14,21 +15,25 @@
 
 <script>
 export default {
-  name: 'EventTemplate',
+  name: 'PoiTemplate',
   props: {
-    poiId: {
+    eventId: {
       type: Number,
       required: true,
     },
-    thumbnailPoi: {
+    thumbnailEvent: {
       type: String,
       required: true,
     },
-    namePoi: {
+    nameEvent: {
       type: String,
       required: true,
     },
-    shortDescriptionPoi: {
+    shortDescriptionEvent: {
+      type: String,
+      required: true,
+    },
+    periodEvent: {
       type: String,
       required: true,
     },
