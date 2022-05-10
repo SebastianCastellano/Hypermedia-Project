@@ -45,6 +45,40 @@ export default async (models) => {
             shortDescription: "short description 2",
         },
     ]
+    const itineraryList = [
+        {
+            name: "Itinerary1",
+            duration: "short",
+            length: "500m",
+            description: "description1",
+            map: "https://fs.i3lab.group/hypermedia/cats/siberian.jpg",
+            shortDescription: "shortDescription1",
+        },
+        {
+            name: "Itinerary2",
+            duration: "long",
+            length: "3km",
+            description: "description2",
+            map: "https://fs.i3lab.group/hypermedia/cats/siberian.jpg",
+            shortDescription: "shortDescription2",
+        },
+    ]
+    const serviceList = [
+        {
+            type: "pharmacy",
+            name: "pharmacy1",
+            address: "address",
+            times: "24h/24",
+        },
+        {
+            type: "pharmacy",
+            name: "pharmacy2",
+            address: "address2",
+            times: "24h/24 lun-ven",
+        },
+    ]
     await models.PointOfInterest.bulkCreate(pointOfInterestList)
     await models.Event.bulkCreate(eventList)
+    // await models.Itinerary.bulkCreate(itineraryList)
+    // await models.Service.bulkCreate(serviceList)
 }

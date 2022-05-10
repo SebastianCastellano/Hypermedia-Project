@@ -40,7 +40,7 @@ export default {
       required: true,
     },
     videos: {
-      type: String,
+      type: Array,
       required: true,
     },
   },
