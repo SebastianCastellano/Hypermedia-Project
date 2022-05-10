@@ -1,9 +1,18 @@
 <template>
-<div>
-  <event-poi-template :name="name" :breadcrump="breadcrump" :description="description" :dateTime="dateTime"
-  :location="location" :price="price" :images="images" :videos="videos" />
-  <poi-template :eventId="eventId" :thumbnailEvent="thumbnailEvent" :nameEvent="nameEvent" :shortDescriptionEvent="shortDescriptionEvent"/>
-</div>
+  <div>
+    <event-poi-template :name="name" :breadcrump="breadcrump" :description="description" :dateTime="dateTime"
+    :location="location" :price="price" :images="images" :videos="videos" />
+    <poi-template :eventId="eventId[0]" :thumbnailEvent="thumbnailEvent[0]" :nameEvent="nameEvent[0]" :shortDescriptionEvent="shortDescriptionEvent[0]"/>
+    <poi-template :eventId="eventId[1]" :thumbnailEvent="thumbnailEvent[1]" :nameEvent="nameEvent[1]" :shortDescriptionEvent="shortDescriptionEvent[1]"/>
+    <poi-template :eventId="eventId[2]" :thumbnailEvent="thumbnailEvent[2]" :nameEvent="nameEvent[2]" :shortDescriptionEvent="shortDescriptionEvent[2]"/>
+    <poi-template :eventId="eventId[3]" :thumbnailEvent="thumbnailEvent[3]" :nameEvent="nameEvent[3]" :shortDescriptionEvent="shortDescriptionEvent[3]"/>
+    <poi-template :eventId="eventId[4]" :thumbnailEvent="thumbnailEvent[4]" :nameEvent="nameEvent[4]" :shortDescriptionEvent="shortDescriptionEvent[4]"/>
+    <poi-template :eventId="eventId[5]" :thumbnailEvent="thumbnailEvent[5]" :nameEvent="nameEvent[5]" :shortDescriptionEvent="shortDescriptionEvent[5]"/>
+    <poi-template :eventId="eventId[6]" :thumbnailEvent="thumbnailEvent[6]" :nameEvent="nameEvent[6]" :shortDescriptionEvent="shortDescriptionEvent[6]"/>
+    <poi-template :eventId="eventId[7]" :thumbnailEvent="thumbnailEvent[7]" :nameEvent="nameEvent[7]" :shortDescriptionEvent="shortDescriptionEvent[7]"/>
+    <poi-template :eventId="eventId[8]" :thumbnailEvent="thumbnailEvent[8]" :nameEvent="nameEvent[8]" :shortDescriptionEvent="shortDescriptionEvent[8]"/>
+    <poi-template :eventId="eventId[9]" :thumbnailEvent="thumbnailEvent[9]" :nameEvent="nameEvent[9]" :shortDescriptionEvent="shortDescriptionEvent[9]"/>
+  </div>
 </template>
 
 <!--
@@ -61,15 +70,18 @@ export default {
     const price = data[0].price
     const images = data[0].images
     const videos = data[0].videos
-    //
-    const thumbnailEvent = "eeee" // data[1].images[0]
-    const eventId = 1 // data[1].id[0]
-    const nameEvent = "aaa" // data[1].name
-    const shortDescriptionEvent = "bbb" // data[1].shortDescription
-    const periodEvent = "ccc" // data[1].date
-    // bisogna ripetere (in un qualche modo) (eventualmente anche 0 volte) questa parte per ogni evento in quel determinato
-    // punto di interesse eee bisogna forse anche controllare che funzioni data[N] senza che esca fuori dall'array
-    //
+    const thumbnailEvent = []
+    const eventId = []
+    const nameEvent = []
+    const shortDescriptionEvent = []
+    const periodEvent = []
+    for(let i = 0; i < data[1].length; i++){
+      thumbnailEvent.push(data[1][i].images)
+      eventId.push(data[1][i].id)
+      nameEvent.push(data[1][i].name)
+      shortDescriptionEvent.push(data[1][i].shortDescription)
+      periodEvent.push(data[1][i].date)
+    }
     return {
       name,
       breadcrump,
