@@ -53,7 +53,7 @@ async function initializeDatabaseConnection() {
 
     PointOfInterest.hasMany(Event)
     Event.belongsTo(PointOfInterest)
-    
+
     await database.sync({ force: true })
     return {
         Event, PointOfInterest, Itinerary, Service
@@ -210,6 +210,42 @@ async function runMainApi() {
                 address: element.address,
                 times: element.times,
             })
+        }
+        return res.json(filtered)
+    })
+
+    app.get("/servicesUnique", async (req, res) => {
+        const result = await models.Service.findAll()
+        const filtered = []
+        for (const element of result) {
+            var addElem = true
+            for (const el of filtered) {
+                if (el.type == element.type)
+                    addElem = false;
+                if (!addElem)
+                    break
+            }
+            if (addElem) {
+                filtered.push({
+                    type: element.type,
+                })
+            }
+        }
+        return res.json(filtered)
+    })
+
+    app.get("/services/:type", async (req, res) => {
+        const result = await models.Service.findAll()
+        const filtered = []
+        for (const element of result) {
+            if (element.type == req.params.type) {
+                filtered.push({
+                    type: element.type,
+                    name: element.name,
+                    address: element.address,
+                    times: element.times,
+                })
+            }
         }
         return res.json(filtered)
     })

@@ -1,17 +1,19 @@
 <template>
   <div class="card" style="width: 15rem">
     <!-- Use a nuxt-link to make the whole card a link -->
-    <nuxt-link :to="'/services/'+ type">
+    <div>
       <!-- <div
         class="card-img-top card-image"
         :style="{ 'background-image': 'url(' + image + ')' }"
       ></div> -->
       <div class="card-body">
-        <p class="card-title title-font">{{ type }}</p>
+        <p class="card-title title-font">{{ name }}</p>
+        <p class="card-title title-font">{{ address }}</p>
+        <p class="card-title title-font">{{ times }}</p>
         <!--<p class="card-title imp-info">{{ date }}</p>
         <p class="card-text">{{ shortDescription }}</p> -->
       </div>
-    </nuxt-link>
+    </div>
   </div>
 </template>
 
@@ -56,14 +58,22 @@ a {
 
 <script>
 export default {
-  name: 'CardServiceComponent',
+  name: 'CardSingleServiceComponent',
   props: {
-    /* id: {
+    /* type: {
       type: Number,
       required: true,
     },
     */
-    type: {
+    name: {
+      type: String,
+      required: true,
+    },
+    address: {
+      type: String,
+      required: true,
+    },
+    times: {
       type: String,
       required: true,
     },

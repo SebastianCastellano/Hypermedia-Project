@@ -71,6 +71,12 @@ export default async (models) => {
             times: "24h/24",
         },
         {
+            type: "pharmacy",
+            name: "NamePharmacy2",
+            address: "address2",
+            times: "24h/24",
+        },
+        {
             type: "supermarket",
             name: "NameSupermarket2",
             address: "address2",
