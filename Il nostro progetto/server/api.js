@@ -125,12 +125,19 @@ async function runMainApi() {
         return res.json(result)
     })
 
-    app.get('/pointOfInterestAndAssociatedEvents/:id', async (req, res) => {
+    app.get('/pointOfInterestAndAssociatedEventsAndAssociatedItineraries/:id', async (req, res) => {
         const id1 = +req.params.id
         const result1 = await models.PointOfInterest.findOne({ where: { id: id1 } })
         const result2temp = await models.Event.findAll()
         const result2 = result2temp.filter(el => el.poiId == id1)
-        const result = [result1, result2]
+        var result3Temp = await models.PoiIti.findAll()
+        result3Temp = result3Temp.filter(el => el.poiId == id1)
+        var result3 = []
+        for (const el of result3Temp){
+            const temp = await models.Itinerary.findOne({ where: { id: el.itineraryId } })
+            result3.push(temp)
+        }
+        const result = [result1, result2, result3]
         return res.json(result)
     })
 
@@ -143,7 +150,17 @@ async function runMainApi() {
     app.get('/itineraryAndAssociatedPointOfInterest/:id', async (req, res) => {
         const id1 = +req.params.id
         const result1 = await models.Itinerary.findOne({ where: { id: id1 } })
-        const result = [result1, []] // SISTEMARE QUI: LEGGERE DALLA RELAZIONE MANY TO MANY
+        var result2Temp = await models.PoiIti.findAll()
+        result2Temp = result2Temp.filter(el => el.itineraryId == id1)
+        result2Temp.sort(function (a, b) {
+            return a.order - b.order;
+        })
+        var result2 = []
+        for (const el of result2Temp){
+            const temp = await models.PointOfInterest.findOne({ where: { id: el.poiId } })
+            result2.push(temp)
+        }
+        const result = [result1, result2]
         return res.json(result)
     })
 
