@@ -120,11 +120,11 @@ export default {
         },
         {
           name: 'Itineraries',
-          path: '/itineraries',
+          path: '/itineraryList',
         },
         {
           name: 'Services',
-          path: '/services',
+          path: '/servicesList',
         },
       ],
     }

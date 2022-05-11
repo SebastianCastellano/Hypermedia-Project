@@ -68,20 +68,44 @@ export default async (models) => {
     ]
     const serviceList = [
         {
-            type: "pharmacy",
+            type: "Pharmacies",
             name: "NamePharmacy1",
             address: "address1",
             times: "24h/24",
         },
         {
-            type: "pharmacy",
+            type: "Pharmacies",
             name: "NamePharmacy2",
             address: "address2",
+            times: "24h/24",
+        },
+        {
+            type: "Supermarkets",
+            name: "NameSupermarket2",
+            address: "address2",
             times: "24h/24 lun-ven",
+        },
+    ]
+    const poiitiList = [
+        {
+            itineraryId: 1,
+            poiId: 1,
+            order: 1,
+        },
+        {
+            itineraryId: 1,
+            poiId: 2,
+            order: 2,
+        },
+        {
+            itineraryId: 2,
+            poiId: 2,
+            order: 1,
         },
     ]
     await models.PointOfInterest.bulkCreate(pointOfInterestList)
     await models.Event.bulkCreate(eventList)
     await models.Itinerary.bulkCreate(itineraryList)
     await models.Service.bulkCreate(serviceList)
+    await models.PoiIti.bulkCreate(poiitiList)
 }

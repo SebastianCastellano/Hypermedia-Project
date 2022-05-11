@@ -41,8 +41,16 @@ async function initializeDatabaseConnection() {
         shortDescription: DataTypes.STRING,
     })
 
+    /*
     Itinerary.belongsToMany(PointOfInterest, { through: 'poiiti' });
     PointOfInterest.belongsToMany(Itinerary, { through: 'poiiti' });
+    */
+   
+    const PoiIti = database.define('poiiti', {
+        order: DataTypes.INTEGER
+      }, { timestamps: false });
+      Itinerary.belongsToMany(PointOfInterest, { through: 'poiiti' });
+      PointOfInterest.belongsToMany(Itinerary, { through: 'poiiti' });
 
     const Service = database.define("service", {
         type: DataTypes.STRING,
@@ -53,10 +61,10 @@ async function initializeDatabaseConnection() {
 
     PointOfInterest.hasMany(Event)
     Event.belongsTo(PointOfInterest)
-    
+
     await database.sync({ force: true })
     return {
-        Event, PointOfInterest, Itinerary, Service
+        Event, PointOfInterest, Itinerary, Service, PoiIti
     }
 }
 
@@ -132,6 +140,13 @@ async function runMainApi() {
         return res.json(result)
     })
 
+    app.get('/itineraryAndAssociatedPointOfInterest/:id', async (req, res) => {
+        const id1 = +req.params.id
+        const result1 = await models.Itinerary.findOne({ where: { id: id1 } })
+        const result = [result1, []] // SISTEMARE QUI: LEGGERE DALLA RELAZIONE MANY TO MANY
+        return res.json(result)
+    })
+
     app.get('/service/:id', async (req, res) => {
         const id = +req.params.id
         const result = await models.Service.findOne({ where: { id } })
@@ -181,6 +196,7 @@ async function runMainApi() {
         const filtered = []
         for (const element of result) {
             filtered.push({
+                id: element.id,
                 name: element.name,
                 duration: element.duration,
                 length: element.length,
@@ -202,6 +218,42 @@ async function runMainApi() {
                 address: element.address,
                 times: element.times,
             })
+        }
+        return res.json(filtered)
+    })
+
+    app.get("/servicesUnique", async (req, res) => {
+        const result = await models.Service.findAll()
+        const filtered = []
+        for (const element of result) {
+            var addElem = true
+            for (const el of filtered) {
+                if (el.type == element.type)
+                    addElem = false;
+                if (!addElem)
+                    break
+            }
+            if (addElem) {
+                filtered.push({
+                    type: element.type,
+                })
+            }
+        }
+        return res.json(filtered)
+    })
+
+    app.get("/services/:type", async (req, res) => {
+        const result = await models.Service.findAll()
+        const filtered = []
+        for (const element of result) {
+            if (element.type == req.params.type) {
+                filtered.push({
+                    type: element.type,
+                    name: element.name,
+                    address: element.address,
+                    times: element.times,
+                })
+            }
         }
         return res.json(filtered)
     })
