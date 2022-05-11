@@ -41,8 +41,16 @@ async function initializeDatabaseConnection() {
         shortDescription: DataTypes.STRING,
     })
 
+    /*
     Itinerary.belongsToMany(PointOfInterest, { through: 'poiiti' });
     PointOfInterest.belongsToMany(Itinerary, { through: 'poiiti' });
+    */
+   
+    const PoiIti = database.define('poiiti', {
+        order: DataTypes.INTEGER
+      }, { timestamps: false });
+      Itinerary.belongsToMany(PointOfInterest, { through: 'poiiti' });
+      PointOfInterest.belongsToMany(Itinerary, { through: 'poiiti' });
 
     const Service = database.define("service", {
         type: DataTypes.STRING,
@@ -56,7 +64,7 @@ async function initializeDatabaseConnection() {
 
     await database.sync({ force: true })
     return {
-        Event, PointOfInterest, Itinerary, Service
+        Event, PointOfInterest, Itinerary, Service, PoiIti
     }
 }
 
