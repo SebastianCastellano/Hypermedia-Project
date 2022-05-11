@@ -1,27 +1,23 @@
 <template>
   <div class="page container mt-5">
-    <h1 class="display-4">All events</h1>
+    <h1 class="display-4">All services</h1>
     <div class="row mt-3">
-      <card-event
-        v-for="(event, eventIndex) of eventList"
+      <card-service
+        v-for="(service, serviceIndex) of serviceList"
         class="col-sm-2 m-2"
-        :key="`event-index-${eventIndex}`"
-        :id="event.id"
-        :name="event.name"
-        :date="event.date"
-        :shortDescription="event.shortDescription"
-        :image="event.images[0]"
+        :key="`event-index-${serviceIndex}`"
+        :type="service.type"
       />
     </div>
   </div>
 </template>
 
 <script>
-import CardEvent from '~/components/CardEvent.vue'
+import CardService from '~/components/CardService.vue'
 export default {
   name: 'ListServicePage',
   components: {
-    CardEvent,
+    CardService,
   },
   data() {
     return {
@@ -32,7 +28,7 @@ export default {
   async asyncData({ $axios }) {
     const { data } = await $axios.get('/api/services')
     return {
-      eventList: data,
+      serviceList: data,
     }
   },
 }
