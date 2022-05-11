@@ -65,19 +65,19 @@ export default async (models) => {
     ]
     const serviceList = [
         {
-            type: "pharmacy",
+            type: "Pharmacies",
             name: "NamePharmacy1",
             address: "address1",
             times: "24h/24",
         },
         {
-            type: "pharmacy",
+            type: "Pharmacies",
             name: "NamePharmacy2",
             address: "address2",
             times: "24h/24",
         },
         {
-            type: "supermarket",
+            type: "Supermarkets",
             name: "NameSupermarket2",
             address: "address2",
             times: "24h/24 lun-ven",

@@ -1,6 +1,20 @@
 <template>
-  <div class="card" style="width: 18rem">
-    <div
+  <div class="card" style="width: 15rem">
+  <nuxt-link :to="'/itineraries/'+id">
+      <!-- <div
+        class="card-img-top card-image"
+        :style="{ 'background-image': 'url(' + 'https://www.melogranoroma.org/wp-content/uploads/2017/09/SFONDO-GRIGIO-SCURO.png' + ')' }"
+      ></div> -->
+      <div class="card-body">
+        <p class="card-title title-font">{{ name }}</p>
+        <p class="card-title imp-info">{{ duration }}</p>
+        <p class="card-text">{{ length }}</p>
+        <p class="card-text">
+        {{ shortDescription }}
+      </p>
+      </div>
+    </nuxt-link>
+    <!--<div
       class="card-img-top card-image"
       :style="{ 'background-image': 'url(' + 'https://www.melogranoroma.org/wp-content/uploads/2017/09/SFONDO-GRIGIO-SCURO.png' + ')' }"
     ></div>
@@ -14,27 +28,48 @@
       <nuxt-link :to="'/itineraries/'+id" class="btn btn-primary btn-orange">
               Go to itinerary
           </nuxt-link>
-    </div>
+    </div> -->
   </div>
 </template>
 
+
 <style scoped>
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 .card {
-  border: 2px solid lightgray;
+  border: 2px solid var(--color1);
+  background: var(--color2);
 }
 .card:hover {
-  border: 2px solid orange;
-}
-.btn-orange {
-  background-color: orange;
-  border: 2px solid orange;
+  background: var(--color1-light);
+  /*border: 2px solid var(--color1);*/
 }
 .card-image {
+  margin-top: 5px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 160px;
+  height: 140px;
+  border: 1px solid var(--color1);
 }
+.card-title {
+  text-align: center;
+}
+.card-text {
+  text-align: left;
+}
+
+.title-font {
+  font-size: 150%;
+}
+
+.imp-info {
+  font-size: 120%;
+}
+
 </style>
 
 <script>
