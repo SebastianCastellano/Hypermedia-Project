@@ -132,6 +132,13 @@ async function runMainApi() {
         return res.json(result)
     })
 
+    app.get('/itineraryAndAssociatedPointOfInterest/:id', async (req, res) => {
+        const id1 = +req.params.id
+        const result1 = await models.Itinerary.findOne({ where: { id: id1 } })
+        const result = [result1, []] // SISTEMARE QUI: LEGGERE DALLA RELAZIONE MANY TO MANY
+        return res.json(result)
+    })
+
     app.get('/service/:id', async (req, res) => {
         const id = +req.params.id
         const result = await models.Service.findOne({ where: { id } })
