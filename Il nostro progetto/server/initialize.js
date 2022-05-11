@@ -8,7 +8,7 @@ export default async (models) => {
             description: "Description Event 1",
             images: ["https://www.rockon.it/wp-content/uploads/2021/08/mantova-live.jpg","https://www.ojeventi.it/wp-content/uploads/2018/07/unnamed-min.jpg"],
             videos: ["video1Event1","video2Event2"],
-            shortDescription: "Short description event 1",
+            shortDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vel.",
             poiId: 1,
         },
         {
@@ -19,7 +19,7 @@ export default async (models) => {
             description: "Description Event 2",
             images: ["https://www.womblab.com/wp-content/uploads/2016/02/eventmanagement.jpg","https://fs.i3lab.group/hypermedia/cats/siberian.jpg","secondaimmagine"],
             videos: ["video1Event2","video2Event2"],
-            shortDescription: "Short description event 2",
+            shortDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vel.",
             poiId: 1,
         },
     ]
@@ -32,7 +32,7 @@ export default async (models) => {
             description: "descriptionPoi1",
             images: ["https://www.luoghidiinteresse.it/wp-content/uploads/14-Mantova-Piazza-Erbe-e-SantAndrea-696x473.jpg","https://fs.i3lab.group/hypermedia/cats/siberian.jpg","secondaimmagine"],
             videos: ["video1","video2"],
-            shortDescription: "short description Poi 1",
+            shortDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vel.",
         },
         {
             name: "NamePoi2",
@@ -42,7 +42,7 @@ export default async (models) => {
             description: "descriptionPoi2",
             images: ["https://siviaggia.it/wp-content/uploads/sites/2/2017/09/cosa-vedere-a-mantova-virgilio.jpg","https://fs.i3lab.group/hypermedia/cats/siberian.jpg","secondaimmagine"],
             videos: ["video1","video2"],
-            shortDescription: "short description Poi 2",
+            shortDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vel.",
         },
     ]
     const itineraryList = [

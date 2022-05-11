@@ -1,6 +1,6 @@
 <template>
   <div class="page container mt-5">
-    <h1 class="display-4 title-font">All Events</h1>
+    <h1 class="display-4 title-font page-title">All Events</h1>
     <div class="row mt-3">
       <card-event
         v-for="(event, eventIndex) of eventList"
@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import CardEvent from '~/components/CardEvent_v2.vue'
+import CardEvent from '~/components/CardEvent.vue'
 export default {
   name: 'ListPage',
   components: {

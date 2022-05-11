@@ -15,3 +15,7 @@ body
 .title-font {
   font-family: var(--title-font);
 }
+
+.page-title {
+  font-size: 250%;
+}
