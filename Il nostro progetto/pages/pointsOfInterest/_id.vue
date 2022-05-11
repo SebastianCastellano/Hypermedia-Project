@@ -28,7 +28,7 @@ export default {
   },
   async asyncData({ route, $axios }) {
     const { id } = route.params
-    const { data } = await $axios.get('/api/pointOfInterestAndAssociatedEvents/' + id)
+    const { data } = await $axios.get('/api/pointOfInterestAndAssociatedEventsAndAssociatedItineraries/' + id)
     const name = data[0].name
     const breadcrump = "breadcrump"
     const description = data[0].description
