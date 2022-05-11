@@ -1,38 +1,54 @@
 <template>
-  <div class="card" style="width: 18rem">
-    <div
-      class="card-img-top card-image"
-      :style="{ 'background-image': 'url(' + image + ')' }"
-    ></div>
-    <div class="card-body">
-      <h5 class="card-title">{{ name }}</h5>
-      <h4 class="card-title">Price: {{ price }} Eur</h4>
-      <p class="card-text">
-        {{ shortDescription }}
-      </p>
+  <div class="card" style="width: 15rem">
+    <nuxt-link :to="'/pointsOfInterest/'+id">
+      <div
+        class="card-img-top card-image"
+        :style="{ 'background-image': 'url(' + image + ')' }"
+      ></div>
+      <div class="card-body">
+        <div class="card-title title-font">{{ name }}</div>
+        <div class="card-title imp-info">Price: {{ price }} €</div>
+        <p class="card-text">{{ shortDescription }}</p>
+      </div>
+    </nuxt-link>
+  </div>
+      <!--
       <nuxt-link :to="'/pointsOfInterest/'+id" class="btn btn-primary btn-orange">
               Go to point of interest
-          </nuxt-link>
-    </div>
-  </div>
+      </nuxt-link>
+      -->
 </template>
 
 <style scoped>
+a {
+  text-decoration: none;
+  color: inherit;
+}
 .card {
-  border: 2px solid lightgray;
+  border: 2px solid var(--color1);
+  background: var(--color2);
 }
 .card:hover {
-  border: 2px solid orange;
-}
-.btn-orange {
-  background-color: orange;
-  border: 2px solid orange;
+  background: var(--color1-light);
+  /*border: 2px solid var(--color1);*/
 }
 .card-image {
+  margin-top: 5px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 160px;
+  height: 140px;
+  border: 1px solid var(--color1);
+}
+.card-title, .card-text{
+  text-align: center;
+}
+
+.title-font {
+  font-size: 150%;
+}
+.imp-info {
+  font-size: 120%;
 }
 </style>
 

@@ -1,6 +1,6 @@
 <template>
   <div class="page container mt-5">
-    <h1 class="display-4">All point of interests</h1>
+    <h1 class="display-4 title-font page-title">All points of interests</h1>
     <div class="row mt-3">
       <card-poi
         v-for="(poi, poiIndex) of poiList"

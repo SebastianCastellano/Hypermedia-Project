@@ -1,5 +1,6 @@
 :root {
     --color1: rgb(178, 34, 34);
+    --color1-light: rgb(178, 34, 34, 0.1);
     --color2: white;
     --color3: Aqua;
     --title-font: "Cinzel Decorative";
@@ -9,4 +10,12 @@
 body
 {
   font-family: var(--main-font);
+}
+
+.title-font {
+  font-family: var(--title-font);
+}
+
+.page-title {
+  font-size: 250%;
 }
