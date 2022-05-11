@@ -1,5 +1,5 @@
 <template>
-    <div v-if="eventId >= 0">
+<div>
         <nuxt-link :to="'/events/'+eventId" class="btn btn-primary btn-orange">
               Go to {{nameEvent}}
           </nuxt-link>
@@ -10,7 +10,7 @@
             <!-- <img src= {{ thumbnailPoi }} > POTREBBE ESSERCI UN PROBLEMA NEL VISUALIZZARE QUESTA IMMAGINE COME IMMAGINE
             sennò il testo dell'url dell'immagine lo visualizza -->
           </div>
-    </div>
+    </div> 
 </template>
 
 <script>
