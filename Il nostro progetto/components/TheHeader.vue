@@ -116,7 +116,7 @@ export default {
         },
         {
           name: 'Points of interest',
-          path: '/pointsOfInterests',
+          path: '/pointsOfInterestList',
         },
         {
           name: 'Itineraries',

@@ -6,12 +6,12 @@
     ></div>
     <div class="card-body">
       <h5 class="card-title">{{ name }}</h5>
-      <h4 class="card-title">{{ date }}</h4>
+      <h4 class="card-title">Price: {{ price }} Eur</h4>
       <p class="card-text">
         {{ shortDescription }}
       </p>
-      <nuxt-link :to="'/events/'+id" class="btn btn-primary btn-orange">
-              Go to event
+      <nuxt-link :to="'/pointsOfInterest/'+id" class="btn btn-primary btn-orange">
+              Go to point of interest
           </nuxt-link>
     </div>
   </div>
@@ -22,11 +22,11 @@
   border: 2px solid lightgray;
 }
 .card:hover {
-  border: 2px solid var(--color1);
+  border: 2px solid orange;
 }
 .btn-orange {
-  background-color: var(--color1);
-  border: 2px solid var(--color1);
+  background-color: orange;
+  border: 2px solid orange;
 }
 .card-image {
   background-position: center;
@@ -38,7 +38,7 @@
 
 <script>
 export default {
-  name: 'CardComponent',
+  name: 'CardComponentPoi',
   props: {
     id: {
       type: Number,
@@ -48,8 +48,8 @@ export default {
       type: String,
       required: true,
     },
-    date: {
-      type: String,
+    price: {
+      type: Number,
       required: true,
     },
     shortDescription: {
@@ -63,7 +63,7 @@ export default {
   },
   methods: {
     goToDetails() {
-      this.$router.push(`/events/${this.id}`)
+      this.$router.push(`/pointsOfInterest/${this.id}`)
     },
   },
 }

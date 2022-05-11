@@ -31,10 +31,32 @@ async function initializeDatabaseConnection() {
         videos: DataTypes.ARRAY(DataTypes.STRING),
         shortDescription: DataTypes.STRING,
     })
-    console.log("abcde" + database.models)
+
+    const Itinerary = database.define("itinerary", {
+        name: DataTypes.STRING,
+        duration: DataTypes.STRING,
+        length: DataTypes.STRING,
+        description: DataTypes.STRING,
+        map: DataTypes.STRING,
+        shortDescription: DataTypes.STRING,
+    })
+
+    Itinerary.belongsToMany(PointOfInterest, { through: 'poiiti' });
+    PointOfInterest.belongsToMany(Itinerary, { through: 'poiiti' });
+
+    const Service = database.define("service", {
+        type: DataTypes.STRING,
+        name: DataTypes.STRING,
+        address: DataTypes.STRING,
+        times: DataTypes.STRING,
+    })
+
+    PointOfInterest.hasMany(Event)
+    Event.belongsTo(PointOfInterest)
+    
     await database.sync({ force: true })
     return {
-        Event, PointOfInterest
+        Event, PointOfInterest, Itinerary, Service
     }
 }
 
@@ -43,6 +65,12 @@ const pageContentObject = {
         title: "Mantova",
         image: "https://guideturistichemantova.it/wp-content/uploads/freshizer/223f204f831a424ec0e13a4ffa807afe_la-citta-di-mantova-793-446-c-90.jpg",
         shortOverview: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis et tincidunt elit, in finibus elit. Aliquam nec posuere sem, at faucibus erat. Suspendisse iaculis lorem id odio placerat bibendum. Suspendisse potenti. Sed quis efficitur erat. Pellentesque non velit ipsum. Maecenas finibus felis a magna auctor finibus. Mauris tincidunt nibh sit amet ante consectetur, non cursus elit feugiat.
+        Integer vitae elit at nunc lacinia egestas. Etiam nec sagittis lorem. Phasellus consectetur mauris eget neque posuere, vitae sagittis massa congue. Etiam vitae eleifend odio, sit amet tempus ex. Ut semper feugiat erat, id consequat elit volutpat sed. Curabitur vel arcu at risus vehicula blandit in ut nunc. In nec pellentesque tellus. Maecenas vitae purus lacinia, tristique elit vitae, interdum est. Ut feugiat nulla et vestibulum efficitur. Suspendisse potenti. Duis ex dolor, vestibulum a leo eu, dapibus elementum ipsum. Curabitur euismod rhoncus nulla ac interdum. Mauris vulputate viverra scelerisque. Mauris ullamcorper tempus eros.
+        
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis et tincidunt elit, in finibus elit. Aliquam nec posuere sem, at faucibus erat. Suspendisse iaculis lorem id odio placerat bibendum. Suspendisse potenti. Sed quis efficitur erat. Pellentesque non velit ipsum. Maecenas finibus felis a magna auctor finibus. Mauris tincidunt nibh sit amet ante consectetur, non cursus elit feugiat.
+        Integer vitae elit at nunc lacinia egestas. Etiam nec sagittis lorem. Phasellus consectetur mauris eget neque posuere, vitae sagittis massa congue. Etiam vitae eleifend odio, sit amet tempus ex. Ut semper feugiat erat, id consequat elit volutpat sed. Curabitur vel arcu at risus vehicula blandit in ut nunc. In nec pellentesque tellus. Maecenas vitae purus lacinia, tristique elit vitae, interdum est. Ut feugiat nulla et vestibulum efficitur. Suspendisse potenti. Duis ex dolor, vestibulum a leo eu, dapibus elementum ipsum. Curabitur euismod rhoncus nulla ac interdum. Mauris vulputate viverra scelerisque. Mauris ullamcorper tempus eros.
+        
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis et tincidunt elit, in finibus elit. Aliquam nec posuere sem, at faucibus erat. Suspendisse iaculis lorem id odio placerat bibendum. Suspendisse potenti. Sed quis efficitur erat. Pellentesque non velit ipsum. Maecenas finibus felis a magna auctor finibus. Mauris tincidunt nibh sit amet ante consectetur, non cursus elit feugiat.
         Integer vitae elit at nunc lacinia egestas. Etiam nec sagittis lorem. Phasellus consectetur mauris eget neque posuere, vitae sagittis massa congue. Etiam vitae eleifend odio, sit amet tempus ex. Ut semper feugiat erat, id consequat elit volutpat sed. Curabitur vel arcu at risus vehicula blandit in ut nunc. In nec pellentesque tellus. Maecenas vitae purus lacinia, tristique elit vitae, interdum est. Ut feugiat nulla et vestibulum efficitur. Suspendisse potenti. Duis ex dolor, vestibulum a leo eu, dapibus elementum ipsum. Curabitur euismod rhoncus nulla ac interdum. Mauris vulputate viverra scelerisque. Mauris ullamcorper tempus eros.`,
         history: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis et tincidunt elit, in finibus elit. Aliquam nec posuere sem, at faucibus erat. Suspendisse iaculis lorem id odio placerat bibendum. Suspendisse potenti. Sed quis efficitur erat. Pellentesque non velit ipsum. Maecenas finibus felis a magna auctor finibus. Mauris tincidunt nibh sit amet ante consectetur, non cursus elit feugiat.
         Integer vitae elit at nunc lacinia egestas. Etiam nec sagittis lorem. Phasellus consectetur mauris eget neque posuere, vitae sagittis massa congue. Etiam vitae eleifend odio, sit amet tempus ex. Ut semper feugiat erat, id consequat elit volutpat sed. Curabitur vel arcu at risus vehicula blandit in ut nunc. In nec pellentesque tellus. Maecenas vitae purus lacinia, tristique elit vitae, interdum est. Ut feugiat nulla et vestibulum efficitur. Suspendisse potenti. Duis ex dolor, vestibulum a leo eu, dapibus elementum ipsum. Curabitur euismod rhoncus nulla ac interdum. Mauris vulputate viverra scelerisque. Mauris ullamcorper tempus eros.`,
@@ -71,7 +99,15 @@ async function runMainApi() {
     app.get('/event/:id', async (req, res) => {
         const id = +req.params.id
         const result = await models.Event.findOne({ where: { id } })
-        // result.date = result.date.toLocaleDateString() da sistemare la visualizzazione della data del specifico evento
+        return res.json(result)
+    })
+
+    app.get('/eventAndAssociatedPointOfInterest/:id', async (req, res) => {
+        const id1 = +req.params.id
+        const result1 = await models.Event.findOne({ where: { id: id1 } })
+        const id2 = result1.poiId
+        const result2 = await models.PointOfInterest.findOne({ where: { id: id2 } })
+        const result = [result1, result2]
         return res.json(result)
     })
 
@@ -81,7 +117,27 @@ async function runMainApi() {
         return res.json(result)
     })
 
-    // HTTP GET api that returns all the events in our fake database
+    app.get('/pointOfInterestAndAssociatedEvents/:id', async (req, res) => {
+        const id1 = +req.params.id
+        const result1 = await models.PointOfInterest.findOne({ where: { id: id1 } })
+        const result2temp = await models.Event.findAll()
+        const result2 = result2temp.filter(el => el.poiId == id1)
+        const result = [result1, result2]
+        return res.json(result)
+    })
+
+    app.get('/itinerary/:id', async (req, res) => {
+        const id = +req.params.id
+        const result = await models.Itinerary.findOne({ where: { id } })
+        return res.json(result)
+    })
+
+    app.get('/service/:id', async (req, res) => {
+        const id = +req.params.id
+        const result = await models.Service.findOne({ where: { id } })
+        return res.json(result)
+    })
+
     app.get("/events", async (req, res) => {
         const result = await models.Event.findAll()
         const filtered = []
@@ -101,7 +157,6 @@ async function runMainApi() {
         return res.json(filtered)
     })
 
-    // HTTP GET api that returns all the point of interest in our fake database
     app.get("/pointOfInterest", async (req, res) => {
         const result = await models.PointOfInterest.findAll()
         const filtered = []
@@ -116,6 +171,36 @@ async function runMainApi() {
                 videos: element.videos,
                 shortDescription: element.shortDescription,
                 id: element.id,
+            })
+        }
+        return res.json(filtered)
+    })
+
+    app.get("/itineraries", async (req, res) => {
+        const result = await models.Itinerary.findAll()
+        const filtered = []
+        for (const element of result) {
+            filtered.push({
+                name: element.name,
+                duration: element.duration,
+                length: element.length,
+                description: element.description,
+                map: element.map,
+                shortDescription: element.shortDescription,
+            })
+        }
+        return res.json(filtered)
+    })
+
+    app.get("/services", async (req, res) => {
+        const result = await models.Service.findAll()
+        const filtered = []
+        for (const element of result) {
+            filtered.push({
+                type: element.type,
+                name: element.name,
+                address: element.address,
+                times: element.times,
             })
         }
         return res.json(filtered)

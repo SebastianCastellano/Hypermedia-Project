@@ -1,7 +1,7 @@
 <template>
     <footer>
         <div class="vertical-center">
-            Website devolped by ...
+            Website developed by ...
         </div>
     </footer>
 </template>
