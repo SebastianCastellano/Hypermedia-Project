@@ -15,10 +15,10 @@ async function initializeDatabaseConnection() {
         date: DataTypes.DATE,
         location: DataTypes.STRING,
         price: DataTypes.INTEGER,
-        description: DataTypes.STRING,
+        description: DataTypes.TEXT,
         images: DataTypes.ARRAY(DataTypes.STRING),
         videos: DataTypes.ARRAY(DataTypes.STRING),
-        shortDescription: DataTypes.STRING,
+        shortDescription: DataTypes.TEXT,
     })
 
     const PointOfInterest = database.define("poi", {
@@ -26,10 +26,10 @@ async function initializeDatabaseConnection() {
         location: DataTypes.STRING,
         times: DataTypes.STRING,
         price: DataTypes.INTEGER,
-        description: DataTypes.STRING,
+        description: DataTypes.TEXT,
         images: DataTypes.ARRAY(DataTypes.STRING),
         videos: DataTypes.ARRAY(DataTypes.STRING),
-        shortDescription: DataTypes.STRING,
+        shortDescription: DataTypes.TEXT,
     })
 
     const Itinerary = database.define("itinerary", {

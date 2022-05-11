@@ -14,6 +14,7 @@ footer {
     position: relative;
     color: var(--color2);
     background: var(--color1);
+    margin-top: 20vh;
     margin-bottom: 0;
     margin-right: 0;
     height: 10vh;
