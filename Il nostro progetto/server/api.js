@@ -188,6 +188,7 @@ async function runMainApi() {
         const filtered = []
         for (const element of result) {
             filtered.push({
+                id: element.id,
                 name: element.name,
                 duration: element.duration,
                 length: element.length,
