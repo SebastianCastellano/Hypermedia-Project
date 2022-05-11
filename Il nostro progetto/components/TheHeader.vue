@@ -17,6 +17,20 @@
 
     <div class="collapse navbar-collapse" id="navbarToggler">
       <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Events
+          </a>
+          <div class="dropdown-menu nav-item" aria-labelledby="navbarDropdownMenuLink"
+            v-for="(navItem, navItemIndex) of eventsList"
+            :key="`navItem${navItemIndex}`">
+            <nuxt-link
+            :to="navItem.path"
+            class="nav-link dropdown-item">
+              {{ navItem.name }}
+            </nuxt-link>
+          </div>
+        </li>
         <li
           v-for="(navItem, navItemIndex) of headerList"
           :key="`navItem${navItemIndex}`"
@@ -75,6 +89,20 @@ export default {
   name: 'TheHeader',
   data() {
     return {
+      eventsList: [
+        {
+          name: 'All Events',
+          path: '/',
+        },
+        {
+          name: 'Summer Events',
+          path: '/',
+        },
+        {
+          name: 'Winter Events',
+          path: '/',
+        },
+      ],
       headerList: [
         /*
         {

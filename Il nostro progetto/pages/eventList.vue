@@ -12,19 +12,16 @@
         :shortDescription="event.shortDescription"
         :image="event.images[0]"
       />
-      <card-POI></card-POI>
     </div>
   </div>
 </template>
 
 <script>
-import CardEvent from '~/components/CardEvent.vue'
-import CardPOI from '~/components/CardPOI.vue'
+import CardEvent from '~/components/CardEvent_v2.vue'
 export default {
   name: 'ListPage',
   components: {
-    CardEvent,
-    CardPOI
+    CardEvent
 },
   data() {
     return {

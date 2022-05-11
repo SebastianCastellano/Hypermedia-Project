@@ -12,17 +12,23 @@
 
 .card-poi {
     border: 2px solid var(--color1);
+    /*
     height: 55vh;
     width: 45vh;
     padding: 4vh 3vh;
     margin: 1vh 1vw;
+    */
+    height: 325px;
+    width: 250px;
+    padding: 10px 5px;
+    margin: 5px;
 }
 
 .title-font {
     text-align: center;
     padding: 0;
     font-size: 150%;
-    margin-bottom: 2vh;
+    margin-bottom: 5%;
 }
 
 img {
@@ -31,16 +37,17 @@ img {
     margin-left: auto;
     margin-right: auto;
     width: 80%;
-    margin-bottom: 3vh;
+    margin-bottom: 5%;
     border: 1px solid var(--color1);
 }
 
 article {
     font-size: 110%;
+    margin: 0 5%;
 }
 
 .card-poi:hover {
-    background-color: rgb(178, 34, 34, 0.1);
+    background-color: var(--color1-light);
 }
 
 </style>
