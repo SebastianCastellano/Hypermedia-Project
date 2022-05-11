@@ -7,11 +7,21 @@
       v-for="(event, eventIndex) of associatedEventList"
       class="col-sm-2 m-2"
       :key="`event-index-${eventIndex}`"
-      :eventId="event.id" 
-      :thumbnailEvent="event.images[0]" 
-      :nameEvent="event.name" 
+      :eventId="event.id"
+      :thumbnailEvent="event.images[0]"
+      :nameEvent="event.name"
       :shortDescriptionEvent="event.shortDescription"
       :periodEvent="event.date"
+    />
+    <card-itinerary
+      v-for="(itinerary, itineraryIndex) of associatedItineraryList"
+      class="col-sm-2 m-2"
+      :key="`itinerary-index-${itineraryIndex}`"
+      :id="itinerary.id"
+      :name="itinerary.name"
+      :duration="itinerary.duration"
+      :length="itinerary.length"
+      :shortDescription="itinerary.shortDescription"
     />
     </div>
   </div>
@@ -20,11 +30,13 @@
 <script>
 import EventPoiTemplate from '~/components/EventPoiTemplate.vue'
 import PoiTemplate from '~/components/PoiTemplate.vue'
+import CardItinerary from '~/components/CardItinerary.vue'
 export default {
   name: 'poiPage',
   components: {
     EventPoiTemplate,
-    PoiTemplate
+    PoiTemplate,
+    CardItinerary
   },
   async asyncData({ route, $axios }) {
     const { id } = route.params
@@ -46,7 +58,8 @@ export default {
       price,
       images,
       videos,
-      associatedEventList: data[1] 
+      associatedEventList: data[1],
+      associatedItineraryList: data[2]
     }
   },
 }

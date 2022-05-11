@@ -90,12 +90,12 @@ export default async (models) => {
         {
             itineraryId: 1,
             poiId: 1,
-            order: 2,
+            order: 1,
         },
         {
             itineraryId: 1,
             poiId: 2,
-            order: 1,
+            order: 2,
         },
         {
             itineraryId: 2,

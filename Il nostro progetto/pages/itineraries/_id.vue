@@ -2,15 +2,26 @@
   <div>
     <itinerary-template :name="name" :breadcrump="breadcrump" :duration="duration" :length="length" :description="description"
     :map="map"/>
+    <event-template
+      v-for="(poi, poiIndex) of associatedPoiList"
+      class="col-sm-2 m-2"
+      :key="`poi-index-${poiIndex}`"
+      :poiId="poi.id"
+      :thumbnailPoi="poi.images[0]"
+      :namePoi="poi.name"
+      :shortDescriptionPoi="poi.shortDescription"
+    />
   </div>
 </template>
 
 <script>
 import ItineraryTemplate from '~/components/ItineraryTemplate.vue'
+import EventTemplate from '~/components/EventTemplate.vue'
 export default {
   name: 'ItineraryTemplatePage',
   components: {
     ItineraryTemplate,
+    EventTemplate
   },
   async asyncData({ route, $axios }) {
     const { id } = route.params
@@ -21,7 +32,6 @@ export default {
     const length = data[0].length
     const description = data[0].description
     const map = data[0].map
-    // AGGIUNGERE LE ALTRE COSE
     return {
       name,
       breadcrump,
@@ -29,6 +39,7 @@ export default {
       length,
       description,
       map,
+      associatedPoiList: data[1],
     }
   },
 }
