@@ -1,6 +1,6 @@
 <template>
   <div class="page container mt-5">
-    <h1 class="display-4">All Services</h1>
+    <h1 class="display-4 title-font page-title">All Services</h1>
     <div class="row mt-3">
       <card-service
         v-for="(service, serviceIndex) of serviceList"

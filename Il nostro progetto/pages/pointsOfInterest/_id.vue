@@ -3,9 +3,12 @@
     <event-poi-template :name="name" :breadcrump="breadcrump" :description="description" :dateTime="dateTime"
     :location="location" :price="price" :images="images" :videos="videos" />
     <div>
+    <!--Removed from poi-template class="col-sm-2 m-2"-->
+    <div class="page container mt-5">
+      <h3 class="title-font">Events hosted in {{name}}: </h3>
+    </div>
     <poi-template
       v-for="(event, eventIndex) of associatedEventList"
-      class="col-sm-2 m-2"
       :key="`event-index-${eventIndex}`"
       :eventId="event.id" 
       :thumbnailEvent="event.images[0]" 

@@ -2,14 +2,8 @@
   <div class="card" style="width: 15rem">
     <!-- Use a nuxt-link to make the whole card a link -->
     <nuxt-link :to="'/services/'+ type">
-      <!-- <div
-        class="card-img-top card-image"
-        :style="{ 'background-image': 'url(' + image + ')' }"
-      ></div> -->
       <div class="card-body">
-        <p class="card-title title-font">{{ type }}</p>
-        <!--<p class="card-title imp-info">{{ date }}</p>
-        <p class="card-text">{{ shortDescription }}</p> -->
+        <h3 class="card-title title-font">{{ type }}</h3>
       </div>
     </nuxt-link>
   </div>
@@ -29,27 +23,16 @@ a {
   background: var(--color1-light);
   /*border: 2px solid var(--color1);*/
 }
-.card-image {
-  margin-top: 5px;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 140px;
-  border: 1px solid var(--color1);
+
+.card-body {
+  margin: auto;
+  width: 100%;
+  padding: 10px;
 }
+
 .card-title {
   text-align: center;
-}
-.card-text {
-  text-align: left;
-}
-
-.title-font {
-  font-size: 150%;
-}
-
-.imp-info {
-  font-size: 120%;
+  font-size: 140%;
 }
 
 </style>
