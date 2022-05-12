@@ -1,34 +1,19 @@
 <template>
   <div class="card" style="width: 15rem">
-  <nuxt-link :to="'/itineraries/'+id">
-      <!-- <div
-        class="card-img-top card-image"
-        :style="{ 'background-image': 'url(' + 'https://www.melogranoroma.org/wp-content/uploads/2017/09/SFONDO-GRIGIO-SCURO.png' + ')' }"
-      ></div> -->
+    <nuxt-link :to="'/itineraries/'+id">
       <div class="card-body">
-        <p class="card-title title-font">{{ name }}</p>
-        <p class="card-title imp-info">{{ duration }}</p>
-        <p class="card-text">{{ length }}</p>
-        <p class="card-text">
+        <div class="info">
+          <h3 class="card-title title-font">{{ name }}</h3>
+          <div class="imp-info">
+            <p class="card-text">Average duration: {{ duration }} ---</p>
+            <p class="card-text">Length: {{ length }}</p>
+          </div>
+        </div>
+        <p class="card-text short-des">
         {{ shortDescription }}
-      </p>
+        </p>
       </div>
     </nuxt-link>
-    <!--<div
-      class="card-img-top card-image"
-      :style="{ 'background-image': 'url(' + 'https://www.melogranoroma.org/wp-content/uploads/2017/09/SFONDO-GRIGIO-SCURO.png' + ')' }"
-    ></div>
-    <div class="card-body">
-      <h5 class="card-title">{{ name }}</h5>
-      <h4 class="card-title">{{ duration }}</h4>
-      <h4 class="card-title">{{ length }}</h4>
-      <p class="card-text">
-        {{ shortDescription }}
-      </p>
-      <nuxt-link :to="'/itineraries/'+id" class="btn btn-primary btn-orange">
-              Go to itinerary
-          </nuxt-link>
-    </div> -->
   </div>
 </template>
 
@@ -42,32 +27,41 @@ a {
 .card {
   border: 2px solid var(--color1);
   background: var(--color2);
+  width: 100% !important;
 }
 .card:hover {
   background: var(--color1-light);
   /*border: 2px solid var(--color1);*/
 }
-.card-image {
-  margin-top: 5px;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 140px;
-  border: 1px solid var(--color1);
-}
 .card-title {
-  text-align: center;
-}
-.card-text {
   text-align: left;
+  max-width: 50%;
+  display: inline-block;
+  /*margin-right: 48vw;*/
+  margin-left: 5vw;
+  margin-right: 15vw;
+}
+
+.imp-info {
+  max-width: 50%;
+  text-align: right;
+  font-size: 110%;
+  display: inline-block;
+}
+
+.imp-info p {
+  margin: 0;
+  padding: 0;
+  display: inline;
 }
 
 .title-font {
   font-size: 150%;
 }
 
-.imp-info {
-  font-size: 120%;
+.card-body .short-des {
+  /*text-align: center;*/
+  margin-left: 5vw;
 }
 
 </style>

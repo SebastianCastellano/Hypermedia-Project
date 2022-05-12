@@ -1,12 +1,12 @@
 <template>
-  <div class="page container mt-5 event-box">
+  <div class="page container mt-5">
     <div class="event-box">
       <nuxt-link class="flex-container" :to="'/events/'+eventId">
         <img class="column" :src="thumbnailEvent"/>
         <div class="info column">
           <div class="info-text">
             <h3 class="title-font">{{nameEvent}}</h3>
-            <p>{{periodEvent}}</p>
+            <h4>{{periodEvent}}</h4>
             <p>{{shortDescriptionEvent}}</p>
           </div>
         </div>
@@ -16,6 +16,10 @@
 </template>
 
 <style scoped>
+
+.page {
+  margin-top: 20px !important;
+}
 
 a {
   text-decoration: none;
@@ -37,6 +41,7 @@ a {
 
 img {
   height: 150px;
+  max-width: 250px;
 }
 
 .info {
@@ -51,6 +56,10 @@ img {
 
 .info-text {
   margin-top: 40px;
+}
+
+h4 {
+  font-size: 110%;
 }
 
 </style>
