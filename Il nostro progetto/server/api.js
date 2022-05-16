@@ -10,16 +10,26 @@ const database = new Sequelize("postgres://postgres:postgres@localhost:5432/hyp"
 async function initializeDatabaseConnection() {
     await database.authenticate()
 
+    const Media = database.define("media", {
+        url: DataTypes.STRING,
+        alternative: DataTypes.STRING,
+        type: DataTypes.STRING,
+    })
+
     const Event = database.define("event", {
         name: DataTypes.STRING,
         date: DataTypes.DATE,
         location: DataTypes.STRING,
         price: DataTypes.INTEGER,
         description: DataTypes.TEXT,
-        images: DataTypes.ARRAY(DataTypes.STRING),
-        videos: DataTypes.ARRAY(DataTypes.STRING),
         shortDescription: DataTypes.TEXT,
     })
+
+    const EventMedia = database.define('eventmedia', {
+        order: DataTypes.INTEGER
+      }, { timestamps: false });
+      Event.belongsToMany(Media, { through: 'eventmedia' });
+      Media.belongsToMany(Event, { through: 'eventmedia' });
 
     const PointOfInterest = database.define("poi", {
         name: DataTypes.STRING,
@@ -27,10 +37,14 @@ async function initializeDatabaseConnection() {
         times: DataTypes.STRING,
         price: DataTypes.INTEGER,
         description: DataTypes.TEXT,
-        images: DataTypes.ARRAY(DataTypes.STRING),
-        videos: DataTypes.ARRAY(DataTypes.STRING),
         shortDescription: DataTypes.TEXT,
     })
+
+    const PoiMedia = database.define('poimedia', {
+        order: DataTypes.INTEGER
+      }, { timestamps: false });
+      PointOfInterest.belongsToMany(Media, { through: 'poimedia' });
+      Media.belongsToMany(PointOfInterest, { through: 'poimedia' });
 
     const Itinerary = database.define("itinerary", {
         name: DataTypes.STRING,
@@ -40,11 +54,6 @@ async function initializeDatabaseConnection() {
         map: DataTypes.STRING,
         shortDescription: DataTypes.STRING,
     })
-
-    /*
-    Itinerary.belongsToMany(PointOfInterest, { through: 'poiiti' });
-    PointOfInterest.belongsToMany(Itinerary, { through: 'poiiti' });
-    */
    
     const PoiIti = database.define('poiiti', {
         order: DataTypes.INTEGER
@@ -64,7 +73,7 @@ async function initializeDatabaseConnection() {
 
     await database.sync({ force: true })
     return {
-        Event, PointOfInterest, Itinerary, Service, PoiIti
+        Media, Event, PointOfInterest, Itinerary, Service, PoiIti, EventMedia, PoiMedia
     }
 }
 
@@ -107,29 +116,168 @@ async function runMainApi() {
     app.get('/event/:id', async (req, res) => {
         const id = +req.params.id
         const result = await models.Event.findOne({ where: { id } })
-        return res.json(result)
+        var temp = await models.EventMedia.findAll()
+        temp = temp.filter(el => el.eventId == id)
+        temp.sort(function (a, b) {
+            return a.order - b.order;
+        })
+        var relatedMediaList = []
+        for (const el of temp){
+            const temp2 = await models.Media.findOne({ where: { id: el.mediumId } })
+            relatedMediaList.push(temp2)
+        }
+        return res.json({
+            name: result.name,
+            date: result.date.toLocaleDateString(),
+            location: result.location,
+            price: result.price,
+            description: result.description,
+            imagesUrl: relatedMediaList.filter(x => x.type == "i").map(x => x.url),
+            imagesAlternative: relatedMediaList.filter(x => x.type == "i").map(x => x.alternative),
+            videosUrl: relatedMediaList.filter(x => x.type == "v").map(x => x.url),
+            videosAlternative: relatedMediaList.filter(x => x.type == "v").map(x => x.alternative),
+            shortDescription: result.shortDescription,
+            id: result.id,
+        })
     })
 
     app.get('/eventAndAssociatedPointOfInterest/:id', async (req, res) => {
         const id1 = +req.params.id
         const result1 = await models.Event.findOne({ where: { id: id1 } })
+        var temp = await models.EventMedia.findAll()
+        temp = temp.filter(el => el.eventId == id1)
+        temp.sort(function (a, b) {
+            return a.order - b.order;
+        })
+        var relatedMediaList = []
+        for (const el of temp){
+            const temp2 = await models.Media.findOne({ where: { id: el.mediumId } })
+            relatedMediaList.push(temp2)
+        }
+        const result1Ver = {
+            name: result1.name,
+            date: result1.date.toLocaleDateString(),
+            location: result1.location,
+            price: result1.price,
+            description: result1.description,
+            imagesUrl: relatedMediaList.filter(x => x.type == "i").map(x => x.url),
+            imagesAlternative: relatedMediaList.filter(x => x.type == "i").map(x => x.alternative),
+            videosUrl: relatedMediaList.filter(x => x.type == "v").map(x => x.url),
+            videosAlternative: relatedMediaList.filter(x => x.type == "v").map(x => x.alternative),
+            shortDescription: result1.shortDescription,
+            id: result1.id,
+        }
         const id2 = result1.poiId
         const result2 = await models.PointOfInterest.findOne({ where: { id: id2 } })
-        const result = [result1, result2]
+        var tempi = await models.PoiMedia.findAll()
+        tempi = tempi.filter(el => el.poiId == id2)
+        tempi.sort(function (a, b) {
+            return a.order - b.order;
+        })
+        var relatedMediaListi = []
+        for (const el of tempi){
+            const temp2 = await models.Media.findOne({ where: { id: el.mediumId } })
+            relatedMediaListi.push(temp2)
+        }
+        const result1Ve2 = {
+            name: result2.name,
+            location: result2.location,
+            times: result2.times,
+            price: result2.price,
+            description: result2.description,
+            imagesUrl: relatedMediaListi.filter(x => x.type == "i").map(x => x.url),
+            imagesAlternative: relatedMediaListi.filter(x => x.type == "i").map(x => x.alternative),
+            videosUrl: relatedMediaListi.filter(x => x.type == "v").map(x => x.url),
+            videosAlternative: relatedMediaListi.filter(x => x.type == "v").map(x => x.alternative),
+            shortDescription: result2.shortDescription,
+            id: result2.id,
+        }
+        const result = [result1Ver, result1Ve2]
         return res.json(result)
     })
 
     app.get('/pointOfInterest/:id', async (req, res) => {
         const id = +req.params.id
         const result = await models.PointOfInterest.findOne({ where: { id } })
-        return res.json(result)
+        var temp = await models.PoiMedia.findAll()
+        temp = temp.filter(el => el.poiId == id)
+        temp.sort(function (a, b) {
+            return a.order - b.order;
+        })
+        var relatedMediaList = []
+        for (const el of temp){
+            const temp2 = await models.Media.findOne({ where: { id: el.mediumId } })
+            relatedMediaList.push(temp2)
+        }
+        return res.json({
+            name: result.name,
+            location: result.location,
+            times: result.times,
+            price: result.price,
+            description: result.description,
+            imagesUrl: relatedMediaList.filter(x => x.type == "i").map(x => x.url),
+            imagesAlternative: relatedMediaList.filter(x => x.type == "i").map(x => x.alternative),
+            videosUrl: relatedMediaList.filter(x => x.type == "v").map(x => x.url),
+            videosAlternative: relatedMediaList.filter(x => x.type == "v").map(x => x.alternative),
+            shortDescription: result.shortDescription,
+            id: result.id,
+        })
     })
 
     app.get('/pointOfInterestAndAssociatedEventsAndAssociatedItineraries/:id', async (req, res) => {
         const id1 = +req.params.id
         const result1 = await models.PointOfInterest.findOne({ where: { id: id1 } })
+        var temp = await models.PoiMedia.findAll()
+        temp = temp.filter(el => el.poiId == id1)
+        temp.sort(function (a, b) {
+            return a.order - b.order;
+        })
+        var relatedMediaList = []
+        for (const el of temp){
+            const temp2 = await models.Media.findOne({ where: { id: el.mediumId } })
+            relatedMediaList.push(temp2)
+        }
+        const result1Ver = {
+            name: result1.name,
+            location: result1.location,
+            times: result1.times,
+            price: result1.price,
+            description: result1.description,
+            imagesUrl: relatedMediaList.filter(x => x.type == "i").map(x => x.url),
+            imagesAlternative: relatedMediaList.filter(x => x.type == "i").map(x => x.alternative),
+            videosUrl: relatedMediaList.filter(x => x.type == "v").map(x => x.url),
+            videosAlternative: relatedMediaList.filter(x => x.type == "v").map(x => x.alternative),
+            shortDescription: result1.shortDescription,
+            id: result1.id,
+        }
         const result2temp = await models.Event.findAll()
         const result2 = result2temp.filter(el => el.poiId == id1)
+        const result2Ver = []
+        for (const eee of result2){
+            var tempi = await models.EventMedia.findAll()
+            tempi = tempi.filter(el => el.EventId == eee.id)
+            tempi.sort(function (a, b) {
+                return a.order - b.order;
+            })
+            var relatedMediaListi = []
+            for (const el of tempi){
+                const temp2 = await models.Media.findOne({ where: { id: el.mediumId } })
+                relatedMediaListi.push(temp2)
+            }
+            result2Ver.push({
+                name: eee.name,
+                date: eee.date.toLocaleDateString(),
+                location: eee.location,
+                price: eee.price,
+                description: eee.description,
+                imagesUrl: relatedMediaList.filter(x => x.type == "i").map(x => x.url),
+                imagesAlternative: relatedMediaList.filter(x => x.type == "i").map(x => x.alternative),
+                videosUrl: relatedMediaList.filter(x => x.type == "v").map(x => x.url),
+                videosAlternative: relatedMediaList.filter(x => x.type == "v").map(x => x.alternative),
+                shortDescription: eee.shortDescription,
+                id: eee.id,
+            })
+        }
         var result3Temp = await models.PoiIti.findAll()
         result3Temp = result3Temp.filter(el => el.poiId == id1)
         var result3 = []
@@ -137,7 +285,7 @@ async function runMainApi() {
             const temp = await models.Itinerary.findOne({ where: { id: el.itineraryId } })
             result3.push(temp)
         }
-        const result = [result1, result2, result3]
+        const result = [result1Ver, result2Ver, result3]
         return res.json(result)
     })
 
@@ -157,8 +305,30 @@ async function runMainApi() {
         })
         var result2 = []
         for (const el of result2Temp){
-            const temp = await models.PointOfInterest.findOne({ where: { id: el.poiId } })
-            result2.push(temp)
+            const tempi = await models.PointOfInterest.findOne({ where: { id: el.poiId } })
+            var temp = await models.PoiMedia.findAll()
+            temp = temp.filter(elx => elx.poiId == el.poiId)
+            temp.sort(function (a, b) {
+                return a.order - b.order;
+            })
+            var relatedMediaList = []
+            for (const elx of temp){
+                const temp2 = await models.Media.findOne({ where: { id: elx.mediumId } })
+                relatedMediaList.push(temp2)
+            }
+            result2.push({
+                name: tempi.name,
+                location: tempi.location,
+                times: tempi.times,
+                price: tempi.price,
+                description: tempi.description,
+                imagesUrl: relatedMediaList.filter(x => x.type == "i").map(x => x.url),
+                imagesAlternative: relatedMediaList.filter(x => x.type == "i").map(x => x.alternative),
+                videosUrl: relatedMediaList.filter(x => x.type == "v").map(x => x.url),
+                videosAlternative: relatedMediaList.filter(x => x.type == "v").map(x => x.alternative),
+                shortDescription: tempi.shortDescription,
+                id: tempi.id,
+            })
         }
         const result = [result1, result2]
         return res.json(result)
@@ -174,14 +344,26 @@ async function runMainApi() {
         const result = await models.Event.findAll()
         const filtered = []
         for (const element of result) {
+            var temp = await models.EventMedia.findAll()
+            temp = temp.filter(el => el.eventId == element.id)
+            temp.sort(function (a, b) {
+                return a.order - b.order;
+            })
+            var relatedMediaList = []
+            for (const el of temp){
+                const temp2 = await models.Media.findOne({ where: { id: el.mediumId } })
+                relatedMediaList.push(temp2)
+            }
             filtered.push({
                 name: element.name,
                 date: element.date.toLocaleDateString(),
                 location: element.location,
                 price: element.price,
                 description: element.description,
-                images: element.images,
-                videos: element.videos,
+                imagesUrl: relatedMediaList.filter(x => x.type == "i").map(x => x.url),
+                imagesAlternative: relatedMediaList.filter(x => x.type == "i").map(x => x.alternative),
+                videosUrl: relatedMediaList.filter(x => x.type == "v").map(x => x.url),
+                videosAlternative: relatedMediaList.filter(x => x.type == "v").map(x => x.alternative),
                 shortDescription: element.shortDescription,
                 id: element.id,
             })
@@ -193,14 +375,26 @@ async function runMainApi() {
         const result = await models.PointOfInterest.findAll()
         const filtered = []
         for (const element of result) {
+            var temp = await models.PoiMedia.findAll()
+            temp = temp.filter(el => el.poiId == element.id)
+            temp.sort(function (a, b) {
+                return a.order - b.order;
+            })
+            var relatedMediaList = []
+            for (const el of temp){
+                const temp2 = await models.Media.findOne({ where: { id: el.mediumId } })
+                relatedMediaList.push(temp2)
+            }
             filtered.push({
                 name: element.name,
                 location: element.location,
                 times: element.times,
                 price: element.price,
                 description: element.description,
-                images: element.images,
-                videos: element.videos,
+                imagesUrl: relatedMediaList.filter(x => x.type == "i").map(x => x.url),
+                imagesAlternative: relatedMediaList.filter(x => x.type == "i").map(x => x.alternative),
+                videosUrl: relatedMediaList.filter(x => x.type == "v").map(x => x.url),
+                videosAlternative: relatedMediaList.filter(x => x.type == "v").map(x => x.alternative),
                 shortDescription: element.shortDescription,
                 id: element.id,
             })

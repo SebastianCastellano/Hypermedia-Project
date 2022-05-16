@@ -10,14 +10,14 @@
       <p class="description">{{ description }}</p>
       <h3 class="title-font">Media:</h3>
       <img
-        v-for="(image, imageIndex) of images"
+        v-for="(image, imageIndex) of imagesUrl"
         :key="`image-index-${imageIndex}`"
         :src="image"
       />
       <h1>MANCA L'ALT NELLE IMMAGINI E NEI VIDEO</h1>
       <!-- To embed a youtube video-->
       <iframe
-        v-for="(video, videoIndex) of videos"
+        v-for="(video, videoIndex) of videosUrl"
           :key="`video-index-${videoIndex}`"
           :src="video">
       </iframe>
@@ -99,11 +99,19 @@ export default {
       type: Number,
       required: true,
     },
-    images: {
+    imagesUrl: {
       type: Array,
       required: true,
     },
-    videos: {
+    imagesAlternative: {
+      type: Array,
+      required: true,
+    },
+    videosUrl: {
+      type: Array,
+      required: true,
+    },
+    videosAlternative: {
       type: Array,
       required: true,
     },

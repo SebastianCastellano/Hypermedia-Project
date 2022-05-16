@@ -7,7 +7,7 @@
       class="col-sm-2 m-2"
       :key="`poi-index-${poiIndex}`"
       :poiId="poi.id"
-      :thumbnailPoi="poi.images[0]"
+      :thumbnailPoi="poi.imagesUrl[0]"
       :namePoi="poi.name"
       :shortDescriptionPoi="poi.shortDescription"
     />

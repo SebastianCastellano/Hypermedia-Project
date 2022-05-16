@@ -2,7 +2,8 @@
   <div>
     <breadcrumb-component :title="name"/>
     <event-poi-template :name="name" :breadcrump="breadcrump" :description="description" :dateTime="dateTime"
-    :location="location" :price="price" :images="images" :videos="videos"/>
+    :location="location" :price="price" :imagesUrl="imagesUrl" :imagesAlternative="imagesAlternative"
+    :videosUrl="videosUrl" :videosAlternative="videosAlternative"/>
     <event-template :poiId="poiId" :thumbnailPoi="thumbnailPoi" :namePoi="namePoi" :shortDescriptionPoi="shortDescriptionPoi"/>
   </div>
 </template>
@@ -27,10 +28,12 @@ export default {
     const dateTime = new Date(data[0].date).toLocaleDateString()
     const location = data[0].location
     const price = data[0].price
-    const images = data[0].images
-    const videos = data[0].videos
-    const poiId = data[0].poiId
-    const thumbnailPoi = data[1].images[0]
+    const imagesUrl = data[0].imagesUrl
+    const imagesAlternative = data[0].imagesAlternative
+    const videosUrl = data[0].videosUrl
+    const videosAlternative = data[0].videosAlternative
+    const poiId = data[0].id
+    const thumbnailPoi = data[1].imagesUrl[0]
     const namePoi = data[1].name
     const shortDescriptionPoi = data[1].shortDescription
     return {
@@ -40,8 +43,10 @@ export default {
       dateTime,
       location,
       price,
-      images,
-      videos,
+      imagesUrl,
+      imagesAlternative,
+      videosUrl,
+      videosAlternative,
       poiId,
       thumbnailPoi,
       namePoi,

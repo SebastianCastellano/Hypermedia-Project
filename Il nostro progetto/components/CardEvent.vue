@@ -80,6 +80,10 @@ export default {
       type: String,
       required: true,
     },
+    alternative: {
+      type: String,
+      required: true,
+    },
   },
   methods: {
     goToDetails() {

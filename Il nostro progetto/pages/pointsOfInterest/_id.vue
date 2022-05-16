@@ -1,7 +1,8 @@
 <template>
   <div>
     <event-poi-template :name="name" :breadcrump="breadcrump" :description="description" :dateTime="dateTime"
-    :location="location" :price="price" :images="images" :videos="videos" />
+    :location="location" :price="price" :imagesUrl="imagesUrl" :imagesAlternative="imagesAlternative"
+    :videosUrl="videosUrl" :videosAlternative="videosAlternative" />
     <div>
     <!--Removed from poi-template class="col-sm-2 m-2"-->
     <div class="page container mt-5">
@@ -11,7 +12,7 @@
       v-for="(event, eventIndex) of associatedEventList"
       :key="`event-index-${eventIndex}`"
       :eventId="event.id"
-      :thumbnailEvent="event.images[0]"
+      :thumbnailEvent="event.imagesUrl[0]"
       :nameEvent="event.name"
       :shortDescriptionEvent="event.shortDescription"
       :periodEvent="event.date"
@@ -50,8 +51,10 @@ export default {
     const dateTime = data[0].times
     const location = data[0].location
     const price = data[0].price
-    const images = data[0].images
-    const videos = data[0].videos
+    const imagesUrl = data[0].imagesUrl
+    const imagesAlternative = data[0].imagesAlternative
+    const videosUrl = data[0].videosUrl
+    const videosAlternative = data[0].videosAlternative
     return {
       name,
       breadcrump,
@@ -59,8 +62,10 @@ export default {
       dateTime,
       location,
       price,
-      images,
-      videos,
+      imagesUrl,
+      imagesAlternative,
+      videosUrl,
+      videosAlternative,
       associatedEventList: data[1],
       associatedItineraryList: data[2]
     }
