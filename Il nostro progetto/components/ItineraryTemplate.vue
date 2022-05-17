@@ -3,7 +3,7 @@
       <h3 class="breadcrump">{{ breadcrump }}</h3>
       <h1 class="name title-font page-title">{{ name }}</h1>
       <div class="info-box">
-        <p>Starting Point: DA AGGIUNGERE (PRIMO DEI PUNTI DI INTERESSE)</p>
+        <p>Starting Point: {{ start }}</p>
         <p>Length: {{ length }}</p>
         <p>Average Duration: {{ duration }}</p>
       </div>
@@ -66,6 +66,10 @@ export default {
       type: String,
       required: true,
     },
+    start: {
+      type: String,
+      required: true,
+    }
   },
 }
 </script>

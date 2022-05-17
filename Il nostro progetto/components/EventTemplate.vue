@@ -1,6 +1,5 @@
 <template>
   <div class="page container mt-5">
-    <h3 class="title-font">The event takes place near: </h3>
     <div class="poi-box">
       <nuxt-link class="flex-container" :to="'/pointsOfInterest/'+poiId">
         <img class="column" :src="thumbnailPoi"/>

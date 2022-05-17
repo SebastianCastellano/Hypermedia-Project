@@ -4,6 +4,9 @@
     <event-poi-template :name="name" :breadcrump="breadcrump" :description="description" :dateTime="dateTime"
     :location="location" :price="price" :imagesUrl="imagesUrl" :imagesAlternative="imagesAlternative"
     :videosUrl="videosUrl" :videosAlternative="videosAlternative"/>
+    <div class="page container mt-5">
+      <h3 class="title-font">The event takes place near: </h3>
+    </div>
     <event-template :poiId="poiId" :thumbnailPoi="thumbnailPoi" :namePoi="namePoi" :shortDescriptionPoi="shortDescriptionPoi"/>
   </div>
 </template>

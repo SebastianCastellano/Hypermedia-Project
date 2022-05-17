@@ -3,22 +3,20 @@
     <event-poi-template :name="name" :breadcrump="breadcrump" :description="description" :dateTime="dateTime"
     :location="location" :price="price" :imagesUrl="imagesUrl" :imagesAlternative="imagesAlternative"
     :videosUrl="videosUrl" :videosAlternative="videosAlternative" />
-    <div>
-    <!--Removed from poi-template class="col-sm-2 m-2"-->
     <div class="page container mt-5">
-      <h1>*****MANCANO GLI ITINERARI</h1>
       <h3 class="title-font">Events hosted in {{name}}: </h3>
-    </div>
-    <poi-template
+      <poi-template
       v-for="(event, eventIndex) of associatedEventList"
       :key="`event-index-${eventIndex}`"
       :eventId="event.id"
       :thumbnailEvent="event.imagesUrl[0]"
       :nameEvent="event.name"
       :shortDescriptionEvent="event.shortDescription"
-      :periodEvent="event.date"
-    />
-    <card-itinerary
+      :periodEvent="event.date"/>
+    </div>
+    <div class="page container mt-5">
+      <h3 class="title-font">Itineraries including {{name}}: </h3>
+      <card-itinerary
       v-for="(itinerary, itineraryIndex) of associatedItineraryList"
       class="col-sm-2 m-2"
       :key="`itinerary-index-${itineraryIndex}`"
@@ -27,7 +25,7 @@
       :duration="itinerary.duration"
       :length="itinerary.length"
       :shortDescription="itinerary.shortDescription"
-    />
+      />
     </div>
   </div>
 </template>

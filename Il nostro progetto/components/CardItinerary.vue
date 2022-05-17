@@ -1,5 +1,5 @@
 <template>
-  <div class="card" style="width: 15rem">
+  <div class="card mt-5" style="width: 15rem">
     <nuxt-link :to="'/itineraries/'+id">
       <div class="card-body">
         <div class="info">

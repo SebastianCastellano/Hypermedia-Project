@@ -1,10 +1,18 @@
 <template>
   <div>
-    <itinerary-template :name="name" :breadcrump="breadcrump" :duration="duration" :length="length" :description="description"
-    :map="map"/>
+    <itinerary-template
+      :name="name"
+      :breadcrump="breadcrump"
+      :duration="duration"
+      :length="length"
+      :description="description"
+      :map="map"
+      :start="associatedPoiList[0].name"/>
+    <div class="page container mt-5">
+      <h3 class="title-font">Inside {{ name }}:</h3>
+    </div>
     <event-template
       v-for="(poi, poiIndex) of associatedPoiList"
-      class="col-sm-2 m-2"
       :key="`poi-index-${poiIndex}`"
       :poiId="poi.id"
       :thumbnailPoi="poi.imagesUrl[0]"

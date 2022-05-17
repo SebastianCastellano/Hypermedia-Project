@@ -190,9 +190,63 @@ export default async (models) => {
         },
         {
             type: "Supermarkets",
+            name: "NameSupermarket1",
+            address: "address1",
+            times: "24h/24 lun-ven",
+        },
+        {
+            type: "Supermarkets",
             name: "NameSupermarket2",
             address: "address2",
             times: "24h/24 lun-ven",
+        },
+        {
+            type: "Supermarkets",
+            name: "NameSupermarket3",
+            address: "address3",
+            times: "24h/24 lun-ven",
+        },
+        {
+            type: "Supermarkets",
+            name: "NameSupermarket4",
+            address: "address4",
+            times: "24h/24 lun-ven",
+        },
+        {
+            type: "Supermarkets",
+            name: "NameSupermarket5",
+            address: "address5",
+            times: "24h/24 lun-ven",
+        },
+        {
+            type: "Restaurants",
+            name: "NameRestaurant1",
+            address: "address1",
+            times: "19-24 tue-sun",
+        },
+        {
+            type: "Restaurants",
+            name: "NameRestaurant2",
+            address: "address2",
+            times: "19-24 tue-sun",
+        },
+        {
+            type: "Restaurants",
+            name: "NameRestaurant3",
+            address: "address3",
+            times: "19-24 tue-sun",
+        },
+        {
+            type: "Restaurants",
+            name: "NameRestaurant4",
+            address: "address4",
+            times: "19-24 tue-sun",
+        },
+        {
+            type: "Restaurants",
+            name: "NameRestaurant5",
+            address: "address5",
+            times: "19-24 tue-sun",
         },
     ]
     const poiitiList = [
