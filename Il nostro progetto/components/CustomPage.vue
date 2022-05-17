@@ -18,7 +18,7 @@
       </div>
       <p class="overview">{{ shortOverview }}</p>
     </section>
-    <h1 class="intermediate-title title-font page-title">A glimpse of history</h1>
+    <h1 class="intermediate-title title-font page-title">A glimpse of history(mancano gli alt)</h1>
     <section class="overview-section flex-container">
       <p class="overview">{{ shortOverview }}</p>
       <div>

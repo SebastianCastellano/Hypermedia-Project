@@ -16,6 +16,7 @@
       :key="`poi-index-${poiIndex}`"
       :poiId="poi.id"
       :thumbnailPoi="poi.imagesUrl[0]"
+      :alternativeThumbPoi="poi.imagesAlternative[0]"
       :namePoi="poi.name"
       :shortDescriptionPoi="poi.shortDescription"
     />

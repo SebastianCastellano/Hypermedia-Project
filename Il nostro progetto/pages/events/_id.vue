@@ -7,7 +7,12 @@
     <div class="page container mt-5">
       <h3 class="title-font">The event takes place near: </h3>
     </div>
-    <event-template :poiId="poiId" :thumbnailPoi="thumbnailPoi" :namePoi="namePoi" :shortDescriptionPoi="shortDescriptionPoi"/>
+    <event-template
+      :poiId="poiId"
+      :thumbnailPoi="thumbnailPoi"
+      :alternativeThumbPoi="alternativeThumbPoi"
+      :namePoi="namePoi"
+      :shortDescriptionPoi="shortDescriptionPoi"/>
   </div>
 </template>
 
@@ -37,6 +42,7 @@ export default {
     const videosAlternative = data[0].videosAlternative
     const poiId = data[0].id
     const thumbnailPoi = data[1].imagesUrl[0]
+    const alternativeThumbPoi = data[1].imagesAlternative[0]
     const namePoi = data[1].name
     const shortDescriptionPoi = data[1].shortDescription
     return {
@@ -52,6 +58,7 @@ export default {
       videosAlternative,
       poiId,
       thumbnailPoi,
+      alternativeThumbPoi,
       namePoi,
       shortDescriptionPoi,
     }

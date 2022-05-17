@@ -12,6 +12,7 @@
         </div>
       </nuxt-link>
     </div>
+    <h1>MANCA ALT</h1>
   </div>
 </template>
 
@@ -41,7 +42,7 @@ a {
 
 img {
   height: 150px;
-  max-width: 250px;
+  max-width: 40% !important;
 }
 
 .info {

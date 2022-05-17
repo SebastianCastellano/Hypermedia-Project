@@ -1,10 +1,17 @@
 <template>
   <div class="card" style="width: 15rem">
     <nuxt-link :to="'/pointsOfInterest/'+id">
+      <!-- Better to use an img
       <div
         class="card-img-top card-image"
         :style="{ 'background-image': 'url(' + image + ')' }"
       ></div>
+      -->
+      <img
+        class="card-img-top card-image"
+        :src="image"
+        :alt="alternative"
+      />
       <div class="card-body">
         <div class="card-title title-font">{{ name }}</div>
         <div class="card-title imp-info">Price: {{ price }} €</div>

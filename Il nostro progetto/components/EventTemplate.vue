@@ -2,7 +2,10 @@
   <div class="page container mt-5">
     <div class="poi-box">
       <nuxt-link class="flex-container" :to="'/pointsOfInterest/'+poiId">
-        <img class="column" :src="thumbnailPoi"/>
+        <img
+          class="column"
+          :src="thumbnailPoi"
+          :alt="alternativeThumbPoi"/>
         <div class="info column">
           <div class="info-text">
             <h3 class="title-font">{{namePoi}}</h3>
@@ -11,7 +14,6 @@
         </div>
       </nuxt-link>
     </div>
-    <h1>MANCA L'ALT DELLA FOTO</h1>
   </div>
 </template>
 
@@ -28,16 +30,13 @@ a {
   padding: 0;
 }
 
-.poi-box:hover {
-  background-color: var(--color1-light);
-}
+.poi-box:hover { background-color: var(--color1-light); }
 
-.flex-container {
-  display: flex;
-}
+.flex-container { display: flex; }
 
 img {
   height: 150px;
+  max-width: 40% !important;
 }
 
 .info {
@@ -50,9 +49,7 @@ img {
   margin: 0;
 }
 
-.info-text {
-  margin-top: 40px;
-}
+.info-text { margin-top: 40px; }
 
 </style>
 
@@ -65,6 +62,10 @@ export default {
       required: true,
     },
     thumbnailPoi: {
+      type: String,
+      required: true,
+    },
+    alternativeThumbPoi: {
       type: String,
       required: true,
     },

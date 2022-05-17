@@ -2,10 +2,16 @@
   <div class="card" style="width: 15rem">
     <!-- Use a nuxt-link to make the whole card a link -->
     <nuxt-link :to="'/events/'+id">
+      <!-- Better to use an img
       <div
         class="card-img-top card-image"
         :style="{ 'background-image': 'url(' + image + ')' }"
       ></div>
+      -->
+      <img
+        class="card-img-top card-image"
+        :src="image"
+        :alt="alternative"/>
       <div class="card-body">
         <p class="card-title title-font">{{ name }}</p>
         <p class="card-title imp-info">{{ date }}</p>

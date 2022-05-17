@@ -13,13 +13,15 @@
         v-for="(image, imageIndex) of imagesUrl"
         :key="`image-index-${imageIndex}`"
         :src="image"
+        :alt="imagesAlternative[imageIndex]"
       />
-      <h1>MANCA L'ALT NELLE IMMAGINI E NEI VIDEO</h1>
+      <br>
       <!-- To embed a youtube video-->
       <iframe
         v-for="(video, videoIndex) of videosUrl"
           :key="`video-index-${videoIndex}`"
-          :src="video">
+          :src="video"
+          :title="videosAlternative[videoIndex]">
       </iframe>
       <!-- For a general video, maybe in our folders -->
       <!--
@@ -58,12 +60,11 @@
 
 img, iframe, video {
   margin-right: 25px;
-  margin-bottom: 5px;
+  margin-bottom: 15px;
+  max-width: 90%;
 }
 
-img {
-  width: 300px;
-}
+img { width: 400px; }
 
 iframe, video {
   width: 420px;
