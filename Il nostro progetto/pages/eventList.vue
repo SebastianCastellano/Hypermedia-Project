@@ -10,7 +10,8 @@
         :name="event.name"
         :date="event.date"
         :shortDescription="event.shortDescription"
-        :image="event.images[0]"
+        :image="event.imagesUrl[0]"
+        :alternative="event.imagesAlternative[0]"
       />
     </div>
   </div>

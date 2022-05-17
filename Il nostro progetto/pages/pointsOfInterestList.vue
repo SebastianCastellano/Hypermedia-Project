@@ -10,7 +10,8 @@
         :name="poi.name"
         :price="poi.price"
         :shortDescription="poi.shortDescription"
-        :image="poi.images[0]"
+        :image="poi.imagesUrl[0]"
+        :alternative="poi.imagesAlternative[0]"
       />
     </div>
   </div>
