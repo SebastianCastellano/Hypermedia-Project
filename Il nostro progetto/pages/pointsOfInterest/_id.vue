@@ -5,6 +5,7 @@
     <div>
     <!--Removed from poi-template class="col-sm-2 m-2"-->
     <div class="page container mt-5">
+      <h1>*****MANCANO GLI ITINERARI</h1>
       <h3 class="title-font">Events hosted in {{name}}: </h3>
     </div>
     <poi-template

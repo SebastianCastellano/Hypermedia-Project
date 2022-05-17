@@ -1,18 +1,9 @@
 <template>
-  <div class="card" style="width: 15rem">
-    <!-- Use a nuxt-link to make the whole card a link -->
-    <div>
-      <!-- <div
-        class="card-img-top card-image"
-        :style="{ 'background-image': 'url(' + image + ')' }"
-      ></div> -->
-      <div class="card-body">
-        <p class="card-title title-font">{{ name }}</p>
-        <p class="card-title title-font">{{ address }}</p>
-        <p class="card-title title-font">{{ times }}</p>
-        <!--<p class="card-title imp-info">{{ date }}</p>
-        <p class="card-text">{{ shortDescription }}</p> -->
-      </div>
+  <div class="card" style="width: 18rem">
+    <div class="card-body">
+      <h3 class="card-title title-font">{{ name }}</h3>
+      <h4 class="card-info">{{ address }}</h4>
+      <h4 class="card-info">{{ times }}</h4>
     </div>
   </div>
 </template>
@@ -24,36 +15,17 @@ a {
 }
 
 .card {
-  border: 2px solid var(--color1);
+  border: 2px double var(--color1);
   background: var(--color2);
+  padding: 0;
 }
-.card:hover {
-  background: var(--color1-light);
-  /*border: 2px solid var(--color1);*/
-}
-.card-image {
-  margin-top: 5px;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 140px;
-  border: 1px solid var(--color1);
-}
-.card-title {
+
+.card-body { width: 100%; }
+
+h3, h4 {
   text-align: center;
-}
-.card-text {
-  text-align: left;
-}
-
-.title-font {
-  font-size: 150%;
-}
-
-.imp-info {
   font-size: 120%;
 }
-
 </style>
 
 <script>

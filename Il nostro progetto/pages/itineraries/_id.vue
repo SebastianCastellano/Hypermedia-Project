@@ -2,6 +2,19 @@
   <div>
     <itinerary-template :name="name" :breadcrump="breadcrump" :duration="duration" :length="length" :description="description"
     :map="map"/>
+    <div class="page container mt-5">
+      <h3 class="title-font">To be seen inside {{ name }}: </h3>
+      <h1>***COLLEGARE PUNTI DI INTERESSE</h1>
+    </div>
+    <!-- Needed first the database part
+    <event-template
+      v-for="(poi, poiIndex) of associatedPoiList"
+      :key="`poi-index-${poiIndex}`"
+      :poiId="poi.id"
+      :thumbnailPoi="poi.image[0]"
+      :namePoi="poi.name"
+      :shortDescriptionPoi="poi.shortDescription"/>
+    -->
   </div>
 </template>
 
@@ -10,7 +23,7 @@ import ItineraryTemplate from '~/components/ItineraryTemplate.vue'
 export default {
   name: 'ItineraryTemplatePage',
   components: {
-    ItineraryTemplate,
+    ItineraryTemplate
   },
   async asyncData({ route, $axios }) {
     const { id } = route.params

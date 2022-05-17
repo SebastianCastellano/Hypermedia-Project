@@ -73,7 +73,7 @@
 }
 
 li {
-  margin-left: 8.5vw;
+  margin-left: 5vw;
 }
 
 .nav-link {
