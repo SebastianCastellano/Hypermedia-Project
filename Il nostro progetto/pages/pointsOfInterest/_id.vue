@@ -10,6 +10,7 @@
       :key="`event-index-${eventIndex}`"
       :eventId="event.id"
       :thumbnailEvent="event.imagesUrl[0]"
+      :alternativeThumbEvent="event.imagesAlternative[0]"
       :nameEvent="event.name"
       :shortDescriptionEvent="event.shortDescription"
       :periodEvent="event.date"/>
