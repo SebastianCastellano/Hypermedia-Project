@@ -19,8 +19,9 @@ async function initializeDatabaseConnection() {
     const Event = database.define("event", {
         name: DataTypes.STRING,
         date: DataTypes.DATE,
+        date_s: DataTypes.STRING,
         location: DataTypes.STRING,
-        price: DataTypes.INTEGER,
+        price: DataTypes.STRING,
         description: DataTypes.TEXT,
         shortDescription: DataTypes.TEXT,
     })
@@ -35,7 +36,7 @@ async function initializeDatabaseConnection() {
         name: DataTypes.STRING,
         location: DataTypes.STRING,
         times: DataTypes.STRING,
-        price: DataTypes.INTEGER,
+        price: DataTypes.STRING,
         description: DataTypes.TEXT,
         shortDescription: DataTypes.TEXT,
     })
@@ -252,7 +253,7 @@ async function runMainApi() {
         const result2Ver = []
         for (const eee of result2){
             var tempi = await models.EventMedia.findAll()
-            tempi = tempi.filter(el => el.EventId == eee.id)
+            tempi = tempi.filter(el => el.eventId == eee.id)
             tempi.sort(function (a, b) {
                 return a.order - b.order;
             })
@@ -267,10 +268,10 @@ async function runMainApi() {
                 location: eee.location,
                 price: eee.price,
                 description: eee.description,
-                imagesUrl: relatedMediaList.filter(x => x.type == "i").map(x => x.url),
-                imagesAlternative: relatedMediaList.filter(x => x.type == "i").map(x => x.alternative),
-                videosUrl: relatedMediaList.filter(x => x.type == "v").map(x => x.url),
-                videosAlternative: relatedMediaList.filter(x => x.type == "v").map(x => x.alternative),
+                imagesUrl: relatedMediaListi.filter(x => x.type == "i").map(x => x.url),
+                imagesAlternative: relatedMediaListi.filter(x => x.type == "i").map(x => x.alternative),
+                videosUrl: relatedMediaListi.filter(x => x.type == "v").map(x => x.url),
+                videosAlternative: relatedMediaListi.filter(x => x.type == "v").map(x => x.alternative),
                 shortDescription: eee.shortDescription,
                 id: eee.id,
             })

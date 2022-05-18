@@ -8,7 +8,7 @@
         :key="`event-index-${eventIndex}`"
         :id="event.id"
         :name="event.name"
-        :date="event.date"
+        :date="event.date_s"
         :shortDescription="event.shortDescription"
         :image="event.imagesUrl[0]"
         :alternative="event.imagesAlternative[0]"

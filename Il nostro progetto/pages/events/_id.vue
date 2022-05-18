@@ -33,7 +33,7 @@ export default {
     const name = data[0].name
     const breadcrump = "breadcrump"
     const description = data[0].description
-    const dateTime = new Date(data[0].date).toLocaleDateString()
+    const dateTime = data[0].date_s // new Date(data[0].date).toLocaleDateString()
     const location = data[0].location
     const price = data[0].price
     const imagesUrl = data[0].imagesUrl

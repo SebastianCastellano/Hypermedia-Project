@@ -14,7 +14,7 @@
       />
       <div class="card-body">
         <div class="card-title title-font">{{ name }}</div>
-        <div class="card-title imp-info">Price: {{ price }} €</div>
+        <div class="card-title imp-info">Price: {{ price }}</div>
         <p class="card-text">{{ shortDescription }}</p>
       </div>
     </nuxt-link>
