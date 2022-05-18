@@ -1,5 +1,7 @@
 <template>
   <div>
+
+    
     <breadcrumb-component :title="name"/>
     <event-poi-template :name="name" :breadcrump="breadcrump" :description="description" :dateTime="dateTime"
     :location="location" :price="price" :imagesUrl="imagesUrl" :imagesAlternative="imagesAlternative"

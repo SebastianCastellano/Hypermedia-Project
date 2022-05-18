@@ -369,6 +369,43 @@ async function runMainApi() {
         return res.json(filtered)
     })
 
+    app.get("/events/:season", async (req, res) => {
+        const result = await models.Event.findAll()
+        const filtered = []
+        for (const element of result) {
+            var temp = await models.EventMedia.findAll()
+            temp = temp.filter(el => el.eventId == element.id)
+            temp.sort(function (a, b) {
+                return a.order - b.order;
+            })
+            var relatedMediaList = []
+            for (const el of temp){
+                const temp2 = await models.Media.findOne({ where: { id: el.mediumId } })
+                relatedMediaList.push(temp2)
+            }
+            filtered.push({
+                name: element.name,
+                date: element.date.toLocaleDateString(),
+                location: element.location,
+                price: element.price,
+                description: element.description,
+                imagesUrl: relatedMediaList.filter(x => x.type == "i").map(x => x.url),
+                imagesAlternative: relatedMediaList.filter(x => x.type == "i").map(x => x.alternative),
+                videosUrl: relatedMediaList.filter(x => x.type == "v").map(x => x.url),
+                videosAlternative: relatedMediaList.filter(x => x.type == "v").map(x => x.alternative),
+                shortDescription: element.shortDescription,
+                id: element.id,
+            })
+        }
+        if(req.params.season == "winter"){
+            return res.json(filtered.filter(x => parseInt(x.date.split("/")[1]) >= 10 ||  parseInt(x.date.split("/")[1])<=3))
+        }else if(req.params.season == "summer"){
+            return res.json(filtered.filter(x => parseInt(x.date.split("/")[1]) >= 4 &&  parseInt(x.date.split("/")[1])<=9))
+        }
+        
+    })
+    
+
     app.get("/pointOfInterest", async (req, res) => {
         const result = await models.PointOfInterest.findAll()
         const filtered = []

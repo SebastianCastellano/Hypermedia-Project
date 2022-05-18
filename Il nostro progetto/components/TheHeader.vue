@@ -1,55 +1,60 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-light px-3 header">
-    <a class="navbar-brand" id="home-link" href="/">
-      <span class="capital-letter">V</span>isit<span class="capital-letter">M</span>antova
-    </a>
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarToggler"
-      aria-controls="navbarToggler"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
+  <div>
+    <nav class="navbar navbar-expand-lg navbar-light px-3 header">
+      <nuxt-link class="navbar-brand" id="home-link" to="/">
+        <span class="capital-letter">V</span>isit<span class="capital-letter">M</span>antova
+      </nuxt-link>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler"
+        aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-    <div class="collapse navbar-collapse" id="navbarToggler">
-      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-        <!--
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Events
-          </a>
-          <div class="dropdown-menu nav-item" aria-labelledby="navbarDropdownMenuLink"
-            v-for="(navItem, navItemIndex) of eventsList"
-            :key="`navItem${navItemIndex}`">
-            <nuxt-link
-            :to="navItem.path"
-            class="nav-link dropdown-item">
+      <div class="collapse navbar-collapse" id="navbarToggler">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+          
+          <div>
+            <!--  The following lines give error but without them the dropdown bar does not work-->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+            <!---->
+
+            <div class="nav-link dropdown-div">
+              <nuxt-link class="" :to="events[0].path"  id="dropdown-list">
+                {{ events[0].name }}
+              </nuxt-link>
+              <button type="button" class="
+                  btn btn-sm btn-secondary
+                  dropdown-toggle dropdown-toggle-split
+                " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                
+              </button>
+              <div class="dropdown-menu">
+                <nuxt-link v-for="(eventItem, eventItemIndex) of eventList" :key="`eventItem${eventItemIndex}`"
+                  class="dropdown-item" :to="eventItem.path">{{ eventItem.name }}</nuxt-link>
+              </div>
+            </div>
+          </div>
+
+          <li v-for="(navItem, navItemIndex) of headerList" :key="`navItem${navItemIndex}`" class="nav-item">
+            <nuxt-link :to="navItem.path" class="nav-link">
               {{ navItem.name }}
             </nuxt-link>
-          </div>
-        </li>
-        -->
-        <li
-          v-for="(navItem, navItemIndex) of headerList"
-          :key="`navItem${navItemIndex}`"
-          class="nav-item"
-        >
-          <nuxt-link :to="navItem.path" class="nav-link">
-              {{ navItem.name }}
-          </nuxt-link>
-        </li>
-      </ul>
-    </div>
-  </nav>
+          </li>
+
+        </ul>
+      </div>
+    </nav>
+  </div>
 </template>
 
 <style scoped>
-    
 @import '~/static/style/main.css';
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
 
 .header {
   padding-top: 0px;
@@ -76,6 +81,10 @@ li {
   margin-left: 5vw;
 }
 
+.dropdown-div {
+  margin-left: 5vw;
+}
+
 .nav-link {
   color: var(--color2) !important;
   font-size: 150%;
@@ -84,38 +93,47 @@ li {
 li:hover .nav-link {
   text-decoration: underline;
 }
+
+.dropdown-div:hover #dropdown-list {
+  text-decoration: underline;
+}
 </style>
+
 
 <script>
 export default {
   name: 'TheHeader',
   data() {
     return {
-      eventsList: [
+      events: [
         {
           name: 'All Events',
-          path: '/',
+          path: '/eventList',
         },
+      ],
+      eventList: [
+        
+        {
+          name: 'All Events',
+          path: '/eventList',
+        },
+    
         {
           name: 'Summer Events',
-          path: '/',
+          path: '/eventSummer',
         },
         {
           name: 'Winter Events',
-          path: '/',
+          path: '/eventWinter',
         },
       ],
       headerList: [
         /*
         {
-          name: 'Home',
-          path: '/',
-        },
-        */
-        {
           name: 'Events',
           path: '/eventList',
         },
+        */
         {
           name: 'Points of interest',
           path: '/pointsOfInterestList',
