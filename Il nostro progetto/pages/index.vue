@@ -2,6 +2,7 @@
   <custom-page :title="title" :image="image" :short-overview="shortOverview" />
 </template>
 
+
 <script>
 import CustomPage from '~/components/CustomPage.vue'
 export default {
