@@ -51,7 +51,7 @@ async function initializeDatabaseConnection() {
         duration: DataTypes.STRING,
         length: DataTypes.STRING,
         description: DataTypes.TEXT,
-        map: DataTypes.STRING,
+        map: DataTypes.TEXT,
         shortDescription: DataTypes.TEXT,
     })
    

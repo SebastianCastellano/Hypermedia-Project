@@ -8,7 +8,8 @@
         <p>Average Duration: {{ duration }}</p>
       </div>
       <p class="description">{{ description }}</p>
-      <h3 class="map">MAPPAMAPPAMAPPAMAPPAMAPPA{{ map }}</h3>
+      {{/* Buffer.from(map, 'base64').toString() */}}
+      {{map}}
       <!-- AGGIUNGERE ANCHE LE INFORMAZIONI OTTENUTE TRAMITE LA MANY TO MANY CHE SONO DEI LINK -->
     </div>
 </template>
