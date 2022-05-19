@@ -77,13 +77,7 @@ a {
   font-size: 150%;
 }
 
-li {
-  margin-left: 5vw;
-}
-
-.dropdown-div {
-  margin-left: 5vw;
-}
+li, .dropdown-div{ margin-left: 2vw; }
 
 .nav-link {
   color: var(--color2) !important;
@@ -107,7 +101,7 @@ export default {
     return {
       events: [
         {
-          name: 'All Events',
+          name: 'Events',
           path: '/eventList',
         },
       ],
@@ -146,6 +140,10 @@ export default {
           name: 'Services',
           path: '/servicesList',
         },
+        {
+          name: 'About Mantova',
+          path: '/',
+        }
       ],
     }
   },

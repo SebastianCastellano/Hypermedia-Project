@@ -9,6 +9,35 @@
     </div>
   </div>
   -->
+  <div>
+    <nuxt-link to="/eventList">
+      <section id="events">
+        <h1 class="title-font">Discover the next events</h1>
+      </section>
+    </nuxt-link>
+    <nuxt-link to="/pointsOfInterestList">
+      <section id="points">
+        <h1 class="title-font">The treasures Mantova contains</h1>
+      </section>
+    </nuxt-link>
+    <nuxt-link to="/itineraryList">
+      <section id="itineraries">
+        <h1 class="title-font">Let us guide you into beauty</h1>
+      </section>
+    </nuxt-link>
+    <nuxt-link to="/servicesList">
+      <section id="services">
+        <h1 class="title-font">Everything you might need</h1>
+      </section>
+    </nuxt-link>
+    <nuxt-link to="/">
+      <section id="about">
+        <h1 class="title-font">Why is Mantova so special?</h1>
+      </section>
+    </nuxt-link>
+  </div>
+  
+  <!--
   <div class="container mt-5">
     <h1 class="title-font page-title">{{ title }}</h1>
     <section class="overview-section flex-container">
@@ -27,10 +56,44 @@
       </div>
     </section>
   </div>
+  -->
 </template>
 
 <style scoped>
 
+section {
+  display: block;
+  margin: 0;
+  height: 100vh;
+  padding-top: 35vh;
+  border: 5px solid white;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+h1 {
+  margin: auto;
+  text-align: center;
+  color: var(--color2);
+  background-color: var(--color1-main);
+  border: 2px solid var(--color1);
+  font-size: 300%;
+  width: fit-content;
+}
+
+#events { background-image: url("../static/images/palazzoDucale-cameraSposi2.jpg");}
+#points { background-image: url("../static/images/palazzoTe-giganti1.jpg"); }
+#itineraries { background-image: url("../static/images/piazzaVirgiliana1.jpg"); }
+#services { background-image: url("../static/images/mappaAntica1.jpg"); }
+#about { background-image: url("../static/images/skyline1.jpg"); }
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/*
 section { display: flex; }
 .title-font { text-align: center; }
 
@@ -55,6 +118,7 @@ p {
   width: 40vw;
   margin: 15px 0 15px 0;
 }
+*/
 </style>
 
 <script>

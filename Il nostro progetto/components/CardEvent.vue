@@ -51,7 +51,7 @@ a {
 }
 
 .title-font {
-  font-size: 150%;
+  font-size: 130%;
 }
 
 .imp-info {

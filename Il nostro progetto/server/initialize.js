@@ -2,37 +2,37 @@ export default async (models) => {
     const mediaList = [
         {   
             // 1
-            url: "https://www.mantova.com/wp-content/uploads/2017/06/palazzo-te-2-850x425.jpg",
+            url: "../images/palazzoTe-esterno1.jpg",
             alternative: "Ingresso di Palazzo Te.",
             type: "i",
         },
         {
             // 2
-            url: "https://www.travel365.it/f/palazzo-te-veduta-del-giardino-interno-__696x0__.jpg.webp",
+            url: "../images/palazzoTe-esterno2.jpg",
             alternative: "Porticato interno e veduta del giardino.",
             type: "i",
         },
         {
             // 3
-            url: "https://guideturistichemantova.it/wp-content/uploads/freshizer/dc8c599b1bea38732ae22a3b1decc584_palazzo-te-drone-1-793-c-90.jpg",
+            url: "../images/palazzoTe-esterno3.jpg",
             alternative: "Veduta aerea.",
             type: "i",
         },
         {
             // 4
-            url: "../static/images/palazzoTe-giganti1.jpg",
+            url: "../images/palazzoTe-giganti1.jpg",
             alternative: "I giganti a terra osservano con terrore il cielo.",
             type: "i",
         },
         {
             // 5
-            url: "../static/images/palazzoTe-giganti2.jpg",
+            url: "../images/palazzoTe-giganti2.jpg",
             alternative: "Alcuni giganti reggono la volta. Al di sotto una scena di combattimento",
             type: "i",
         },
         {
             // 6
-            url: "../static/images/palazzoTe-soleLuna1.jpg",
+            url: "../images/palazzoTe-soleLuna1.jpg",
             alternative: "Volta della sala del Sole e della Luna.",
             type: "i",
         },
@@ -50,37 +50,37 @@ export default async (models) => {
         },
         {
             //9
-            url: "https://www.centropalazzote.it/wp-content/uploads/2021/10/immagine-per-cartolina.jpg",
+            url: "../images/gandini1.jpg",
             alternative: "Dark sand.",
             type: "i",
         },
         {
             //10
-            url: "https://www.centropalazzote.it/wp-content/uploads/2022/04/copertina-evento-OPEN-2022.jpg",
+            url: "../images/OPEN-festival1.jpg",
             alternative: "OPEN Festival banner",
             type: "i",
         },
         {
             //11
-            url: "https://www.itinerarieluoghi.it/wp-content/uploads/2020/04/129-Galleria-degli-Specchi.-Palazzo-Ducale.jpg",
+            url: "../images/palazzoDucale-galleriaSpecchi.jpg",
             alternative: "Gallery of the mirrors.",
             type: "i",
         },
         {
             //12
-            url: "https://www.inexhibit.com/wp-content/uploads/2017/10/Palazzo-Ducale-Mantova-vista-aerea-Ducal-Palace-Mantua-aerial-.jpg",
+            url: "../images/palazzoDucale-map.jpg",
             alternative: "Map of Palazzo Ducale",
             type: "i",
         },
         {
             //13
-            url: "https://www.viaggiverdeacido.com/wp-content/uploads/2016/04/mantova-palazzo-ducale-visitare.jpg",
+            url: "../images/palazzoDucale-camera.jpg",
             alternative: "A decorated chamber.",
             type: "i",
         },
         {
             //14
-            url: "https://www.mantovaducale.beniculturali.it/images/Camera_degli_Sposi_generale_f.to_A._Quattrone_low.jpg",
+            url: "../images/palazzoDucale-cameraSposi.jpg",
             alternative: "Camera degli sposi.",
             type: "i",
         },
@@ -92,7 +92,7 @@ export default async (models) => {
         },
         {
             //16
-            url: "https://www.mantovaducale.beniculturali.it/images/Visual_052_low.jpg",
+            url: "../images/iBronziDellaPassione1.jpg",
             alternative: "The bronzes of Michelangelo",
             type: "i",
         },
@@ -108,17 +108,7 @@ export default async (models) => {
             che raffigurano gli elementi naturali, aria, acqua e terra, resi indistinguibili da una sorta di mimetismo visivo. Le immagini appaiono come ibridi linguaggi della natura. La natura, infatti, \
             rimane sempre il punto di partenza per una ricerca che sfocia nell’inconscio: “Interpretando questi paesaggi fotografici che sfidano i nostri sensi e le nostre emozioni - racconta l’artista - \
             possiamo condividere l’infinito spazio e la fugacità del tempo. Percepiamo l’energia vitale che anima l’universo il disordine accidentale o la forza creatrice dello straordinario e del sublime. \
-            Entrambe ci liberano dal dover descrivere l’ovvietà della realtà per consegnarci allo stupore della visione”. \
-            Il percorso artistico di Antonella Gandini si è svolto all’insegna di una personale ricerca che l’ha portata a esplorare connessioni e strutture di linguaggi liminari tra pittura, fotografia e video arte. \
-            La sua formazione all’Accademia di Belle Arti G.B. Cignaroli di Verona è stata prevalentemente indirizzata alla pittura e alle tecniche grafiche, per le quali ottiene immediati riconoscimenti: \
-            Premio Nazionale Giovani Incisori Italiani (1991); Premio Internazionale Biella per l’incisione (1993). \
-            Interessata agli studi filosofici si laurea all’Università di Verona con una tesi in Estetica. Partecipa al Corso Internazionale di disegno promosso dalla Fondazione Ratti e tenuto dall’artista Gerhard Ricther. \
-            La pratica disegnativa accompagnerà costantemente la sua ricerca che si accosta all’esperienza plastica. \
-            Dopo aver utilizzato la pittura richiamandosi a certi procedimenti surrealisti, si dedica alla fotografia utilizzando principalmente il metodo analogico. Dal 2002 allestisce numerose personali, tra cui: \
-            Centro Culturale Luigi di Sarro, Roma; Centro Arte Contemporanea, Bannata (Enna); La stanza delle biciclette, Brescia; Galleria Fotografica Luigi Ghirri; Caltagirone; Galleria Carte d’arte, Catania; Tinelli di Palazzo Te, Mantova (2009). \
-            Interessata ad argomenti di stretta attualità il suo libro d’artista Diario intimo, fa parte della collana Memorie d’artista (edizioni Peccolo). \
-            Nel 2018 viene invitata alla Stadtische Galerie, di Rosenheim, Germania, partecipa a Bookworks, Studio Expurgamento, Londra, a Visuali italiane, Roonee Gallery, Tokyo, e nel 2019 al 70° Premio Michetti, Francavilla a Mare, Chieti. \
-            Fa parte dell’associazione Donne Fotografe Italiane con la quale promuove diverse iniziative riguardanti le questioni di genere, come la recente esposizione Scolpite Palazzo Reale, Milano (2021)",
+            Entrambe ci liberano dal dover descrivere l’ovvietà della realtà per consegnarci allo stupore della visione”.",
             shortDescription: "Mostra fotografica dedicata agli elementi naturali.",
             poiId: 1,
         },
@@ -134,12 +124,7 @@ export default async (models) => {
             in questo modo Mantova diventa un palcoscenico a cielo aperto con spettacoli fino a notte fonda fra le piazze del centro, i giardini e il Palazzo Te. \
             La presenza degli artisti, con i loro spettacoli, diventa l’occasione di una bellezza dell’intrattenimento, attraverso il quale il pubblico può rivivere il patrimonio urbano come spazio di meraviglia e di incanto. \
             Dopo la prima edizione, organizzata nel 2018, ogni anno OPEN Festival rappresenta una nuova sfida, con programmi sempre più ricchi e nuovi spazi prestigiosi a fare da cornice alle suggestive performance. \
-            Durante le varie edizioni, il festival ha intrecciato le sue atmosfere con gli spazi di Piazza Mantegna,  Piazza Marconi, Palazzo Te, Loggia del Grano, Piazza Erbe e tanti altri. \
-            Ogni anno OPEN lancia anche una Call for Artists dedicato ad artisti e compagnie emergenti, alcuni dei quali vengono selezionati per esibirsi durante il festival. \
-            Inoltre, la rassegna promuove anche la tradizione e il linguaggio della commedia rinascimentale, offrendo l’opportunità, ai vincitori del concorso “I giovani e la Commedia dell’Arte”, \
-            che ogni anno si conclude in una serata di gala durante la quale si esibiscono i finalisti, di esibirsi con le loro performance in una delle prestigiose location del festival. \
-            Infine, il calendario di ogni edizione si completa con alcuni laboratori dedicati alle diverse generazioni, con le quali i partecipanti possono cimentarsi con le arti del circo urbano e del teatro di strada. \
-            OPEN è un Festival da gustare insieme, non senza ironia e spirito critico. Che sia un Festival davvero per tutti.",
+            Durante le varie edizioni, il festival ha intrecciato le sue atmosfere con gli spazi di Piazza Mantegna,  Piazza Marconi, Palazzo Te, Loggia del Grano, Piazza Erbe e tanti altri.",
             shortDescription: "Festival di teatro urbano all'aperto.",
             poiId: 1,
         },
@@ -156,16 +141,7 @@ export default async (models) => {
             Si tratta del progetto di un “Calvario”, ovvero la rappresentazione di Cristo sul Golgota assieme ai due ladroni; il termine deriva dal nome latino della collina appena fuori dalle mura di Gerusalemme, ossia il luogo sul quale si svolse la crocifissione. \
             Di questo progetto abbiamo testimonianza dell’esistenza di modelli di studio - in cera o terracotta - transitati a Mantova nel 1582, come attesta una scritta riportata su due disegni conservati uno a Budapest (Szépművészeti Múzeum) e l’altro già nella Rugby School Art Museum (e poi in asta a Londra, presso Christie’s). \
             Questi modelli, evidentemente oggetto di studio e attenzione nel tardo Cinquecento mantovano, sono alla base dei bronzi realizzati da un anonimo scultore lombardo e conservati presso le Raccolte di Arte Applicata del Castello Sforzesco a Milano. \
-            Le tre sculture sono il fulcro della mostra di Palazzo Ducale e vengono esposte lungo il percorso di visita di Corte Vecchia in un allestimento inedito nella cappella dell’Appartamento Ducale e con un apparato di approfondimento dispiegato nella camera di Giove e Giunone. \
-            L’intento è raccontare al pubblico la vicenda di quei modelli perduti e del relativo progetto incompiuto a opera del maestro toscano. I tre magnifici bronzi milanesi, pur non essendo di mano di Michelangelo ma di un suo abile imitatore, costituiscono l’esito a noi più vicino della sua ricerca figurativa sul tema del Calvario. \
-            Cristo crocifisso è al centro e ai suoi lati sono i due ladroni, alla nostra sinistra il buon ladrone e a destra il cattivo. I nomi di questi ultimi - rispettivamente Disma e Gesta - compaiono solo nel Vangelo apocrifo di Nicodemo. \
-            La loro vicenda, ripresa in numerosi testi dal Medioevo e per tutto il Rinascimento, si lega al tema della Salvezza e del libero arbitrio: Disma si pente, comprendendo la natura divina di Cristo, ed è raffigurato con lo sguardo rivolto al Salvatore; al contrario, Gesta rifiuta la salvezza offerta da Gesù e distoglie lo sguardo, volgendolo nella direzione opposta. \
-            Il gruppo fu eseguito negli ultimi decenni del Cinquecento in area lombarda e doveva probabilmente essere destinato alla devozione privata, in una cappella all’interno di un palazzo o di un edificio religioso. \
-            Oltre al gruppo del Castello Sforzesco esposto in mostra e appartenuto all’inizio dell’Ottocento all’artista neoclassico Giuseppe Bossi, sono note altre due versioni in bronzo raffiguranti lo stesso tema. \
-            Il gruppo più celebre e fedele al pensiero di Michelangelo, si conserva al Metropolitan Museum of Art di New York; alla fine dell’Ottocento, era proprietà del celebre antiquario fiorentino Stefano Bardini. \
-            L’altro, già seicentesco, è nel Dommuseum di Hildesheim ed è completato dalle figure dei tre dolenti - la Madonna, la Maddalena e San Giovanni Evangelista. Le due versioni più importanti - Milano e New York - differiscono tra di loro per alcuni dettagli, soprattutto nella figura di Cristo, e mescolano studi diversi dello stesso Michelangelo. \
-            “Questa mostra - afferma Stefano L’Occaso, Direttore di Palazzo Ducale di Mantova – affronta un singolo progetto michelangiolesco, legato a un Calvario, del quale ci sono tracce a Mantova nel 1582, quando l’artista era già morto, e i cui riflessi si colgono, in un labirintico gioco di specchi (tra copie e derivazioni, citazioni dissimulate e variazioni), in questa e numerose altre città. \
-            Certamente un argomento così profondo, come quello della Salvezza, non poteva non toccare la sensibilità e il cuore di un artista di sincera e profonda religiosità, quale fu Michelangelo. Con questo piccolo ma prezioso tassello espositivo confidiamo di illuminare uno dei molteplici aspetti della straordinaria vitalità artistica della città di Mantova nel Cinquecento”.",
+            Le tre sculture sono il fulcro della mostra di Palazzo Ducale e vengono esposte lungo il percorso di visita di Corte Vecchia in un allestimento inedito nella cappella dell’Appartamento Ducale e con un apparato di approfondimento dispiegato nella camera di Giove e Giunone.",
             shortDescription: "Un'esposizione di bronzi di Michelangelo.",
             poiId: 2,
         },

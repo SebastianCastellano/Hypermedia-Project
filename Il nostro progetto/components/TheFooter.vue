@@ -1,7 +1,9 @@
 <template>
     <footer>
         <div class="vertical-center">
-            Website developed by ...
+            <nuxt-link to="/">
+                Home page
+            </nuxt-link>
         </div>
     </footer>
 </template>
@@ -9,6 +11,11 @@
 <style scoped>
 
 @import '~/static/style/main.css';
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
 
 footer {
     position: relative;
