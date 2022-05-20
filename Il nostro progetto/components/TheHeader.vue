@@ -149,7 +149,7 @@ export default {
         },
         {
           name: 'About Mantova',
-          path: '/',
+          path: '/aboutMantova',
         }
       ],
     }

@@ -99,6 +99,19 @@ const pageContentObject = {
             image5: "https://fs.i3lab.group/hypermedia/images/index.jpeg"
         }
     },
+    aboutMantova: {
+        title: ["Title1","Title2","Title3","Title4","Title5","Title6"],
+        image: [
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Gatto_europeo4.jpg/220px-Gatto_europeo4.jpg",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Gatto_europeo4.jpg/220px-Gatto_europeo4.jpg",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Gatto_europeo4.jpg/220px-Gatto_europeo4.jpg",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Gatto_europeo4.jpg/220px-Gatto_europeo4.jpg",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Gatto_europeo4.jpg/220px-Gatto_europeo4.jpg",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Gatto_europeo4.jpg/220px-Gatto_europeo4.jpg",
+        ],
+        alternative: ["Alternative1","Alternative2","Alternative3","Alternative4","Alternative5","Alternative6"],
+        text: ["Text1","Text2","Text3"],
+    }
 }
 
 async function runMainApi() {
@@ -127,6 +140,7 @@ async function runMainApi() {
         return res.json({
             name: result.name,
             date: result.date.toLocaleDateString(),
+            date_s: result.date_s,
             location: result.location,
             price: result.price,
             description: result.description,
@@ -155,6 +169,7 @@ async function runMainApi() {
         const result1Ver = {
             name: result1.name,
             date: result1.date.toLocaleDateString(),
+            date_s: result1.date_s,
             location: result1.location,
             price: result1.price,
             description: result1.description,
@@ -190,7 +205,37 @@ async function runMainApi() {
             shortDescription: result2.shortDescription,
             id: result2.id,
         }
-        const result = [result1Ver, result1Ve2]
+        const idThisEvent = id1
+        var tempTempTemp = await models.Event.findAll()
+        const tempTempTemp2 = []
+        for (const tempTempTemp3 of tempTempTemp) {
+            tempTempTemp2.push({
+                realDateLocalVar: tempTempTemp3.date,
+                id: tempTempTemp3.id,
+            })
+        }
+        tempTempTemp2.sort(function (a, b) {
+            return a.realDateLocalVar - b.realDateLocalVar;
+        })
+        var findIndex = 0
+        var found = false
+        for (const tempTempTemp3 of tempTempTemp2){
+            if (tempTempTemp3.id == idThisEvent){
+                found = true
+            }
+            if(found == false){
+                findIndex = findIndex + 1
+            }
+        }
+        var idPreviousEvent = -1
+        if(findIndex > 0){
+            idPreviousEvent = tempTempTemp2[findIndex - 1].id
+        }
+        var idNextEvent = -1
+        if(findIndex < tempTempTemp2.length - 1){
+            idNextEvent = tempTempTemp2[findIndex + 1].id
+        }
+        const result = [result1Ver, result1Ve2, idPreviousEvent, idNextEvent]
         return res.json(result)
     })
 
@@ -265,6 +310,7 @@ async function runMainApi() {
             result2Ver.push({
                 name: eee.name,
                 date: eee.date.toLocaleDateString(),
+                date_s: eee.date_s,
                 location: eee.location,
                 price: eee.price,
                 description: eee.description,
@@ -354,7 +400,9 @@ async function runMainApi() {
             }
             filtered.push({
                 name: element.name,
+                realDateLocalVar: element.date,
                 date: element.date.toLocaleDateString(),
+                date_s: element.date_s,
                 location: element.location,
                 price: element.price,
                 description: element.description,
@@ -366,6 +414,9 @@ async function runMainApi() {
                 id: element.id,
             })
         }
+        filtered.sort(function (a, b) {
+            return a.realDateLocalVar - b.realDateLocalVar;
+        })
         return res.json(filtered)
     })
 
@@ -385,7 +436,9 @@ async function runMainApi() {
             }
             filtered.push({
                 name: element.name,
+                realDateLocalVar: element.date,
                 date: element.date.toLocaleDateString(),
+                date_s: element.date_s,
                 location: element.location,
                 price: element.price,
                 description: element.description,
@@ -397,6 +450,9 @@ async function runMainApi() {
                 id: element.id,
             })
         }
+        filtered.sort(function (a, b) {
+            return a.realDateLocalVar - b.realDateLocalVar;
+        })
         if(req.params.season == "winter"){
             return res.json(filtered.filter(x => parseInt(x.date.split("/")[1]) >= 10 ||  parseInt(x.date.split("/")[1])<=3))
         }else if(req.params.season == "summer"){
@@ -404,7 +460,6 @@ async function runMainApi() {
         }
         
     })
-    
 
     app.get("/pointOfInterest", async (req, res) => {
         const result = await models.PointOfInterest.findAll()
