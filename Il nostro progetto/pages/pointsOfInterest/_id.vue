@@ -13,7 +13,7 @@
       :alternativeThumbEvent="event.imagesAlternative[0]"
       :nameEvent="event.name"
       :shortDescriptionEvent="event.shortDescription"
-      :periodEvent="event.date"/>
+      :periodEvent="event.date_s"/>
     </div>
     <div class="page container mt-5">
       <h3 class="title-font">Itineraries including {{name}}: </h3>

@@ -1,11 +1,10 @@
 <template>
   <div>
-
-    
     <breadcrumb-component :title="name"/>
     <event-poi-template :name="name" :breadcrump="breadcrump" :description="description" :dateTime="dateTime"
     :location="location" :price="price" :imagesUrl="imagesUrl" :imagesAlternative="imagesAlternative"
-    :videosUrl="videosUrl" :videosAlternative="videosAlternative"/>
+    :videosUrl="videosUrl" :videosAlternative="videosAlternative"
+    :idPreviousEvent="idPreviousEvent" :idNextEvent="idNextEvent"/>
     <div class="page container mt-5">
       <h3 class="title-font">The event takes place near: </h3>
     </div>
@@ -47,6 +46,8 @@ export default {
     const alternativeThumbPoi = data[1].imagesAlternative[0]
     const namePoi = data[1].name
     const shortDescriptionPoi = data[1].shortDescription
+    const idPreviousEvent = data[2]
+    const idNextEvent = data[3]
     return {
       name,
       breadcrump,
@@ -63,6 +64,8 @@ export default {
       alternativeThumbPoi,
       namePoi,
       shortDescriptionPoi,
+      idPreviousEvent,
+      idNextEvent,
     }
   },
 }
