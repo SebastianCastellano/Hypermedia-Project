@@ -7,6 +7,7 @@
 import CustomPage from '~/components/CustomPage.vue'
 export default {
   name: 'IndexPage',
+  layout: 'header-only',
   components: {
     CustomPage,
   },

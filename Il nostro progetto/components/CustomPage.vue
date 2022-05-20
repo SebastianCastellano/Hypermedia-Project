@@ -30,7 +30,7 @@
         <h1 class="title-font">Everything you might need</h1>
       </section>
     </nuxt-link>
-    <nuxt-link to="/">
+    <nuxt-link to="/aboutMantova">
       <section id="about">
         <h1 class="title-font">Why is Mantova so special?</h1>
       </section>
@@ -93,6 +93,11 @@ a {
   color: inherit;
 }
 
+section:hover h1 {
+  color: var(--color1);
+  background-color: rgb(255, 255, 255, 0.8);
+}
+
 /*
 section { display: flex; }
 .title-font { text-align: center; }
@@ -124,6 +129,7 @@ p {
 <script>
 export default {
   name: 'CustomPage',
+  layout: 'header-only',
   props: {
     title: {
       type: String,

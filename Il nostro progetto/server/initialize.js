@@ -3,49 +3,49 @@ export default async (models) => {
         {   
             // 1
             url: "../images/palazzoTe-esterno1.jpg",
-            alternative: "Ingresso di Palazzo Te.",
+            alternative: "Entrance of Palazzo Te.",
             type: "i",
         },
         {
             // 2
             url: "../images/palazzoTe-esterno2.jpg",
-            alternative: "Porticato interno e veduta del giardino.",
+            alternative: "Internal portico and garden view.",
             type: "i",
         },
         {
             // 3
             url: "../images/palazzoTe-esterno3.jpg",
-            alternative: "Veduta aerea.",
+            alternative: "Aereal view.",
             type: "i",
         },
         {
             // 4
             url: "../images/palazzoTe-giganti1.jpg",
-            alternative: "I giganti a terra osservano con terrore il cielo.",
+            alternative: "The giants on the ground watch the sky with terror.",
             type: "i",
         },
         {
             // 5
             url: "../images/palazzoTe-giganti2.jpg",
-            alternative: "Alcuni giganti reggono la volta. Al di sotto una scena di combattimento",
+            alternative: "Two giants keep the vault still. Beneath a scene of a fight.",
             type: "i",
         },
         {
             // 6
             url: "../images/palazzoTe-soleLuna1.jpg",
-            alternative: "Volta della sala del Sole e della Luna.",
+            alternative: "Vault of the sala del Sole e della Luna.",
             type: "i",
         },
         {
             // 7
             url: "https://www.youtube.com/embed/MrLxyBg_USQ",
-            alternative: "Spiegazione della Sala dei Giganti.",
+            alternative: "Explanation of Sala dei Giganti.",
             type: "v",
         },
         {
             // 8
             url: "https://www.youtube.com/embed/ugEP0v59xQg",
-            alternative: "Documentario su Mantova, città di capolavori.",
+            alternative: "Documentary over Mantova, city of masterpieces.",
             type: "v",
         },
         {
@@ -109,7 +109,7 @@ export default async (models) => {
             rimane sempre il punto di partenza per una ricerca che sfocia nell’inconscio: “Interpretando questi paesaggi fotografici che sfidano i nostri sensi e le nostre emozioni - racconta l’artista - \
             possiamo condividere l’infinito spazio e la fugacità del tempo. Percepiamo l’energia vitale che anima l’universo il disordine accidentale o la forza creatrice dello straordinario e del sublime. \
             Entrambe ci liberano dal dover descrivere l’ovvietà della realtà per consegnarci allo stupore della visione”.",
-            shortDescription: "Mostra fotografica dedicata agli elementi naturali.",
+            shortDescription: "Photographic expositions over natural elements.",
             poiId: 1,
         },
         {
@@ -125,7 +125,7 @@ export default async (models) => {
             La presenza degli artisti, con i loro spettacoli, diventa l’occasione di una bellezza dell’intrattenimento, attraverso il quale il pubblico può rivivere il patrimonio urbano come spazio di meraviglia e di incanto. \
             Dopo la prima edizione, organizzata nel 2018, ogni anno OPEN Festival rappresenta una nuova sfida, con programmi sempre più ricchi e nuovi spazi prestigiosi a fare da cornice alle suggestive performance. \
             Durante le varie edizioni, il festival ha intrecciato le sue atmosfere con gli spazi di Piazza Mantegna,  Piazza Marconi, Palazzo Te, Loggia del Grano, Piazza Erbe e tanti altri.",
-            shortDescription: "Festival di teatro urbano all'aperto.",
+            shortDescription: "Urban theatre festival en plain air.",
             poiId: 1,
         },
         {
@@ -142,7 +142,7 @@ export default async (models) => {
             Di questo progetto abbiamo testimonianza dell’esistenza di modelli di studio - in cera o terracotta - transitati a Mantova nel 1582, come attesta una scritta riportata su due disegni conservati uno a Budapest (Szépművészeti Múzeum) e l’altro già nella Rugby School Art Museum (e poi in asta a Londra, presso Christie’s). \
             Questi modelli, evidentemente oggetto di studio e attenzione nel tardo Cinquecento mantovano, sono alla base dei bronzi realizzati da un anonimo scultore lombardo e conservati presso le Raccolte di Arte Applicata del Castello Sforzesco a Milano. \
             Le tre sculture sono il fulcro della mostra di Palazzo Ducale e vengono esposte lungo il percorso di visita di Corte Vecchia in un allestimento inedito nella cappella dell’Appartamento Ducale e con un apparato di approfondimento dispiegato nella camera di Giove e Giunone.",
-            shortDescription: "Un'esposizione di bronzi di Michelangelo.",
+            shortDescription: "Exposition of Michelangelo bronze statues.",
             poiId: 2,
         },
     ]
@@ -176,7 +176,7 @@ export default async (models) => {
             Il palazzo è un edificio a pianta quadrata con al centro un grande cortile quadrato anch'esso, un tempo decorato con un labirinto, \
             con quattro entrate sui quattro lati (Giulio Romano si ispira nell'impianto alla descrizione vitruviana della casa di abitazione: la domus romana con quattro entrate, ciascuna su uno dei quattro lati). \
             Il palazzo ha proporzioni insolite: si presenta come un largo e basso blocco, a un piano solo, la cui altezza è circa un quarto della larghezza.",
-            shortDescription: "Villa rinascimentale opera di Giulio Romano.",
+            shortDescription: "Renaissance villa, work of Giulio Romano.",
         },
         {
             // 2
@@ -190,7 +190,7 @@ export default async (models) => {
             Assunse la denominazione di Palazzo Reale durante la dominazione austriaca a partire dall'epoca di Maria Teresa d'Austria regnante. \
             Ogni duca ha voluto aggiungere un'ala per sé e per le proprie opere d'arte, il risultato è un'area di più di 35.000 m². \
             Ha più di 500 stanze e racchiude 7 giardini e 8 cortili.",
-            shortDescription: "Antica residenza dei duchi di Mantova.",
+            shortDescription: "The ancient palace of Mantova dukes.",
         },
     ]
     const poimediaList = [
