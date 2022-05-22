@@ -7,6 +7,8 @@
         class="col-sm-2 m-2"
         :key="`itinerary-index-${itineraryIndex}`"
         :id="itinerary.id"
+        :imageUrl="itinerary.imageUrl"
+        :imageAlternative="itinerary.imageAlternative"
         :name="itinerary.name"
         :duration="itinerary.duration"
         :length="itinerary.length"

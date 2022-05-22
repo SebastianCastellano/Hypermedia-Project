@@ -7,6 +7,10 @@
         <p>Length: {{ length }}</p>
         <p>Average Duration: {{ duration }}</p>
       </div>
+      <img
+          class="column"
+          :src="imageUrl"
+          :alt="imageAlternative"/>
       <p class="description">{{ description }}</p>
       {{/* Buffer.from(map, 'base64').toString() */}}
       {{map}}
@@ -56,6 +60,14 @@ export default {
       required: true,
     },
     length: {
+      type: String,
+      required: true,
+    },
+    imageUrl: {
+      type: String,
+      required: true,
+    },
+    imageAlternative: {
       type: String,
       required: true,
     },

@@ -54,6 +54,7 @@ async function initializeDatabaseConnection() {
         description: DataTypes.TEXT,
         map: DataTypes.TEXT,
         shortDescription: DataTypes.TEXT,
+        image: DataTypes.INTEGER,
     })
    
     const PoiIti = database.define('poiiti', {
@@ -336,12 +337,35 @@ async function runMainApi() {
     app.get('/itinerary/:id', async (req, res) => {
         const id = +req.params.id
         const result = await models.Itinerary.findOne({ where: { id } })
-        return res.json(result)
+        const associatedImage = await models.Media.findOne({ where: { id: result.image } })
+        return res.json({
+            id: result.id,
+            name: result.name,
+            duration: result.duration,
+            length: result.length,
+            description: result.description,
+            map: result.map,
+            shortDescription: result.shortDescription,
+            imageUrl: associatedImage.url,
+            imageAlternative: associatedImage.alternative,
+        })
     })
 
     app.get('/itineraryAndAssociatedPointOfInterest/:id', async (req, res) => {
         const id1 = +req.params.id
         const result1 = await models.Itinerary.findOne({ where: { id: id1 } })
+        const associatedImage = await models.Media.findOne({ where: { id: result1.image } })
+        const result1ver = {
+            id: result1.id,
+            name: result1.name,
+            duration: result1.duration,
+            length: result1.length,
+            description: result1.description,
+            map: result1.map,
+            shortDescription: result1.shortDescription,
+            imageUrl: associatedImage.url,
+            imageAlternative: associatedImage.alternative,
+        }
         var result2Temp = await models.PoiIti.findAll()
         result2Temp = result2Temp.filter(el => el.itineraryId == id1)
         result2Temp.sort(function (a, b) {
@@ -374,7 +398,7 @@ async function runMainApi() {
                 id: tempi.id,
             })
         }
-        const result = [result1, result2]
+        const result = [result1ver, result2]
         return res.json(result)
     })
 
@@ -496,6 +520,7 @@ async function runMainApi() {
         const result = await models.Itinerary.findAll()
         const filtered = []
         for (const element of result) {
+            const associatedImage = await models.Media.findOne({ where: { id: element.image } })
             filtered.push({
                 id: element.id,
                 name: element.name,
@@ -504,6 +529,8 @@ async function runMainApi() {
                 description: element.description,
                 map: element.map,
                 shortDescription: element.shortDescription,
+                imageUrl: associatedImage.url,
+                imageAlternative: associatedImage.alternative,
             })
         }
         return res.json(filtered)

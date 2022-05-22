@@ -271,6 +271,7 @@ export default async (models) => {
             Donec sit amet pulvinar mauris. Nam eu turpis ac nibh posuere porttitor. Pellentesque mauris leo, pretium id pulvinar non, imperdiet porttitor justo. Phasellus dapibus orci eu eleifend aliquet. Vivamus sit amet nisi ut leo euismod laoreet a id arcu. Sed tincidunt dolor eget eleifend lacinia. Vestibulum vulputate quis massa id dictum. Phasellus sollicitudin rhoncus.",
             map: "https://fs.i3lab.group/hypermedia/cats/siberian.jpg",
             shortDescription: "The perfect itinerary to enjoy Mantova masterpieces.",
+            image: 1,
         },
         {
             name: "Following Virgilio",
@@ -282,6 +283,7 @@ export default async (models) => {
             Donec sit amet pulvinar mauris. Nam eu turpis ac nibh posuere porttitor. Pellentesque mauris leo, pretium id pulvinar non, imperdiet porttitor justo. Phasellus dapibus orci eu eleifend aliquet. Vivamus sit amet nisi ut leo euismod laoreet a id arcu. Sed tincidunt dolor eget eleifend lacinia. Vestibulum vulputate quis massa id dictum. Phasellus sollicitudin rhoncus.",
             map: "https://fs.i3lab.group/hypermedia/cats/siberian.jpg",
             shortDescription: "Live the city of Mantova as Virgilio did.",
+            image: 2,
         },
         {
             name: "Religious Steps",
@@ -293,6 +295,7 @@ export default async (models) => {
             Donec sit amet pulvinar mauris. Nam eu turpis ac nibh posuere porttitor. Pellentesque mauris leo, pretium id pulvinar non, imperdiet porttitor justo. Phasellus dapibus orci eu eleifend aliquet. Vivamus sit amet nisi ut leo euismod laoreet a id arcu. Sed tincidunt dolor eget eleifend lacinia. Vestibulum vulputate quis massa id dictum. Phasellus sollicitudin rhoncus.",
             map: "https://fs.i3lab.group/hypermedia/cats/siberian.jpg",
             shortDescription: "A religious itinerary across Mantova holy sites.",
+            image: 3,
         },
     ]
     const serviceList = [

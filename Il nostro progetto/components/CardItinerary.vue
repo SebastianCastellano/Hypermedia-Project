@@ -3,6 +3,10 @@
     <nuxt-link :to="'/itineraries/'+id">
       <div class="card-body">
         <div class="info">
+          <img
+          class="card-itinerary"
+          :src="imageUrl"
+          :alt="imageAlternative"/>
           <h3 class="card-title title-font">{{ name }}</h3>
           <div class="imp-info">
             <p class="card-text">Average duration: {{ duration }} ---</p>
@@ -33,6 +37,9 @@ a {
   background: var(--color1-light);
   /*border: 2px solid var(--color1);*/
 }
+.card-itinerary{
+  height: 140px;
+}
 .card-title {
   text-align: left;
   max-width: 50%;
@@ -40,6 +47,9 @@ a {
   /*margin-right: 48vw;*/
   margin-left: 5vw;
   margin-right: 15vw;
+}
+.card-text{
+  text-align: center;
 }
 
 .imp-info {
@@ -75,6 +85,14 @@ export default {
       required: true,
     },
     name: {
+      type: String,
+      required: true,
+    },
+    imageUrl: {
+      type: String,
+      required: true,
+    },
+    imageAlternative: {
       type: String,
       required: true,
     },

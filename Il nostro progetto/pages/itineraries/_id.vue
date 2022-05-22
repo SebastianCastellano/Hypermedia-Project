@@ -5,6 +5,8 @@
       :breadcrump="breadcrump"
       :duration="duration"
       :length="length"
+      :imageUrl="imageUrl"
+      :imageAlternative="imageAlternative"
       :description="description"
       :map="map"
       :start="associatedPoiList[0].name"/>
@@ -41,6 +43,8 @@ export default {
     const length = data[0].length
     const description = data[0].description
     const map = data[0].map
+    const imageUrl = data[0].imageUrl
+    const imageAlternative = data[0].imageAlternative
     return {
       name,
       breadcrump,
@@ -49,6 +53,8 @@ export default {
       description,
       map,
       associatedPoiList: data[1],
+      imageUrl,
+      imageAlternative,
     }
   },
 }
