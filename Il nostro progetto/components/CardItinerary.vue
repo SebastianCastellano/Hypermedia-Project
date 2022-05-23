@@ -1,4 +1,5 @@
 <template>
+  <!--
   <div class="card mt-5" style="width: 15rem">
     <nuxt-link :to="'/itineraries/'+id">
       <div class="card-body">
@@ -19,10 +20,62 @@
       </div>
     </nuxt-link>
   </div>
+  -->
+  <div class="page container mt-5">
+    <div class="poi-box">
+      <nuxt-link class="flex-container" :to="'/itineraries/'+id">
+        <img
+          class="column"
+          :src="imageUrl"
+          :alt="imageAlternative"/>
+        <div class="info column">
+          <div class="info-text">
+            <h3 class="title-font">{{ name }}</h3>
+            <p>Average duration: {{ duration }} --- Length: {{ length }}</p>
+            <p>{{ shortDescription }}</p>
+          </div>
+        </div>
+      </nuxt-link>
+    </div>
+  </div>
 </template>
 
 
 <style scoped>
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.poi-box {
+  margin-top: 20px;
+  border: 2px solid var(--color1);
+  padding: 0;
+}
+
+.poi-box:hover { background-color: var(--color1-light); }
+
+.flex-container { display: flex; }
+
+img {
+  height: 150px;
+  max-width: 40% !important;
+}
+
+.info {
+  text-align: center;
+  width: 100%;
+}
+
+.info p {
+  padding: 0;
+  margin: 0;
+}
+
+.info-text { margin-top: 40px; }
+
+/*
 a {
   text-decoration: none;
   color: inherit;
@@ -35,7 +88,7 @@ a {
 }
 .card:hover {
   background: var(--color1-light);
-  /*border: 2px solid var(--color1);*/
+  //border: 2px solid var(--color1);
 }
 .card-itinerary{
   height: 140px;
@@ -44,7 +97,7 @@ a {
   text-align: left;
   max-width: 50%;
   display: inline-block;
-  /*margin-right: 48vw;*/
+  //margin-right: 48vw;
   margin-left: 5vw;
   margin-right: 15vw;
 }
@@ -70,10 +123,10 @@ a {
 }
 
 .card-body .short-des {
-  /*text-align: center;*/
+  //text-align: center;
   margin-left: 5vw;
 }
-
+*/
 </style>
 
 <script>

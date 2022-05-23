@@ -84,7 +84,7 @@ h1 {
 
 #events { background-image: url("../static/images/palazzoDucale-cameraSposi2.jpg");}
 #points { background-image: url("../static/images/palazzoTe-giganti1.jpg"); }
-#itineraries { background-image: url("../static/images/piazzaVirgiliana1.jpg"); }
+#itineraries { background-image: url("../static/images/piazzaVirgiliana2.jpg"); }
 #services { background-image: url("../static/images/mappaAntica1.jpg"); }
 #about { background-image: url("../static/images/skyline1.jpg"); }
 

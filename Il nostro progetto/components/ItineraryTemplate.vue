@@ -1,6 +1,6 @@
 <template>
     <div class="page container mt-5">
-      <h3 class="breadcrump">{{ breadcrump }}</h3>
+      <h3 class="no-disp breadcrump">{{ breadcrump }}</h3>
       <h1 class="name title-font page-title">{{ name }}</h1>
       <div class="info-box">
         <p>Starting Point: {{ start }}</p>
@@ -8,7 +8,7 @@
         <p>Average Duration: {{ duration }}</p>
       </div>
       <img
-          class="column"
+          class="no-disp column"
           :src="imageUrl"
           :alt="imageAlternative"/>
       <p class="description">{{ description }}</p>
@@ -19,9 +19,9 @@
 </template>
 
 <style scoped>
-.name {
-  text-align: center;
-}
+
+.name { text-align: center; }
+.no-disp { display: none; }
 
 .info-box {
   margin: 25px auto;

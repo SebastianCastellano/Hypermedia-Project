@@ -4,7 +4,6 @@
     <div class="row mt-3">
       <card-itinerary
         v-for="(itinerary, itineraryIndex) of itineraryList"
-        class="col-sm-2 m-2"
         :key="`itinerary-index-${itineraryIndex}`"
         :id="itinerary.id"
         :imageUrl="itinerary.imageUrl"

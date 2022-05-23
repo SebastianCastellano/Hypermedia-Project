@@ -19,7 +19,6 @@
       <h3 class="title-font">Itineraries including {{name}}: </h3>
       <card-itinerary
       v-for="(itinerary, itineraryIndex) of associatedItineraryList"
-      class="col-sm-2 m-2"
       :key="`itinerary-index-${itineraryIndex}`"
       :id="itinerary.id"
       :name="itinerary.name"

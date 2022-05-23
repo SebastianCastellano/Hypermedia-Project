@@ -96,6 +96,54 @@ export default async (models) => {
             alternative: "The bronzes of Michelangelo",
             type: "i",
         },
+        {
+            //17
+            url: "../images/palazzoDucale-cameraSposi2.jpg",
+            alternative: "The vault of 'Camera degli Sposi', mimicking the sky.",
+            type: "i",
+        },
+        {
+            //18
+            url: "../images/piazzaVirgiliana2.jpg",
+            alternative: "Virgilio statue in the middle of 'Piazza Virgiliana'",
+            type: "i",
+        },
+        {
+            //19
+            url: "../images/basilicaAndrea1.jpg",
+            alternative: "The facade of 'Basilica di Sant'Andrea'.",
+            type: "i",
+        },
+        {
+            //20
+            url: "../images/basilicaAndrea2.jpg",
+            alternative: "The central nave of 'Basilica di Sant'Andrea'.",
+            type: "i",
+        },
+        {
+            //21
+            url: "../images/basilicaAndrea3.jpg",
+            alternative: "The vault of 'Basilica di Sant'Andrea'",
+            type: "i",
+        },
+        {
+            //22
+            url: "../images/piazzaVirgiliana1.jpg",
+            alternative: "Virgilio statue in the middle of 'Piazza Virgiliana'",
+            type: "i",
+        },
+        {
+            //23
+            url: "../images/piazzaDelleErbe1.jpg",
+            alternative: "Piazza Delle Erbe",
+            type: "i",
+        },
+        {
+            //24
+            url: "../images/piazzaDelleErbe2.jpg",
+            alternative: "Piazza Delle Erbe",
+            type: "i",
+        },
     ]
     const eventList = [
         {
@@ -138,10 +186,7 @@ export default async (models) => {
             Il 22 febbraio del 1527 Federico II scriveva di essere da “molt’anni (…) amatore dello excellentissimo messer Michele Angelo” e - in un significativo ribaltamento di ruoli - senza paura di mostrarsi supplice chiedeva di ottenere una sua opera. \
             Non importava quale fosse, ne bastava una qualsiasi. \
             L’esposizione “Michelangelo: i bronzi della Passione” di Palazzo Ducale di Mantova - aperta dal 18 marzo fino al 15 giugno 2022 - vuole puntare l’attenzione su un episodio poco noto della vita del grande artista. \
-            Si tratta del progetto di un “Calvario”, ovvero la rappresentazione di Cristo sul Golgota assieme ai due ladroni; il termine deriva dal nome latino della collina appena fuori dalle mura di Gerusalemme, ossia il luogo sul quale si svolse la crocifissione. \
-            Di questo progetto abbiamo testimonianza dell’esistenza di modelli di studio - in cera o terracotta - transitati a Mantova nel 1582, come attesta una scritta riportata su due disegni conservati uno a Budapest (Szépművészeti Múzeum) e l’altro già nella Rugby School Art Museum (e poi in asta a Londra, presso Christie’s). \
-            Questi modelli, evidentemente oggetto di studio e attenzione nel tardo Cinquecento mantovano, sono alla base dei bronzi realizzati da un anonimo scultore lombardo e conservati presso le Raccolte di Arte Applicata del Castello Sforzesco a Milano. \
-            Le tre sculture sono il fulcro della mostra di Palazzo Ducale e vengono esposte lungo il percorso di visita di Corte Vecchia in un allestimento inedito nella cappella dell’Appartamento Ducale e con un apparato di approfondimento dispiegato nella camera di Giove e Giunone.",
+            Si tratta del progetto di un “Calvario”, ovvero la rappresentazione di Cristo sul Golgota assieme ai due ladroni; il termine deriva dal nome latino della collina appena fuori dalle mura di Gerusalemme, ossia il luogo sul quale si svolse la crocifissione.",
             shortDescription: "Exposition of Michelangelo bronze statues.",
             poiId: 2,
         },
@@ -191,6 +236,44 @@ export default async (models) => {
             Ogni duca ha voluto aggiungere un'ala per sé e per le proprie opere d'arte, il risultato è un'area di più di 35.000 m². \
             Ha più di 500 stanze e racchiude 7 giardini e 8 cortili.",
             shortDescription: "The ancient palace of Mantova dukes.",
+        },
+        {
+            // 3
+            name: "Basilica di Sant'Andrea",
+            location: "Piazza Andrea Mantegna, 1",
+            times: "Everyday: 8.00-12.00 / 15.00-19.00",
+            price: "Free Entry",
+            description: "The Basilica of Sant'Andrea is a Roman Catholic co-cathedral and minor basilica. \
+            It is one of the major works of 15th-century Renaissance architecture in Northern Italy. \
+            Commissioned by Ludovico III Gonzaga, the church was begun in 1472 according to designs by Leon Battista Alberti on a site occupied by a Benedictine monastery, of which the bell tower (1414) remains. \
+            The building, however, was only finished 328 years later. \
+            Though later changes and expansions altered Alberti's design, the church is still considered to be one of Alberti's most complete works. \
+            It looms over the Piazza Mantegna.",
+            shortDescription: "The biggest church in Mantova, work of Leon Battista Alberti.",
+        },
+        {
+            // 4
+            name: "Piazza delle Erbe",
+            location: "Piazza delle Erbe",
+            times: "Everyday (public location)",
+            price: "Gratis (public location)",
+            description: "Cominciò a configurarsi quando la città comunale, verso la fine del XII secolo, iniziò ad espandersi oltre il Voltone di San Pietro, \
+            oltre l'antica città romana che insisteva nei luoghi allora edificati dell'attuale Piazza Sordello. \
+            Con il dominio prima dei Bonacolsi e dei Gonzaga successivamente, il centro amministrativo e del potere politico si sposta sulla costruenda nuova piazza San Pietro (ora Piazza Sordello). \
+            Gli edifici medievali di Piazza Erbe subirono nel corso dei secoli rimaneggiamenti e ristrutturazioni. \
+            La sequenza di case che ospitavano i mercanti cittadini, furono pregevolmente abbellite da portici di stile tardo gotico e rinascimentale.",
+            shortDescription: "The must-see square in Mantova.",
+        },
+        {
+            // 5
+            name: "Piazza Virgiliana",
+            location: "Piazza Virgiliana",
+            times: "Everyday (public location)",
+            price: "Gratis (public location)",
+            description: "The Piazza Virgiliana is an oblong shaped park in the center of the city. \
+            It spans from a circumvailling Piazza Virgilliana street, fed from Piazza dei Filipinni by Via Virgilio, and stretching northwest towards Lago di Mezzo (part of Mincio River). \
+            The park has a number of tree-lined trails, and commemorative statues, most prominent of which is a monument to Virgil with flanking fountains.",
+            shortDescription: "A big green area, towered by the statue of Virgilio.",
         },
     ]
     const poimediaList = [
@@ -259,6 +342,41 @@ export default async (models) => {
             mediumId: 15,
             order: 5,
         },
+        {
+            poiId: 3,
+            mediumId: 19,
+            order: 1,
+        },
+        {
+            poiId: 3,
+            mediumId: 20,
+            order: 2,
+        },
+        {
+            poiId: 3,
+            mediumId: 21,
+            order: 3,
+        },
+        {
+            poiId: 5,
+            mediumId: 22,
+            order: 1,
+        },
+        {
+            poiId: 5,
+            mediumId: 18,
+            order: 2,
+        },
+        {
+            poiId: 4,
+            mediumId: 23,
+            order: 1,
+        },
+        {
+            poiId: 4,
+            mediumId: 24,
+            order: 2,
+        },
     ]
     const itineraryList = [
         {
@@ -271,7 +389,7 @@ export default async (models) => {
             Donec sit amet pulvinar mauris. Nam eu turpis ac nibh posuere porttitor. Pellentesque mauris leo, pretium id pulvinar non, imperdiet porttitor justo. Phasellus dapibus orci eu eleifend aliquet. Vivamus sit amet nisi ut leo euismod laoreet a id arcu. Sed tincidunt dolor eget eleifend lacinia. Vestibulum vulputate quis massa id dictum. Phasellus sollicitudin rhoncus.",
             map: "https://fs.i3lab.group/hypermedia/cats/siberian.jpg",
             shortDescription: "The perfect itinerary to enjoy Mantova masterpieces.",
-            image: 1,
+            image: 17,
         },
         {
             name: "Following Virgilio",
@@ -283,7 +401,7 @@ export default async (models) => {
             Donec sit amet pulvinar mauris. Nam eu turpis ac nibh posuere porttitor. Pellentesque mauris leo, pretium id pulvinar non, imperdiet porttitor justo. Phasellus dapibus orci eu eleifend aliquet. Vivamus sit amet nisi ut leo euismod laoreet a id arcu. Sed tincidunt dolor eget eleifend lacinia. Vestibulum vulputate quis massa id dictum. Phasellus sollicitudin rhoncus.",
             map: "https://fs.i3lab.group/hypermedia/cats/siberian.jpg",
             shortDescription: "Live the city of Mantova as Virgilio did.",
-            image: 2,
+            image: 18,
         },
         {
             name: "Religious Steps",
@@ -295,7 +413,7 @@ export default async (models) => {
             Donec sit amet pulvinar mauris. Nam eu turpis ac nibh posuere porttitor. Pellentesque mauris leo, pretium id pulvinar non, imperdiet porttitor justo. Phasellus dapibus orci eu eleifend aliquet. Vivamus sit amet nisi ut leo euismod laoreet a id arcu. Sed tincidunt dolor eget eleifend lacinia. Vestibulum vulputate quis massa id dictum. Phasellus sollicitudin rhoncus.",
             map: "https://fs.i3lab.group/hypermedia/cats/siberian.jpg",
             shortDescription: "A religious itinerary across Mantova holy sites.",
-            image: 3,
+            image: 21,
         },
     ]
     const serviceList = [
@@ -382,6 +500,16 @@ export default async (models) => {
             itineraryId: 1,
             poiId: 2,
             order: 2,
+        },
+        {
+            itineraryId: 1,
+            poiId: 4,
+            order: 3,
+        },
+        {
+            itineraryId: 3,
+            poiId: 3,
+            order: 1,
         },
     ]
     await models.Media.bulkCreate(mediaList)
