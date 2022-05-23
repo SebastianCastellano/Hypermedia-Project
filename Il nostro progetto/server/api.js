@@ -296,7 +296,7 @@ async function runMainApi() {
         }
         const result2temp = await models.Event.findAll()
         const result2 = result2temp.filter(el => el.poiId == id1)
-        const result2Ver = []
+        var result2Ver = []
         for (const eee of result2){
             var tempi = await models.EventMedia.findAll()
             tempi = tempi.filter(el => el.eventId == eee.id)
@@ -330,7 +330,22 @@ async function runMainApi() {
             const temp = await models.Itinerary.findOne({ where: { id: el.itineraryId } })
             result3.push(temp)
         }
-        const result = [result1Ver, result2Ver, result3]
+        var result3Ver = []
+        for (const el of result3){
+            const associatedImage = await models.Media.findOne({ where: { id: el.image } })
+            result3Ver.push({
+                id: el.id,
+                name: el.name,
+                duration: el.duration,
+                length: el.length,
+                description: el.description,
+                map: el.map,
+                shortDescription: el.shortDescription,
+                imageUrl: associatedImage.url,
+                imageAlternative: associatedImage.alternative,
+            })
+        }
+        const result = [result1Ver, result2Ver, result3Ver]
         return res.json(result)
     })
 
