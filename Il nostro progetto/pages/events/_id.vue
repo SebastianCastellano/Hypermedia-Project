@@ -1,6 +1,22 @@
 <template>
   <div>
-    <breadcrumb-component :title="name"/>
+    <!--<breadcrumb-component :title="name"/>-->
+    <div class="page container mt-5 flex-container">
+      <div class="previousEvent" v-if="idPreviousEvent != -1">
+        <nuxt-link
+          class="column"
+          :to="'/events/'+idPreviousEvent">
+          Previous event {{ idPreviousEvent }}
+        </nuxt-link>
+      </div>
+      <div class="nextEvent" v-if="idNextEvent != -1">
+        <nuxt-link
+          class="column"
+          :to="'/events/'+idNextEvent">
+          Next event {{ idNextEvent }}
+        </nuxt-link>
+      </div>
+    </div>
     <event-poi-template :name="name" :breadcrump="breadcrump" :description="description" :dateTime="dateTime"
     :location="location" :price="price" :imagesUrl="imagesUrl" :imagesAlternative="imagesAlternative"
     :videosUrl="videosUrl" :videosAlternative="videosAlternative"
@@ -17,16 +33,38 @@
   </div>
 </template>
 
+<style scoped>
+a {
+  text-decoration: none;
+  color: inherit;
+  font-size: 120%;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.previousEvent, .nextEvent {
+  border: 2px solid var(--color1);
+  width: fit-content;
+  padding: 5px;
+}
+
+.previousEvent:hover, .nextEvent:hover { background-color: var(--color1-light); }
+
+</style>
+
 <script>
 import EventPoiTemplate from '~/components/EventPoiTemplate.vue'
 import EventTemplate from '~/components/EventTemplate.vue'
-import BreadcrumbComponent from '~/components/BreadcrumbComponent.vue'
+// import BreadcrumbComponent from '~/components/BreadcrumbComponent.vue'
 export default {
   name: 'EventPage',
   components: {
     EventPoiTemplate,
     EventTemplate,
-    BreadcrumbComponent
+    // BreadcrumbComponent
   },
   async asyncData({ route, $axios }) {
     const { id } = route.params

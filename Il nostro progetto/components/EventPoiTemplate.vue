@@ -1,18 +1,20 @@
 <template>
     <div class="page container mt-5">
-      <h3 class="breadcrump">{{ breadcrump }}</h3>
+      <!--<h3 class="breadcrump">{{ breadcrump }}</h3>-->
       <h1 class="name title-font page-title">{{ name }}</h1>
       <div class="info-box">
         <p>When: {{dateTime}}</p>
         <p>Where: {{location}}</p>
         <p>Price: {{price}}</p>
       </div>
-    <nuxt-link class="previousEvent" :to="'/events/'+idPreviousEvent" v-if="idPreviousEvent != -1">
+      <!--
+      <nuxt-link class="previousEvent" :to="'/events/'+idPreviousEvent" v-if="idPreviousEvent != -1">
         Previous event
-    </nuxt-link>
-    <nuxt-link class="nextEvent" :to="'/events/'+idNextEvent" v-if="idNextEvent != -1">
+      </nuxt-link>
+      <nuxt-link class="nextEvent" :to="'/events/'+idNextEvent" v-if="idNextEvent != -1">
         Next event
-    </nuxt-link>
+      </nuxt-link>
+      -->
       <p class="description">{{ description }}</p>
       <h3 class="title-font">Media:</h3>
       <img
