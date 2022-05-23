@@ -12,8 +12,7 @@
           :src="imageUrl"
           :alt="imageAlternative"/>
       <p class="description">{{ description }}</p>
-      {{/* Buffer.from(map, 'base64').toString() */}}
-      {{map}}
+      <iframe :src="map" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       <!-- AGGIUNGERE ANCHE LE INFORMAZIONI OTTENUTE TRAMITE LA MANY TO MANY CHE SONO DEI LINK -->
     </div>
 </template>
