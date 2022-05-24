@@ -9,12 +9,19 @@
     </div>
   </div>
   -->
-  <div>
-    <nuxt-link to="/eventList">
-      <section id="events">
+  <div> 
+    
+    <section id="events">
+      <nuxt-link to="/eventList">
         <h1 class="title-font">Discover the next events</h1>
-      </section>
-    </nuxt-link>
+      </nuxt-link>
+      <div class="arrowContainer">
+          <a href="#points" class="arrowDownLink">
+              <img src="../static/icons/downArrow.png" class="arrowDown"/>
+              <img src="../static/icons/downArrowHover.png" class="arrowDownHover"/>
+          </a>
+      </div>
+    </section>
     <nuxt-link to="/pointsOfInterestList">
       <section id="points">
         <h1 class="title-font">The treasures Mantova contains</h1>
@@ -73,6 +80,8 @@ section {
 }
 
 h1 {
+  padding-left: 10px;
+  padding-right: 10px;
   margin: auto;
   text-align: center;
   color: var(--color2);
@@ -80,6 +89,26 @@ h1 {
   border: 2px solid var(--color1);
   font-size: 300%;
   width: fit-content;
+}
+
+.arrowContainer {
+  margin-top: 25vh;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.arrowDownHover{
+  display: none;
+}
+
+.arrowDownLink:hover .arrowDown{
+  display:none;
+}
+
+.arrowDownLink:hover .arrowDownHover{
+  display: inline;
 }
 
 #events { background-image: url("../static/images/palazzoDucale-cameraSposi2.jpg");}
@@ -93,7 +122,7 @@ a {
   color: inherit;
 }
 
-section:hover h1 {
+h1:hover{
   color: var(--color1);
   background-color: rgb(255, 255, 255, 0.8);
 }
