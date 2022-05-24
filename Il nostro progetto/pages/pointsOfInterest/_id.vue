@@ -1,23 +1,26 @@
 <template>
   <div>
-    <event-poi-template :name="name" :breadcrump="breadcrump" :description="description" :dateTime="dateTime"
+    <event-poi-template
+    :name="name" :breadcrump="breadcrump" :description="description" :dateTime="dateTime"
     :location="location" :price="price" :imagesUrl="imagesUrl" :imagesAlternative="imagesAlternative"
     :videosUrl="videosUrl" :videosAlternative="videosAlternative" />
 
-    <div class="page container mt-5">
+    <div class="page container mt-5" v-if="associatedEventList[0]">
       <h3 class="title-font">Events hosted in {{name}}: </h3>
-      <poi-template
-      v-for="(event, eventIndex) of associatedEventList"
-      :key="`event-index-${eventIndex}`"
-      :eventId="event.id"
-      :thumbnailEvent="event.imagesUrl[0]"
-      :alternativeThumbEvent="event.imagesAlternative[0]"
-      :nameEvent="event.name"
-      :shortDescriptionEvent="event.shortDescription"
-      :periodEvent="event.date_s"/>
+      <div class="events">
+        <poi-template
+        v-for="(event, eventIndex) of associatedEventList"
+        :key="`event-index-${eventIndex}`"
+        :eventId="event.id"
+        :thumbnailEvent="event.imagesUrl[0]"
+        :alternativeThumbEvent="event.imagesAlternative[0]"
+        :nameEvent="event.name"
+        :shortDescriptionEvent="event.shortDescription"
+        :periodEvent="event.date_s"/>
+      </div>
     </div>
 
-    <div class="page container mt-5">
+    <div class="page container mt-5" v-if="associatedItineraryList[0]">
       <h3 class="title-font">Itineraries including {{name}}: </h3>
       <card-itinerary
       v-for="(itinerary, itineraryIndex) of associatedItineraryList"
