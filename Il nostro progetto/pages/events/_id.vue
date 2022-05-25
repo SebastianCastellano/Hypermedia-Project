@@ -167,7 +167,7 @@ export default {
     const imagesAlternative = data[0].imagesAlternative
     const videosUrl = data[0].videosUrl
     const videosAlternative = data[0].videosAlternative
-    const poiId = data[0].id
+    const poiId = data[1].id
     const thumbnailPoi = data[1].imagesUrl[0]
     const alternativeThumbPoi = data[1].imagesAlternative[0]
     const namePoi = data[1].name

@@ -1,4 +1,1 @@
-- Fix some links e.g., in "Bronzi della Passione" la carta palazzo Ducale
-    porta a un altro poi
 - Fill the page /aboutMantova
-
