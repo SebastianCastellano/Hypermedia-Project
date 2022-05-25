@@ -10,38 +10,79 @@
   </div>
   -->
   <div> 
-    
     <section id="events">
       <nuxt-link to="/eventList">
-        <h1 class="title-font">Discover the next events</h1>
+        <h1 id="first-section" class="title-font">Discover the next events</h1>
       </nuxt-link>
-      <div class="arrowContainer">
+      <div class="downArrowContainer">
           <a href="#points" class="arrowDownLink">
               <img src="../static/icons/downArrow.png" class="arrowDown"/>
               <img src="../static/icons/downArrowHover.png" class="arrowDownHover"/>
           </a>
       </div>
     </section>
-    <nuxt-link to="/pointsOfInterestList">
-      <section id="points">
+    <section id="points">
+      <div class="upArrowContainer">
+        <a href="#events" class="arrowUpLink">
+          <img src="../static/icons/upArrow.png" class="arrowUp"/>
+          <img src="../static/icons/upArrowHover.png" class="arrowUpHover"/>
+        </a>
+      </div>
+      <nuxt-link to="/pointsOfInterestList">
         <h1 class="title-font">The treasures Mantova contains</h1>
-      </section>
-    </nuxt-link>
-    <nuxt-link to="/itineraryList">
-      <section id="itineraries">
+      </nuxt-link>
+      <div class="downArrowContainer">
+        <a href="#itineraries" class="arrowDownLink">
+          <img src="../static/icons/downArrow.png" class="arrowDown"/>
+          <img src="../static/icons/downArrowHover.png" class="arrowDownHover"/>
+        </a>
+      </div>
+    </section>
+    <section id="itineraries">
+      <div class="upArrowContainer">
+        <a href="#points" class="arrowUpLink">
+          <img src="../static/icons/upArrow.png" class="arrowUp"/>
+          <img src="../static/icons/upArrowHover.png" class="arrowUpHover"/>
+        </a>
+      </div>
+      <nuxt-link to="/itineraryList">
         <h1 class="title-font">Let us guide you into beauty</h1>
-      </section>
-    </nuxt-link>
-    <nuxt-link to="/servicesList">
-      <section id="services">
+      </nuxt-link>
+      <div class="downArrowContainer">
+        <a href="#services" class="arrowDownLink">
+          <img src="../static/icons/downArrow.png" class="arrowDown"/>
+          <img src="../static/icons/downArrowHover.png" class="arrowDownHover"/>
+        </a>
+      </div>
+    </section>
+    <section id="services">
+      <div class="upArrowContainer">
+        <a href="#itineraries" class="arrowUpLink">
+          <img src="../static/icons/upArrow.png" class="arrowUp"/>
+          <img src="../static/icons/upArrowHover.png" class="arrowUpHover"/>
+        </a>
+      </div>
+      <nuxt-link to="/servicesList">
         <h1 class="title-font">Everything you might need</h1>
-      </section>
-    </nuxt-link>
-    <nuxt-link to="/aboutMantova">
-      <section id="about">
+      </nuxt-link>
+      <div class="downArrowContainer">
+        <a href="#about" class="arrowDownLink">
+          <img src="../static/icons/downArrow.png" class="arrowDown"/>
+          <img src="../static/icons/downArrowHover.png" class="arrowDownHover"/>
+        </a>
+      </div>
+    </section>
+    <section id="about">
+      <div class="upArrowContainer">
+        <a href="#services" class="arrowUpLink">
+          <img src="../static/icons/upArrow.png" class="arrowUp"/>
+          <img src="../static/icons/upArrowHover.png" class="arrowUpHover"/>
+        </a>
+      </div>
+      <nuxt-link to="/aboutMantova">
         <h1 class="title-font">Why is Mantova so special?</h1>
-      </section>
-    </nuxt-link>
+      </nuxt-link>
+    </section>
   </div>
   
   <!--
@@ -72,17 +113,22 @@ section {
   display: block;
   margin: 0;
   height: 100vh;
-  padding-top: 35vh;
   border: 5px solid white;
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
 
+#first-section{
+  margin-top: 45vh;
+  margin-bottom: -2vh;
+}
+
 h1 {
   padding-left: 10px;
   padding-right: 10px;
-  margin: auto;
+  margin-left: auto;
+  margin-right: auto;
   text-align: center;
   color: var(--color2);
   background-color: var(--color1-main);
@@ -91,7 +137,7 @@ h1 {
   width: fit-content;
 }
 
-.arrowContainer {
+.downArrowContainer {
   margin-top: 25vh;
   display: block;
   margin-left: auto;
@@ -99,7 +145,22 @@ h1 {
   text-align: center;
 }
 
+.upArrowContainer {
+  margin-top: 15vh;
+  margin-bottom: 25vh;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.arrowDown{
+  height: 8vh;
+}
+
+
 .arrowDownHover{
+  height: 8vh;
   display: none;
 }
 
@@ -108,6 +169,23 @@ h1 {
 }
 
 .arrowDownLink:hover .arrowDownHover{
+  display: inline;
+}
+
+.arrowUp{
+  height: 8vh;
+}
+
+.arrowUpHover{
+  height: 8vh;
+  display: none;
+}
+
+.arrowUpLink:hover .arrowUp{
+  display:none;
+}
+
+.arrowUpLink:hover .arrowUpHover{
   display: inline;
 }
 
