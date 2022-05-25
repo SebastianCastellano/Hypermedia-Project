@@ -1,27 +1,22 @@
 <template>
   <div>
-    <prev-next-selector
+    <prev-next-selector v-if="idPreviousEvent==-1 && idNextEvent!=-1"
       type="Event"
-      prevName="Event Name"
-      :prevPageUrl="'/events/'+idprevEvent"
-      nextName="Event Name"
+      :nextName="nameNextEvent"
       :nextPageUrl="'/events/'+idNextEvent"
     />
-    <!--
-    <div id="eventSelector">
-      <div id="prevEventGrid">
-        <img id="leftArrow" src="../../static/icons/leftArrow.png"/>
-        <p id="prevEvent">Previous Event</p>
-        <p id="prevEventName">Event Name</p>
-      </div>
-      <div id="spacer"></div>
-      <div id="nextEventGrid">
-        <img id="rightArrow" src="../../static/icons/rightArrow.png"/>
-        <p id="nextEvent">Next Event</p>
-        <p id="nextEventName">Event Name</p>
-      </div>
-    </div>
-    -->
+    <prev-next-selector v-else-if="idPreviousEvent!=-1 && idNextEvent==-1"
+      type="Event"
+      :prevName="namePreviousEvent"
+      :prevPageUrl="'/events/'+idPreviousEvent"
+    />
+    <prev-next-selector v-else-if="idPreviousEvent!=-1 && idNextEvent!=-1"
+      type="Event"
+      :prevName="namePreviousEvent"
+      :prevPageUrl="'/events/'+idPreviousEvent"
+      :nextName="nameNextEvent"
+      :nextPageUrl="'/events/'+idNextEvent"
+    />
     <event-title-banner
       :eventName="name"
       :eventImagesUrl="imagesUrl"
@@ -179,6 +174,8 @@ export default {
     const shortDescriptionPoi = data[1].shortDescription
     const idPreviousEvent = data[2]
     const idNextEvent = data[3]
+    const namePreviousEvent = data[4]
+    const nameNextEvent = data[5]
     return {
       name,
       breadcrump,
@@ -197,6 +194,8 @@ export default {
       shortDescriptionPoi,
       idPreviousEvent,
       idNextEvent,
+      namePreviousEvent,
+      nameNextEvent,
     }
   },
 }

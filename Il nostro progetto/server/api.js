@@ -216,6 +216,7 @@ async function runMainApi() {
             tempTempTemp2.push({
                 realDateLocalVar: tempTempTemp3.dateBegin,
                 id: tempTempTemp3.id,
+                name: tempTempTemp3.name,
             })
         }
         tempTempTemp2.sort(function (a, b) {
@@ -232,14 +233,18 @@ async function runMainApi() {
             }
         }
         var idPreviousEvent = -1
+        var namePreviousEvent = ""
         if(findIndex > 0){
             idPreviousEvent = tempTempTemp2[findIndex - 1].id
+            namePreviousEvent = tempTempTemp2[findIndex - 1].name
         }
         var idNextEvent = -1
+        var nameNextEvent = ""
         if(findIndex < tempTempTemp2.length - 1){
             idNextEvent = tempTempTemp2[findIndex + 1].id
+            nameNextEvent = tempTempTemp2[findIndex + 1].name
         }
-        const result = [result1Ver, result1Ve2, idPreviousEvent, idNextEvent]
+        const result = [result1Ver, result1Ve2, idPreviousEvent, idNextEvent, namePreviousEvent, nameNextEvent]
         return res.json(result)
     })
 
