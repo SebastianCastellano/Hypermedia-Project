@@ -148,7 +148,8 @@ export default async (models) => {
     const eventList = [
         {
             name: "Antonella Gandini. In-naturale",
-            date: new Date(2021, 9, 7),
+            dateBegin: new Date(2021, 10, 7),
+            dateEnd: new Date(2022, 6, 30),
             date_s: "07/10/2021 - 30/06/2022",
             location: "Palazzo Te",
             price: "Free Entry", //€
@@ -162,7 +163,8 @@ export default async (models) => {
         },
         {
             name: "OPEN Festival",
-            date: new Date(2022, 5, 10),
+            dateBegin: new Date(2022, 6, 10),
+            dateEnd: new Date(2022, 6, 12),
             date_s: "10/06/2022 - 12/06/2022",
             location: "Palazzo Te",
             price: "Free Entry",
@@ -178,7 +180,8 @@ export default async (models) => {
         },
         {
             name: "Michelangelo: i bronzi della Passione",
-            date: new Date(2022, 2, 18),
+            dateBegin: new Date(2022, 3, 18),
+            dateEnd: new Date(2022, 6, 15),
             date_s: "18/03/2022 - 15/06/2022",
             location: "Palazzo Ducale",
             price: "Inside the usual ticket",

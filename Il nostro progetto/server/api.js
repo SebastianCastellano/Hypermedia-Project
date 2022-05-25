@@ -18,7 +18,8 @@ async function initializeDatabaseConnection() {
 
     const Event = database.define("event", {
         name: DataTypes.STRING,
-        date: DataTypes.DATE,
+        dateBegin: DataTypes.DATE,
+        dateEnd: DataTypes.DATE,
         date_s: DataTypes.STRING,
         location: DataTypes.STRING,
         price: DataTypes.STRING,
@@ -140,7 +141,8 @@ async function runMainApi() {
         }
         return res.json({
             name: result.name,
-            date: result.date.toLocaleDateString(),
+            dateBegin: result.dateBegin.toLocaleDateString(),
+            dateEnd: result.dateEnd.toLocaleDateString(),
             date_s: result.date_s,
             location: result.location,
             price: result.price,
@@ -169,7 +171,8 @@ async function runMainApi() {
         }
         const result1Ver = {
             name: result1.name,
-            date: result1.date.toLocaleDateString(),
+            dateBegin: result1.dateBegin.toLocaleDateString(),
+            dateEnd: result1.dateEnd.toLocaleDateString(),
             date_s: result1.date_s,
             location: result1.location,
             price: result1.price,
@@ -211,7 +214,7 @@ async function runMainApi() {
         const tempTempTemp2 = []
         for (const tempTempTemp3 of tempTempTemp) {
             tempTempTemp2.push({
-                realDateLocalVar: tempTempTemp3.date,
+                realDateLocalVar: tempTempTemp3.dateBegin,
                 id: tempTempTemp3.id,
             })
         }
@@ -310,7 +313,8 @@ async function runMainApi() {
             }
             result2Ver.push({
                 name: eee.name,
-                date: eee.date.toLocaleDateString(),
+                dateBegin: eee.dateBegin.toLocaleDateString(),
+                dateEnd: eee.dateEnd.toLocaleDateString(),
                 date_s: eee.date_s,
                 location: eee.location,
                 price: eee.price,
@@ -439,8 +443,9 @@ async function runMainApi() {
             }
             filtered.push({
                 name: element.name,
-                realDateLocalVar: element.date,
-                date: element.date.toLocaleDateString(),
+                realDateLocalVar: element.dateBegin,
+                dateBegin: element.dateBegin.toLocaleDateString(),
+                dateEnd: element.dateEnd.toLocaleDateString(),
                 date_s: element.date_s,
                 location: element.location,
                 price: element.price,
@@ -475,8 +480,9 @@ async function runMainApi() {
             }
             filtered.push({
                 name: element.name,
-                realDateLocalVar: element.date,
-                date: element.date.toLocaleDateString(),
+                realDateLocalVar: element.dateBegin,
+                dateBegin: element.dateBegin.toLocaleDateString(),
+                dateEnd: element.dateEnd.toLocaleDateString(),
                 date_s: element.date_s,
                 location: element.location,
                 price: element.price,
@@ -493,9 +499,9 @@ async function runMainApi() {
             return a.realDateLocalVar - b.realDateLocalVar;
         })
         if(req.params.season == "winter"){
-            return res.json(filtered.filter(x => parseInt(x.date.split("/")[1]) >= 10 ||  parseInt(x.date.split("/")[1])<=3))
+            return res.json(filtered.filter(x => (parseInt(x.dateBegin.split("/")[1]) >= 10 ||  parseInt(x.dateBegin.split("/")[1])<=3) || (parseInt(x.dateEnd.split("/")[1]) >= 10 ||  parseInt(x.dateEnd.split("/")[1])<=3)))
         }else if(req.params.season == "summer"){
-            return res.json(filtered.filter(x => parseInt(x.date.split("/")[1]) >= 4 &&  parseInt(x.date.split("/")[1])<=9))
+            return res.json(filtered.filter(x => (parseInt(x.dateBegin.split("/")[1]) >= 4 &&  parseInt(x.dateBegin.split("/")[1])<=9) || (parseInt(x.dateEnd.split("/")[1]) >= 4 &&  parseInt(x.dateEnd.split("/")[1])<=9)))
         }
         
     })
