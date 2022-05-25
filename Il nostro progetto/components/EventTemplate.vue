@@ -1,19 +1,17 @@
 <template>
-  <div class="page container mt-5">
-    <div class="poi-box">
-      <nuxt-link class="flex-container" :to="'/pointsOfInterest/'+poiId">
-        <img
-          class="column"
-          :src="thumbnailPoi"
-          :alt="alternativeThumbPoi"/>
-        <div class="info column">
-          <div class="info-text">
-            <h3 class="title-font">{{namePoi}}</h3>
-            <p>{{shortDescriptionPoi}}</p>
-          </div>
+  <div class="poi-box">
+    <nuxt-link class="flex-container" :to="'/pointsOfInterest/'+poiId">
+      <img
+        class="column"
+        :src="thumbnailPoi"
+        :alt="alternativeThumbPoi"/>
+      <div class="info column">
+        <div class="info-text">
+          <h3 class="title-font">{{namePoi}}</h3>
+          <p>{{shortDescriptionPoi}}</p>
         </div>
-      </nuxt-link>
-    </div>
+      </div>
+    </nuxt-link>
   </div>
 </template>
 

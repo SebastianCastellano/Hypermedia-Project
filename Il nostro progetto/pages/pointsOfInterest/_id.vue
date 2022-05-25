@@ -7,17 +7,15 @@
 
     <div class="page container mt-5" v-if="associatedEventList[0]">
       <h3 class="title-font">Events hosted in {{name}}: </h3>
-      <div class="events">
-        <poi-template
-        v-for="(event, eventIndex) of associatedEventList"
-        :key="`event-index-${eventIndex}`"
-        :eventId="event.id"
-        :thumbnailEvent="event.imagesUrl[0]"
-        :alternativeThumbEvent="event.imagesAlternative[0]"
-        :nameEvent="event.name"
-        :shortDescriptionEvent="event.shortDescription"
-        :periodEvent="event.date_s"/>
-      </div>
+      <poi-template
+      v-for="(event, eventIndex) of associatedEventList"
+      :key="`event-index-${eventIndex}`"
+      :eventId="event.id"
+      :thumbnailEvent="event.imagesUrl[0]"
+      :alternativeThumbEvent="event.imagesAlternative[0]"
+      :nameEvent="event.name"
+      :shortDescriptionEvent="event.shortDescription"
+      :periodEvent="event.date_s"/>
     </div>
 
     <div class="page container mt-5" v-if="associatedItineraryList[0]">
