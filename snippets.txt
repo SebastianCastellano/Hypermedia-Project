@@ -1,0 +1,14 @@
+GUIDA PER HEROKU
+In nuxt config:
+// baseURL: 'https://localhost:3000'
+    baseURL: 'https://soft-math.herokuapp.com'
+
+
+In api:
+// const database = new Sequelize("postgres://postgres:postgres@localhost:5432/hyp")
+const pg = require('pg')
+pg.defaults.ssl = true
+const database = new Sequelize(process.env.DATABASE_URL, {
+    ssl: true,
+    dialectOptions: {ssl: {require: true, rejectUnauthorized: false}},
+})

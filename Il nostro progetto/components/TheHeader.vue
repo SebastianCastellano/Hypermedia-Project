@@ -2,93 +2,118 @@
   <div id="mainDiv">
     <nav class="navbar navbar-expand-lg navbar-light px-3 header">
       <nuxt-link id="home-link" class="navbar-brand" to="/">
-        <span class="capital-letter">V</span>isit<span class="capital-letter">M</span>antova
+        <span class="capital-letter">V</span>isit<span class="capital-letter"
+          >M</span
+        >antova
       </nuxt-link>
-      <button 
-        class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler"
-        aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarToggler"
+        aria-controls="navbarToggler"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
         <span class="navbar-toggler-icon"></span>
       </button>
 
       <div id="navbarToggler" class="collapse navbar-collapse">
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-          
           <div>
-            <!--  The following lines give error but without them the dropdown bar does not work-->
+            <!--  The following lines give error but without them the dropdown bar does not work
             <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-            <!---->
+            -->
 
             <div class="nav-link dropdown-div">
               <nuxt-link id="dropdown-list" :to="events[0].path">
                 {{ events[0].name }}
               </nuxt-link>
+
               <button
-                  type="button" class="
+                type="button"
+                class="
                   btn btn-sm btn-secondary
                   dropdown-toggle dropdown-toggle-split
-                " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                
-              </button>
+                "
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              ></button>
               <div class="dropdown-menu">
                 <nuxt-link
-                  v-for="(eventItem, eventItemIndex) of eventList" :key="`eventItem${eventItemIndex}`"
-                  class="dropdown-item" :to="eventItem.path">{{ eventItem.name }}</nuxt-link>
+                  v-for="(eventItem, eventItemIndex) of eventList"
+                  :key="`eventItem${eventItemIndex}`"
+                  class="dropdown-item"
+                  :to="eventItem.path"
+                  >{{ eventItem.name }}</nuxt-link
+                >
               </div>
             </div>
           </div>
 
-          <li v-for="(navItem, navItemIndex) of headerList" :key="`navItem${navItemIndex}`" class="nav-item">
+          <li
+            v-for="(navItem, navItemIndex) of headerList"
+            :key="`navItem${navItemIndex}`"
+            class="nav-item"
+          >
             <nuxt-link :to="navItem.path" class="nav-link">
               {{ navItem.name }}
             </nuxt-link>
           </li>
-
         </ul>
       </div>
     </nav>
 
     <nav class="navbar navbar-expand-lg navbar-light px-3 header-holder">
       <div id="home-link" class="navbar-brand">
-        <span class="capital-letter">V</span>isit<span class="capital-letter">M</span>antova
+        <span class="capital-letter">V</span>isit<span class="capital-letter"
+          >M</span
+        >antova
       </div>
 
       <div id="navbarToggler" class="collapse navbar-collapse">
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-          
           <div>
-            
             <div class="nav-link dropdown-div">
               <nuxt-link id="dropdown-list" class="ex-nl" :to="events[0].path">
                 {{ events[0].name }}
               </nuxt-link>
-              <button
-                  type="button" class="
+              <div
+                class="
                   btn btn-sm btn-secondary
                   dropdown-toggle dropdown-toggle-split
-                " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                
-              </button>
+                "
+              ></div>
               <div class="dropdown-menu">
-                <nuxt-link
-                  v-for="(eventItem, eventItemIndex) of eventList" :key="`eventItem${eventItemIndex}`"
-                  class="dropdown-item" :to="eventItem.path">{{ eventItem.name }}</nuxt-link>
+                <div
+                  v-for="(eventItem, eventItemIndex) of eventList"
+                  :key="`eventItem${eventItemIndex}`"
+                  class="dropdown-item"
+                >
+                  {{ eventItem.name }}
+                </div>
               </div>
             </div>
           </div>
 
-          <li v-for="(navItem, navItemIndex) of headerList" :key="`navItem${navItemIndex}`" class="nav-item">
-            <nuxt-link :to="navItem.path" class="nav-link">
+          <li
+            v-for="(navItem, navItemIndex) of headerList"
+            :key="`navItem${navItemIndex}`"
+            class="nav-item"
+          >
+            <div class="nav-link">
               {{ navItem.name }}
-            </nuxt-link>
+            </div>
           </li>
-
         </ul>
       </div>
     </nav>
 
-<!--
+    <!--
   <div class="place-holder">
 
   </div>
@@ -109,12 +134,11 @@ export default {
         },
       ],
       eventList: [
-        
         {
           name: 'All Events',
           path: '/eventList',
         },
-    
+
         {
           name: 'Summer Events',
           path: '/eventSummer',
@@ -146,7 +170,7 @@ export default {
         {
           name: 'About Mantova',
           path: '/aboutMantova',
-        }
+        },
       ],
     }
   },
@@ -157,16 +181,15 @@ export default {
 <style scoped>
 @import '~/static/style/main.css';
 
-
 a {
   text-decoration: none;
   color: inherit;
-} 
+}
 
 .ex-nl {
   text-decoration: none;
   color: inherit;
-} 
+}
 
 .header {
   padding-top: 0px;
@@ -198,7 +221,10 @@ a {
   font-size: 150%;
 }
 
-li, .dropdown-div{ margin-left: 2vw; }
+li,
+.dropdown-div {
+  margin-left: 2vw;
+}
 
 .nav-link {
   color: var(--color2) !important;
@@ -219,7 +245,6 @@ li:hover .nav-link {
   width: 100%;
   height: 2cm;
 }
-
 </style>
 
 

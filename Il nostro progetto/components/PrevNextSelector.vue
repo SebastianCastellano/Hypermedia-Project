@@ -1,17 +1,19 @@
 <template>
     <div id="selector">
-      <nuxt-link :to="prevPageUrl">
+      <nuxt-link :to="prevPageUrl" v-if="prevPageUrl != null">
         <div id="prevGrid">
           <img id="leftArrow" src="../static/icons/leftArrow.png"/>
+          <img id="leftArrowHover" src="../static/icons/leftArrowHover.png"/>
           <p id="prev">Previous {{type}}</p>
           <p id="prevName">{{prevName}}</p>
         </div>
       </nuxt-link>
       <div id="spacer"></div>
-      <nuxt-link :to="prevPageUrl">
+      <nuxt-link :to="nextPageUrl" v-if="nextPageUrl != null">
         <div id="nextGrid">
           <img id="rightArrow" src="../static/icons/rightArrow.png"/>
-          <p id="nextt">Next {{type}}</p>
+          <img id="rightArrowHover" src="../static/icons/rightArrowHover.png"/>
+          <p id="next">Next {{type}}</p>
           <p id="nextName">{{nextName}}</p>
         </div>
       </nuxt-link>
@@ -28,19 +30,19 @@ export default {
     },
     prevName: {
       type: String,
-      required: true,
+      required: false,
     },
     nextName: {
       type: String,
-      required: true,
+      required: false,
     },
     prevPageUrl: {
       type: String,
-      required: true,
+      required: false,
     },
     nextPageUrl: {
       type: String,
-      required: true,
+      required: false,
     },
   },
 }
@@ -49,6 +51,7 @@ export default {
 <style scoped>
     #selector{
       display: flex;
+      align-items: center;
     }
 
     #prevGrid{
@@ -67,15 +70,32 @@ export default {
       margin-bottom: auto;
     }
 
+    #leftArrowHover{
+      height: 5vh;
+      grid-row: 1 /span 2;
+      margin-top: auto;
+      margin-bottom: auto;
+      display: none;
+    }
+
+    #prevGrid:hover #leftArrow{
+      display: none;
+    }
+
+    #prevGrid:hover #leftArrowHover{
+      display: inline;
+    }
+
     #prev{
       margin: 0;
       margin-top: 2vh;
       padding: 0;
       font-size: 90%;
+      text-align: left;
     }
 
     #prevName{
-      margin: 0;
+      margin-top: -5px;
       margin-bottom: 1vh;
       padding: 0;
       font-size: 150%;
@@ -98,6 +118,23 @@ export default {
       margin-bottom: auto;
     }
 
+    #rightArrowHover{
+      height: 5vh;
+      grid-column: 2;
+      grid-row: 1 /span 2;
+      margin-top: auto;
+      margin-bottom: auto;
+      display: none;
+    }
+
+    #nextGrid:hover #rightArrow{
+      display: inline;
+    }
+
+    #nextGrid:hover #rightArrowHover{
+      display:block;
+    }
+
     #next{
       margin: 0;
       margin-top: 2vh;
@@ -107,7 +144,7 @@ export default {
     }
 
     #nextName{
-      margin: 0;
+      margin-top: -5px;
       margin-bottom: 1vh;
       padding: 0;
       font-size: 150%;
@@ -116,5 +153,10 @@ export default {
 
     #spacer{
       flex: 2;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
     }
 </style>
