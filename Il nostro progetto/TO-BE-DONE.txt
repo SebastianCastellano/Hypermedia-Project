@@ -1,1 +1,3 @@
 - Fill the page /aboutMantova
+- Make the images inside the various divs fixed size: meaning that the size of the div shouldn't depende on the size of the image.
+  E.g events single pages
