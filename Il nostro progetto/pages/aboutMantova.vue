@@ -108,9 +108,10 @@
   justify-content: space-evenly;
   width: 100%;
   height: 100vh;
-  border: 10px solid var(--color2);
+  /*border: 10px solid var(--color2);*/
   margin: 0;
-  background-size: 100% 100%;
+  /*background-size: 100% 100%;*/
+  background-size: cover;
   background-repeat: no-repeat;
   background-attachment: scroll;
 }
@@ -126,6 +127,7 @@
   background-color: var(--color2);
   overflow: auto;
   text-overflow: ellipsis;
+  min-width: 200px;
 }
 
 h3 {

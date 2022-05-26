@@ -1,14 +1,4 @@
 <template>
-  <!--
-  <div class="container mt-5">
-    <div class="jumbotron">
-      <h1 class="display-4 title-font page-title">{{ title }}</h1>
-      <img :src="image" alt="prova" />
-      <hr class="my-4" />
-      <p class="lead">{{ shortOverview }}</p>
-    </div>
-  </div>
-  -->
   <div> 
     <section id="events">
       <nuxt-link to="/eventList">
@@ -84,27 +74,6 @@
       </nuxt-link>
     </section>
   </div>
-  
-  <!--
-  <div class="container mt-5">
-    <h1 class="title-font page-title">{{ title }}</h1>
-    <section class="overview-section flex-container">
-      <div>
-        <img :src="image" alt="prova" />
-        <img :src="image" alt="prova" />
-      </div>
-      <p class="overview">{{ shortOverview }}</p>
-    </section>
-    <h1 class="intermediate-title title-font page-title">A glimpse of history(mancano gli alt)</h1>
-    <section class="overview-section flex-container">
-      <p class="overview">{{ shortOverview }}</p>
-      <div>
-        <img class="right-img" :src="image" alt="prova" />
-        <img class="right-img" :src="image" alt="prova" />
-      </div>
-    </section>
-  </div>
-  -->
 </template>
 
 <style scoped>
@@ -113,7 +82,9 @@ section {
   display: block;
   margin: 0;
   height: 100vh;
-  border: 5px solid white;
+  width: 100%;
+  border-top: 1px solid white;
+  border-bottom: 4px solid white;
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -133,8 +104,10 @@ h1 {
   color: var(--color2);
   background-color: var(--color1-main);
   border: 2px solid var(--color1);
-  font-size: 300%;
+  font-size: 8vmin;
   width: fit-content;
+  max-width: 100%;
+  overflow: ellipsis;
 }
 
 .downArrowContainer {
@@ -155,12 +128,12 @@ h1 {
 }
 
 .arrowDown{
-  height: 8vh;
+  height: 8vmin;
 }
 
 
 .arrowDownHover{
-  height: 8vh;
+  height: 8vmin;
   display: none;
 }
 
@@ -173,11 +146,11 @@ h1 {
 }
 
 .arrowUp{
-  height: 8vh;
+  height: 8vmin;
 }
 
 .arrowUpHover{
-  height: 8vh;
+  height: 8vmin;
   display: none;
 }
 

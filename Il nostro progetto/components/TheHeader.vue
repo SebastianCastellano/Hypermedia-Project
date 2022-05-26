@@ -121,6 +121,10 @@
   </div>
 </template>
 
+<style scoped>
+nav {border-bottom: 2px solid var(--color2);}
+</style>
+
 
 <script>
 export default {
