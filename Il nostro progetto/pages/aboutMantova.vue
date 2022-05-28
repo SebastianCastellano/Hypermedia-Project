@@ -4,7 +4,7 @@
       <div class="column"></div>
       <div class="column text">
         <h3 class="title-font">
-          The Beauty Of Mantova
+          The beauty of Mantova
         </h3>
         <p>
           The Gonzagas protected the arts and culture, and were hosts
