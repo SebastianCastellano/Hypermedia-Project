@@ -5,6 +5,9 @@
                 Home page
             </nuxt-link>
         </div>
+        <div class="team-info">
+            Softmath --- 10612772 - Carlo Ambrogi --- 10582405 - Sebastian Castellano --- 10573185 - Andrea De Bettin --- 10571386 - Lorenzo Guerrieri
+        </div>
     </footer>
 </template>
 
@@ -37,6 +40,20 @@ div {
   top: 50%;
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
+}
+
+.team-info {
+  position: absolute;
+  bottom: 10%;
+  right: 25px;
+  border: 3px solid #73AD21;
+  border-style: dashed;
+/*
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+*/
+  color: lightgrey;
+  max-width: 80%;
 }
 
 </style>
