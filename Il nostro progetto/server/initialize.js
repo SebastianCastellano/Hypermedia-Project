@@ -150,9 +150,58 @@ export default async (models) => {
             alternative: "The bronzes of Michelangelo",
             type: "i",
         },
+        {
+            //26
+            url: "../images/teatro-sociale.jpg",
+            alternative: "Interior of Teatro Sociale",
+            type: "i",
+        },
+        {
+            //27
+            url: "../images/teatro-sociale2.jpg",
+            alternative: "Facade of Teatro Sociale",
+            type: "i",
+        },
+        {
+            //28
+            url: "../images/teatro-bibiena.jpg",
+            alternative: "Interior of Teatro Bibiena",
+            type: "i",
+        },
+        {
+            //29
+            url: "../images/teatro-bibiena2.jpg",
+            alternative: "Interior of Teatro Bibiena.",
+            type: "i",
+        },
+        {
+            //30
+            url: "../images/teatro-bibiena3.jpg",
+            alternative: "Interior of Teatro Bibiena.",
+            type: "i",
+        },
+        {
+            //31
+            url: "../images/violino.jpg",
+            alternative: "A violin.",
+            type: "i",
+        },
+        {
+            //32
+            url: "../images/concerto-jazz.jpg",
+            alternative: "A jazz concert.",
+            type: "i",
+        },
+        {
+            //33
+            url: "../images/signore-arte.jpg",
+            alternative: "Some portaits of ladies.",
+            type: "i",
+        },
     ]
     const eventList = [
         {
+            //1
             name: "Antonella Gandini. In-naturale",
             dateBegin: new Date(2021, 10, 7),
             dateEnd: new Date(2022, 6, 30),
@@ -168,6 +217,7 @@ export default async (models) => {
             poiId: 1,
         },
         {
+            //2
             name: "OPEN Festival",
             dateBegin: new Date(2022, 6, 10),
             dateEnd: new Date(2022, 6, 12),
@@ -185,6 +235,7 @@ export default async (models) => {
             poiId: 1,
         },
         {
+            //3
             name: "Michelangelo: i bronzi della Passione",
             dateBegin: new Date(2022, 3, 18),
             dateEnd: new Date(2022, 6, 15),
@@ -198,6 +249,70 @@ export default async (models) => {
             Si tratta del progetto di un “Calvario”, ovvero la rappresentazione di Cristo sul Golgota assieme ai due ladroni; il termine deriva dal nome latino della collina appena fuori dalle mura di Gerusalemme, ossia il luogo sul quale si svolse la crocifissione.",
             shortDescription: "Exposition of Michelangelo bronze statues.",
             poiId: 2,
+        },
+        {
+            //4
+            name: "A violin for Virgilio",
+            dateBegin: new Date(2022, 4, 1),
+            dateEnd: new Date(2022, 4, 1),
+            date_s: "01/04/2022",
+            location: "Piazza Virgiliana",
+            price: "5€",
+            description: "Michelangelo Buonarroti è semplicemente il “divino” Michelangelo, l’archetipo degli artisti di tutti i tempi. Grande fu la sua fama, anche in vita: nonostante la sua attività si sia concentrata su Roma e Firenze, anche la Mantova dei Gonzaga dovette fare i conti con l’ineludibile influenza di quel gigante. \
+            Il 22 febbraio del 1527 Federico II scriveva di essere da “molt’anni (…) amatore dello excellentissimo messer Michele Angelo” e - in un significativo ribaltamento di ruoli - senza paura di mostrarsi supplice chiedeva di ottenere una sua opera. \
+            Non importava quale fosse, ne bastava una qualsiasi. \
+            L’esposizione “Michelangelo: i bronzi della Passione” di Palazzo Ducale di Mantova - aperta dal 18 marzo fino al 15 giugno 2022 - vuole puntare l’attenzione su un episodio poco noto della vita del grande artista. \
+            Si tratta del progetto di un “Calvario”, ovvero la rappresentazione di Cristo sul Golgota assieme ai due ladroni; il termine deriva dal nome latino della collina appena fuori dalle mura di Gerusalemme, ossia il luogo sul quale si svolse la crocifissione.",
+            shortDescription: "A violin concert inspired by Virgilio.",
+            poiId: 5,
+        },
+        {
+            //5
+            name: "Luke Hermond: my piano life",
+            dateBegin: new Date(2022, 6, 19),
+            dateEnd: new Date(2022, 6, 19),
+            date_s: "19/06/2022",
+            location: "Teatro Sociale",
+            price: "45€",
+            description: "Michelangelo Buonarroti è semplicemente il “divino” Michelangelo, l’archetipo degli artisti di tutti i tempi. Grande fu la sua fama, anche in vita: nonostante la sua attività si sia concentrata su Roma e Firenze, anche la Mantova dei Gonzaga dovette fare i conti con l’ineludibile influenza di quel gigante. \
+            Il 22 febbraio del 1527 Federico II scriveva di essere da “molt’anni (…) amatore dello excellentissimo messer Michele Angelo” e - in un significativo ribaltamento di ruoli - senza paura di mostrarsi supplice chiedeva di ottenere una sua opera. \
+            Non importava quale fosse, ne bastava una qualsiasi. \
+            L’esposizione “Michelangelo: i bronzi della Passione” di Palazzo Ducale di Mantova - aperta dal 18 marzo fino al 15 giugno 2022 - vuole puntare l’attenzione su un episodio poco noto della vita del grande artista. \
+            Si tratta del progetto di un “Calvario”, ovvero la rappresentazione di Cristo sul Golgota assieme ai due ladroni; il termine deriva dal nome latino della collina appena fuori dalle mura di Gerusalemme, ossia il luogo sul quale si svolse la crocifissione.",
+            shortDescription: "Luke Hermond presents his piano skills.",
+            poiId: 6,
+        },
+        {
+            //6
+            name: "Jazz concert: I Treboniani",
+            dateBegin: new Date(2022, 9, 25),
+            dateEnd: new Date(2022, 9, 25),
+            date_s: "25/09/2022",
+            location: "Piazza delle Erbe",
+            price: "Gratis",
+            description: "Michelangelo Buonarroti è semplicemente il “divino” Michelangelo, l’archetipo degli artisti di tutti i tempi. Grande fu la sua fama, anche in vita: nonostante la sua attività si sia concentrata su Roma e Firenze, anche la Mantova dei Gonzaga dovette fare i conti con l’ineludibile influenza di quel gigante. \
+            Il 22 febbraio del 1527 Federico II scriveva di essere da “molt’anni (…) amatore dello excellentissimo messer Michele Angelo” e - in un significativo ribaltamento di ruoli - senza paura di mostrarsi supplice chiedeva di ottenere una sua opera. \
+            Non importava quale fosse, ne bastava una qualsiasi. \
+            L’esposizione “Michelangelo: i bronzi della Passione” di Palazzo Ducale di Mantova - aperta dal 18 marzo fino al 15 giugno 2022 - vuole puntare l’attenzione su un episodio poco noto della vita del grande artista. \
+            Si tratta del progetto di un “Calvario”, ovvero la rappresentazione di Cristo sul Golgota assieme ai due ladroni; il termine deriva dal nome latino della collina appena fuori dalle mura di Gerusalemme, ossia il luogo sul quale si svolse la crocifissione.",
+            shortDescription: "'I Treboniani' in an immersive concert in the city centre.",
+            poiId: 4,
+        },
+        {
+            //7
+            name: "Art Ladies",
+            dateBegin: new Date(2022, 10, 2),
+            dateEnd: new Date(2023, 1, 29),
+            date_s: "02/10/2022 - 29/01/2023",
+            location: "Teatro Sociale",
+            price: "10€",
+            description: "Michelangelo Buonarroti è semplicemente il “divino” Michelangelo, l’archetipo degli artisti di tutti i tempi. Grande fu la sua fama, anche in vita: nonostante la sua attività si sia concentrata su Roma e Firenze, anche la Mantova dei Gonzaga dovette fare i conti con l’ineludibile influenza di quel gigante. \
+            Il 22 febbraio del 1527 Federico II scriveva di essere da “molt’anni (…) amatore dello excellentissimo messer Michele Angelo” e - in un significativo ribaltamento di ruoli - senza paura di mostrarsi supplice chiedeva di ottenere una sua opera. \
+            Non importava quale fosse, ne bastava una qualsiasi. \
+            L’esposizione “Michelangelo: i bronzi della Passione” di Palazzo Ducale di Mantova - aperta dal 18 marzo fino al 15 giugno 2022 - vuole puntare l’attenzione su un episodio poco noto della vita del grande artista. \
+            Si tratta del progetto di un “Calvario”, ovvero la rappresentazione di Cristo sul Golgota assieme ai due ladroni; il termine deriva dal nome latino della collina appena fuori dalle mura di Gerusalemme, ossia il luogo sul quale si svolse la crocifissione.",
+            shortDescription: "An exposition over women in visual arts.",
+            poiId: 6,
         },
     ]
     const eventmediaList = [
@@ -217,8 +332,28 @@ export default async (models) => {
             order: 1,
         },
         {
-            eventId: 3  ,
+            eventId: 3,
             mediumId: 25,
+            order: 2,
+        },
+        {
+            eventId: 4,
+            mediumId: 31,
+            order: 1,
+        },
+        {
+            eventId: 5,
+            mediumId: 29,
+            order: 1,
+        },
+        {
+            eventId: 6,
+            mediumId: 32,
+            order: 1,
+        },
+        {
+            eventId: 7,
+            mediumId: 33,
             order: 1,
         },
     ]
@@ -288,6 +423,40 @@ export default async (models) => {
             It spans from a circumvailling Piazza Virgilliana street, fed from Piazza dei Filipinni by Via Virgilio, and stretching northwest towards Lago di Mezzo (part of Mincio River). \
             The park has a number of tree-lined trails, and commemorative statues, most prominent of which is a monument to Virgil with flanking fountains.",
             shortDescription: "A big green area, towered by the statue of Virgilio.",
+        },
+        {
+            // 6
+            name: "Teatro Sociale",
+            location: "Piazza Felice Cavallotti, 14",
+            times: "thu-sun 15:00-18:00",
+            price: "2.5€",
+            description: "Il Teatro Sociale di Mantova è il maggiore teatro storico situato nel Comune di Mantova; \
+            teatro di tradizione, si trova nel centro storico della città ed è di proprietà della Società dei Palchettisti. \
+            Venne realizzato, tra il 1817 e il 1822, dal noto architetto ticinese Luigi Canonica.",
+            shortDescription: "The greatest theatre in the city centre.",
+        },
+        {
+            // 7
+            name: "Teatro Scientifico Bibiena",
+            location: "Via Accademia, 47",
+            times: "tue-fri: 10:00-13:00 / 15:00-18:00; sat-sun: 10:00-18:00",
+            price: "3€",
+            description: "Costruito tra il 1767 e il 1769, il teatro fu progettato dal parmense \
+            Antonio Galli Bibiena su commissione del rettore dell'Accademia dei Timidi, \
+            conte Carlo Ottavio di Colloredo, con la finalità di ospitare principalmente \
+            adunanze scientifiche, ma aperto anche a recite e concerti. \
+            Il teatro, non più a gradinata come quelli rinascimentali, presenta una pianta \
+            a forma di campana ed è disposto su più ordini di palchetti lignei, secondo il \
+            genere di struttura inventato nel Seicento e che ormai imperava. \
+            Con vivacità prodigiosa pari alle risorse dell'estro, l'architetto Bibiena \
+            adempì in soli due anni all'obbligo che nel 1767 aveva contratto coi Timidi: \
+            ideò lo speciale teatro, ne diresse i lavori di fabbrica ed infine, con \
+            abilità di pittore oltre che di architetto, affrescò personalmente gli interni \
+            dei numerosi palchetti con figurazioni monocrome, anch'esse documento prezioso \
+            dell'attività artistica dell'insigne maestro. \
+            La classica facciata fu invece realizzata da Giuseppe Piermarini da cui \
+            trae il nome il salone posto al primo piano del teatro.",
+            shortDescription: "Theatre and arts national academy.",
         },
     ]
     const poimediaList = [
@@ -390,6 +559,16 @@ export default async (models) => {
             poiId: 4,
             mediumId: 24,
             order: 2,
+        },
+        {
+            poiId: 6,
+            mediumId: 26,
+            order: 1,
+        },
+        {
+            poiId: 7,
+            mediumId: 29,
+            order: 1,
         },
     ]
     const itineraryList = [
