@@ -2,7 +2,7 @@
     <div class="eventTitleBanner">
       <slide-show :imagesUrl="eventImagesUrl" :imgAlternatives="imgAlternatives" height="40vh" width="71vh" :keepRatio="false" />
       <div id="bannerText">
-        <h1 class="title-font title">{{eventName}}</h1>
+        <h1 class="title-font title white-title">{{eventName}}</h1>
         <div id="infoGrid">
           <div id="when">When:</div>
           <div id="where">Where:</div>
@@ -70,8 +70,11 @@ export default {
     }
 
     .title-font{
-      color: #ffffff;
       text-align: center;
+    }
+
+    .white-title {
+      color: #ffffff;
     }
 
     #infoGrid{
@@ -94,4 +97,5 @@ export default {
       color: #ffffff;
       font-size: 120%;
     }
+    
 </style>
