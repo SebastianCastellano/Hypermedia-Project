@@ -198,6 +198,54 @@ export default async (models) => {
             alternative: "Some portaits of ladies.",
             type: "i",
         },
+        {
+            //34
+            url: "../images/piazzaSordello1.jpg",
+            alternative: "Piazza Sordello.",
+            type: "i",
+        },
+        {
+            //35
+            url: "../images/duomo1.jpg",
+            alternative: "Facade of Duomo.",
+            type: "i",
+        },
+        {
+            //36
+            url: "../images/torreOrologio1.jpg",
+            alternative: "The clock tower.",
+            type: "i",
+        },
+        {
+            //37
+            url: "../images/rotondaLorenzo1.jpg",
+            alternative: "View of the Rotonda of san Lorenzo.",
+            type: "i",
+        },
+        {
+            //38
+            url: "../images/casaMercante1.jpg",
+            alternative: "A store of Casa del Mercante.",
+            type: "i",
+        },
+        {
+            //39
+            url: "../images/loggiaPescherie.jpg",
+            alternative: "Loggia delle pescherie by night.",
+            type: "i",
+        },
+        {
+            //40
+            url: "../images/laghi1.jpg",
+            alternative: "Mantova seen from one of its lakes.",
+            type: "i",
+        },
+        {
+            //41
+            url: "../images/museoArcheo1.jpg",
+            alternative: "Some pieces inside the archeological museum.",
+            type: "i",
+        },
     ]
     const eventList = [
         {
@@ -453,10 +501,139 @@ export default async (models) => {
             ideò lo speciale teatro, ne diresse i lavori di fabbrica ed infine, con \
             abilità di pittore oltre che di architetto, affrescò personalmente gli interni \
             dei numerosi palchetti con figurazioni monocrome, anch'esse documento prezioso \
-            dell'attività artistica dell'insigne maestro. \
-            La classica facciata fu invece realizzata da Giuseppe Piermarini da cui \
-            trae il nome il salone posto al primo piano del teatro.",
+            dell'attività artistica dell'insigne maestro.",
             shortDescription: "Theatre and arts national academy.",
+        },
+        {
+            // 8
+            name: "Piazza Sordello",
+            location: "Piazza Sordello",
+            times: "Everyday (public location)",
+            price: "Gratis (public location)",
+            description: "La piazza di San Pietro, sua prima denominazione, \
+            fu realizzata nel 1330 dopo la demolizione di vecchie case \
+            che si trovavano disposte fra due strade parallele che \
+            seguivano ancora l'antico disegno urbanistico della città romana. \
+            Una via, Strada Magna univa il voltone di San Pietro con la \
+            cattedrale mentre l'altra via, Strata Sanctae Mariae Matris \
+            Domini, univa la chiesa che le dava il nome, alla chiesa di \
+            Santa Croce, inglobata poi nel Palazzo Ducale, che si \
+            affacciava sul lato destro del sagrato del Duomo. Per secoli, \
+            la piazza è rimasta il centro della vita politica, mondana e \
+            religiosa di Mantova.",
+            shortDescription: "Square in front of Palazzo Ducale.",
+        },
+        {
+            // 9
+            name: "Duomo",
+            location: "Piazza Sordello",
+            times: "mon-sun: 07:15-19:00",
+            price: "Gratis",
+            description: "Di origine paleocristiana, ma ricostruita \
+            in età medievale (probabilmente da Matilde di Canossa), \
+            la chiesa, inizialmente in stile romanico (di quest'epoca \
+            è ancora il campanile), venne ampliata agli inizi del XV \
+            secolo sotto l'egida di Francesco I Gonzaga. \
+            Il duomo venne edificato dal 1395 al 1401 su commissione \
+            di Francesco IV Gonzaga e sorge sulla chiesa romanica di \
+            San Pietro di cui si conservano solo alcune strutture \
+            murarie e il campanile.",
+            shortDescription: "The central church of the city.",
+        },
+        {
+            // 10
+            name: "Torre dell' orologio",
+            location: "Piazza delle Erbe",
+            times: "Tue-fri: 10:00-13:00 / 15:00-18:00; sat-sun 10:00-18:00",
+            price: "3€",
+            description: "La Torre dell’Orologio, di impianto rettangolare \
+            e costruita nel 1472-73 su progetto di Luca Fancelli su richiesta \
+            del marchese Ludovico II Gonzaga, è così detta per l’antico \
+            orologio realizzato da Bartolomeo Manfredi, meccanico, matematico \
+            e astrologo alla corte dei Gonzaga, noto anche come Bartolomeo \
+            dell’Orologio. L’Orologio venne inaugurato nel dicembre del 1473.",
+            shortDescription: "The clock tower wanted by Ludovico II Gonzaga.",
+        },
+        {
+            // 11
+            name: "Rotonda di San Lorenzo",
+            location: "Piazza delle Erbe",
+            times: "mon-fri: 10:00-13::0, 14:00-18:00 / sat-sun 10:00-19:00",
+            price: "5€",
+            description: "E' la chiesa più antica della città, \
+            fondata tra la fine del XI secolo e l'inizio del XII, forse \
+            per volere di Matilde di Canossa. Ispirata alla chiesa del \
+            Santo Sepolcro di Gerusalemme e dedicata a san Lorenzo \
+            (martirizzato a Roma nel III secolo), la rotonda è a pianta \
+            centrale, con soprastante galleria. Un deambulatorio precede \
+            e circonda la navata, caratterizzata da dieci colonne e un \
+            piccolo abside. E' costruita in cotto, secondo la tradizione \
+            lombarda del periodo, ma presenta due colonne di marmo di \
+            epoca romana e pilastrini in pietra dei secoli IX-XII \
+            provenienti da edifici scomparsi.",
+            shortDescription: "The oldest church in Mantova.",
+        },
+        {
+            // 12
+            name: "Casa del Mercante",
+            location: "Piazza delle Erbe, 26",
+            times: "Everyday (public location)",
+            price: "Gratis (public location)",
+            description: "La costruzione su tre piani presenta una facciata\
+             - al tempo ornata di piccole foglie dorate - in cotto a motivi \
+             tardo gotici e orientali di gusto veneziano. \
+             Il piano terra è ritmato da un portico sostenuto da colonne \
+             in marmo rosso di Verona, sulle cui architravi è possibile \
+             leggere le seguenti iscrizioni: (ZO) HANBONIFORT DA CONCHOREZO \
+             AFAT FAR QUESTA OPERA DELANO 1455 - IOHANESBONIFORT DE \
+             CONCORESIO HOC OPUS FIERI FECIT SUB ANNO DOMINI 1455.",
+            shortDescription: "Mansion of Giovanni Boniforte da Concorezzo, rich mercant",
+        },
+        {
+            // 13
+            name: "Loggia delle pescherie",
+            location: "Via Pescheria, 20",
+            times: "Everyday (public location)",
+            price: "Gratis (public location)",
+            description: "Le Pescherie di Giulio Romano (o \
+            Loggia di Giulio Romano) sono un edificio storico di Mantova. \
+            Edificate nel 1536 su progetto dell'architetto di palazzo Te, \
+            erano dedicate al commercio del pesce. \
+            La costruzione era costituita da due porticati ad archi tondi nel tipico bugnato giuliesco, con attico sovrastante dove si aprono finestre rettangolari incorniciate da lesene. Le pescherie erano poste ai lati del ponte di epoca medievale che scavalcava il Rio, corso d'acqua che attraversa la città di Mantova dal lago Superiore al lago Inferiore. ",
+            shortDescription: "Large area used for trading fishes.",
+        },
+        {
+            // 14
+            name: "I tre laghi",
+            location: "Around the city",
+            times: "Everyday (public location)",
+            price: "Gratis (public location)",
+            description: "Nei pressi di Mantova la vegetazione palustre \
+            lascia il posto a tre grandi specchi d'acqua: i tre laghi \
+            di Mantova, che avvolgono la città a semicerchio. \
+            Solo il Lago Superiore mostra ancora caratteristiche palustri, \
+            con ampie isole galleggianti di Ninfea, Nannufero e Fior di loto, \
+            il Lago di Mezzo e il Lago Inferiore sono mantenuti nudi \
+            per esigenze di navigazione. Le rive sono notevolmente \
+            frequentate ed il calpestio continuo impedisce la crescita \
+            di vegetazione spontanea.",
+            shortDescription: "The three lakes surrounding Mantova.",
+        },
+        {
+            // 15
+            name: "Museo d' Archeologia",
+            location: "Piazza Sordello, 27",
+            times: "tue-sat: 8:15-19:00; sun: 14:00-19:00",
+            price: "9€",
+            description: "Aperto nel 1998 nel sito che fu Teatro \
+            di Corte dei Gonzaga nel Cinquecento e dal 1896 \
+            mercato cittadino dei bachi da seta (come si evince \
+            dalla scritta attualmente ancora visibile in facciata), \
+            custodisce le testimonianze di archeologia del \
+            territorio mantovano e spazia dalla Preistoria alla \
+            Protostoria, dal Neolitico alla romanizzazione fino \
+            alle soglie del Medioevo.",
+            shortDescription: "The rich archeological museum.",
         },
     ]
     const poimediaList = [
@@ -568,6 +745,46 @@ export default async (models) => {
         {
             poiId: 7,
             mediumId: 29,
+            order: 1,
+        },
+        {
+            poiId: 8,
+            mediumId: 34,
+            order: 1,
+        },
+        {
+            poiId: 9,
+            mediumId: 35,
+            order: 1,
+        },
+        {
+            poiId: 10,
+            mediumId: 36,
+            order: 1,
+        },
+        {
+            poiId: 11,
+            mediumId: 37,
+            order: 1,
+        },
+        {
+            poiId: 12,
+            mediumId: 38,
+            order: 1,
+        },
+        {
+            poiId: 13,
+            mediumId: 39,
+            order: 1,
+        },
+        {
+            poiId: 14,
+            mediumId: 40,
+            order: 1,
+        },
+        {
+            poiId: 15,
+            mediumId: 41,
             order: 1,
         },
     ]
