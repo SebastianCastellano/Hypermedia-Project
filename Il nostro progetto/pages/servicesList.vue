@@ -26,7 +26,7 @@ export default {
   },
   // Note: This happens on backend (server) side
   async asyncData({ $axios }) {
-    const { data } = await $axios.get('/api/servicesUnique')
+    const { data } = await $axios.get('/api/services')
     return {
       serviceList: data,
     }

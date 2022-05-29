@@ -126,36 +126,6 @@ async function runMainApi() {
         return res.json(result)
     })
 
-    app.get('/event/:id', async (req, res) => {
-        const id = +req.params.id
-        const result = await models.Event.findOne({ where: { id } })
-        var temp = await models.EventMedia.findAll()
-        temp = temp.filter(el => el.eventId == id)
-        temp.sort(function (a, b) {
-            return a.order - b.order;
-        })
-        var relatedMediaList = []
-        for (const el of temp){
-            const temp2 = await models.Media.findOne({ where: { id: el.mediumId } })
-            relatedMediaList.push(temp2)
-        }
-        return res.json({
-            name: result.name,
-            dateBegin: result.dateBegin.toLocaleDateString(),
-            dateEnd: result.dateEnd.toLocaleDateString(),
-            date_s: result.date_s,
-            location: result.location,
-            price: result.price,
-            description: result.description,
-            imagesUrl: relatedMediaList.filter(x => x.type == "i").map(x => x.url),
-            imagesAlternative: relatedMediaList.filter(x => x.type == "i").map(x => x.alternative),
-            videosUrl: relatedMediaList.filter(x => x.type == "v").map(x => x.url),
-            videosAlternative: relatedMediaList.filter(x => x.type == "v").map(x => x.alternative),
-            shortDescription: result.shortDescription,
-            id: result.id,
-        })
-    })
-
     app.get('/eventAndAssociatedPointOfInterest/:id', async (req, res) => {
         const id1 = +req.params.id
         const result1 = await models.Event.findOne({ where: { id: id1 } })
@@ -248,34 +218,6 @@ async function runMainApi() {
         return res.json(result)
     })
 
-    app.get('/pointOfInterest/:id', async (req, res) => {
-        const id = +req.params.id
-        const result = await models.PointOfInterest.findOne({ where: { id } })
-        var temp = await models.PoiMedia.findAll()
-        temp = temp.filter(el => el.poiId == id)
-        temp.sort(function (a, b) {
-            return a.order - b.order;
-        })
-        var relatedMediaList = []
-        for (const el of temp){
-            const temp2 = await models.Media.findOne({ where: { id: el.mediumId } })
-            relatedMediaList.push(temp2)
-        }
-        return res.json({
-            name: result.name,
-            location: result.location,
-            times: result.times,
-            price: result.price,
-            description: result.description,
-            imagesUrl: relatedMediaList.filter(x => x.type == "i").map(x => x.url),
-            imagesAlternative: relatedMediaList.filter(x => x.type == "i").map(x => x.alternative),
-            videosUrl: relatedMediaList.filter(x => x.type == "v").map(x => x.url),
-            videosAlternative: relatedMediaList.filter(x => x.type == "v").map(x => x.alternative),
-            shortDescription: result.shortDescription,
-            id: result.id,
-        })
-    })
-
     app.get('/pointOfInterestAndAssociatedEventsAndAssociatedItineraries/:id', async (req, res) => {
         const id1 = +req.params.id
         const result1 = await models.PointOfInterest.findOne({ where: { id: id1 } })
@@ -358,23 +300,6 @@ async function runMainApi() {
         return res.json(result)
     })
 
-    app.get('/itinerary/:id', async (req, res) => {
-        const id = +req.params.id
-        const result = await models.Itinerary.findOne({ where: { id } })
-        const associatedImage = await models.Media.findOne({ where: { id: result.image } })
-        return res.json({
-            id: result.id,
-            name: result.name,
-            duration: result.duration,
-            length: result.length,
-            description: result.description,
-            map: result.map,
-            shortDescription: result.shortDescription,
-            imageUrl: associatedImage.url,
-            imageAlternative: associatedImage.alternative,
-        })
-    })
-
     app.get('/itineraryAndAssociatedPointOfInterest/:id', async (req, res) => {
         const id1 = +req.params.id
         const result1 = await models.Itinerary.findOne({ where: { id: id1 } })
@@ -426,47 +351,10 @@ async function runMainApi() {
         return res.json(result)
     })
 
-    app.get('/service/:id', async (req, res) => {
-        const id = +req.params.id
-        const result = await models.Service.findOne({ where: { id } })
+    app.get('/service/:type', async (req, res) => {
+        const type = +req.params.type
+        const result = await models.Service.findOne({ where: { id: type } })
         return res.json(result)
-    })
-
-    app.get("/events", async (req, res) => {
-        const result = await models.Event.findAll()
-        const filtered = []
-        for (const element of result) {
-            var temp = await models.EventMedia.findAll()
-            temp = temp.filter(el => el.eventId == element.id)
-            temp.sort(function (a, b) {
-                return a.order - b.order;
-            })
-            var relatedMediaList = []
-            for (const el of temp){
-                const temp2 = await models.Media.findOne({ where: { id: el.mediumId } })
-                relatedMediaList.push(temp2)
-            }
-            filtered.push({
-                name: element.name,
-                realDateLocalVar: element.dateBegin,
-                dateBegin: element.dateBegin.toLocaleDateString(),
-                dateEnd: element.dateEnd.toLocaleDateString(),
-                date_s: element.date_s,
-                location: element.location,
-                price: element.price,
-                description: element.description,
-                imagesUrl: relatedMediaList.filter(x => x.type == "i").map(x => x.url),
-                imagesAlternative: relatedMediaList.filter(x => x.type == "i").map(x => x.alternative),
-                videosUrl: relatedMediaList.filter(x => x.type == "v").map(x => x.url),
-                videosAlternative: relatedMediaList.filter(x => x.type == "v").map(x => x.alternative),
-                shortDescription: element.shortDescription,
-                id: element.id,
-            })
-        }
-        filtered.sort(function (a, b) {
-            return a.realDateLocalVar - b.realDateLocalVar;
-        })
-        return res.json(filtered)
     })
 
     app.get("/events/:season", async (req, res) => {
@@ -507,8 +395,9 @@ async function runMainApi() {
             return res.json(filtered.filter(x => (parseInt(x.dateBegin.split("/")[1]) >= 10 ||  parseInt(x.dateBegin.split("/")[1])<=3) || (parseInt(x.dateEnd.split("/")[1]) >= 10 ||  parseInt(x.dateEnd.split("/")[1])<=3)))
         }else if(req.params.season == "summer"){
             return res.json(filtered.filter(x => (parseInt(x.dateBegin.split("/")[1]) >= 4 &&  parseInt(x.dateBegin.split("/")[1])<=9) || (parseInt(x.dateEnd.split("/")[1]) >= 4 &&  parseInt(x.dateEnd.split("/")[1])<=9)))
+        }else if(req.params.season == "all"){
+            return res.json(filtered)
         }
-        
     })
 
     app.get("/pointOfInterest", async (req, res) => {
@@ -566,20 +455,6 @@ async function runMainApi() {
         const result = await models.Service.findAll()
         const filtered = []
         for (const element of result) {
-            filtered.push({
-                type: element.type,
-                name: element.name,
-                address: element.address,
-                times: element.times,
-            })
-        }
-        return res.json(filtered)
-    })
-
-    app.get("/servicesUnique", async (req, res) => {
-        const result = await models.Service.findAll()
-        const filtered = []
-        for (const element of result) {
             var addElem = true
             for (const el of filtered) {
                 if (el.type == element.type)
@@ -611,16 +486,6 @@ async function runMainApi() {
         }
         return res.json(filtered)
     })
-
-    /*
-    // HTTP POST apio that will push (and therefore create) a new element in 
-    // our fake database 
-    app.post("/cats", (req, res) => {
-        const { body } = req
-        catList.push(body)
-        return res.sendStatus(200)
-    })
-    */
 }
 
 runMainApi()
