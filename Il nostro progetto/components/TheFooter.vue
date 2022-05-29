@@ -57,6 +57,10 @@ div {
   right: 25px;
   color: lightgrey;
   font-size: 65%;
+  margin-left: 5px;
+  margin-right: 5px;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 
 </style>
