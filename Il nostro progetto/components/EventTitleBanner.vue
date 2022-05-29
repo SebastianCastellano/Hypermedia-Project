@@ -1,6 +1,6 @@
 <template>
-    <div class="eventBanner">
-      <img class="eventMedia" :src="eventImagesUrl[0]" :alt="imgAlternatives[0]">
+    <div class="eventTitleBanner">
+      <slide-show :imagesUrl="eventImagesUrl" :imgAlternatives="imgAlternatives" height="40vh" width="71vh" :keepRatio="false" />
       <div id="bannerText">
         <h1 class="title-font title">{{eventName}}</h1>
         <div id="infoGrid">
@@ -47,14 +47,22 @@ export default {
 }
 </script>
 
-<style scoped>
-    .eventBanner{
+<style>
+    .eventTitleBanner{
       display: flex;
       background-color: #b22222;
     }
 
     .eventMedia{
-      height: 40vh;
+      height: 40vh !important;
+    }
+
+    .carousel{
+      height: 10vhpx !important;
+    }
+
+    .carousel  .carousel-item{
+      height: 10vhpx !important;
     }
 
     #bannerText{

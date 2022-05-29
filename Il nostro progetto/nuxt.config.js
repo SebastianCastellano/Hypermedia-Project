@@ -25,7 +25,9 @@ export default {
       { rel: "stylesheet", href: "https://fonts.googleapis.com/css?family=Gentium+Basic"}
     ],
     script: [
-      { src: "https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" }
+      { src: "https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" },
+      { src: "https://code.jquery.com/jquery-3.2.1.slim.min.js" },
+      { src: "https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" }
     ]
   },
 

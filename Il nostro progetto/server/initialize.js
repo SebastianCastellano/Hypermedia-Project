@@ -144,6 +144,12 @@ export default async (models) => {
             alternative: "Piazza Delle Erbe",
             type: "i",
         },
+        {
+            //25
+            url: "../images/iBronziDellaPassione2.jpg",
+            alternative: "The bronzes of Michelangelo",
+            type: "i",
+        },
     ]
     const eventList = [
         {
@@ -208,6 +214,11 @@ export default async (models) => {
         {
             eventId: 3,
             mediumId: 16,
+            order: 1,
+        },
+        {
+            eventId: 3  ,
+            mediumId: 25,
             order: 1,
         },
     ]
