@@ -175,6 +175,10 @@ export default {
           name: 'About Mantova',
           path: '/aboutMantova',
         },
+        {
+          name: 'Contact us',
+          path: '/contactUs',
+        },
       ],
     }
   },

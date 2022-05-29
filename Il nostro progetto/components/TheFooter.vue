@@ -1,14 +1,19 @@
 <template>
-    <footer>
-        <div class="vertical-center">
-            <nuxt-link to="/">
-                Home page
-            </nuxt-link>
-        </div>
-        <div class="team-info">
-            Softmath --- 10612772 - Carlo Ambrogi --- 10582405 - Sebastian Castellano --- 10573185 - Andrea De Bettin --- 10571386 - Lorenzo Guerrieri
-        </div>
-    </footer>
+<div>
+  <footer>
+    <div class="vertical-center">
+        <nuxt-link to="/">
+            Home page
+        </nuxt-link>
+    </div>
+  </footer>
+  <div class="footer-extension">
+    <div class="team-info">
+          SoftMath --- 10612772 - Carlo Ambrogi --- 10582405 - Sebastian Castellano --- 10573185 - Andrea De Bettin --- 10571386 - Lorenzo Guerrieri
+    </div>
+  </div>
+</div>
+    
 </template>
 
 <style scoped>
@@ -42,18 +47,16 @@ div {
   transform: translateY(-50%);
 }
 
+.footer-extension {
+  min-height: 25px;
+  background-color: var(--color1);
+}
+
 .team-info {
   position: absolute;
-  bottom: 10%;
   right: 25px;
-  border: 3px solid #73AD21;
-  border-style: dashed;
-/*
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-*/
   color: lightgrey;
-  max-width: 80%;
+  font-size: 65%;
 }
 
 </style>
