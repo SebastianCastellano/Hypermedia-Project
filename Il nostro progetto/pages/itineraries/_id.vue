@@ -25,6 +25,12 @@
   </div>
 </template>
 
+<style scoped>
+.title-font{
+  text-align: center;
+}
+</style>
+
 <script>
 import ItineraryTemplate from '~/components/ItineraryTemplate.vue'
 import EventTemplate from '~/components/EventTemplate.vue'

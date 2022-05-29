@@ -1,5 +1,6 @@
 <template>
   <div id="mainDiv">
+    
     <nav class="navbar navbar-expand-lg navbar-light px-3 header">
       <nuxt-link id="home-link" class="navbar-brand" to="/">
         <span class="capital-letter">V</span>isit<span class="capital-letter"
@@ -16,17 +17,23 @@
         aria-expanded="false"
         aria-label="Toggle navigation"
       >
+      
         <span class="navbar-toggler-icon"></span>
       </button>
 
       <div id="navbarToggler" class="collapse navbar-collapse">
+         
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-          <div>
-            <!--  The following lines give error but without them the dropdown bar does not work
+           
+           <!--
+             The following lines give error but without them the dropdown bar does not work
             <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
             -->
+          <!--
+          <div>
+            
 
             <div class="nav-link dropdown-div">
               <nuxt-link id="dropdown-list" :to="events[0].path">
@@ -54,7 +61,7 @@
               </div>
             </div>
           </div>
-
+-->
           <li
             v-for="(navItem, navItemIndex) of headerList"
             :key="`navItem${navItemIndex}`"
@@ -66,8 +73,12 @@
           </li>
         </ul>
       </div>
+      
+      
     </nav>
 
+    <!-- This second div below is the same as above, serves as a placeholder in order to avoid text overlapping caused
+    by position:fixed in the div above-->
     <nav class="navbar navbar-expand-lg navbar-light px-3 header-holder">
       <div id="home-link" class="navbar-brand">
         <span class="capital-letter">V</span>isit<span class="capital-letter"
@@ -77,6 +88,7 @@
 
       <div id="navbarToggler" class="collapse navbar-collapse">
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+          <!--
           <div>
             <div class="nav-link dropdown-div">
               <nuxt-link id="dropdown-list" class="ex-nl" :to="events[0].path">
@@ -99,7 +111,7 @@
               </div>
             </div>
           </div>
-
+-->
           <li
             v-for="(navItem, navItemIndex) of headerList"
             :key="`navItem${navItemIndex}`"
@@ -113,11 +125,7 @@
       </div>
     </nav>
 
-    <!--
-  <div class="place-holder">
 
-  </div>
--->
   </div>
 </template>
 
@@ -153,12 +161,12 @@ export default {
         },
       ],
       headerList: [
-        /*
+        
         {
           name: 'Events',
           path: '/eventList',
         },
-        */
+        
         {
           name: 'Points of interest',
           path: '/pointsOfInterestList',

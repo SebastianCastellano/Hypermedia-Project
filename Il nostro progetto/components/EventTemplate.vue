@@ -1,4 +1,5 @@
 <template>
+<div class="page container mt-5">
   <div class="poi-box">
     <nuxt-link class="flex-container" :to="'/pointsOfInterest/'+poiId">
       <img
@@ -12,6 +13,7 @@
         </div>
       </div>
     </nuxt-link>
+  </div>
   </div>
 </template>
 

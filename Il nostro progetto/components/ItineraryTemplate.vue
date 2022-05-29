@@ -12,12 +12,18 @@
           :src="imageUrl"
           :alt="imageAlternative"/>
       <p class="description">{{ description }}</p>
-      <iframe :src="map" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <div class="map">
+        <iframe :src="map" width="100%" height="300vh" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       <!-- AGGIUNGERE ANCHE LE INFORMAZIONI OTTENUTE TRAMITE LA MANY TO MANY CHE SONO DEI LINK -->
+      </div>
     </div>
 </template>
 
 <style scoped>
+
+.map{
+ margin: auto;
+}
 
 .name { text-align: center; }
 .no-disp { display: none; }

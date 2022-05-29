@@ -1,6 +1,11 @@
 <template>
   <div class="page container mt-5">
+    
     <h1 class="display-4 title-font page-title">All Events</h1>
+    <div class="sub-events-div">
+    <nuxt-link class="display-4 title-font page-title sub-events" to="/eventSummer">Summer Events</nuxt-link>
+    <nuxt-link class="display-4 title-font page-title sub-events" to="/eventWinter">Winter Events</nuxt-link>
+    </div>
     <div class="row mt-3">
       <card-event
         v-for="(event, eventIndex) of eventList"
@@ -16,6 +21,22 @@
     </div>
   </div>
 </template>
+
+<style>
+.sub-events-div{
+  width:4cm;
+  display: block; 
+  margin:0;
+  padding: 0 !important;
+}
+.sub-events{
+  
+  font-family: var(--title-font);
+  color: #000000;
+  font-size: medium;
+
+}
+</style>
 
 <script>
 import CardEvent from '~/components/CardEvent.vue'

@@ -1,5 +1,5 @@
 <template>
-  <div class="card" style="width: 15rem">
+  <div class="card">
     <!-- Use a nuxt-link to make the whole card a link -->
     <nuxt-link :to="'/events/'+id">
       <!-- Better to use an img
@@ -28,6 +28,7 @@ a {
 }
 
 .card {
+  width: 15rem;
   border: 2px solid var(--color1);
   background: var(--color2);
 }
