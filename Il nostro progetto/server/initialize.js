@@ -914,38 +914,57 @@ export default async (models) => {
     const itineraryList = [
         {
             name: "Masterpieces",
-            duration: "30 min",
-            length: "2 km",
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu sapien sodales eros auctor finibus nec eget tortor. Quisque at odio sit amet neque lacinia molestie at nec purus. Curabitur pretium ante lectus, sit amet imperdiet nulla faucibus quis. \
-            Sed bibendum vel tortor sit amet finibus. Maecenas tincidunt ipsum sit amet accumsan tincidunt. Vivamus id neque non urna malesuada gravida at luctus tellus. Curabitur elementum nisl neque, ut dignissim nunc imperdiet vel. Suspendisse porta, odio nec congue consectetur,\
-            velit mauris gravida magna, ac fermentum diam augue a elit. Sed sodales augue sed mi consequat interdum. Duis nec finibus orci. Nunc eget dapibus eros. Phasellus id augue lobortis, tincidunt nulla sit amet, eleifend erat. Sed sit amet odio purus. Morbi ultricies rhoncus justo in ornare. Sed at sapien et lacus placerat dapibus ac in nulla. Nulla facilisi. Duis odio mauris, efficitur ut purus sed, posuere auctor tellus. \
-            Donec sit amet pulvinar mauris. Nam eu turpis ac nibh posuere porttitor. Pellentesque mauris leo, pretium id pulvinar non, imperdiet porttitor justo. Phasellus dapibus orci eu eleifend aliquet. Vivamus sit amet nisi ut leo euismod laoreet a id arcu. Sed tincidunt dolor eget eleifend lacinia. Vestibulum vulputate quis massa id dictum. Phasellus sollicitudin rhoncus.",
-            map: "https://www.google.com/maps/embed?pb=!1m40!1m12!1m3!1d89599.96228458753!2d9.167748772960042!3d45.42952509772028!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m25!3e2!4m5!1s0x4786c0e4f3622533%3A0xd165a5577378fd49!2sBiblioteca%20polimi%2C%20edificio%20pk%2C%20Via%20Giovanni%20Durando%2C%208%2C%2020158%20Milano%20MI%2C%20Italia!3m2!1d45.5036822!2d9.164496699999999!4m5!1s0x4786d1f408a0e7f1%3A0x3c1fc7590826d78f!2sCentro%20Scout%20Melegnanese%2C%20Via%20Baden%20Powell%2C%205%2C%2020077%20Melegnano%20MI!3m2!1d45.355072899999996!2d9.330140499999999!4m5!1s0x4786c3df1bad32a1%3A0x94f92b587b658221!2sEsselunga%2C%20Via%20Giorgio%20Washington%2C%20Milano%20MI!3m2!1d45.4607509!2d9.1555857!4m5!1s0x4786c1aafbb8ec73%3A0x99168e9e38cee9e9!2sVia%20Varesina%2C%2066!3m2!1d45.497609399999995!2d9.1456009!5e0!3m2!1sit!2sit!4v1653318126516!5m2!1sit!2sit",
+            duration: "35 min",
+            length: "2.7 km",
+            description: "This itinerary covers the must-see attractions \
+            in Mantova. It is ideal for newcomers, maybe with not enough \
+            time to spend visiting. Anyway it can also be enjoyed by \
+            anyone who wants to see the masterpieces, even the citizens \
+            themselves. \
+            The tour starts off with Palazzo Te, a bit outside the \
+            centre. Then it procedes inside the city heart with the two \
+            major squares, Piazza delle Erbe e Piazza Sordello. In the \
+            latter lies Palazzo Ducale, node of the power during the \
+            Gonzaga duchy. The itinerary ends with a sneak-peek of the lakes.",
+            map: "https://www.google.com/maps/embed?pb=!1m46!1m12!1m3!1d7664.183301420241!2d10.793265578533921!3d45.1593790465609!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m31!3e2!4m5!1s0x4781d4147ff56b4d%3A0xe21b521e540ef29b!2sPalazzo%20Te%2C%20Viale%20Te%2C%20Mantova%2C%20MN!3m2!1d45.1475198!2d10.7865928!4m5!1s0x4781d4189288f3b9%3A0x48a45bf5b6a230a!2sPiazza%20delle%20Erbe%2C%20Mantova%2C%20MN!3m2!1d45.1584636!2d10.794680699999999!4m5!1s0x4781d421fa2a7f37%3A0xe82c55bcacec3d94!2sPiazza%20Sordello%2C%2046100%20Mantova%20MN!3m2!1d45.160247!2d10.7975976!4m5!1s0x4781d4219074e2ad%3A0x237edbac607df7c0!2sPalazzo%20Ducale%2C%20Piazza%20Sordello%2C%20Mantova%2C%20MN!3m2!1d45.1602794!2d10.798804599999999!4m5!1s0x4781d4212d711f0d%3A0x9c85b79f5d318e2b!2sPonte%20di%20San%20Giorgio%2C%20Via%20Legnano%2C%20Mantova%2C%20MN!3m2!1d45.161145499999996!2d10.8032379!5e0!3m2!1sit!2sit!4v1653898192848!5m2!1sit!2sit",
             shortDescription: "The perfect itinerary to enjoy Mantova masterpieces.",
             image: 17,
         },
         {
-            name: "Following Virgilio",
-            duration: "2 h",
-            length: "5.4 km",
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu sapien sodales eros auctor finibus nec eget tortor. Quisque at odio sit amet neque lacinia molestie at nec purus. Curabitur pretium ante lectus, sit amet imperdiet nulla faucibus quis. \
-            Sed bibendum vel tortor sit amet finibus. Maecenas tincidunt ipsum sit amet accumsan tincidunt. Vivamus id neque non urna malesuada gravida at luctus tellus. Curabitur elementum nisl neque, ut dignissim nunc imperdiet vel. Suspendisse porta, odio nec congue consectetur,\
-            velit mauris gravida magna, ac fermentum diam augue a elit. Sed sodales augue sed mi consequat interdum. Duis nec finibus orci. Nunc eget dapibus eros. Phasellus id augue lobortis, tincidunt nulla sit amet, eleifend erat. Sed sit amet odio purus. Morbi ultricies rhoncus justo in ornare. Sed at sapien et lacus placerat dapibus ac in nulla. Nulla facilisi. Duis odio mauris, efficitur ut purus sed, posuere auctor tellus. \
-            Donec sit amet pulvinar mauris. Nam eu turpis ac nibh posuere porttitor. Pellentesque mauris leo, pretium id pulvinar non, imperdiet porttitor justo. Phasellus dapibus orci eu eleifend aliquet. Vivamus sit amet nisi ut leo euismod laoreet a id arcu. Sed tincidunt dolor eget eleifend lacinia. Vestibulum vulputate quis massa id dictum. Phasellus sollicitudin rhoncus.",
-            map: "https://www.google.com/maps/embed?pb=!1m40!1m12!1m3!1d89599.96228458753!2d9.167748772960042!3d45.42952509772028!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m25!3e2!4m5!1s0x4786c0e4f3622533%3A0xd165a5577378fd49!2sBiblioteca%20polimi%2C%20edificio%20pk%2C%20Via%20Giovanni%20Durando%2C%208%2C%2020158%20Milano%20MI%2C%20Italia!3m2!1d45.5036822!2d9.164496699999999!4m5!1s0x4786d1f408a0e7f1%3A0x3c1fc7590826d78f!2sCentro%20Scout%20Melegnanese%2C%20Via%20Baden%20Powell%2C%205%2C%2020077%20Melegnano%20MI!3m2!1d45.355072899999996!2d9.330140499999999!4m5!1s0x4786c3df1bad32a1%3A0x94f92b587b658221!2sEsselunga%2C%20Via%20Giorgio%20Washington%2C%20Milano%20MI!3m2!1d45.4607509!2d9.1555857!4m5!1s0x4786c1aafbb8ec73%3A0x99168e9e38cee9e9!2sVia%20Varesina%2C%2066!3m2!1d45.497609399999995!2d9.1456009!5e0!3m2!1sit!2sit!4v1653318126516!5m2!1sit!2sit",
-            shortDescription: "Live the city of Mantova as Virgilio did.",
-            image: 18,
+            name: "Hidden Gems",
+            duration: "20 min",
+            length: "1.4 km",
+            description: "This itinerary is thought for those who \
+            would like to discover not just the main locations but \
+            also smaller and precious attractions. \
+            It starts with Teatro Scientifico del Bibiena, a little \
+            but incredibly surprising theatre few steps behind Palazzo \
+            Ducale. Then it reaches Loggia delle Pescherie, where fish \
+            was in the past bought and sold. The second theatre of the \
+            city, Teatro Sociale di Mantova, is also touched. The tour \
+            ends in Piazza delle Erbe, where one can admire both the \
+            Casa del Mercante, with its incredible details, and the \
+            Torre dell'Orologio.",
+            map: "https://www.google.com/maps/embed?pb=!1m46!1m12!1m3!1d3832.1873653044477!2d10.791767134487783!3d45.157955885295515!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m31!3e2!4m5!1s0x4781d42243b07049%3A0x18b60311522a750!2sVia%20Accademia%2C%2047%2C%2046100%20Mantova%20MN!3m2!1d45.158102799999995!2d10.7980425!4m5!1s0x4781d4182fe7e95f%3A0xe0f5255efab136d!2sVia%20Pescheria%2C%2046100%20Mantova%20MN!3m2!1d45.1561654!2d10.7928883!4m5!1s0x4781d41a2a1d07df%3A0xce1b3e5bc2a29d64!2sPiazza%20Felice%20Cavallotti%2C%2014%2C%2046100%20Mantova%2C%20MN!3m2!1d45.15802!2d10.7898329!4m5!1s0x4781d418f23070cb%3A0x9e0d4aaee4c63be3!2sPiazza%20Erbe%2C%2026%2C%2046100%20Mantova%2C%20MN!3m2!1d45.1584016!2d10.7941497!4m5!1s0x4781d4188b5803d9%3A0x50f16cb43830254f!2sPiazza%20Erbe%2C%2046100%20Mantova%20MN!3m2!1d45.158355!2d10.7942971!5e0!3m2!1sit!2sit!4v1653917530561!5m2!1sit!2sit",
+            shortDescription: "Discover the pearls not everyone knows.",
+            image: 39,
         },
         {
-            name: "Religious Steps",
-            duration: "1 h 20 min",
-            length: "4.3 km",
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu sapien sodales eros auctor finibus nec eget tortor. Quisque at odio sit amet neque lacinia molestie at nec purus. Curabitur pretium ante lectus, sit amet imperdiet nulla faucibus quis. \
-            Sed bibendum vel tortor sit amet finibus. Maecenas tincidunt ipsum sit amet accumsan tincidunt. Vivamus id neque non urna malesuada gravida at luctus tellus. Curabitur elementum nisl neque, ut dignissim nunc imperdiet vel. Suspendisse porta, odio nec congue consectetur,\
-            velit mauris gravida magna, ac fermentum diam augue a elit. Sed sodales augue sed mi consequat interdum. Duis nec finibus orci. Nunc eget dapibus eros. Phasellus id augue lobortis, tincidunt nulla sit amet, eleifend erat. Sed sit amet odio purus. Morbi ultricies rhoncus justo in ornare. Sed at sapien et lacus placerat dapibus ac in nulla. Nulla facilisi. Duis odio mauris, efficitur ut purus sed, posuere auctor tellus. \
-            Donec sit amet pulvinar mauris. Nam eu turpis ac nibh posuere porttitor. Pellentesque mauris leo, pretium id pulvinar non, imperdiet porttitor justo. Phasellus dapibus orci eu eleifend aliquet. Vivamus sit amet nisi ut leo euismod laoreet a id arcu. Sed tincidunt dolor eget eleifend lacinia. Vestibulum vulputate quis massa id dictum. Phasellus sollicitudin rhoncus.",
-            map: "https://www.google.com/maps/embed?pb=!1m40!1m12!1m3!1d89599.96228458753!2d9.167748772960042!3d45.42952509772028!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m25!3e2!4m5!1s0x4786c0e4f3622533%3A0xd165a5577378fd49!2sBiblioteca%20polimi%2C%20edificio%20pk%2C%20Via%20Giovanni%20Durando%2C%208%2C%2020158%20Milano%20MI%2C%20Italia!3m2!1d45.5036822!2d9.164496699999999!4m5!1s0x4786d1f408a0e7f1%3A0x3c1fc7590826d78f!2sCentro%20Scout%20Melegnanese%2C%20Via%20Baden%20Powell%2C%205%2C%2020077%20Melegnano%20MI!3m2!1d45.355072899999996!2d9.330140499999999!4m5!1s0x4786c3df1bad32a1%3A0x94f92b587b658221!2sEsselunga%2C%20Via%20Giorgio%20Washington%2C%20Milano%20MI!3m2!1d45.4607509!2d9.1555857!4m5!1s0x4786c1aafbb8ec73%3A0x99168e9e38cee9e9!2sVia%20Varesina%2C%2066!3m2!1d45.497609399999995!2d9.1456009!5e0!3m2!1sit!2sit!4v1653318126516!5m2!1sit!2sit",
-            shortDescription: "A religious itinerary across Mantova holy sites.",
+            name: "Religious & Past",
+            duration: "15 min",
+            length: "1 km",
+            description: "This itinerary is born with the idea of \
+            mixing the religious sphere with the historical roots of the \
+            city. Therefore the tour presents alternatively churches and \
+            places containing pieces of the oldest city history.\
+            It starts from Piazza Virgiliana, where one can appreciate \
+            the connection between Mantova and the Latin writer. Moving \
+            to the centre, one crosses the Duomo before reaching the \
+            archeological museum, rich of the traces of the origins. \
+            The tour ends with Rotonda di San Lorenzo e Basilica di \
+            Sant'Andrea.",
+            map: "https://www.google.com/maps/embed?pb=!1m46!1m12!1m3!1d5626.638781712219!2d10.791704074454747!3d45.16038186639373!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m31!3e2!4m5!1s0x4781d41fab567c2d%3A0xe2b7110686cd529a!2sPiazza%20Virgiliana%2C%2046100%20Mantova%20MN!3m2!1d45.162408899999996!2d10.795627699999999!4m5!1s0x4781d421fa2a7f37%3A0xe82c55bcacec3d94!2sPiazza%20Sordello%2C%2046100%20Mantova%20MN!3m2!1d45.160247!2d10.7975976!4m5!1s0x4781d421c0026e59%3A0xbfcca0a55a4c209e!2sPiazza%20Sordello%2C%2027%2C%2046100%20Mantova%2C%20MN!3m2!1d45.161025699999996!2d10.7984669!4m5!1s0x4781d4188b5803d9%3A0x50f16cb43830254f!2sPiazza%20Erbe%2C%2046100%20Mantova%20MN!3m2!1d45.158355!2d10.7942971!4m5!1s0x4781d418e50c54df%3A0xc14e326dc5f9d69e!2sPiazza%20Andrea%20Mantegna%2C%201%2C%2046100%20Mantova%2C%20MN!3m2!1d45.1586351!2d10.793756!5e0!3m2!1sit!2sit!4v1653917771477!5m2!1sit!2sit",
+            shortDescription: "An itinerary mixing religion and Mantova's roots.",
             image: 21,
         },
     ]
@@ -1049,18 +1068,73 @@ export default async (models) => {
         },
         {
             itineraryId: 1,
-            poiId: 2,
+            poiId: 4,
             order: 2,
         },
         {
             itineraryId: 1,
-            poiId: 4,
+            poiId: 8,
+            order: 3,
+        },
+        {
+            itineraryId: 1,
+            poiId: 2,
+            order: 4,
+        },
+        {
+            itineraryId: 1,
+            poiId: 14,
+            order: 5,
+        },
+        {
+            itineraryId: 2,
+            poiId: 7,
+            order: 1,
+        },
+        {
+            itineraryId: 2,
+            poiId: 13,
+            order: 2,
+        },
+        {
+            itineraryId: 2,
+            poiId: 6,
+            order: 3,
+        },
+        {
+            itineraryId: 2,
+            poiId: 12,
+            order: 4,
+        },
+        {
+            itineraryId: 2,
+            poiId: 10,
+            order: 5,
+        },
+        {
+            itineraryId: 3,
+            poiId: 5,
+            order: 1,
+        },
+        {
+            itineraryId: 3,
+            poiId: 9,
+            order: 2,
+        },
+        {
+            itineraryId: 3,
+            poiId: 15,
             order: 3,
         },
         {
             itineraryId: 3,
+            poiId: 11,
+            order: 4,
+        },
+        {
+            itineraryId: 3,
             poiId: 3,
-            order: 1,
+            order: 5,
         },
     ]
     await models.Media.bulkCreate(mediaList)
