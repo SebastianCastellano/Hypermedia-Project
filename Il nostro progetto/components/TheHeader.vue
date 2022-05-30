@@ -239,12 +239,12 @@ a {
 
 li,
 .dropdown-div {
-  margin-left: 2vw;
+  margin-left: 1.5vw;
 }
 
 .nav-link {
   color: var(--color2) !important;
-  font-size: 150%;
+  font-size: 130%;
 }
 
 li:hover .nav-link {

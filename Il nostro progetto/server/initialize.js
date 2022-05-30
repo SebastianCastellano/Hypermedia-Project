@@ -246,6 +246,24 @@ export default async (models) => {
             alternative: "Some pieces inside the archeological museum.",
             type: "i",
         },
+        {
+            //42
+            url: "../images/sbrisolona1.jpg",
+            alternative: "Sbrisolona cake.",
+            type: "i",
+        },
+        {
+            //43
+            url: "../images/laghi2.jpg",
+            alternative: "The nature near the lakes.",
+            type: "i",
+        },
+        {
+            //44
+            url: "../images/tortelliZucca1.jpg",
+            alternative: "Some pieces inside the archeological museum.",
+            type: "i",
+        },
     ]
     const eventList = [
         {
@@ -362,6 +380,54 @@ export default async (models) => {
             shortDescription: "An exposition over women in visual arts.",
             poiId: 6,
         },
+        {
+            //8
+            name: "Salone della Sbrisolona",
+            dateBegin: new Date(2022, 3, 1),
+            dateEnd: new Date(2022, 9, 31),
+            date_s: "01/03/2022 - 31/09/2022",
+            location: "Loggia delle Pescherie",
+            price: "Gratis",
+            description: "Michelangelo Buonarroti è semplicemente il “divino” Michelangelo, l’archetipo degli artisti di tutti i tempi. Grande fu la sua fama, anche in vita: nonostante la sua attività si sia concentrata su Roma e Firenze, anche la Mantova dei Gonzaga dovette fare i conti con l’ineludibile influenza di quel gigante. \
+            Il 22 febbraio del 1527 Federico II scriveva di essere da “molt’anni (…) amatore dello excellentissimo messer Michele Angelo” e - in un significativo ribaltamento di ruoli - senza paura di mostrarsi supplice chiedeva di ottenere una sua opera. \
+            Non importava quale fosse, ne bastava una qualsiasi. \
+            L’esposizione “Michelangelo: i bronzi della Passione” di Palazzo Ducale di Mantova - aperta dal 18 marzo fino al 15 giugno 2022 - vuole puntare l’attenzione su un episodio poco noto della vita del grande artista. \
+            Si tratta del progetto di un “Calvario”, ovvero la rappresentazione di Cristo sul Golgota assieme ai due ladroni; il termine deriva dal nome latino della collina appena fuori dalle mura di Gerusalemme, ossia il luogo sul quale si svolse la crocifissione.",
+            shortDescription: "Every sunday a meeting with Mantova's cake.",
+            poiId: 13,
+        },
+        {
+            //9
+            name: "Walk&Relax",
+            dateBegin: new Date(2022, 11, 1),
+            dateEnd: new Date(2023, 11, 1),
+            date_s: "15/11/2022",
+            location: "I tre laghi",
+            price: "Gratis",
+            description: "Michelangelo Buonarroti è semplicemente il “divino” Michelangelo, l’archetipo degli artisti di tutti i tempi. Grande fu la sua fama, anche in vita: nonostante la sua attività si sia concentrata su Roma e Firenze, anche la Mantova dei Gonzaga dovette fare i conti con l’ineludibile influenza di quel gigante. \
+            Il 22 febbraio del 1527 Federico II scriveva di essere da “molt’anni (…) amatore dello excellentissimo messer Michele Angelo” e - in un significativo ribaltamento di ruoli - senza paura di mostrarsi supplice chiedeva di ottenere una sua opera. \
+            Non importava quale fosse, ne bastava una qualsiasi. \
+            L’esposizione “Michelangelo: i bronzi della Passione” di Palazzo Ducale di Mantova - aperta dal 18 marzo fino al 15 giugno 2022 - vuole puntare l’attenzione su un episodio poco noto della vita del grande artista. \
+            Si tratta del progetto di un “Calvario”, ovvero la rappresentazione di Cristo sul Golgota assieme ai due ladroni; il termine deriva dal nome latino della collina appena fuori dalle mura di Gerusalemme, ossia il luogo sul quale si svolse la crocifissione.",
+            shortDescription: "Enjoy the relaxing contact with the lakes.",
+            poiId: 14,
+        },
+        {
+            //10
+            name: "Tortello Festival",
+            dateBegin: new Date(2022, 10, 1),
+            dateEnd: new Date(2022, 10, 31),
+            date_s: "01/10/2022 - 31/10/2022",
+            location: "Piazza Sordello",
+            price: "Gratis",
+            description: "Michelangelo Buonarroti è semplicemente il “divino” Michelangelo, l’archetipo degli artisti di tutti i tempi. Grande fu la sua fama, anche in vita: nonostante la sua attività si sia concentrata su Roma e Firenze, anche la Mantova dei Gonzaga dovette fare i conti con l’ineludibile influenza di quel gigante. \
+            Il 22 febbraio del 1527 Federico II scriveva di essere da “molt’anni (…) amatore dello excellentissimo messer Michele Angelo” e - in un significativo ribaltamento di ruoli - senza paura di mostrarsi supplice chiedeva di ottenere una sua opera. \
+            Non importava quale fosse, ne bastava una qualsiasi. \
+            L’esposizione “Michelangelo: i bronzi della Passione” di Palazzo Ducale di Mantova - aperta dal 18 marzo fino al 15 giugno 2022 - vuole puntare l’attenzione su un episodio poco noto della vita del grande artista. \
+            Si tratta del progetto di un “Calvario”, ovvero la rappresentazione di Cristo sul Golgota assieme ai due ladroni; il termine deriva dal nome latino della collina appena fuori dalle mura di Gerusalemme, ossia il luogo sul quale si svolse la crocifissione.",
+            shortDescription: "A month to celebrate the 'Tortello alla Zucca'",
+            poiId: 8,
+        },
     ]
     const eventmediaList = [
         {
@@ -402,6 +468,21 @@ export default async (models) => {
         {
             eventId: 7,
             mediumId: 33,
+            order: 1,
+        },
+        {
+            eventId: 8,
+            mediumId: 42,
+            order: 1,
+        },
+        {
+            eventId: 9,
+            mediumId: 43,
+            order: 1,
+        },
+        {
+            eventId: 10,
+            mediumId: 44,
             order: 1,
         },
     ]
