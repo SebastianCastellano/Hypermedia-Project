@@ -264,6 +264,24 @@ export default async (models) => {
             alternative: "Some pieces inside the archeological museum.",
             type: "i",
         },
+        {
+            //45
+            url: "../images/concerto-jazz2.jpg",
+            alternative: "A cartoon of a jazz concert.",
+            type: "i",
+        },
+        {
+            //46
+            url: "../images/sbrisolona2.jpg",
+            alternative: "A piece of Sbrisolona.",
+            type: "i",
+        },
+        {
+            //47
+            url: "../images/virgilio1.jpg",
+            alternative: "Virgilio.",
+            type: "i",
+        },
     ]
     const eventList = [
         {
@@ -324,27 +342,29 @@ export default async (models) => {
             date_s: "01/04/2022",
             location: "Piazza Virgiliana",
             price: "5€",
-            description: "Michelangelo Buonarroti è semplicemente il “divino” Michelangelo, l’archetipo degli artisti di tutti i tempi. Grande fu la sua fama, anche in vita: nonostante la sua attività si sia concentrata su Roma e Firenze, anche la Mantova dei Gonzaga dovette fare i conti con l’ineludibile influenza di quel gigante. \
-            Il 22 febbraio del 1527 Federico II scriveva di essere da “molt’anni (…) amatore dello excellentissimo messer Michele Angelo” e - in un significativo ribaltamento di ruoli - senza paura di mostrarsi supplice chiedeva di ottenere una sua opera. \
-            Non importava quale fosse, ne bastava una qualsiasi. \
-            L’esposizione “Michelangelo: i bronzi della Passione” di Palazzo Ducale di Mantova - aperta dal 18 marzo fino al 15 giugno 2022 - vuole puntare l’attenzione su un episodio poco noto della vita del grande artista. \
-            Si tratta del progetto di un “Calvario”, ovvero la rappresentazione di Cristo sul Golgota assieme ai due ladroni; il termine deriva dal nome latino della collina appena fuori dalle mura di Gerusalemme, ossia il luogo sul quale si svolse la crocifissione.",
+            description: "Fondazione 'Amici di Virgilio' presents \
+            a night of culture and music. 'A violin for Virgilio' is \
+            a concert thought to celebrate the importance of the Roman \
+            writer for the city. It will of course be held in Piazza \
+            Virgiliana. Some great names are expected to come from all \
+            over the world.",
             shortDescription: "A violin concert inspired by Virgilio.",
             poiId: 5,
         },
         {
             //5
             name: "Luke Hermond: my piano life",
-            dateBegin: new Date(2022, 6, 19),
+            dateBegin: new Date(2022, 6, 14),
             dateEnd: new Date(2022, 6, 19),
-            date_s: "19/06/2022",
+            date_s: "14/06/2022 - 19/06/2022",
             location: "Teatro Sociale",
             price: "45€",
-            description: "Michelangelo Buonarroti è semplicemente il “divino” Michelangelo, l’archetipo degli artisti di tutti i tempi. Grande fu la sua fama, anche in vita: nonostante la sua attività si sia concentrata su Roma e Firenze, anche la Mantova dei Gonzaga dovette fare i conti con l’ineludibile influenza di quel gigante. \
-            Il 22 febbraio del 1527 Federico II scriveva di essere da “molt’anni (…) amatore dello excellentissimo messer Michele Angelo” e - in un significativo ribaltamento di ruoli - senza paura di mostrarsi supplice chiedeva di ottenere una sua opera. \
-            Non importava quale fosse, ne bastava una qualsiasi. \
-            L’esposizione “Michelangelo: i bronzi della Passione” di Palazzo Ducale di Mantova - aperta dal 18 marzo fino al 15 giugno 2022 - vuole puntare l’attenzione su un episodio poco noto della vita del grande artista. \
-            Si tratta del progetto di un “Calvario”, ovvero la rappresentazione di Cristo sul Golgota assieme ai due ladroni; il termine deriva dal nome latino della collina appena fuori dalle mura di Gerusalemme, ossia il luogo sul quale si svolse la crocifissione.",
+            description: "Luke Harmond is one of the most renowned \
+            piano players in the world. Therefore it is no surprise \
+            that his show - only performed for six days - got quite \
+            some clamour. Harmond has already confirmed that other \
+            unexpected guests are on their way. Not to miss in Teatro \
+            Sociale.",
             shortDescription: "Luke Hermond presents his piano skills.",
             poiId: 6,
         },
@@ -356,11 +376,12 @@ export default async (models) => {
             date_s: "25/09/2022",
             location: "Piazza delle Erbe",
             price: "Gratis",
-            description: "Michelangelo Buonarroti è semplicemente il “divino” Michelangelo, l’archetipo degli artisti di tutti i tempi. Grande fu la sua fama, anche in vita: nonostante la sua attività si sia concentrata su Roma e Firenze, anche la Mantova dei Gonzaga dovette fare i conti con l’ineludibile influenza di quel gigante. \
-            Il 22 febbraio del 1527 Federico II scriveva di essere da “molt’anni (…) amatore dello excellentissimo messer Michele Angelo” e - in un significativo ribaltamento di ruoli - senza paura di mostrarsi supplice chiedeva di ottenere una sua opera. \
-            Non importava quale fosse, ne bastava una qualsiasi. \
-            L’esposizione “Michelangelo: i bronzi della Passione” di Palazzo Ducale di Mantova - aperta dal 18 marzo fino al 15 giugno 2022 - vuole puntare l’attenzione su un episodio poco noto della vita del grande artista. \
-            Si tratta del progetto di un “Calvario”, ovvero la rappresentazione di Cristo sul Golgota assieme ai due ladroni; il termine deriva dal nome latino della collina appena fuori dalle mura di Gerusalemme, ossia il luogo sul quale si svolse la crocifissione.",
+            description: "'I Treboniani' return for an incredible night in \
+            Piazza delle Erbe. After some months without shows, the jazz \
+            group from Mantova comes back to demonstrate what they are \
+            currently up to. It is also for a good cause: the entry is free \
+            but everything that will be possibly collected will go to \
+            the city hospital. Not bad at all.",
             shortDescription: "'I Treboniani' in an immersive concert in the city centre.",
             poiId: 4,
         },
@@ -372,11 +393,12 @@ export default async (models) => {
             date_s: "02/10/2022 - 29/01/2023",
             location: "Teatro Sociale",
             price: "10€",
-            description: "Michelangelo Buonarroti è semplicemente il “divino” Michelangelo, l’archetipo degli artisti di tutti i tempi. Grande fu la sua fama, anche in vita: nonostante la sua attività si sia concentrata su Roma e Firenze, anche la Mantova dei Gonzaga dovette fare i conti con l’ineludibile influenza di quel gigante. \
-            Il 22 febbraio del 1527 Federico II scriveva di essere da “molt’anni (…) amatore dello excellentissimo messer Michele Angelo” e - in un significativo ribaltamento di ruoli - senza paura di mostrarsi supplice chiedeva di ottenere una sua opera. \
-            Non importava quale fosse, ne bastava una qualsiasi. \
-            L’esposizione “Michelangelo: i bronzi della Passione” di Palazzo Ducale di Mantova - aperta dal 18 marzo fino al 15 giugno 2022 - vuole puntare l’attenzione su un episodio poco noto della vita del grande artista. \
-            Si tratta del progetto di un “Calvario”, ovvero la rappresentazione di Cristo sul Golgota assieme ai due ladroni; il termine deriva dal nome latino della collina appena fuori dalle mura di Gerusalemme, ossia il luogo sul quale si svolse la crocifissione.",
+            description: "Teatro Sociale becomes a place to celebrate \
+            women and their impact in the artistic field, in every \
+            possible dimension. Alongside some women-written or \
+            women-interpreted theatre perfomances, also other visual \
+            arts pieces are collected. Portraits, paintings, first-edition \
+            books, statues and much more to be discovered.",
             shortDescription: "An exposition over women in visual arts.",
             poiId: 6,
         },
@@ -388,11 +410,13 @@ export default async (models) => {
             date_s: "01/03/2022 - 31/09/2022",
             location: "Loggia delle Pescherie",
             price: "Gratis",
-            description: "Michelangelo Buonarroti è semplicemente il “divino” Michelangelo, l’archetipo degli artisti di tutti i tempi. Grande fu la sua fama, anche in vita: nonostante la sua attività si sia concentrata su Roma e Firenze, anche la Mantova dei Gonzaga dovette fare i conti con l’ineludibile influenza di quel gigante. \
-            Il 22 febbraio del 1527 Federico II scriveva di essere da “molt’anni (…) amatore dello excellentissimo messer Michele Angelo” e - in un significativo ribaltamento di ruoli - senza paura di mostrarsi supplice chiedeva di ottenere una sua opera. \
-            Non importava quale fosse, ne bastava una qualsiasi. \
-            L’esposizione “Michelangelo: i bronzi della Passione” di Palazzo Ducale di Mantova - aperta dal 18 marzo fino al 15 giugno 2022 - vuole puntare l’attenzione su un episodio poco noto della vita del grande artista. \
-            Si tratta del progetto di un “Calvario”, ovvero la rappresentazione di Cristo sul Golgota assieme ai due ladroni; il termine deriva dal nome latino della collina appena fuori dalle mura di Gerusalemme, ossia il luogo sul quale si svolse la crocifissione.",
+            description: "The most important cake of the city takes \
+            its sweet spot every sunday from March 3rd 2022 to September \
+            9th 2022 near Loggia delle Pescherie. Everyone will be able \
+            to have free tastes and to buy the products of the local \
+            pastry chefs. Alongside the traditional versions, some \
+            experimental bakers will present their own variants, \
+            some of them we are sure the public will find unexpected.",
             shortDescription: "Every sunday a meeting with Mantova's cake.",
             poiId: 13,
         },
@@ -404,11 +428,12 @@ export default async (models) => {
             date_s: "15/11/2022",
             location: "I tre laghi",
             price: "Gratis",
-            description: "Michelangelo Buonarroti è semplicemente il “divino” Michelangelo, l’archetipo degli artisti di tutti i tempi. Grande fu la sua fama, anche in vita: nonostante la sua attività si sia concentrata su Roma e Firenze, anche la Mantova dei Gonzaga dovette fare i conti con l’ineludibile influenza di quel gigante. \
-            Il 22 febbraio del 1527 Federico II scriveva di essere da “molt’anni (…) amatore dello excellentissimo messer Michele Angelo” e - in un significativo ribaltamento di ruoli - senza paura di mostrarsi supplice chiedeva di ottenere una sua opera. \
-            Non importava quale fosse, ne bastava una qualsiasi. \
-            L’esposizione “Michelangelo: i bronzi della Passione” di Palazzo Ducale di Mantova - aperta dal 18 marzo fino al 15 giugno 2022 - vuole puntare l’attenzione su un episodio poco noto della vita del grande artista. \
-            Si tratta del progetto di un “Calvario”, ovvero la rappresentazione di Cristo sul Golgota assieme ai due ladroni; il termine deriva dal nome latino della collina appena fuori dalle mura di Gerusalemme, ossia il luogo sul quale si svolse la crocifissione.",
+            description: "The lakes around Mantova offer the unique \
+            possibility to detox from the fast pace of the modern life. \
+            Enjoy a relaxing walk alongside the lakes and their nature. \
+            The walk is thought with different lengths to fit the \
+            different physical conditions, which will not be therefore \
+            a problem.",
             shortDescription: "Enjoy the relaxing contact with the lakes.",
             poiId: 14,
         },
@@ -420,11 +445,13 @@ export default async (models) => {
             date_s: "01/10/2022 - 31/10/2022",
             location: "Piazza Sordello",
             price: "Gratis",
-            description: "Michelangelo Buonarroti è semplicemente il “divino” Michelangelo, l’archetipo degli artisti di tutti i tempi. Grande fu la sua fama, anche in vita: nonostante la sua attività si sia concentrata su Roma e Firenze, anche la Mantova dei Gonzaga dovette fare i conti con l’ineludibile influenza di quel gigante. \
-            Il 22 febbraio del 1527 Federico II scriveva di essere da “molt’anni (…) amatore dello excellentissimo messer Michele Angelo” e - in un significativo ribaltamento di ruoli - senza paura di mostrarsi supplice chiedeva di ottenere una sua opera. \
-            Non importava quale fosse, ne bastava una qualsiasi. \
-            L’esposizione “Michelangelo: i bronzi della Passione” di Palazzo Ducale di Mantova - aperta dal 18 marzo fino al 15 giugno 2022 - vuole puntare l’attenzione su un episodio poco noto della vita del grande artista. \
-            Si tratta del progetto di un “Calvario”, ovvero la rappresentazione di Cristo sul Golgota assieme ai due ladroni; il termine deriva dal nome latino della collina appena fuori dalle mura di Gerusalemme, ossia il luogo sul quale si svolse la crocifissione.",
+            description: "October 2022 sees the birth of the the 1st \
+            edition of 'Tortello Festival'. It is an occasion for \
+            everyone to enjoy one of the most delicious Mantova's dish. \
+            Not only tradition though, but also a possibility to \
+            experiment with different tastes. Everyday a chef will \
+            present his own edition and tell the public his personal \
+            experience.",
             shortDescription: "A month to celebrate the 'Tortello alla Zucca'",
             poiId: 8,
         },
@@ -453,12 +480,22 @@ export default async (models) => {
         {
             eventId: 4,
             mediumId: 31,
+            order: 2,
+        },
+        {
+            eventId: 4,
+            mediumId: 47,
             order: 1,
         },
         {
             eventId: 5,
             mediumId: 29,
             order: 1,
+        },
+        {
+            eventId: 6,
+            mediumId: 45,
+            order: 2,
         },
         {
             eventId: 6,
@@ -474,6 +511,11 @@ export default async (models) => {
             eventId: 8,
             mediumId: 42,
             order: 1,
+        },
+        {
+            eventId: 8,
+            mediumId: 46,
+            order: 2,
         },
         {
             eventId: 9,
