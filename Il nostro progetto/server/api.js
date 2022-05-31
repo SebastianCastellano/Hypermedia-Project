@@ -10,12 +10,14 @@ const database = new Sequelize("postgres://postgres:postgres@localhost:5432/hyp"
 async function initializeDatabaseConnection() {
     await database.authenticate()
 
+    // Media entity
     const Media = database.define("media", {
         url: DataTypes.STRING,
         alternative: DataTypes.STRING,
         type: DataTypes.STRING,
     })
 
+    // Event entity
     const Event = database.define("event", {
         name: DataTypes.STRING,
         dateBegin: DataTypes.DATE,
@@ -27,12 +29,14 @@ async function initializeDatabaseConnection() {
         shortDescription: DataTypes.TEXT,
     })
 
+    // EventMedia relation (to associate events with their media)
     const EventMedia = database.define('eventmedia', {
         order: DataTypes.INTEGER
-      }, { timestamps: false });
-      Event.belongsToMany(Media, { through: 'eventmedia' });
-      Media.belongsToMany(Event, { through: 'eventmedia' });
+    }, { timestamps: false });
+    Event.belongsToMany(Media, { through: 'eventmedia' });
+    Media.belongsToMany(Event, { through: 'eventmedia' });
 
+    // PointOfInterest entity
     const PointOfInterest = database.define("poi", {
         name: DataTypes.STRING,
         location: DataTypes.STRING,
@@ -42,12 +46,14 @@ async function initializeDatabaseConnection() {
         shortDescription: DataTypes.TEXT,
     })
 
+    // PoiMedia relation (to associate points of interest with their media)
     const PoiMedia = database.define('poimedia', {
         order: DataTypes.INTEGER
-      }, { timestamps: false });
-      PointOfInterest.belongsToMany(Media, { through: 'poimedia' });
-      Media.belongsToMany(PointOfInterest, { through: 'poimedia' });
+    }, { timestamps: false });
+    PointOfInterest.belongsToMany(Media, { through: 'poimedia' });
+    Media.belongsToMany(PointOfInterest, { through: 'poimedia' });
 
+    // Itinerary entity
     const Itinerary = database.define("itinerary", {
         name: DataTypes.STRING,
         duration: DataTypes.STRING,
@@ -57,13 +63,15 @@ async function initializeDatabaseConnection() {
         shortDescription: DataTypes.TEXT,
         image: DataTypes.INTEGER,
     })
-   
+
+    // PoiIti relation (to associate points of interest with itineraries)
     const PoiIti = database.define('poiiti', {
         order: DataTypes.INTEGER
-      }, { timestamps: false });
-      Itinerary.belongsToMany(PointOfInterest, { through: 'poiiti' });
-      PointOfInterest.belongsToMany(Itinerary, { through: 'poiiti' });
+    }, { timestamps: false });
+    Itinerary.belongsToMany(PointOfInterest, { through: 'poiiti' });
+    PointOfInterest.belongsToMany(Itinerary, { through: 'poiiti' });
 
+    // Service entity
     const Service = database.define("service", {
         type: DataTypes.STRING,
         name: DataTypes.STRING,
@@ -71,6 +79,7 @@ async function initializeDatabaseConnection() {
         times: DataTypes.STRING,
     })
 
+    // relation between a point of interest and events (every point of interest has many events)
     PointOfInterest.hasMany(Event)
     Event.belongsTo(PointOfInterest)
 
@@ -80,6 +89,7 @@ async function initializeDatabaseConnection() {
     }
 }
 
+// predefined content for some pages (index and aboutMantova pages)
 const pageContentObject = {
     index: {
         title: "Mantova",

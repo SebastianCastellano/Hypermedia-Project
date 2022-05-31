@@ -22,6 +22,8 @@
   </div>
 </template>
 
+<!-- This page is shown in case of error (for example a wrong url) -->
+
 <style scoped>
 
 h1, p, .img-container {text-align: center;}

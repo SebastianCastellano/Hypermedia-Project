@@ -1,4 +1,5 @@
 export default async (models) => {
+    // this is the list of media; every media has an url, an alternative text and a type ("i" x images; "v" x videos)
     const mediaList = [
         {   
             // 1
@@ -283,6 +284,8 @@ export default async (models) => {
             type: "i",
         },
     ]
+    // this is the list of events; every media has a name, a date of begin, a date of end, a date string to be visualized to the user,
+    // a location, a price, a description, a short description, the id of the point of interest where an event takes place
     const eventList = [
         {
             //1
@@ -456,6 +459,7 @@ export default async (models) => {
             poiId: 8,
         },
     ]
+    // this is the to associate an event to media and to decide the appearing order of images or videos
     const eventmediaList = [
         {
             eventId: 1,
@@ -528,6 +532,8 @@ export default async (models) => {
             order: 1,
         },
     ]
+    // this is the list of points of interest; every point of interest has a name, a location, the opening times,
+    // a price, a description, a short description
     const pointOfInterestList = [
         {
             // 1
@@ -759,6 +765,7 @@ export default async (models) => {
             shortDescription: "The rich archeological museum.",
         },
     ]
+    // this is the to associate a point of interest to media and to decide the appearing order of images or videos
     const poimediaList = [
         {
             poiId: 1,
@@ -911,6 +918,8 @@ export default async (models) => {
             order: 1,
         },
     ]
+    // this is the list of points of itineraries; every itinerary has a name, a duration, a lenght,
+    // a description, a map, a short description, an id of a media witch is an image representing that itinerary
     const itineraryList = [
         {
             name: "Masterpieces",
@@ -968,6 +977,7 @@ export default async (models) => {
             image: 21,
         },
     ]
+    // this is the list of services; every service has a type, a name, an address, and opening times
     const serviceList = [
         {
             type: "Pharmacies",
@@ -1060,6 +1070,7 @@ export default async (models) => {
             times: "9-14 / 16-20 tue-sun",
         },
     ]
+    // This is to make a relation between points of interest and itineraries (and to decide the order of points of interest in an itinerary)
     const poiitiList = [
         {
             itineraryId: 1,
