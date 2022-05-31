@@ -226,7 +226,7 @@ async function runMainApi() {
     // the info of a specific point of interest, the info of the associated events (events witch take place i that point of interest),
     // the info about the itineraries involving that point of interest
     app.get('/pointOfInterestAndAssociatedEventsAndAssociatedItineraries/:id', async (req, res) => {
-        const pointOfInterestId = +req.params.id
+        const pointOfInterestId = +req.params.id // id of the point of interest you are interested in
         const findingSpecificPointOfInterest = await models.PointOfInterest.findOne({ where: { id: pointOfInterestId } }) // found the specific point of interest
         var tempPointOfInterest = await models.PoiMedia.findAll()
         tempPointOfInterest = tempPointOfInterest.filter(el => el.poiId == pointOfInterestId)
@@ -307,191 +307,199 @@ async function runMainApi() {
         return res.json(result)
     })
 
+    // This api is used to obtain useful information used in a page of topic point of itinerary:
+    // the info of a specific itinerary and the info of the related points of interest
     app.get('/itineraryAndAssociatedPointOfInterest/:id', async (req, res) => {
-        const id1 = +req.params.id
-        const result1 = await models.Itinerary.findOne({ where: { id: id1 } })
-        const associatedImage = await models.Media.findOne({ where: { id: result1.image } })
-        const result1ver = {
-            id: result1.id,
-            name: result1.name,
-            duration: result1.duration,
-            length: result1.length,
-            description: result1.description,
-            map: result1.map,
-            shortDescription: result1.shortDescription,
+        const itineraryId = +req.params.id // id of the itinerary you are interested in
+        const findSpecificItinerary = await models.Itinerary.findOne({ where: { id: itineraryId } })
+        const associatedImage = await models.Media.findOne({ where: { id: findSpecificItinerary.image } }) // The image of the itinerary
+        const resultItinerary = {
+            id: findSpecificItinerary.id,
+            name: findSpecificItinerary.name,
+            duration: findSpecificItinerary.duration,
+            length: findSpecificItinerary.length,
+            description: findSpecificItinerary.description,
+            map: findSpecificItinerary.map,
+            shortDescription: findSpecificItinerary.shortDescription,
             imageUrl: associatedImage.url,
             imageAlternative: associatedImage.alternative,
-        }
-        var result2Temp = await models.PoiIti.findAll()
-        result2Temp = result2Temp.filter(el => el.itineraryId == id1)
-        result2Temp.sort(function (a, b) {
+        } // this is the resultItinerary, the first result obtained by this api
+        var tempPoiIti = await models.PoiIti.findAll() // now we are going to find the points of interest involving this itinerary
+        tempPoiIti = tempPoiIti.filter(el => el.itineraryId == itineraryId) // filtering points of interest
+        tempPoiIti.sort(function (a, b) { // points of interests are ordered
             return a.order - b.order;
         })
-        var result2 = []
-        for (const el of result2Temp){
-            const tempi = await models.PointOfInterest.findOne({ where: { id: el.poiId } })
-            var temp = await models.PoiMedia.findAll()
-            temp = temp.filter(elx => elx.poiId == el.poiId)
-            temp.sort(function (a, b) {
+        var resultPointsOfInterest = [] // this array will be filled with the result of points of interest
+        for (const singlePointOfInterest of tempPoiIti){ // for each effective point of interest
+            const foundPointOfInterest = await models.PointOfInterest.findOne({ where: { id: singlePointOfInterest.poiId } })
+            var relatedMediaPointOfInterest = await models.PoiMedia.findAll()
+            relatedMediaPointOfInterest = relatedMediaPointOfInterest.filter(el => el.poiId == singlePointOfInterest.poiId)
+            relatedMediaPointOfInterest.sort(function (a, b) {
                 return a.order - b.order;
             })
             var relatedMediaList = []
-            for (const elx of temp){
-                const temp2 = await models.Media.findOne({ where: { id: elx.mediumId } })
+            for (const el of relatedMediaPointOfInterest){
+                const temp2 = await models.Media.findOne({ where: { id: el.mediumId } })
                 relatedMediaList.push(temp2)
-            }
-            result2.push({
-                name: tempi.name,
-                location: tempi.location,
-                times: tempi.times,
-                price: tempi.price,
-                description: tempi.description,
+            } // array relatedMediaList is filled with images and video related to the point of interest (for each point of interest)
+            resultPointsOfInterest.push({
+                name: foundPointOfInterest.name,
+                location: foundPointOfInterest.location,
+                times: foundPointOfInterest.times,
+                price: foundPointOfInterest.price,
+                description: foundPointOfInterest.description,
                 imagesUrl: relatedMediaList.filter(x => x.type == "i").map(x => x.url),
                 imagesAlternative: relatedMediaList.filter(x => x.type == "i").map(x => x.alternative),
                 videosUrl: relatedMediaList.filter(x => x.type == "v").map(x => x.url),
                 videosAlternative: relatedMediaList.filter(x => x.type == "v").map(x => x.alternative),
-                shortDescription: tempi.shortDescription,
-                id: tempi.id,
-            })
+                shortDescription: foundPointOfInterest.shortDescription,
+                id: foundPointOfInterest.id,
+            }) // this is the resultPointsOfInterest, the second result obtained by this api
         }
-        const result = [result1ver, result2]
+        const result = [resultItinerary, resultPointsOfInterest]
         return res.json(result)
     })
 
+    // This api is used to obtain the list of services of a type
     app.get('/service/:type', async (req, res) => {
         const type = +req.params.type
         const result = await models.Service.findOne({ where: { id: type } })
         return res.json(result)
     })
 
+    // This api is used to obtain the list of events (eventually filtered by season)
     app.get("/events/:season", async (req, res) => {
-        const result = await models.Event.findAll()
-        const filtered = []
-        for (const element of result) {
-            var temp = await models.EventMedia.findAll()
-            temp = temp.filter(el => el.eventId == element.id)
-            temp.sort(function (a, b) {
+        const allEvents = await models.Event.findAll()
+        const filteredEvents = [] // this array will be filled events
+        for (const singleEvent of allEvents) { // for each event
+            var relatedMediaEvent = await models.EventMedia.findAll()
+            relatedMediaEvent = relatedMediaEvent.filter(el => el.eventId == singleEvent.id)
+            relatedMediaEvent.sort(function (a, b) {
                 return a.order - b.order;
             })
             var relatedMediaList = []
-            for (const el of temp){
+            for (const el of relatedMediaEvent){
                 const temp2 = await models.Media.findOne({ where: { id: el.mediumId } })
                 relatedMediaList.push(temp2)
-            }
-            filtered.push({
-                name: element.name,
-                realDateLocalVar: element.dateBegin,
-                dateBegin: element.dateBegin.toLocaleDateString(),
-                dateEnd: element.dateEnd.toLocaleDateString(),
-                date_s: element.date_s,
-                location: element.location,
-                price: element.price,
-                description: element.description,
+            } // array relatedMediaList is filled with images and video related to event
+            filteredEvents.push({
+                name: singleEvent.name,
+                realDateLocalVar: singleEvent.dateBegin,
+                dateBegin: singleEvent.dateBegin.toLocaleDateString(),
+                dateEnd: singleEvent.dateEnd.toLocaleDateString(),
+                date_s: singleEvent.date_s,
+                location: singleEvent.location,
+                price: singleEvent.price,
+                description: singleEvent.description,
                 imagesUrl: relatedMediaList.filter(x => x.type == "i").map(x => x.url),
                 imagesAlternative: relatedMediaList.filter(x => x.type == "i").map(x => x.alternative),
                 videosUrl: relatedMediaList.filter(x => x.type == "v").map(x => x.url),
                 videosAlternative: relatedMediaList.filter(x => x.type == "v").map(x => x.alternative),
-                shortDescription: element.shortDescription,
-                id: element.id,
-            })
+                shortDescription: singleEvent.shortDescription,
+                id: singleEvent.id,
+            }) // array filteredEvents is filled with all events (and then will be filtered in case we apply a filer for season)
         }
-        filtered.sort(function (a, b) {
+        filteredEvents.sort(function (a, b) {
             return a.realDateLocalVar - b.realDateLocalVar;
-        })
+        }) // event are ordered by date
         if(req.params.season == "winter"){
-            return res.json(filtered.filter(x => (parseInt(x.dateBegin.split("/")[1]) >= 10 ||  parseInt(x.dateBegin.split("/")[1])<=3) || (parseInt(x.dateEnd.split("/")[1]) >= 10 ||  parseInt(x.dateEnd.split("/")[1])<=3)))
+            return res.json(filteredEvents.filter(x => (parseInt(x.dateBegin.split("/")[1]) >= 10 ||  parseInt(x.dateBegin.split("/")[1])<=3) || (parseInt(x.dateEnd.split("/")[1]) >= 10 ||  parseInt(x.dateEnd.split("/")[1])<=3)))
         }else if(req.params.season == "summer"){
-            return res.json(filtered.filter(x => (parseInt(x.dateBegin.split("/")[1]) >= 4 &&  parseInt(x.dateBegin.split("/")[1])<=9) || (parseInt(x.dateEnd.split("/")[1]) >= 4 &&  parseInt(x.dateEnd.split("/")[1])<=9)))
+            return res.json(filteredEvents.filter(x => (parseInt(x.dateBegin.split("/")[1]) >= 4 &&  parseInt(x.dateBegin.split("/")[1])<=9) || (parseInt(x.dateEnd.split("/")[1]) >= 4 &&  parseInt(x.dateEnd.split("/")[1])<=9)))
         }else if(req.params.season == "all"){
-            return res.json(filtered)
+            return res.json(filteredEvents)
         }
     })
 
+    // This api is used to obtain the list of points of interest
     app.get("/pointOfInterest", async (req, res) => {
-        const result = await models.PointOfInterest.findAll()
-        const filtered = []
-        for (const element of result) {
-            var temp = await models.PoiMedia.findAll()
-            temp = temp.filter(el => el.poiId == element.id)
-            temp.sort(function (a, b) {
+        const allPointsOfInterest = await models.PointOfInterest.findAll()
+        const resultAllPointsOfInterest = []
+        for (const singlePointOfInterest of allPointsOfInterest) {
+            var relatedMediaPointOfinterest = await models.PoiMedia.findAll()
+            relatedMediaPointOfinterest = relatedMediaPointOfinterest.filter(el => el.poiId == singlePointOfInterest.id)
+            relatedMediaPointOfinterest.sort(function (a, b) {
                 return a.order - b.order;
             })
             var relatedMediaList = []
-            for (const el of temp){
+            for (const el of relatedMediaPointOfinterest){
                 const temp2 = await models.Media.findOne({ where: { id: el.mediumId } })
                 relatedMediaList.push(temp2)
-            }
-            filtered.push({
-                name: element.name,
-                location: element.location,
-                times: element.times,
-                price: element.price,
-                description: element.description,
+            } // array relatedMediaList is filled with images and video related to point of interest
+            resultAllPointsOfInterest.push({
+                name: singlePointOfInterest.name,
+                location: singlePointOfInterest.location,
+                times: singlePointOfInterest.times,
+                price: singlePointOfInterest.price,
+                description: singlePointOfInterest.description,
                 imagesUrl: relatedMediaList.filter(x => x.type == "i").map(x => x.url),
                 imagesAlternative: relatedMediaList.filter(x => x.type == "i").map(x => x.alternative),
                 videosUrl: relatedMediaList.filter(x => x.type == "v").map(x => x.url),
                 videosAlternative: relatedMediaList.filter(x => x.type == "v").map(x => x.alternative),
-                shortDescription: element.shortDescription,
-                id: element.id,
-            })
+                shortDescription: singlePointOfInterest.shortDescription,
+                id: singlePointOfInterest.id,
+            }) // resultAllPointsOfInterest is the final array with all points of interest
         }
-        return res.json(filtered)
+        return res.json(resultAllPointsOfInterest)
     })
 
+    // This api is used to obtain the list of all itineraries
     app.get("/itineraries", async (req, res) => {
-        const result = await models.Itinerary.findAll()
-        const filtered = []
-        for (const element of result) {
-            const associatedImage = await models.Media.findOne({ where: { id: element.image } })
-            filtered.push({
-                id: element.id,
-                name: element.name,
-                duration: element.duration,
-                length: element.length,
-                description: element.description,
-                map: element.map,
-                shortDescription: element.shortDescription,
+        const allItineraries = await models.Itinerary.findAll()
+        const resultItineraries = []
+        for (const singleItinerary of allItineraries) {
+            const associatedImage = await models.Media.findOne({ where: { id: singleItinerary.image } }) // The image of the itinerary
+            resultItineraries.push({
+                id: singleItinerary.id,
+                name: singleItinerary.name,
+                duration: singleItinerary.duration,
+                length: singleItinerary.length,
+                description: singleItinerary.description,
+                map: singleItinerary.map,
+                shortDescription: singleItinerary.shortDescription,
                 imageUrl: associatedImage.url,
                 imageAlternative: associatedImage.alternative,
             })
-        }
-        return res.json(filtered)
+        } // resultItineraries is the final array with all itineraries
+        return res.json(resultItineraries)
     })
 
+    // This api is used to obtain the list of all kind of services
     app.get("/services", async (req, res) => {
-        const result = await models.Service.findAll()
-        const filtered = []
-        for (const element of result) {
-            var addElem = true
-            for (const el of filtered) {
-                if (el.type == element.type)
-                    addElem = false;
-                if (!addElem)
+        const allServices = await models.Service.findAll()
+        const resultServices = []
+        for (const singleService of allServices) {
+            var addElement = true
+            for (const el of resultServices) { // checking if a new kind of service isn't been already added
+                if (el.type == singleService.type)
+                    addElement = false;
+                if (!addElement)
                     break
             }
-            if (addElem) {
-                filtered.push({
-                    type: element.type,
+            if (addElement) {
+                resultServices.push({ // array resultServices is filled with new kind of services
+                    type: singleService.type,
                 })
             }
         }
-        return res.json(filtered)
+        return res.json(resultServices) // resultServices is the final array with all kind of services
     })
 
+    // This api is used to obtain the list of services of a certain type
     app.get("/services/:type", async (req, res) => {
-        const result = await models.Service.findAll()
-        const filtered = []
-        for (const element of result) {
+        const allServices = await models.Service.findAll()
+        const filteredServices = []
+        for (const element of allServices) {
             if (element.type == req.params.type) {
-                filtered.push({
+                filteredServices.push({
                     type: element.type,
                     name: element.name,
                     address: element.address,
                     times: element.times,
-                })
+                }) // filteredServices is the final array with the required services
             }
         }
-        return res.json(filtered)
+        return res.json(filteredServices)
     })
 }
 
