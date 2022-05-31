@@ -120,82 +120,86 @@ async function runMainApi() {
     const models = await initializeDatabaseConnection()
     await initialize(models)
 
+    // This api is to obtain some useful info x pages index and aboutMantova
     app.get('/page-info/:topic', (req, res) => {
         const { topic } = req.params
         const result = pageContentObject[topic]
         return res.json(result)
     })
 
+    // This api is used to obtain useful information used in a page of topic event:
+    // the info of a specific event, the info of the associated point of interest (where the event takes place),
+    // the info about the previous and next event
     app.get('/eventAndAssociatedPointOfInterest/:id', async (req, res) => {
-        const id1 = +req.params.id
-        const result1 = await models.Event.findOne({ where: { id: id1 } })
-        var temp = await models.EventMedia.findAll()
-        temp = temp.filter(el => el.eventId == id1)
-        temp.sort(function (a, b) {
+        const eventId = +req.params.id // id of the event you are interested in
+        const findingSpecificEvent = await models.Event.findOne({ where: { id: eventId } }) // found the specific event
+        var tempEventMedia = await models.EventMedia.findAll()
+        tempEventMedia = tempEventMedia.filter(el => el.eventId == eventId)
+        tempEventMedia.sort(function (a, b) {
             return a.order - b.order;
         })
-        var relatedMediaList = []
-        for (const el of temp){
+        var eventRelatedMediaList = []
+        for (const el of tempEventMedia){
             const temp2 = await models.Media.findOne({ where: { id: el.mediumId } })
-            relatedMediaList.push(temp2)
+            eventRelatedMediaList.push(temp2) // array relatedMediaList is filled with images and video related to the event
         }
-        const result1Ver = {
-            name: result1.name,
-            dateBegin: result1.dateBegin.toLocaleDateString(),
-            dateEnd: result1.dateEnd.toLocaleDateString(),
-            date_s: result1.date_s,
-            location: result1.location,
-            price: result1.price,
-            description: result1.description,
-            imagesUrl: relatedMediaList.filter(x => x.type == "i").map(x => x.url),
-            imagesAlternative: relatedMediaList.filter(x => x.type == "i").map(x => x.alternative),
-            videosUrl: relatedMediaList.filter(x => x.type == "v").map(x => x.url),
-            videosAlternative: relatedMediaList.filter(x => x.type == "v").map(x => x.alternative),
-            shortDescription: result1.shortDescription,
-            id: result1.id,
-        }
-        const id2 = result1.poiId
-        const result2 = await models.PointOfInterest.findOne({ where: { id: id2 } })
-        var tempi = await models.PoiMedia.findAll()
-        tempi = tempi.filter(el => el.poiId == id2)
-        tempi.sort(function (a, b) {
+        const resultEvent = {
+            name: findingSpecificEvent.name,
+            dateBegin: findingSpecificEvent.dateBegin.toLocaleDateString(),
+            dateEnd: findingSpecificEvent.dateEnd.toLocaleDateString(),
+            date_s: findingSpecificEvent.date_s,
+            location: findingSpecificEvent.location,
+            price: findingSpecificEvent.price,
+            description: findingSpecificEvent.description,
+            imagesUrl: eventRelatedMediaList.filter(x => x.type == "i").map(x => x.url),
+            imagesAlternative: eventRelatedMediaList.filter(x => x.type == "i").map(x => x.alternative),
+            videosUrl: eventRelatedMediaList.filter(x => x.type == "v").map(x => x.url),
+            videosAlternative: eventRelatedMediaList.filter(x => x.type == "v").map(x => x.alternative),
+            shortDescription: findingSpecificEvent.shortDescription,
+            id: findingSpecificEvent.id,
+        } // this is the resultEvent, the first result obtained by this api
+        const pointOfInterestId = findingSpecificEvent.poiId // the id of the related point of interest where the event takes place
+        const result2 = await models.PointOfInterest.findOne({ where: { id: pointOfInterestId } }) // found the specefic point of interest
+        var tempPointOfInterest = await models.PoiMedia.findAll()
+        tempPointOfInterest = tempPointOfInterest.filter(el => el.poiId == pointOfInterestId)
+        tempPointOfInterest.sort(function (a, b) {
             return a.order - b.order;
         })
-        var relatedMediaListi = []
-        for (const el of tempi){
+        var PointOfInterestRelatedMediaList = []
+        for (const el of tempPointOfInterest){
             const temp2 = await models.Media.findOne({ where: { id: el.mediumId } })
-            relatedMediaListi.push(temp2)
+            PointOfInterestRelatedMediaList.push(temp2) // array PointOfInterestRelatedMediaList is filled with images and video related to the point of interest (relaterd itsself to the event)
         }
-        const result1Ve2 = {
+        const resultAssociatedPointOfInterest = {
             name: result2.name,
             location: result2.location,
             times: result2.times,
             price: result2.price,
             description: result2.description,
-            imagesUrl: relatedMediaListi.filter(x => x.type == "i").map(x => x.url),
-            imagesAlternative: relatedMediaListi.filter(x => x.type == "i").map(x => x.alternative),
-            videosUrl: relatedMediaListi.filter(x => x.type == "v").map(x => x.url),
-            videosAlternative: relatedMediaListi.filter(x => x.type == "v").map(x => x.alternative),
+            imagesUrl: PointOfInterestRelatedMediaList.filter(x => x.type == "i").map(x => x.url),
+            imagesAlternative: PointOfInterestRelatedMediaList.filter(x => x.type == "i").map(x => x.alternative),
+            videosUrl: PointOfInterestRelatedMediaList.filter(x => x.type == "v").map(x => x.url),
+            videosAlternative: PointOfInterestRelatedMediaList.filter(x => x.type == "v").map(x => x.alternative),
             shortDescription: result2.shortDescription,
             id: result2.id,
-        }
-        const idThisEvent = id1
-        var tempTempTemp = await models.Event.findAll()
-        const tempTempTemp2 = []
-        for (const tempTempTemp3 of tempTempTemp) {
-            tempTempTemp2.push({
-                realDateLocalVar: tempTempTemp3.dateBegin,
-                id: tempTempTemp3.id,
-                name: tempTempTemp3.name,
+        } // this is the resultAssociatedPointOfInterest, the second result obtained by this api
+        const idThisEvent = eventId
+        var allEventList = await models.Event.findAll() // now we are going to find witch is the previous and the next event
+        const allEventListEssentialInfo = []
+        for (const singleEvent of allEventList) {
+            allEventListEssentialInfo.push({
+                realDateLocalVar: singleEvent.dateBegin,
+                id: singleEvent.id,
+                name: singleEvent.name,
             })
         }
-        tempTempTemp2.sort(function (a, b) {
+        allEventListEssentialInfo.sort(function (a, b) {
             return a.realDateLocalVar - b.realDateLocalVar;
-        })
+        }) // now the array allEventListEssentialInfo contains all event essential info reordered by date
         var findIndex = 0
         var found = false
-        for (const tempTempTemp3 of tempTempTemp2){
-            if (tempTempTemp3.id == idThisEvent){
+        for (const singleEvent of allEventListEssentialInfo){
+            if (singleEvent.id == idThisEvent){
                 found = true
             }
             if(found == false){
@@ -205,86 +209,89 @@ async function runMainApi() {
         var idPreviousEvent = -1
         var namePreviousEvent = ""
         if(findIndex > 0){
-            idPreviousEvent = tempTempTemp2[findIndex - 1].id
-            namePreviousEvent = tempTempTemp2[findIndex - 1].name
+            idPreviousEvent = allEventListEssentialInfo[findIndex - 1].id
+            namePreviousEvent = allEventListEssentialInfo[findIndex - 1].name
         }
         var idNextEvent = -1
         var nameNextEvent = ""
-        if(findIndex < tempTempTemp2.length - 1){
-            idNextEvent = tempTempTemp2[findIndex + 1].id
-            nameNextEvent = tempTempTemp2[findIndex + 1].name
-        }
-        const result = [result1Ver, result1Ve2, idPreviousEvent, idNextEvent, namePreviousEvent, nameNextEvent]
+        if(findIndex < allEventListEssentialInfo.length - 1){
+            idNextEvent = allEventListEssentialInfo[findIndex + 1].id
+            nameNextEvent = allEventListEssentialInfo[findIndex + 1].name
+        } // now we have found ids and names of previous and next events (-1 in case does not exists)
+        const result = [resultEvent, resultAssociatedPointOfInterest, idPreviousEvent, idNextEvent, namePreviousEvent, nameNextEvent]
         return res.json(result)
     })
 
+    // This api is used to obtain useful information used in a page of topic point of interest:
+    // the info of a specific point of interest, the info of the associated events (events witch take place i that point of interest),
+    // the info about the itineraries involving that point of interest
     app.get('/pointOfInterestAndAssociatedEventsAndAssociatedItineraries/:id', async (req, res) => {
-        const id1 = +req.params.id
-        const result1 = await models.PointOfInterest.findOne({ where: { id: id1 } })
-        var temp = await models.PoiMedia.findAll()
-        temp = temp.filter(el => el.poiId == id1)
-        temp.sort(function (a, b) {
+        const pointOfInterestId = +req.params.id
+        const findingSpecificPointOfInterest = await models.PointOfInterest.findOne({ where: { id: pointOfInterestId } }) // found the specific point of interest
+        var tempPointOfInterest = await models.PoiMedia.findAll()
+        tempPointOfInterest = tempPointOfInterest.filter(el => el.poiId == pointOfInterestId)
+        tempPointOfInterest.sort(function (a, b) {
             return a.order - b.order;
         })
-        var relatedMediaList = []
-        for (const el of temp){
+        var pointOfInterestRelatedMediaList = []
+        for (const el of tempPointOfInterest){
             const temp2 = await models.Media.findOne({ where: { id: el.mediumId } })
-            relatedMediaList.push(temp2)
+            pointOfInterestRelatedMediaList.push(temp2) // array pointOfInterestRelatedMediaList is filled with images and video related to the point of interest
         }
-        const result1Ver = {
-            name: result1.name,
-            location: result1.location,
-            times: result1.times,
-            price: result1.price,
-            description: result1.description,
-            imagesUrl: relatedMediaList.filter(x => x.type == "i").map(x => x.url),
-            imagesAlternative: relatedMediaList.filter(x => x.type == "i").map(x => x.alternative),
-            videosUrl: relatedMediaList.filter(x => x.type == "v").map(x => x.url),
-            videosAlternative: relatedMediaList.filter(x => x.type == "v").map(x => x.alternative),
-            shortDescription: result1.shortDescription,
-            id: result1.id,
-        }
-        const result2temp = await models.Event.findAll()
-        const result2 = result2temp.filter(el => el.poiId == id1)
-        var result2Ver = []
-        for (const eee of result2){
-            var tempi = await models.EventMedia.findAll()
-            tempi = tempi.filter(el => el.eventId == eee.id)
-            tempi.sort(function (a, b) {
+        const resultPointOfInterest = {
+            name: findingSpecificPointOfInterest.name,
+            location: findingSpecificPointOfInterest.location,
+            times: findingSpecificPointOfInterest.times,
+            price: findingSpecificPointOfInterest.price,
+            description: findingSpecificPointOfInterest.description,
+            imagesUrl: pointOfInterestRelatedMediaList.filter(x => x.type == "i").map(x => x.url),
+            imagesAlternative: pointOfInterestRelatedMediaList.filter(x => x.type == "i").map(x => x.alternative),
+            videosUrl: pointOfInterestRelatedMediaList.filter(x => x.type == "v").map(x => x.url),
+            videosAlternative: pointOfInterestRelatedMediaList.filter(x => x.type == "v").map(x => x.alternative),
+            shortDescription: findingSpecificPointOfInterest.shortDescription,
+            id: findingSpecificPointOfInterest.id,
+        } // this is the resultPointOfInterest, the first result obtained by this api
+        const allEventsList = await models.Event.findAll()
+        const eventsRelatedToThatPoi = allEventsList.filter(el => el.poiId == pointOfInterestId) // events related to that point of interest
+        var resultAssociatedEvents = []
+        for (const singleEvent of eventsRelatedToThatPoi){
+            var tempEvent = await models.EventMedia.findAll()
+            tempEvent = tempEvent.filter(el => el.eventId == singleEvent.id)
+            tempEvent.sort(function (a, b) {
                 return a.order - b.order;
             })
-            var relatedMediaListi = []
-            for (const el of tempi){
+            var eventRelatedMediaList = []
+            for (const el of tempEvent){
                 const temp2 = await models.Media.findOne({ where: { id: el.mediumId } })
-                relatedMediaListi.push(temp2)
+                eventRelatedMediaList.push(temp2) // array eventRelatedMediaList is filled with images and video related to every event related to the initial point of interest
             }
-            result2Ver.push({
-                name: eee.name,
-                dateBegin: eee.dateBegin.toLocaleDateString(),
-                dateEnd: eee.dateEnd.toLocaleDateString(),
-                date_s: eee.date_s,
-                location: eee.location,
-                price: eee.price,
-                description: eee.description,
-                imagesUrl: relatedMediaListi.filter(x => x.type == "i").map(x => x.url),
-                imagesAlternative: relatedMediaListi.filter(x => x.type == "i").map(x => x.alternative),
-                videosUrl: relatedMediaListi.filter(x => x.type == "v").map(x => x.url),
-                videosAlternative: relatedMediaListi.filter(x => x.type == "v").map(x => x.alternative),
-                shortDescription: eee.shortDescription,
-                id: eee.id,
+            resultAssociatedEvents.push({
+                name: singleEvent.name,
+                dateBegin: singleEvent.dateBegin.toLocaleDateString(),
+                dateEnd: singleEvent.dateEnd.toLocaleDateString(),
+                date_s: singleEvent.date_s,
+                location: singleEvent.location,
+                price: singleEvent.price,
+                description: singleEvent.description,
+                imagesUrl: eventRelatedMediaList.filter(x => x.type == "i").map(x => x.url),
+                imagesAlternative: eventRelatedMediaList.filter(x => x.type == "i").map(x => x.alternative),
+                videosUrl: eventRelatedMediaList.filter(x => x.type == "v").map(x => x.url),
+                videosAlternative: eventRelatedMediaList.filter(x => x.type == "v").map(x => x.alternative),
+                shortDescription: singleEvent.shortDescription,
+                id: singleEvent.id,
             })
-        }
-        var result3Temp = await models.PoiIti.findAll()
-        result3Temp = result3Temp.filter(el => el.poiId == id1)
-        var result3 = []
-        for (const el of result3Temp){
-            const temp = await models.Itinerary.findOne({ where: { id: el.itineraryId } })
-            result3.push(temp)
-        }
-        var result3Ver = []
-        for (const el of result3){
-            const associatedImage = await models.Media.findOne({ where: { id: el.image } })
-            result3Ver.push({
+        } // this is resultAssociatedEvents, the second result obtained by this api
+        var tempPoiIti = await models.PoiIti.findAll() // now we are going to find itineraries involving the point of interest
+        tempPoiIti = tempPoiIti.filter(el => el.poiId == pointOfInterestId)
+        var associatedItineraryList = []
+        for (const el of tempPoiIti){
+            const specificItinerary = await models.Itinerary.findOne({ where: { id: el.itineraryId } })
+            associatedItineraryList.push(specificItinerary)
+        } // array associatedItineraryList is filled with itineraries associated to the initial point of interest
+        var resultItinerariesInvolvingPoi = []
+        for (const el of associatedItineraryList){ // for each itinerary associated to the initial point of interest
+            const associatedImage = await models.Media.findOne({ where: { id: el.image } }) // The image of the specific itinerary
+            resultItinerariesInvolvingPoi.push({
                 id: el.id,
                 name: el.name,
                 duration: el.duration,
@@ -295,8 +302,8 @@ async function runMainApi() {
                 imageUrl: associatedImage.url,
                 imageAlternative: associatedImage.alternative,
             })
-        }
-        const result = [result1Ver, result2Ver, result3Ver]
+        } // this is resultItinerariesInvolvingPoi, the second result obtained by this api
+        const result = [resultPointOfInterest, resultAssociatedEvents, resultItinerariesInvolvingPoi]
         return res.json(result)
     })
 
