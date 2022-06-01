@@ -22,7 +22,7 @@
 
 <script>
 export default {
-  name: 'EventTitleBanner',
+  name: 'PrevNextSelector',
   props: {
     type: {
       type: String,
@@ -99,6 +99,9 @@ export default {
       margin-bottom: 1vh;
       padding: 0;
       font-size: 150%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
     }
 
     #nextGrid{
@@ -149,10 +152,14 @@ export default {
       padding: 0;
       font-size: 150%;
       text-align: right;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
     }
 
     #spacer{
       flex: 2;
+      min-width: 50px;
     }
 
     a {

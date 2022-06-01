@@ -17,18 +17,31 @@
       :nextName="nameNextEvent"
       :nextPageUrl="'/events/'+idNextEvent"
     />
-    <event-title-banner
-      :eventName="name"
-      :eventImagesUrl="imagesUrl"
-      :imgAlternatives="imagesAlternative"
-      :date="dateTime"
-      :location="location"
-      :price="price"
-    />
+    <title-banner :title="name">
+      <template v-slot:media>
+        <slide-show :imagesUrl="imagesUrl" :imgAlternatives="imagesAlternative" height="40vh" width="71vh" :keepRatio="false" />
+      </template>
+      <template v-slot:content>
+        <div id="info">
+          <div id="first">
+            <div id="when">When:</div>
+            <div id="date">{{dateTime}}</div>
+          </div>
+          <div id="second">
+            <div id="where">Where:</div>
+            <div id="location">{{location}}</div>
+          </div>
+          <div id="third">
+            <div id="cost">Price:</div>
+            <div id="price">{{price}}</div>
+          </div>
+        </div>
+      </template>
+    </title-banner>
     <div class="page-content">
       <p id="description">{{description}}</p>
       <div id="poiList">
-        <h3 class="title-font poiTitle">The event takes place near: </h3>
+        <h3 class="title-font" id="poiTitle">The event takes place near: </h3>
         <div id="list">
           <event-template
           :poiId="poiId"
@@ -43,87 +56,86 @@
 </template>
 
 <style scoped>
-#eventSelector{
-  display: flex;
-}
-
-#prevEventGrid{
-  display: grid;
-  grid-template-columns: auto auto;
-  column-gap: 10px;
-  width: fit-content;
-  height: fit-content;
-  padding-left: 2vw;
-}
-
-#leftArrow{
-  height: 5vh;
-  grid-row: 1 /span 2;
-  margin-top: auto;
-  margin-bottom: auto;
-}
-
-#prevEvent{
-  margin: 0;
-  margin-top: 2vh;
-  padding: 0;
-  font-size: 90%;
-}
-
-#prevEventName{
-  margin: 0;
-  margin-bottom: 1vh;
-  padding: 0;
-  font-size: 150%;
-}
-
-#nextEventGrid{
-  display: grid;
-  grid-template-columns: auto auto;
-  column-gap: 10px;
-  width: fit-content;
-  height: fit-content;
-  padding-right: 2vw;
-}
-
-#rightArrow{
-  height: 5vh;
-  grid-column: 2;
-  grid-row: 1 /span 2;
-  margin-top: auto;
-  margin-bottom: auto;
-}
-
-#nextEvent{
-  margin: 0;
-  margin-top: 2vh;
-  padding: 0;
-  font-size: 90%;
-  text-align: right;
-}
-
-#nextEventName{
-  margin: 0;
-  margin-bottom: 1vh;
-  padding: 0;
-  font-size: 150%;
-  text-align: right;
-}
-
 #spacer{
   flex: 2;
 }
 
-.page-content{
-  display: flex;
-  margin-top: 7vh;
-  margin-left: 5vw;
-  margin-right: 5vw;
-  align-items:flex-start;
+#info{
+      display: Flex;
+      width: fit-content;
+      height: fit-content;
+      margin-left: auto;
+      margin-right: auto;
+}
+@media screen and (min-width: 940px){
+  #descButton{
+    display: none;
+  }
+
+  #info > div{
+    padding-left: 2vw;
+    padding-right: 2vw;
+    color: #ffffff;
+    text-align: center;
+    font-size: calc(12px + 1vh);
+  }
 }
 
-.poiTitle{
-  padding-top: 20px;
+@media screen and (max-width: 940px){
+  #info > div{
+    padding-left: 2vw;
+    padding-right: 2vw;
+    color: #ffffff;
+    text-align: center;
+    font-size: calc(10px + 25%);
+  }
+}
+
+#info > #first, #info > #second{
+  border-right-color: #ffffff;
+  border-right-style: solid;
+  border-right-width: 2px;
+}
+
+@media screen and (min-width: 940px) {
+  .page-content{
+    display: flex;
+    margin-top: 7vh;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    align-items:flex-start;
+  }
+
+  #description{
+    flex: 3;
+    text-align: justify;
+    text-justify:distribute;
+    font-size: 120%;
+    margin-right: 5vw;
+  }
+
+  #poiTitle{
+    padding-top: 30px;
+  }
+}
+
+@media screen and (max-width: 940px) {
+  .page-content{
+    margin-top: 7vh;
+    margin-left: 5vw;
+    margin-right: 5vw;
+  }
+
+  #description{
+    flex: 3;
+    text-align: justify;
+    text-justify:distribute;
+    font-size: 120%;
+  }
+
+  #poiList{
+    padding-top: 30px;
+  }
 }
 
 #poiList{
@@ -133,26 +145,18 @@
 #list{
   margin-left: 10px;
 }
-
-#description{
-  flex: 3;
-  text-align: justify;
-  text-justify:distribute;
-  font-size: 120%;
-  margin-right: 5vw;
-}
 </style>
 
 <script>
 import EventTemplate from '~/components/EventTemplate.vue'
-import EventTitleBanner from '~/components/EventTitleBanner.vue'
 import PrevNextSelector from '~/components/PrevNextSelector.vue'
+import TitleBanner from '~/components/TitleBanner.vue'
 export default {
   name: 'EventPage',
   components: {
     EventTemplate,
-    EventTitleBanner,
     PrevNextSelector,
+    TitleBanner,
 },
   async asyncData({ route, $axios }) {
     const { id } = route.params

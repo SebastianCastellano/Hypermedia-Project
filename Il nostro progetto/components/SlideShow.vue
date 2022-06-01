@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div id="carousel" class="carousel slide  carousel-fade" data-bs-ride="carousel" :style="cssProps">
+    <div id="carousel" class="carousel slide carousel-fade" data-bs-ride="carousel" :style="cssProps">
       <div class="carousel-indicators">
         <button type="button" data-bs-target="#carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
         <button v-for="(img, imgIndex) of imgsWithNoHead" :key="imgIndex" type="button" data-bs-target="#carousel" :data-bs-slide-to="imgIndex+1" :aria-label="'Slide '+imgIndex+2"></button>
@@ -27,7 +27,7 @@
 
 <script>
 export default {
-  name: 'EventTitleBanner',
+  name: 'SlideShow',
   props: {
     imagesUrl: {
       type: Array,
@@ -63,18 +63,42 @@ export default {
 </script>
 
 <style scoped>
-  .carousel{
-    height: var(--carousel-height);
-    width: var(--carousel-width);
-    background-color: rgba(84, 84, 84, 0.244);
-  }
+  @media screen and (max-width: 940px){
+    .carousel{
+      max-height: var(--carousel-height);
+      
+      background-color: rgba(84, 84, 84, 0.244);
+      margin-left: auto;
+      margin-right: auto;
+    }
 
-  .carousel  .carousel-item {
-    height: var(--carousel-height);
-    width: var(--carousel-width);
-  }
+    .carousel  .carousel-item {
+      max-height: var(--carousel-height);
+    }
 
-  img{
-    margin: auto;
+    img{
+      margin: auto;
+      max-width: 100%;
+      max-height: var(--carousel-height);
+    }
+  }
+  
+  @media screen and (min-width: 940px){
+    .carousel{
+      max-height: var(--carousel-height);
+      max-width: var(--carousel-width);
+      background-color: rgba(84, 84, 84, 0.244);
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .carousel  .carousel-item {
+      height: var(--carousel-height);
+      width: var(--carousel-width);
+    }
+
+    img{
+      margin: auto;
+    }
   }
 </style>
