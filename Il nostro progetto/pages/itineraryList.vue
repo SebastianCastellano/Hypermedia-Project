@@ -17,8 +17,11 @@
   </div>
 </template>
 
+<!-- this is the itineraries list page -->
+
 <script>
-import CardItinerary from '~/components/CardItinerary.vue'
+import CardItinerary from '~/components/CardItinerary.vue' // We are importing the component used for an itinerary card
+// (in the itineraries list page there are multiple itinerary card: one for each itinerary)
 export default {
   name: 'ListPage',
   components: {
@@ -26,22 +29,13 @@ export default {
   },
   data() {
     return {
-      // catList: []
     }
   },
-  // Note: This happens on backend (server) side
   async asyncData({ $axios }) {
-    // const { data } = await $axios.get('http://localhost:3000/api/cats')
-    const { data } = await $axios.get('/api/itineraries')
+    const { data } = await $axios.get('/api/itineraries') // we use this api to get all itineraries
     return {
       itineraryList: data,
     }
   },
-
-  // Note: This would happen on frontend (client) side
-  // async mounted() {
-  //   const { data } = await this.$axios.get('/api/cats')
-  //   this.catList = data
-  // },
 }
 </script>

@@ -1,8 +1,8 @@
 <template>
   <div class="page container mt-5">
-    
     <h1 class="display-4 title-font page-title">All Events</h1>
     <div class="sub-events-div">
+    <!-- there are two links to go to the summer events or to the winter events and apply a filter -->
     <nuxt-link class="display-4 title-font page-title sub-events" to="/eventSummer">Summer Events</nuxt-link>
     <nuxt-link class="display-4 title-font page-title sub-events" to="/eventWinter">Winter Events</nuxt-link>
     </div>
@@ -22,6 +22,8 @@
   </div>
 </template>
 
+<!-- this is the event list page -->
+
 <style>
 .sub-events-div{
   width:4cm;
@@ -39,7 +41,8 @@
 </style>
 
 <script>
-import CardEvent from '~/components/CardEvent.vue'
+import CardEvent from '~/components/CardEvent.vue' // We are importing the component used for an event card
+// (in the event list page there are multiple event card: one for each event)
 export default {
   name: 'ListPage',
   components: {
@@ -47,22 +50,13 @@ export default {
 },
   data() {
     return {
-      // catList: []
     }
   },
-  // Note: This happens on backend (server) side
   async asyncData({ $axios }) {
-    // const { data } = await $axios.get('http://localhost:3000/api/cats')
-    const { data } = await $axios.get('/api/events/all')
+    const { data } = await $axios.get('/api/events/all') // we use this api to get all events
     return {
       eventList: data,
     }
   },
-
-  // Note: This would happen on frontend (client) side
-  // async mounted() {
-  //   const { data } = await this.$axios.get('/api/cats')
-  //   this.catList = data
-  // },
 }
 </script>

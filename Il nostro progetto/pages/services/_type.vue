@@ -2,6 +2,7 @@
   <div class="page container mt-5">
     <h1 class="display-4 title-font page-title">All {{serviceList[0].type}}</h1>
     <div class="row mt-3">
+      <!-- In this part there are visualized some cards, one for each service of this type of services -->
       <card-single-service
         v-for="(service, serviceIndex) of serviceList"
         class="col-sm-2 m-2"
@@ -15,8 +16,11 @@
   </div>
 </template>
 
+<!-- this is a service page, a page to visualize the list of services of a certain type -->
+
 <script>
-import CardSingleService from '~/components/CardSingleService.vue'
+import CardSingleService from '~/components/CardSingleService.vue' // The component used to visualize a card with a service
+// (in this page we visualize as many cards as many services are of this specific type of services)
 export default {
   name: 'singleServicePage',
   components: {
@@ -24,26 +28,8 @@ export default {
   },
   async asyncData({ route, $axios }) {
     const { type } = route.params
-    const { data } = await $axios.get('/api/services/' + type)
-    /* const name = data[0].name
-    const breadcrump = "breadcrump"
-    const address = data[0].address
-    const dateTime = data[0].times
-    const location = data[0].location
-    const price = data[0].price
-    const images = data[0].images
-    const videos = data[0].videos
-    */
+    const { data } = await $axios.get('/api/services/' + type) // we use this api to get the list of services of this kind
     return {
-      /* name,
-      breadcrump,
-      description,
-      dateTime,
-      location,
-      price,
-      images,
-      videos,
-      associatedEventList: data[1] */
       serviceList: data
     }
   },
