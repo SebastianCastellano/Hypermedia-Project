@@ -17,8 +17,11 @@
   </div>
 </template>
 
+<!-- this is the points of interest list page -->
+
 <script>
-import CardPoi from '~/components/CardPoi.vue'
+import CardPoi from '~/components/CardPoi.vue' // We are importing the component used for a point of interest card
+// (in the points of interest list page there are multiple points of interest card: one for each point of interset)
 export default {
   name: 'ListPagePoi',
   components: {
@@ -26,22 +29,13 @@ export default {
   },
   data() {
     return {
-      // catList: []
     }
   },
-  // Note: This happens on backend (server) side
   async asyncData({ $axios }) {
-    // const { data } = await $axios.get('http://localhost:3000/api/cats')
-    const { data } = await $axios.get('/api/pointOfInterest')
+    const { data } = await $axios.get('/api/pointOfInterest') // we use this api to get all points of interest
     return {
       poiList: data,
     }
   },
-
-  // Note: This would happen on frontend (client) side
-  // async mounted() {
-  //   const { data } = await this.$axios.get('/api/cats')
-  //   this.catList = data
-  // },
 }
 </script>

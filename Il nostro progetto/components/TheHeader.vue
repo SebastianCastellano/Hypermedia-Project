@@ -1,13 +1,13 @@
 <template>
+  <!-- This is the template of the header -->
   <div id="mainDiv">
-    
     <nav class="navbar navbar-expand-lg navbar-light px-3 header">
       <nuxt-link id="home-link" class="navbar-brand" to="/">
+        <!-- The beautiful VisitMantova lettering; it's also a link to the home page -->
         <span class="capital-letter">V</span>isit<span class="capital-letter"
           >M</span
         >antova
       </nuxt-link>
-
       <button
         class="navbar-toggler"
         type="button"
@@ -17,51 +17,10 @@
         aria-expanded="false"
         aria-label="Toggle navigation"
       >
-      
         <span class="navbar-toggler-icon"></span>
       </button>
-
       <div id="navbarToggler" class="collapse navbar-collapse">
-         
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-           
-           <!--
-             The following lines give error but without them the dropdown bar does not work
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-            -->
-          <!--
-          <div>
-            
-
-            <div class="nav-link dropdown-div">
-              <nuxt-link id="dropdown-list" :to="events[0].path">
-                {{ events[0].name }}
-              </nuxt-link>
-
-              <button
-                type="button"
-                class="
-                  btn btn-sm btn-secondary
-                  dropdown-toggle dropdown-toggle-split
-                "
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false"
-              ></button>
-              <div class="dropdown-menu">
-                <nuxt-link
-                  v-for="(eventItem, eventItemIndex) of eventList"
-                  :key="`eventItem${eventItemIndex}`"
-                  class="dropdown-item"
-                  :to="eventItem.path"
-                  >{{ eventItem.name }}</nuxt-link
-                >
-              </div>
-            </div>
-          </div>
--->
           <li
             v-for="(navItem, navItemIndex) of headerList"
             :key="`navItem${navItemIndex}`"
@@ -73,10 +32,7 @@
           </li>
         </ul>
       </div>
-      
-      
     </nav>
-
     <!-- This second div below is the same as above, serves as a placeholder in order to avoid text overlapping caused
     by position:fixed in the div above-->
     <nav class="navbar navbar-expand-lg navbar-light px-3 header-holder">
@@ -85,33 +41,8 @@
           >M</span
         >antova
       </div>
-
       <div id="navbarToggler" class="collapse navbar-collapse">
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-          <!--
-          <div>
-            <div class="nav-link dropdown-div">
-              <nuxt-link id="dropdown-list" class="ex-nl" :to="events[0].path">
-                {{ events[0].name }}
-              </nuxt-link>
-              <div
-                class="
-                  btn btn-sm btn-secondary
-                  dropdown-toggle dropdown-toggle-split
-                "
-              ></div>
-              <div class="dropdown-menu">
-                <div
-                  v-for="(eventItem, eventItemIndex) of eventList"
-                  :key="`eventItem${eventItemIndex}`"
-                  class="dropdown-item"
-                >
-                  {{ eventItem.name }}
-                </div>
-              </div>
-            </div>
-          </div>
--->
           <li
             v-for="(navItem, navItemIndex) of headerList"
             :key="`navItem${navItemIndex}`"
@@ -124,8 +55,7 @@
         </ul>
       </div>
     </nav>
-
-
+  <!-- end of the second header -->
   </div>
 </template>
 
@@ -145,7 +75,6 @@ li {
 
 </style>
 
-
 <script>
 export default {
   name: 'TheHeader',
@@ -157,28 +86,12 @@ export default {
           path: '/eventList',
         },
       ],
-      eventList: [
-        {
-          name: 'All Events',
-          path: '/eventList',
-        },
-
-        {
-          name: 'Summer Events',
-          path: '/eventSummer',
-        },
-        {
-          name: 'Winter Events',
-          path: '/eventWinter',
-        },
-      ],
       headerList: [
-        
+        // All landmarks link present in the header
         {
           name: 'Events',
           path: '/eventList',
         },
-        
         {
           name: 'Points of interest',
           path: '/pointsOfInterestList',
@@ -204,7 +117,6 @@ export default {
   },
 }
 </script>
-
 
 <style scoped>
 @import '~/static/style/main.css';
@@ -274,5 +186,3 @@ li:hover .nav-link {
   height: 2cm;
 }
 </style>
-
-

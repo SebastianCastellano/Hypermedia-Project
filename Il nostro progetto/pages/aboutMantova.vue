@@ -1,5 +1,6 @@
 <template>
   <div>
+    <!-- This page is divided in 3 sections: the beauty of Mantova, a glimpse of history, why visit -->
     <section class="flex-container" id="first">
       <div class="column"></div>
       <div class="column text">
@@ -97,11 +98,10 @@
         </p>
       </div>
     </section>
-    <!--
-    <about-mantova-component :title="title" :image="image" :alternative="alternative" :text="text" />
-    -->
   </div>
 </template>
+
+<!-- this is the about Mantova page -->
 
 <style scoped>
 
@@ -110,9 +110,7 @@
   justify-content: space-evenly;
   width: 100%;
   height: 100vh;
-  /*border: 10px solid var(--color2);*/
   margin: 0;
-  /*background-size: 100% 100%;*/
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: scroll;
@@ -148,15 +146,13 @@ p {
 </style>
 
 <script>
-// import AboutMantovaComponent from '~/components/AboutMantovaComponent.vue'
 export default {
   name: 'AboutMantovaPage',
   layout: 'header-only',
   components: {
-    // AboutMantovaComponent,
   },
   async asyncData({ $axios }) {
-    const { data } = await $axios.get('/api/page-info/aboutMantova')
+    const { data } = await $axios.get('/api/page-info/aboutMantova') // We use this api to get the useful info for the about Mantova page
     const title = data.title
     const image = data.image
     const alternative = data.alternative

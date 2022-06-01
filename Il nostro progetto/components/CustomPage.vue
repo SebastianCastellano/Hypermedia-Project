@@ -1,10 +1,15 @@
 <template>
-  <div> 
+  <div>
+    <!-- This is the template for the home page -->
+    <!-- The home page is divided in different sections -->
     <section id="events">
       <nuxt-link to="/eventList">
+        <!-- this is a link to the event list page -->
         <h1 id="first-section" class="title-font">Discover the next events</h1>
       </nuxt-link>
       <div class="downArrowContainer">
+        <!-- This is an arrow to move more easly in the page (there are different arrows in this page
+        and you can move between the sections in this page by scrolling or using arrows) -->
           <a href="#points" class="arrowDownLink">
               <img src="../static/icons/downArrow.png" class="arrowDown"/>
               <img src="../static/icons/downArrowHover.png" class="arrowDownHover"/>
@@ -19,6 +24,7 @@
         </a>
       </div>
       <nuxt-link to="/pointsOfInterestList">
+        <!-- this is a link to the points of interest list page -->
         <h1 class="title-font">The treasures Mantova contains</h1>
       </nuxt-link>
       <div class="downArrowContainer">
@@ -36,6 +42,7 @@
         </a>
       </div>
       <nuxt-link to="/itineraryList">
+        <!-- this is a link to the itineraries list page -->
         <h1 class="title-font">Let us guide you into beauty</h1>
       </nuxt-link>
       <div class="downArrowContainer">
@@ -53,6 +60,7 @@
         </a>
       </div>
       <nuxt-link to="/servicesList">
+        <!-- this is a link to the service list page -->
         <h1 class="title-font">Everything you might need</h1>
       </nuxt-link>
       <div class="downArrowContainer">
@@ -70,6 +78,7 @@
         </a>
       </div>
       <nuxt-link to="/aboutMantova">
+        <!-- this is a link to the page about mantova -->
         <h1 class="title-font">Why is Mantova so special?</h1>
       </nuxt-link>
     </section>
@@ -178,51 +187,11 @@ h1:hover{
   background-color: rgb(255, 255, 255, 0.8);
 }
 
-/*
-section { display: flex; }
-.title-font { text-align: center; }
-
-img {
-  max-height: 300px;
-  width: 40vw;
-  margin: 15px 5vw 15px 0;
-}
-
-p {
-  padding-top: 1%;
-  margin-right: 5vw;
-  text-align: justify;
-}
-
-.intermediate-title {
-  margin-top: 50px;
-}
-
-.img-right {
-  max-height: 300px;
-  width: 40vw;
-  margin: 15px 0 15px 0;
-}
-*/
 </style>
 
 <script>
 export default {
   name: 'CustomPage',
   layout: 'header-only',
-  props: {
-    title: {
-      type: String,
-      required: true,
-    },
-    image: {
-      type: String,
-      required: true,
-    },
-    shortOverview: {
-      type: String,
-      required: true,
-    },
-  },
 }
 </script>
