@@ -2,12 +2,14 @@
   <div id="backgroundImage">
       <br>
       <div class="text">
-        <h3 class="title-font">VisitMantova</h3>
-        <p>via example 111,<br>
-        12345 Mantova</p>
-        <p><b>Mail:</b> <a href = "mailto: example@mail.com">example@mail.com</a><br>
-        <b>Tel:</b> <a href="tel:123-456-789">1234567890</a><br>
-        <b>Fax:</b> 123456789</p>
+        <h3 class="title-font"><span class="capital-letter">V</span>isit<span class="capital-letter"
+          >M</span
+        >antova</h3>
+        <p>Piazza Sordello, 45, 46100 Mantova</p>
+        <p><b>Mail:</b> <a href = "mailto: VisitMantova@gmail.com">VisitMantova@gmail.com</a><br>
+        <b>Tel:</b> <a href="tel:+39-362-558-932">+39 362 558932</a><br>
+        <b>Facebook:</b> VisitMantova <br>
+        <b>Instagram:</b> @VisitMantova </p>
       </div>
       <br>
   </div>
@@ -16,25 +18,51 @@
 <style>
 
 .text {
-  width: 50%;
+  /*width: 50%;*/
   margin: 0 auto;
+  margin-top: 25vmin;
   top: 300px;
-  width: 30vw;
-  height: 100%;
+  width: 75vmin;
+  min-width: 150px;
+  height: fit-content;
+  min-height: 100px;
+  padding: 5vmin;
   border: 2px var(--color1) solid;
-  padding: 10vh;
   background-color: var(--color2);
-  min-width: 200px;
+  overflow: auto;
 }
 
-#backgroundImage { background-image: url("../static/images/palazzoDucale-cameraSposi2.jpg"); }
+p, h3 {
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+p { font-size: 3vmin; }
+
+h3 {
+  margin-bottom: 15px;
+  font-size: 5vmin;
+}
+
+.capital-letter {font-size: 150%;}
+
+#backgroundImage {
+  background-image: url("../static/images/palazzoDucale-cameraSposi4.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  margin-bottom: 0;
+  height: 100vh;
+  width: 100%;
+}
 
 </style>
 
 <script>
 export default {
   name: 'ContactUsPage',
-  // layout: 'header-only',
+  layout: 'header-only',
   components: {
   },
 }
