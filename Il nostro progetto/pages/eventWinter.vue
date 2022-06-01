@@ -1,9 +1,6 @@
 <template>
   <div class="page container mt-5">
     <h1 class="display-4 title-font page-title">Winter Events</h1>
-    <div class="sub-events-div">
-    <nuxt-link class="display-4 title-font page-title sub-events" to="/eventList">Back to All Events</nuxt-link>
-    </div>
     <div class="row mt-3">
       <card-event
         v-for="(event, eventIndex) of eventList"

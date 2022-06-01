@@ -28,6 +28,10 @@
 .flexbox-container {
   justify-content: space-evenly;
 }
+.sub-events:hover {
+  text-decoration: underline;
+  color: black;
+}
 
 .sub-events-div{
   width:4cm;
@@ -40,6 +44,7 @@
   font-family: var(--title-font);
   color: #000000;
   font-size: medium;
+  text-decoration: none;
 
 }
 </style>
