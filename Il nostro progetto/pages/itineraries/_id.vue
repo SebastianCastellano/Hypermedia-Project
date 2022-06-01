@@ -4,7 +4,6 @@
     the name, the duration, the lenght, the image representing the itinerary, a description, a map -->
     <itinerary-template
       :name="name"
-      :breadcrump="breadcrump"
       :duration="duration"
       :length="length"
       :imageUrl="imageUrl"
@@ -50,7 +49,6 @@ export default {
     const { id } = route.params
     const { data } = await $axios.get('/api/itineraryAndAssociatedPointOfInterest/' + id) // we use this api to get all useful info about this itinerary
     const name = data[0].name
-    const breadcrump = "breadcrump"
     const duration = data[0].duration
     const length = data[0].length
     const description = data[0].description
@@ -59,7 +57,6 @@ export default {
     const imageAlternative = data[0].imageAlternative
     return {
       name,
-      breadcrump,
       duration,
       length,
       description,

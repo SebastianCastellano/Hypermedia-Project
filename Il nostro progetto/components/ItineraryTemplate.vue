@@ -1,7 +1,6 @@
 <template>
   <!-- Template used for the main part of the itinerary page, to visualize the main info of the itinerary -->
   <div class="page container mt-5">
-    <h3 class="no-disp breadcrump">{{ breadcrump }}</h3>
     <h1 class="name title-font page-title">{{ name }}</h1> <!-- The name of the itinerary -->
     <div class="info-box"> <!-- A box with the main info about the itinerary -->
       <p>Starting Point: {{ start }}</p>
@@ -53,10 +52,6 @@ export default {
   name: 'EventPoiTemplate',
   props: {
     name: { // The name of the itinerary
-      type: String,
-      required: true,
-    },
-    breadcrump: {
       type: String,
       required: true,
     },

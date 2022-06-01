@@ -17,6 +17,7 @@
       :nextName="nameNextEvent"
       :nextPageUrl="'/events/'+idNextEvent"
     />-->
+    <!-- Here there are the main info of the point of interest: the name, the opening times, where the point of interest is and the price -->
     <title-banner :title="name">
       <template v-slot:media>
         <slide-show :imagesUrl="imagesUrl" :imgAlternatives="imagesAlternative" height="40vh" width="71vh" :keepRatio="false" />
@@ -38,9 +39,11 @@
         </div>
       </template>
     </title-banner>
+    <!-- Description of the point of interest -->
     <div class="page-content">
       <p id="description">{{description}}</p>
       <div id="side">
+        <!-- A list of cards of the events witch take place in this point of interest -->
         <div class="list">
           <div v-if="associatedEventList[0]">
             <h3 class="title-font list-title">Events hosted in {{name}}: </h3>
@@ -75,6 +78,8 @@
     </div>
   </div>
 </template>
+
+<!-- this is a point of interest page, a page to visualize a specific point of interest -->
 
 <style scoped>
 #spacer{
@@ -164,7 +169,9 @@
 <script>
 import PoiTemplate from '~/components/PoiTemplate.vue' // The component used to visualize a card with an event
 // import PrevNextSelector from '~/components/PrevNextSelector.vue'
-import TitleBanner from '~/components/TitleBanner.vue'
+import TitleBanner from '~/components/TitleBanner.vue' // A component used to visualize the name of the point of interest,
+// a slideshow with the images of the point of interest,
+// and other essential info about the point of interest (opening times, where the point of interest is, the price)
 export default {
   name: 'EventPage',
   components: {
@@ -176,7 +183,6 @@ export default {
     const { id } = route.params
     const { data } = await $axios.get('/api/pointOfInterestAndAssociatedEventsAndAssociatedItineraries/' + id) // we use this api to get all useful info about this point of interest
     const name = data[0].name
-    const breadcrump = "breadcrump"
     const description = data[0].description
     const dateTime = data[0].times
     const location = data[0].location
@@ -187,7 +193,6 @@ export default {
     const videosAlternative = data[0].videosAlternative
     return {
       name,
-      breadcrump,
       description,
       dateTime,
       location,

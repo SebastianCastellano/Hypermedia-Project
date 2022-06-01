@@ -46,7 +46,7 @@
       <div id="poiList">
         <h3 class="title-font" id="poiTitle">The event takes place near: </h3>
         <div id="list">
-          <!-- A card of the point of interest where the event takes place-->
+          <!-- A card of the point of interest where the event takes place -->
           <event-template
           :poiId="poiId"
           :thumbnailPoi="thumbnailPoi"
@@ -170,7 +170,6 @@ export default {
     const { id } = route.params
     const { data } = await $axios.get('/api/eventAndAssociatedPointOfInterest/' + id) // we use this api to get all useful info about this event
     const name = data[0].name
-    const breadcrump = "breadcrump"
     const description = data[0].description
     const dateTime = data[0].date_s
     const location = data[0].location
@@ -190,7 +189,6 @@ export default {
     const nameNextEvent = data[5]
     return {
       name,
-      breadcrump,
       description,
       dateTime,
       location,

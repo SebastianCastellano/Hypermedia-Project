@@ -1,18 +1,19 @@
 <template>
-  <!-- This is the template of the title banner, a component used in an event page to visualize the name of the event,
-  a slideshow with the images of the event, and other essential info about the event (when the event is, where the event is,
-  the price) -->
+  <!-- This is the template of the title banner,
+  a component used in an event page or in a point of interest page to visualize the name of the event / point of interest,
+  a slideshow with the images of the event / point of interest,
+  and other essential info about (for example, in case of the event, when the event is, where the event is, the price) -->
   <div>
     <div class="titleBanner">
       <div id="bannerText">
-        <!-- The title of the event -->
+        <!-- The title of the event / point of interest -->
         <h1 id="bannerTitle" class="title-font title">{{title}}</h1>
-        <!-- The content of essential info about the event -->
+        <!-- The content of essential info about the event / point of interest -->
         <div id="contentWrapper">
           <slot name="content"></slot>
         </div>
       </div>
-      <!-- The media related to the event -->
+      <!-- The media related to the event / point of interest -->
       <div id="mediaWrapper">
         <slot name="media"></slot>
       </div>

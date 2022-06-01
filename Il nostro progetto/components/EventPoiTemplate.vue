@@ -75,10 +75,6 @@ export default {
       type: String,
       required: true,
     },
-    breadcrump: {
-      type: String,
-      required: true,
-    },
     description: { // The description of the point of interest
       type: String,
       required: true,
