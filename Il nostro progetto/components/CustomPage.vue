@@ -107,7 +107,7 @@ h1 {
   font-size: 8vmin;
   width: fit-content;
   max-width: 100%;
-  overflow: ellipsis;
+  /*white-space: nowrap;*/
 }
 
 .downArrowContainer {

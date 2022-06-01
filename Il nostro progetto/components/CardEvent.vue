@@ -44,20 +44,17 @@ a {
   height: 140px;
   border: 1px solid var(--color1);
 }
-.card-title {
-  text-align: center;
-}
+
 .card-text {
   text-align: left;
 }
 
-.title-font {
-  font-size: 130%;
+.card-title {
+  font-size: 1.5vmax;
+  text-align: center; 
 }
 
-.imp-info {
-  font-size: 120%;
-}
+.card-body{ font-size: 1.0vmax; }
 
 </style>
 

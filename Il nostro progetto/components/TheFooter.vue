@@ -1,18 +1,12 @@
 <template>
-<div>
-  <footer>
-    <div class="vertical-center">
-        <nuxt-link to="/">
-            Home page
-        </nuxt-link>
-    </div>
-  </footer>
-  <div class="footer-extension">
-    <div class="team-info">
-          SoftMath --- 10612772 - Carlo Ambrogi --- 10582405 - Sebastian Castellano --- 10573185 - Andrea De Bettin --- 10571386 - Lorenzo Guerrieri
-    </div>
+
+<footer>
+  <div class="vertical-center">
+    SoftMath --- 10612772 - Carlo Ambrogi --- 10582405 - Sebastian Castellano --- 10573185 - Andrea De Bettin --- 10571386 - Lorenzo Guerrieri
   </div>
-</div>
+</footer>
+  
+
     
 </template>
 
@@ -29,15 +23,13 @@ footer {
     position: relative;
     color: var(--color2);
     background: var(--color1);
-    margin-top: 20vh;
+    margin-top: max(20vh, 200px);
     margin-bottom: 0;
     margin-right: 0;
     height: 10vh;
 }
 
-div {
-    font-size: 110%;
-}
+div { font-size: 1.5vw; }
 
 .vertical-center {
   margin: 0 0 0 2vw;
