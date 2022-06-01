@@ -86,24 +86,6 @@ export default {
       display: inline;
     }
 
-    #prev{
-      margin: 0;
-      margin-top: 2vh;
-      padding: 0;
-      font-size: 90%;
-      text-align: left;
-    }
-
-    #prevName{
-      margin-top: -5px;
-      margin-bottom: 1vh;
-      padding: 0;
-      font-size: 150%;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-    }
-
     #nextGrid{
       display: grid;
       grid-template-columns: auto auto;
@@ -138,25 +120,6 @@ export default {
       display:block;
     }
 
-    #next{
-      margin: 0;
-      margin-top: 2vh;
-      padding: 0;
-      font-size: 90%;
-      text-align: right;
-    }
-
-    #nextName{
-      margin-top: -5px;
-      margin-bottom: 1vh;
-      padding: 0;
-      font-size: 150%;
-      text-align: right;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-    }
-
     #spacer{
       flex: 2;
       min-width: 50px;
@@ -165,5 +128,83 @@ export default {
     a {
       text-decoration: none;
       color: inherit;
+    }
+
+    @media screen and (max-width: 940px) {
+      #next{
+        margin: 0;
+        margin-top: 2vh;
+        padding: 0;
+        font-size: 90%;
+        text-align: right;
+      }
+
+      #nextName{
+        margin-top: -5px;
+        margin-bottom: 1vh;
+        padding: 0;
+        font-size: 100%;
+        text-align: right;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      #prev{
+        margin: 0;
+        margin-top: 2vh;
+        padding: 0;
+        font-size: 90%;
+        text-align: left;
+      }
+  
+      #prevName{
+        margin-top: -5px;
+        margin-bottom: 1vh;
+        padding: 0;
+        font-size: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    }
+
+    @media screen and (min-width: 940px) {
+      #next{
+        margin: 0;
+        margin-top: 2vh;
+        padding: 0;
+        font-size: 90%;
+        text-align: right;
+      }
+
+      #nextName{
+        margin-top: -5px;
+        margin-bottom: 1vh;
+        padding: 0;
+        font-size: 150%;
+        text-align: right;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      #prev{
+        margin: 0;
+        margin-top: 2vh;
+        padding: 0;
+        font-size: 90%;
+        text-align: left;
+      }
+
+      #prevName{
+        margin-top: -5px;
+        margin-bottom: 1vh;
+        padding: 0;
+        font-size: 150%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
     }
 </style>

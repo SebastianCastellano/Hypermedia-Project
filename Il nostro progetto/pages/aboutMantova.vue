@@ -16,9 +16,9 @@
           value of Mantua is nonetheless outstanding, with many of Mantua's 
           patrician and ecclesiastical buildings being uniquely important 
           examples of Italian architecture.
-          <br><br>
           In 2008, Mantua's <em>centro storico</em> (old town) 
-          was declared by UNESCO to be a World Heritage Site. 
+          was declared by UNESCO to be a World Heritage Site.
+          <!--
           Mantua's historic power and influence under the Gonzaga 
           family has made it one of the main artistic, cultural, 
           and especially musical hubs of Northern Italy and the 
@@ -33,6 +33,7 @@
           play Romeo and Juliet. It is the nearest town to the 
           birthplace of the Roman poet Virgil, who is commemorated 
           by a statue at the lakeside park "Piazza Virgiliana".
+          -->
         </p>
       </div>
     </section>
@@ -103,6 +104,7 @@
 <!-- this is the about Mantova page -->
 
 <style scoped>
+
 .flex-container {
   display: flex;
   justify-content: space-evenly;
@@ -116,6 +118,7 @@
 .column {
   width: 35vw;
   height: 100%;
+  margin: 0;
 }
 
 .text {

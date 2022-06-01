@@ -66,7 +66,6 @@ export default {
   @media screen and (max-width: 940px){
     .carousel{
       max-height: var(--carousel-height);
-      
       background-color: rgba(84, 84, 84, 0.244);
       margin-left: auto;
       margin-right: auto;

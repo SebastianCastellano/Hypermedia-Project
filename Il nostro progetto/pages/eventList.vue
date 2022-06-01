@@ -6,10 +6,10 @@
     <nuxt-link class="display-4 title-font page-title sub-events" to="/eventSummer">Summer Events</nuxt-link>
     <nuxt-link class="display-4 title-font page-title sub-events" to="/eventWinter">Winter Events</nuxt-link>
     </div>
-    <div class="row mt-3">
+    <div class="row mt-3 flexbox-container">
       <card-event
         v-for="(event, eventIndex) of eventList"
-        class="col-sm-2 m-2"
+        class="col-sm-2 m-2 column"
         :key="`event-index-${eventIndex}`"
         :id="event.id"
         :name="event.name"
@@ -25,6 +25,10 @@
 <!-- this is the event list page -->
 
 <style>
+.flexbox-container {
+  justify-content: space-evenly;
+}
+
 .sub-events-div{
   width:4cm;
   display: block; 

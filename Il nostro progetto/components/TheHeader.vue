@@ -61,6 +61,18 @@
 
 <style scoped>
 nav {border-bottom: 2px solid var(--color2);}
+
+li {
+  white-space: nowrap;
+  font-size: 1.5vw;
+}
+
+@media screen and (max-width: 991px){
+  li {
+    font-size: 15px;
+  }
+}
+
 </style>
 
 <script>
