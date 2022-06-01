@@ -6,6 +6,8 @@
   </div>
 </template>
 
+<!-- A page has an header and a footer -->
+
 <script>
 import TheHeader from '~/components/TheHeader.vue'
 import TheFooter from '~/components/TheFooter.vue'

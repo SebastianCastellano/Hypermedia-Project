@@ -5,6 +5,8 @@
   </div>
 </template>
 
+<!-- A page witch has an header but not a footer -->
+
 <script>
 import TheHeader from '~/components/TheHeader.vue'
 export default {
