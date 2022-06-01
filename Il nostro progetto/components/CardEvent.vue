@@ -2,16 +2,12 @@
   <div class="card">
     <!-- Use a nuxt-link to make the whole card a link -->
     <nuxt-link :to="'/events/'+id">
-      <!-- Better to use an img
-      <div
-        class="card-img-top card-image"
-        :style="{ 'background-image': 'url(' + image + ')' }"
-      ></div>
-      -->
+    <div class="img-container">
       <img
         class="card-img-top card-image"
         :src="image"
         :alt="alternative"/>
+    </div>
       <div class="card-body">
         <p class="card-title title-font">{{ name }}</p>
         <p class="card-title imp-info">{{ date }}</p>
@@ -36,13 +32,22 @@ a {
   background: var(--color1-light);
   /*border: 2px solid var(--color1);*/
 }
+
+.img-container{ 
+  height:140px;
+  }
+
 .card-image {
   margin-top: 5px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 140px;
+  /* height: 140px; */
   border: 1px solid var(--color1);
+  width:100%;
+    height:100%;
+    object-fit: cover;
+    overflow: hidden;
 }
 
 .card-text {
@@ -87,11 +92,6 @@ export default {
     alternative: {
       type: String,
       required: true,
-    },
-  },
-  methods: {
-    goToDetails() {
-      this.$router.push(`/events/${this.id}`)
     },
   },
 }

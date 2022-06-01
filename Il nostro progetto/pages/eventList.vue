@@ -51,7 +51,17 @@
 import CardEvent from '~/components/CardEvent.vue' // We are importing the component used for an event card
 // (in the event list page there are multiple event card: one for each event)
 export default {
-  name: 'ListPage',
+  name: 'EventListPage',
+  head: {
+    title: 'Events page',
+    meta: [
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'Discover Mantova future events!'
+      }
+      ],
+  },
   components: {
     CardEvent
 },

@@ -44,7 +44,7 @@
     <div class="page-content">
       <p id="description">{{description}}</p>
       <div id="poiList">
-        <h3 class="title-font" id="poiTitle">The event takes place near: </h3>
+        <h2 class="title-font" id="poiTitle">The event takes place near: </h2>
         <div id="list">
           <!-- A card of the point of interest where the event takes place -->
           <event-template

@@ -17,10 +17,10 @@ a {
 
 .card {
   border: 2px solid var(--color1);
-  background: var(--color2);
+  background-color: var(--color2);
 }
 .card:hover {
-  background: var(--color1-light);
+  background-color: var(--color1-light);
   /*border: 2px solid var(--color1);*/
 }
 

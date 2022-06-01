@@ -4,8 +4,8 @@
     <!-- Previous event button -->
     <nuxt-link :to="prevPageUrl" v-if="prevPageUrl != null">
       <div id="prevGrid">
-        <img id="leftArrow" src="../static/icons/leftArrow.png"/>
-        <img id="leftArrowHover" src="../static/icons/leftArrowHover.png"/>
+        <img id="leftArrow" alt="left arrow" src="../static/icons/leftArrow.png"/>
+        <img id="leftArrowHover" alt="left arrow hover effect" src="../static/icons/leftArrowHover.png"/>
         <p id="prev">Previous {{type}}</p>
         <p id="prevName">{{prevName}}</p>
       </div>
@@ -14,8 +14,8 @@
     <!-- Next event button -->
     <nuxt-link :to="nextPageUrl" v-if="nextPageUrl != null">
       <div id="nextGrid">
-        <img id="rightArrow" src="../static/icons/rightArrow.png"/>
-        <img id="rightArrowHover" src="../static/icons/rightArrowHover.png"/>
+        <img id="rightArrow" alt="right arrow" src="../static/icons/rightArrow.png"/>
+        <img id="rightArrowHover" alt="right arrow hover effect" src="../static/icons/rightArrowHover.png"/>
         <p id="next">Next {{type}}</p>
         <p id="nextName">{{nextName}}</p>
       </div>
