@@ -11,16 +11,16 @@
         <!-- This is an arrow to move more easly in the page (there are different arrows in this page
         and you can move between the sections in this page by scrolling or using arrows) -->
           <a href="#points" class="arrowDownLink">
-              <img src="../static/icons/downArrow.png" class="arrowDown"/>
-              <img src="../static/icons/downArrowHover.png" class="arrowDownHover"/>
+              <img src="../static/icons/downArrow.png" alt="down arrow" class="arrowDown"/>
+              <img src="../static/icons/downArrowHover.png" alt="down arrow hover effect" class="arrowDownHover"/>
           </a>
       </div>
     </section>
     <section id="points">
       <div class="upArrowContainer">
         <a href="#events" class="arrowUpLink">
-          <img src="../static/icons/upArrow.png" class="arrowUp"/>
-          <img src="../static/icons/upArrowHover.png" class="arrowUpHover"/>
+          <img src="../static/icons/upArrow.png" alt="up arrow" class="arrowUp"/>
+          <img src="../static/icons/upArrowHover.png" alt="up arrow hover effect" class="arrowUpHover"/>
         </a>
       </div>
       <nuxt-link to="/pointsOfInterestList">
@@ -29,16 +29,16 @@
       </nuxt-link>
       <div class="downArrowContainer">
         <a href="#itineraries" class="arrowDownLink">
-          <img src="../static/icons/downArrow.png" class="arrowDown"/>
-          <img src="../static/icons/downArrowHover.png" class="arrowDownHover"/>
+          <img src="../static/icons/downArrow.png" alt="down arrow" class="arrowDown"/>
+          <img src="../static/icons/downArrowHover.png" alt="down arrow hover effect" class="arrowDownHover"/>
         </a>
       </div>
     </section>
     <section id="itineraries">
       <div class="upArrowContainer">
         <a href="#points" class="arrowUpLink">
-          <img src="../static/icons/upArrow.png" class="arrowUp"/>
-          <img src="../static/icons/upArrowHover.png" class="arrowUpHover"/>
+          <img src="../static/icons/upArrow.png" alt="up arrow" class="arrowUp"/>
+          <img src="../static/icons/upArrowHover.png" alt="up arrow hover effect" class="arrowUpHover"/>
         </a>
       </div>
       <nuxt-link to="/itineraryList">
@@ -47,16 +47,16 @@
       </nuxt-link>
       <div class="downArrowContainer">
         <a href="#services" class="arrowDownLink">
-          <img src="../static/icons/downArrow.png" class="arrowDown"/>
-          <img src="../static/icons/downArrowHover.png" class="arrowDownHover"/>
+          <img src="../static/icons/downArrow.png" alt="down arrow" class="arrowDown"/>
+          <img src="../static/icons/downArrowHover.png" alt="down arrow hover effect" class="arrowDownHover"/>
         </a>
       </div>
     </section>
     <section id="services">
       <div class="upArrowContainer">
         <a href="#itineraries" class="arrowUpLink">
-          <img src="../static/icons/upArrow.png" class="arrowUp"/>
-          <img src="../static/icons/upArrowHover.png" class="arrowUpHover"/>
+          <img src="../static/icons/upArrow.png" alt="up arrow" class="arrowUp"/>
+          <img src="../static/icons/upArrowHover.png" alt="up arrow hover effect" class="arrowUpHover"/>
         </a>
       </div>
       <nuxt-link to="/servicesList">
@@ -65,16 +65,16 @@
       </nuxt-link>
       <div class="downArrowContainer">
         <a href="#about" class="arrowDownLink">
-          <img src="../static/icons/downArrow.png" class="arrowDown"/>
-          <img src="../static/icons/downArrowHover.png" class="arrowDownHover"/>
+          <img src="../static/icons/downArrow.png" alt="down arrow" class="arrowDown"/>
+          <img src="../static/icons/downArrowHover.png" alt="down arrow hover effect" class="arrowDownHover"/>
         </a>
       </div>
     </section>
     <section id="about">
       <div class="upArrowContainer">
         <a href="#services" class="arrowUpLink">
-          <img src="../static/icons/upArrow.png" class="arrowUp"/>
-          <img src="../static/icons/upArrowHover.png" class="arrowUpHover"/>
+          <img src="../static/icons/upArrow.png" alt="up arrow" class="arrowUp"/>
+          <img src="../static/icons/upArrowHover.png" alt="up arrow hover effect" class="arrowUpHover"/>
         </a>
       </div>
       <nuxt-link to="/aboutMantova">

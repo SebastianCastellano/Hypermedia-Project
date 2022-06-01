@@ -36,12 +36,12 @@
     <!-- This second div below is the same as above, serves as a placeholder in order to avoid text overlapping caused
     by position:fixed in the div above-->
     <nav class="navbar navbar-expand-lg navbar-light px-3 header-holder">
-      <div id="home-link" class="navbar-brand">
+      <div class="navbar-brand">
         <span class="capital-letter">V</span>isit<span class="capital-letter"
           >M</span
         >antova
       </div>
-      <div id="navbarToggler" class="collapse navbar-collapse">
+      <div class="collapse navbar-collapse">
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
           <li
             v-for="(navItem, navItemIndex) of headerList"
@@ -121,6 +121,7 @@ export default {
 <style scoped>
 @import '~/static/style/main.css';
 
+nav {border-bottom: 2px solid var(--color2);}
 a {
   text-decoration: none;
   color: inherit;
