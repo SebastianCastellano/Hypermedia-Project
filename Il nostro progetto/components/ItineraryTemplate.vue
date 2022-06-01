@@ -1,22 +1,22 @@
 <template>
-    <div class="page container mt-5">
-      <h3 class="no-disp breadcrump">{{ breadcrump }}</h3>
-      <h1 class="name title-font page-title">{{ name }}</h1>
-      <div class="info-box">
-        <p>Starting Point: {{ start }}</p>
-        <p>Length: {{ length }}</p>
-        <p>Average Duration: {{ duration }}</p>
-      </div>
-      <img
-          class="no-disp column"
-          :src="imageUrl"
-          :alt="imageAlternative"/>
-      <p class="description">{{ description }}</p>
-      <div class="map">
-        <iframe :src="map" width="100%" height="300vh" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-      <!-- AGGIUNGERE ANCHE LE INFORMAZIONI OTTENUTE TRAMITE LA MANY TO MANY CHE SONO DEI LINK -->
-      </div>
+  <!-- Template used for the main part of the itinerary page, to visualize the main info of the itinerary -->
+  <div class="page container mt-5">
+    <h3 class="no-disp breadcrump">{{ breadcrump }}</h3>
+    <h1 class="name title-font page-title">{{ name }}</h1> <!-- The name of the itinerary -->
+    <div class="info-box"> <!-- A box with the main info about the itinerary -->
+      <p>Starting Point: {{ start }}</p>
+      <p>Length: {{ length }}</p>
+      <p>Average Duration: {{ duration }}</p>
     </div>
+    <img
+        class="no-disp column"
+        :src="imageUrl"
+        :alt="imageAlternative"/>
+    <p class="description">{{ description }}</p>
+    <div class="map"> <!-- The map of the itinerary -->
+      <iframe :src="map" width="100%" height="300vh" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
 </template>
 
 <style scoped>
@@ -52,7 +52,7 @@
 export default {
   name: 'EventPoiTemplate',
   props: {
-    name: {
+    name: { // The name of the itinerary
       type: String,
       required: true,
     },
@@ -60,31 +60,31 @@ export default {
       type: String,
       required: true,
     },
-    duration: {
+    duration: { // The duration of the itinerary
       type: String,
       required: true,
     },
-    length: {
+    length: { // The lenght of the itinerary
       type: String,
       required: true,
     },
-    imageUrl: {
+    imageUrl: { // An image representing the itinerary
       type: String,
       required: true,
     },
-    imageAlternative: {
+    imageAlternative: { // A string alternative to the image
       type: String,
       required: true,
     },
-    description: {
+    description: { // A description about the itinerary
       type: String,
       required: true,
     },
-    map: {
+    map: { // A map of the itinerary
       type: String,
       required: true,
     },
-    start: {
+    start: { // The name of the first point of interest of the itinerary
       type: String,
       required: true,
     }
