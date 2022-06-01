@@ -1,19 +1,22 @@
 <template>
-<div class="page container mt-5">
-  <div class="poi-box">
-    <nuxt-link class="flex-container" :to="'/pointsOfInterest/'+poiId">
-      <img
-        class="column"
-        :src="thumbnailPoi"
-        :alt="alternativeThumbPoi"/>
-      <div class="info column">
-        <div class="info-text">
-          <h3 class="title-font">{{namePoi}}</h3>
-          <p>{{shortDescriptionPoi}}</p>
+  <!-- Component used to visualize a card with a point of interest -->
+  <div class="page container mt-5">
+    <div class="poi-box">
+      <nuxt-link class="flex-container" :to="'/pointsOfInterest/'+poiId">
+        <!-- An image representing the point of interest -->
+        <img
+          class="column"
+          :src="thumbnailPoi"
+          :alt="alternativeThumbPoi"/>
+        <div class="info column">
+          <div class="info-text">
+            <!-- Other little information about the point of interest -->
+            <h3 class="title-font">{{namePoi}}</h3>
+            <p>{{shortDescriptionPoi}}</p>
+          </div>
         </div>
-      </div>
-    </nuxt-link>
-  </div>
+      </nuxt-link>
+    </div>
   </div>
 </template>
 
@@ -57,23 +60,23 @@ img {
 export default {
   name: 'EventTemplate',
   props: {
-    poiId: {
+    poiId: { // The id of the point of interest
       type: Number,
       required: true,
     },
-    thumbnailPoi: {
+    thumbnailPoi: { // An image representing the point of interest
       type: String,
       required: true,
     },
-    alternativeThumbPoi: {
+    alternativeThumbPoi: { // A string alternative to the image
       type: String,
       required: true,
     },
-    namePoi: {
+    namePoi: { // The name of the point of interest
       type: String,
       required: true,
     },
-    shortDescriptionPoi: {
+    shortDescriptionPoi: { // A description of the point of interest
       type: String,
       required: true,
     },

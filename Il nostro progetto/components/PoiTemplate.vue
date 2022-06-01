@@ -1,4 +1,5 @@
 <template>
+  <!-- This is a template to visualize a card with an event -->
   <div class="page container mt-5">
     <div class="event-box">
       <nuxt-link class="flex-container" :to="'/events/'+eventId">
@@ -71,27 +72,27 @@ h4 {
 export default {
   name: 'PoiTemplate',
   props: {
-    eventId: {
+    eventId: { // The id of the event
       type: Number,
       required: true,
     },
-    thumbnailEvent: {
+    thumbnailEvent: { // An image representing the event
       type: String,
       required: true,
     },
-    alternativeThumbEvent: {
+    alternativeThumbEvent: { // A string alternative to the image
       type: String,
       requitred: true,
     },
-    nameEvent: {
+    nameEvent: { // The name of the event
       type: String,
       required: true,
     },
-    shortDescriptionEvent: {
+    shortDescriptionEvent: { // A short description of the event
       type: String,
       required: true,
     },
-    periodEvent: {
+    periodEvent: { // The period of the event
       type: String,
       required: true,
     },

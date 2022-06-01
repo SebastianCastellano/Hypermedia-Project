@@ -1,13 +1,13 @@
 <template>
 
 <footer>
+  <!-- This is the template of the footer -->
   <div class="vertical-center">
+    <!-- Our info -->
     SoftMath --- 10612772 - Carlo Ambrogi --- 10582405 - Sebastian Castellano --- 10573185 - Andrea De Bettin --- 10571386 - Lorenzo Guerrieri
   </div>
 </footer>
-  
 
-    
 </template>
 
 <style scoped>

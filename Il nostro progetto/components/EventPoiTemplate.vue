@@ -1,46 +1,33 @@
 <template>
-    <div class="page container mt-5">
-      <!--<h3 class="breadcrump">{{ breadcrump }}</h3>-->
-      <h1 class="name title-font page-title">{{ name }}</h1>
-      <div class="info-box">
-        <p>When: {{dateTime}}</p>
-        <p>Where: {{location}}</p>
-        <p>Price: {{price}}</p>
-      </div>
-      <!--
-      <nuxt-link class="previousEvent" :to="'/events/'+idPreviousEvent" v-if="idPreviousEvent != -1">
-        Previous event
-      </nuxt-link>
-      <nuxt-link class="nextEvent" :to="'/events/'+idNextEvent" v-if="idNextEvent != -1">
-        Next event
-      </nuxt-link>
-      -->
-      <p class="description">{{ description }}</p>
-      <h3 class="title-font">Media:</h3>
-      <img
-        v-for="(image, imageIndex) of imagesUrl"
-        :key="`image-index-${imageIndex}`"
-        :src="image"
-        :alt="imagesAlternative[imageIndex]"
-      />
-      <br>
-      <!-- To embed a youtube video-->
-      <iframe
-        v-for="(video, videoIndex) of videosUrl"
-          :key="`video-index-${videoIndex}`"
-          :src="video"
-          :title="videosAlternative[videoIndex]">
-      </iframe>
-      <!-- For a general video, maybe in our folders -->
-      <!--
-      <video controls
-        v-for="(video, videoIndex) of videos"
+  <!-- The template used to visualize the main info of a specific point of interest -->
+  <div class="page container mt-5">
+    <h1 class="name title-font page-title">{{ name }}</h1>
+    <!-- General info of the point of interest -->
+    <div class="info-box">
+      <p>When: {{dateTime}}</p>
+      <p>Where: {{location}}</p>
+      <p>Price: {{price}}</p>
+    </div>
+    <!-- A description of the point of interest -->
+    <p class="description">{{ description }}</p>
+    <!-- The images of the point of interest -->
+    <h3 class="title-font">Media:</h3>
+    <img
+      v-for="(image, imageIndex) of imagesUrl"
+      :key="`image-index-${imageIndex}`"
+      :src="image"
+      :alt="imagesAlternative[imageIndex]"
+    />
+    <br>
+    <!-- The videos of the point of interest -->
+    <!-- To embed a youtube video-->
+    <iframe
+      v-for="(video, videoIndex) of videosUrl"
         :key="`video-index-${videoIndex}`"
         :src="video"
-        :type="video/webm">
-      </video>
-      -->
-    </div>
+        :title="videosAlternative[videoIndex]">
+    </iframe>
+  </div>
 </template>
 
 <style scoped>
@@ -84,7 +71,7 @@ iframe, video {
 export default {
   name: 'EventPoiTemplate',
   props: {
-    name: {
+    name: { // The name of the point of interest
       type: String,
       required: true,
     },
@@ -92,44 +79,36 @@ export default {
       type: String,
       required: true,
     },
-    description: {
+    description: { // The description of the point of interest
       type: String,
       required: true,
     },
-    dateTime: {
+    dateTime: { // Opening times of the point of interest
       type: String,
       required: true,
     },
-    location: {
+    location: { // The location of the point of interest
       type: String,
       required: true,
     },
-    price: {
+    price: { // The price to enter in the point of interest
       type: String,
       required: true,
     },
-    imagesUrl: {
+    imagesUrl: { // Images
       type: Array,
       required: true,
     },
-    imagesAlternative: {
+    imagesAlternative: { // Alternative string to the images
       type: Array,
       required: true,
     },
-    videosUrl: {
+    videosUrl: { // Videos
       type: Array,
       required: true,
     },
-    videosAlternative: {
+    videosAlternative: { // Alternative string to the videos
       type: Array,
-      required: true,
-    },
-    idPreviousEvent: {
-      type: Number,
-      required: true,
-    },
-    idNextEvent: {
-      type: Number,
       required: true,
     },
   },
