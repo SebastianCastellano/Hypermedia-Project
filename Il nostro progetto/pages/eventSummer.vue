@@ -1,7 +1,7 @@
 <template>
   <div class="page container mt-5">
     <h1 class="display-4 title-font page-title">Summer Events</h1>
-    <div class="row mt-3">
+    <div class="row mt-3 flexbox-container">
       <card-event
         v-for="(event, eventIndex) of eventList"
         class="col-sm-2 m-2"
@@ -20,6 +20,9 @@
 <!-- this is the summer event list page (a page with all events in summer) -->
 
 <style scoped>
+.flexbox-container {
+  justify-content: space-evenly;
+}
 .sub-events-div{
   width:7cm;
   display: block; 

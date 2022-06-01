@@ -24,7 +24,7 @@
 
 <!-- this is the event list page -->
 
-<style>
+<style scoped>
 .flexbox-container {
   justify-content: space-evenly;
 }
@@ -34,10 +34,8 @@
 }
 
 .sub-events-div{
-  width:4cm;
-  display: block; 
-  margin:0;
-  padding: 0 !important;
+  display:flex;
+  justify-content: space-between;
 }
 .sub-events{
   

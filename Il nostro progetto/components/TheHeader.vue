@@ -59,21 +59,6 @@
   </div>
 </template>
 
-<style scoped>
-nav {border-bottom: 2px solid var(--color2);}
-
-li {
-  white-space: nowrap;
-  font-size: 1.5vw;
-}
-
-@media screen and (max-width: 991px){
-  li {
-    font-size: 15px;
-  }
-}
-
-</style>
 
 <script>
 export default {
@@ -119,6 +104,19 @@ export default {
 </script>
 
 <style scoped>
+nav {border-bottom: 2px solid var(--color2);}
+
+li {
+  white-space: nowrap;
+  font-size: 1.5vw;
+}
+
+@media screen and (max-width: 991px){
+  li {
+    font-size: 15px;
+  }
+}
+
 @import '~/static/style/main.css';
 
 nav {border-bottom: 2px solid var(--color2);}

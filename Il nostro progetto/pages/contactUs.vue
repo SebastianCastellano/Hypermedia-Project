@@ -19,7 +19,7 @@
 
 <!-- this is the contact us page -->
 
-<style>
+<style scoped>
 
 .text {
   /*width: 50%;*/

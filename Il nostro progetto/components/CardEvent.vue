@@ -50,11 +50,11 @@ a {
 }
 
 .card-title {
-  font-size: 1.5vmax;
+  font-size: clamp(15px,2.0vmax,20px); 
   text-align: center; 
 }
 
-.card-body{ font-size: 1.0vmax; }
+.card-body{ font-size: clamp(15px,2.0vmax,20px); }
 
 </style>
 
