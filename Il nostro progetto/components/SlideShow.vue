@@ -1,4 +1,5 @@
 <template>
+  <!-- This is the slideshow, a component to visualize a slideshow of some images -->
   <div>
     <div id="carousel" class="carousel slide carousel-fade" data-bs-ride="carousel" :style="cssProps">
       <div class="carousel-indicators">
@@ -29,19 +30,19 @@
 export default {
   name: 'SlideShow',
   props: {
-    imagesUrl: {
+    imagesUrl: { // An array with the images to visualize in the slideshow
       type: Array,
       required: true,
     },
-    imgAlternatives: {
+    imgAlternatives: { // An array of strings alternative to images
       type: Array,
       required: true,
     },
-    height: {
+    height: { // Height of the image
       type: String,
       required: true,
     },
-    width: {
+    width: { // Width of the image
       type: String,
       required: true,
     },

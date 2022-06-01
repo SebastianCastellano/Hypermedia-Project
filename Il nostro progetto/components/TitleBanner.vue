@@ -1,12 +1,18 @@
 <template>
+  <!-- This is the template of the title banner, a component used in an event page to visualize the name of the event,
+  a slideshow with the images of the event, and other essential info about the event (when the event is, where the event is,
+  the price) -->
   <div>
     <div class="titleBanner">
       <div id="bannerText">
+        <!-- The title of the event -->
         <h1 id="bannerTitle" class="title-font title">{{title}}</h1>
+        <!-- The content of essential info about the event -->
         <div id="contentWrapper">
           <slot name="content"></slot>
         </div>
       </div>
+      <!-- The media related to the event -->
       <div id="mediaWrapper">
         <slot name="media"></slot>
       </div>

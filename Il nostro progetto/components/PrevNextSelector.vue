@@ -1,46 +1,49 @@
 <template>
-    <div id="selector">
-      <nuxt-link :to="prevPageUrl" v-if="prevPageUrl != null">
-        <div id="prevGrid">
-          <img id="leftArrow" src="../static/icons/leftArrow.png"/>
-          <img id="leftArrowHover" src="../static/icons/leftArrowHover.png"/>
-          <p id="prev">Previous {{type}}</p>
-          <p id="prevName">{{prevName}}</p>
-        </div>
-      </nuxt-link>
-      <div id="spacer"></div>
-      <nuxt-link :to="nextPageUrl" v-if="nextPageUrl != null">
-        <div id="nextGrid">
-          <img id="rightArrow" src="../static/icons/rightArrow.png"/>
-          <img id="rightArrowHover" src="../static/icons/rightArrowHover.png"/>
-          <p id="next">Next {{type}}</p>
-          <p id="nextName">{{nextName}}</p>
-        </div>
-      </nuxt-link>
-    </div>
+  <!-- This component is the next / previous event selector -->
+  <div id="selector">
+    <!-- Previous event button -->
+    <nuxt-link :to="prevPageUrl" v-if="prevPageUrl != null">
+      <div id="prevGrid">
+        <img id="leftArrow" src="../static/icons/leftArrow.png"/>
+        <img id="leftArrowHover" src="../static/icons/leftArrowHover.png"/>
+        <p id="prev">Previous {{type}}</p>
+        <p id="prevName">{{prevName}}</p>
+      </div>
+    </nuxt-link>
+    <div id="spacer"></div>
+    <!-- Next event button -->
+    <nuxt-link :to="nextPageUrl" v-if="nextPageUrl != null">
+      <div id="nextGrid">
+        <img id="rightArrow" src="../static/icons/rightArrow.png"/>
+        <img id="rightArrowHover" src="../static/icons/rightArrowHover.png"/>
+        <p id="next">Next {{type}}</p>
+        <p id="nextName">{{nextName}}</p>
+      </div>
+    </nuxt-link>
+  </div>
 </template>
 
 <script>
 export default {
   name: 'PrevNextSelector',
   props: {
-    type: {
+    type: { // type is 'Event' (we use this component for events)
       type: String,
       required: true,
     },
-    prevName: {
+    prevName: { // the name of the previuos event
       type: String,
       required: false,
     },
-    nextName: {
+    nextName: { // the name of the next event
       type: String,
       required: false,
     },
-    prevPageUrl: {
+    prevPageUrl: { // The previous event page
       type: String,
       required: false,
     },
-    nextPageUrl: {
+    nextPageUrl: { // The next event page
       type: String,
       required: false,
     },

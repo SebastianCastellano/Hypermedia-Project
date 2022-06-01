@@ -20,6 +20,8 @@
   </div>
 </template>
 
+<!-- this is the winter event list page (a page with all events in winter) -->
+
 <style scoped>
 .sub-events-div{
   width:7cm;
@@ -30,7 +32,8 @@
 </style>
 
 <script>
-import CardEvent from '~/components/CardEvent.vue'
+import CardEvent from '~/components/CardEvent.vue' // We are importing the component used for an event card
+// (in the winter event list page there are multiple event card: one for each event in winter)
 export default {
   name: 'ListPage',
   components: {
@@ -38,22 +41,13 @@ export default {
 },
   data() {
     return {
-      // catList: []
     }
   },
-  // Note: This happens on backend (server) side
   async asyncData({ $axios }) {
-    // const { data } = await $axios.get('http://localhost:3000/api/cats')
-    const { data } = await $axios.get('/api/events/winter')
+    const { data } = await $axios.get('/api/events/winter') // we use this api to get all events in winter
     return {
       eventList: data,
     }
   },
-
-  // Note: This would happen on frontend (client) side
-  // async mounted() {
-  //   const { data } = await this.$axios.get('/api/cats')
-  //   this.catList = data
-  // },
 }
 </script>

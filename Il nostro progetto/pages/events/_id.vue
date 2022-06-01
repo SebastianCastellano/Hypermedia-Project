@@ -1,5 +1,6 @@
 <template>
   <div>
+    <!-- This is a selector to go to previous / next event (ordered by date) -->
     <prev-next-selector v-if="idPreviousEvent==-1 && idNextEvent!=-1"
       type="Event"
       :nextName="nameNextEvent"
@@ -17,6 +18,7 @@
       :nextName="nameNextEvent"
       :nextPageUrl="'/events/'+idNextEvent"
     />
+    <!-- Here there are the main info of the event: the name, the date / time, where the event is and the price -->
     <title-banner :title="name">
       <template v-slot:media>
         <slide-show :imagesUrl="imagesUrl" :imgAlternatives="imagesAlternative" height="40vh" width="71vh" :keepRatio="false" />
@@ -38,11 +40,13 @@
         </div>
       </template>
     </title-banner>
+    <!-- Description of the event -->
     <div class="page-content">
       <p id="description">{{description}}</p>
       <div id="poiList">
         <h3 class="title-font" id="poiTitle">The event takes place near: </h3>
         <div id="list">
+          <!-- A card of the point of interest where the event takes place-->
           <event-template
           :poiId="poiId"
           :thumbnailPoi="thumbnailPoi"
@@ -54,6 +58,8 @@
     </div>
   </div>
 </template>
+
+<!-- this is an event page, a page to visualize a specific event -->
 
 <style scoped>
 #spacer{
@@ -148,9 +154,11 @@
 </style>
 
 <script>
-import EventTemplate from '~/components/EventTemplate.vue'
-import PrevNextSelector from '~/components/PrevNextSelector.vue'
-import TitleBanner from '~/components/TitleBanner.vue'
+import EventTemplate from '~/components/EventTemplate.vue' // A component used to visualize a card with a point of interest
+// (it is used to visualize the point of interest where the event takes place)
+import PrevNextSelector from '~/components/PrevNextSelector.vue' // the component used to visualize the next / previous event buttons
+import TitleBanner from '~/components/TitleBanner.vue' // A component used to visualize the name of the event,
+// a slideshow with the images of the event, and other essential info about the event (when the event is, where the event is, the price)
 export default {
   name: 'EventPage',
   components: {
@@ -160,7 +168,7 @@ export default {
 },
   async asyncData({ route, $axios }) {
     const { id } = route.params
-    const { data } = await $axios.get('/api/eventAndAssociatedPointOfInterest/' + id)
+    const { data } = await $axios.get('/api/eventAndAssociatedPointOfInterest/' + id) // we use this api to get all useful info about this event
     const name = data[0].name
     const breadcrump = "breadcrump"
     const description = data[0].description

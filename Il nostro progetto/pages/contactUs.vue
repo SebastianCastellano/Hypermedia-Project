@@ -2,9 +2,11 @@
   <div id="backgroundImage">
       <br>
       <div class="text">
+        <!-- VisitMantova's beautiful lettering -->
         <h3 class="title-font"><span class="capital-letter">V</span>isit<span class="capital-letter"
           >M</span
         >antova</h3>
+        <!-- Contact info -->
         <p>Piazza Sordello, 45, 46100 Mantova</p>
         <p><b>Mail:</b> <a href = "mailto: VisitMantova@gmail.com">VisitMantova@gmail.com</a><br>
         <b>Tel:</b> <a href="tel:+39-362-558-932">+39 362 558932</a><br>
@@ -14,6 +16,8 @@
       <br>
   </div>
 </template>
+
+<!-- this is the contact us page -->
 
 <style>
 
