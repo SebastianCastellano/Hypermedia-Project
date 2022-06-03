@@ -138,6 +138,7 @@ h3 {
 p {
   text-align: justify;
   margin: 0 1vw;
+  font-size: 1.2rem;
 }
 
 #first { background-image: url("../static/images/palazzoDucale-cameraSposi3.jpg"); }

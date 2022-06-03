@@ -7,11 +7,13 @@
         :style="{ 'background-image': 'url(' + image + ')' }"
       ></div>
       -->
-      <img
-        class="card-img-top card-image"
-        :src="image"
-        :alt="alternative"
-      />
+      <div class="img-container">
+        <img
+          class="card-img-top card-image"
+          :src="image"
+          :alt="alternative"
+        />
+      </div>
       <div class="card-body">
         <div class="card-title title-font">{{ name }}</div>
         <div class="card-title imp-info">Price: {{ price }}</div>
@@ -39,13 +41,20 @@ a {
   background: var(--color1-light);
   /*border: 2px solid var(--color1);*/
 }
+.img-container{ 
+  height: 140px;
+}
 .card-image {
   margin-top: 5px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 140px;
+  
   border: 1px solid var(--color1);
+  width:100%;
+    height:100%;
+    object-fit: cover;
+    overflow: hidden;
 }
 .card-title, .card-text{
   text-align: center;

@@ -3,7 +3,7 @@
     <!-- Use a nuxt-link to make the whole card a link -->
     <nuxt-link :to="'/services/'+ type">
       <div class="card-body">
-        <h3 class="card-title title-font">{{ type }}</h3>
+        <h2 class="card-title title-font">{{ type }}</h2>
       </div>
     </nuxt-link>
   </div>

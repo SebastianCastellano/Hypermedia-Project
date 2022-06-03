@@ -167,7 +167,7 @@ li,
 
 .nav-link {
   color: var(--color2) !important;
-  font-size: 130%;
+  font-size: min(130%,30px);
 }
 
 li:hover .nav-link {

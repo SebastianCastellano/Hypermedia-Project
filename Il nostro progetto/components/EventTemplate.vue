@@ -4,10 +4,12 @@
     <div class="poi-box">
       <nuxt-link class="flex-container" :to="'/pointsOfInterest/'+poiId">
         <!-- An image representing the point of interest -->
-        <img
-          class="column"
-          :src="thumbnailPoi"
-          :alt="alternativeThumbPoi"/>
+        <div class="img-container">
+          <img
+            class="column"
+            :src="thumbnailPoi"
+            :alt="alternativeThumbPoi"/>
+        </div>
         <div class="info column">
           <div class="info-text">
             <!-- Other little information about the point of interest -->
@@ -37,9 +39,16 @@ a {
 
 .flex-container { display: flex; }
 
-img {
+.img-container{ 
   height: 150px;
-  max-width: 40% !important;
+  width: 40%;
+}
+img {
+  border: 1px solid var(--color1);
+  width:100%;
+    height:100%;
+    object-fit: cover;
+    overflow: hidden;
 }
 
 .info {

@@ -4,7 +4,11 @@
   <!-- This is the template of the footer -->
   <div class="vertical-center">
     <!-- Our info -->
-    SoftMath --- 10612772 - Carlo Ambrogi --- 10582405 - Sebastian Castellano --- 10573185 - Andrea De Bettin --- 10571386 - Lorenzo Guerrieri
+      
+      Website for the course of Hypermedia Applications - Polimi 2021/2022 - Group SoftMath 
+      
+    <!-- --- 10612772 - Carlo Ambrogi --- 10582405 - Sebastian Castellano --- 10573185 - Andrea De Bettin --- 10571386 - Lorenzo Guerrieri
+  -->
   </div>
 </footer>
 
@@ -27,11 +31,15 @@ footer {
     margin-bottom: 0;
     margin-right: 0;
     height: 10vh;
+    display: flex;
+  justify-content: center;
 }
 
-div { font-size: 1.5vw; }
+
 
 .vertical-center {
+  
+  font-size: 1rem;
   margin: 0 0 0 2vw;
   position: absolute;
   top: 50%;

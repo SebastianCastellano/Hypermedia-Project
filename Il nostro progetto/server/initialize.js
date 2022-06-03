@@ -289,7 +289,7 @@ export default async (models) => {
     const eventList = [
         {
             //1
-            name: "Antonella Gandini. In-naturale",
+            name: "In-naturale",
             dateBegin: new Date(2021, 10, 7),
             dateEnd: new Date(2022, 6, 30),
             date_s: "07/10/2021 - 30/06/2022",

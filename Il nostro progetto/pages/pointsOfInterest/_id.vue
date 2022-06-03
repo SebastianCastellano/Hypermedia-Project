@@ -46,7 +46,7 @@
         <!-- A list of cards of the events witch take place in this point of interest -->
         <div class="list">
           <div v-if="associatedEventList[0]">
-            <h3 class="title-font list-title">Events hosted in {{name}}: </h3>
+            <h2 class="title-font list-title">Events hosted in {{name}}: </h2>
             <poi-template
             v-for="(event, eventIndex) of associatedEventList"
             :key="`event-index-${eventIndex}`"
@@ -60,7 +60,7 @@
         </div>
         <div class="list">
           <div v-if="associatedItineraryList[0]">
-            <h3 class="title-font list-title">Itineraries including {{name}}: </h3>
+            <h2 class="title-font list-title">Itineraries including {{name}}: </h2>
             <card-itinerary
             v-for="(itinerary, itineraryIndex) of associatedItineraryList"
             :key="`itinerary-index-${itineraryIndex}`"
@@ -93,7 +93,20 @@
       margin-left: auto;
       margin-right: auto;
 }
-@media screen and (min-width: 940px){
+
+
+
+#info > #first, #info > #second{
+  border-right-color: #ffffff;
+  border-right-style: solid;
+  border-right-width: 2px;
+}
+
+.list-title{
+    padding-top: 30px;
+  }
+
+@media screen and (min-width: 940px) {
   #descButton{
     display: none;
   }
@@ -105,25 +118,6 @@
     text-align: center;
     font-size: calc(12px + 1vh);
   }
-}
-
-@media screen and (max-width: 940px){
-  #info > div{
-    padding-left: 2vw;
-    padding-right: 2vw;
-    color: #ffffff;
-    text-align: center;
-    font-size: calc(10px + 25%);
-  }
-}
-
-#info > #first, #info > #second{
-  border-right-color: #ffffff;
-  border-right-style: solid;
-  border-right-width: 2px;
-}
-
-@media screen and (min-width: 940px) {
   .page-content{
     display: flex;
     margin-top: 7vh;
@@ -140,12 +134,17 @@
     margin-right: 5vw;
   }
 
-  .list-title{
-    padding-top: 30px;
-  }
 }
 
 @media screen and (max-width: 940px) {
+  #info > div{
+    padding-left: 2vw;
+    padding-right: 2vw;
+    color: #ffffff;
+    text-align: center;
+    font-size: calc(10px + 25%);
+  }
+
   .page-content{
     margin-top: 7vh;
     margin-left: 5vw;

@@ -3,10 +3,12 @@
   <div class="page container mt-5">
     <div class="event-box">
       <nuxt-link class="flex-container" :to="'/events/'+eventId">
+      <div class="img-container">
         <img
           class="column"
           :src="thumbnailEvent"
           :alt="alternativeThumbEvent"/>
+      </div>
         <div class="info column">
           <div class="info-text">
             <h3 class="title-font">{{nameEvent}}</h3>
@@ -42,10 +44,16 @@ a {
 .flex-container {
   display: flex;
 }
-
-img {
+.img-container{ 
   height: 150px;
-  max-width: 40% !important;
+  width: 40%;
+}
+img {
+  border: 1px solid var(--color1);
+  width:100%;
+    height:100%;
+    object-fit: cover;
+    overflow: hidden;
 }
 
 .info {

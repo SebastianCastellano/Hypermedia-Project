@@ -13,7 +13,7 @@
         :alt="imageAlternative"/>
     <p class="description">{{ description }}</p>
     <div class="map"> <!-- The map of the itinerary -->
-      <iframe :src="map" width="100%" height="300vh" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <iframe :src="map" title="Map of the itinerary" width="100%" height="300vh" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
   </div>
 </template>

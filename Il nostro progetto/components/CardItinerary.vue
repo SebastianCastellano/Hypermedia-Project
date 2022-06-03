@@ -1,16 +1,19 @@
 <template>
   <div class="page container mt-5">
     <div class="poi-box">
-      <nuxt-link class="flex-container" :to="'/itineraries/'+id">
-        <img
-          class="column"
-          :src="imageUrl"
-          :alt="imageAlternative"/>
+      <nuxt-link class="flex-container" :to="'/itineraries/' + id">
+        <div class="img-container">
+          <img class="column" :src="imageUrl" :alt="imageAlternative" />
+        </div>
         <div class="info column">
           <div class="info-text">
-            <h3 class="title-font">{{ name }}</h3>
-            <p><div class="int">Average duration: {{ duration }} --- Length: {{ length }}</div></p>
-            <p><div class="int">{{ shortDescription }}</div></p>
+            <h2 class="title-font">{{ name }}</h2>
+            <div class="p-info">
+              <div class="int">Average duration: {{ duration }} --- Length: {{ length }}</div>
+            </div>
+            <div class="p-info">
+              <div class="int">{{ shortDescription }}</div>
+            </div>
           </div>
         </div>
       </nuxt-link>
@@ -20,7 +23,6 @@
 
 
 <style scoped>
-
 a {
   text-decoration: none;
   color: inherit;
@@ -33,14 +35,31 @@ a {
   width: 100%;
 }
 
-h3 {font-size: 4.5vmin;}
-p {font-size: 2.7vmin;}
+h3 {
+  font-size: 1.75rem;
+}
 
-.poi-box:hover { background-color: var(--color1-light); }
 
-.flex-container { display: flex; }
 
-img { width: 30%; }
+.poi-box:hover {
+  background-color: var(--color1-light);
+}
+
+.flex-container {
+  display: flex;
+}
+
+.img-container { 
+  width: 30%;
+}
+
+img {
+  border: 1px solid var(--color1);
+  width:100%;
+    height:100%;
+    object-fit: cover;
+    overflow: hidden;
+}
 
 .info {
   text-align: center;
@@ -56,20 +75,26 @@ img { width: 30%; }
   margin-top: 40px;
 }
 
-.int{
+.int {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   width: 100%;
 }
 
-@media screen and (max-width: 540px){
-  img {display: none;}
-  .info { width: 100%; }
-  h3 {font-size: 7vw;}
+@media screen and (max-width: 540px) {
+  .img-container {
+    display: none;
+  }
+
+  .info {
+    width: 100%;
+  }
+
+  h3 {
+    font-size: 7vw;
+  }
 }
-
-
 </style>
 
 <script>

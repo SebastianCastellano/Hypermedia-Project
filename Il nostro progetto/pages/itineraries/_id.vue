@@ -12,7 +12,7 @@
       :map="map"
       :start="associatedPoiList[0].name"/>
     <div class="page container mt-5">
-      <h3 class="title-font">Inside {{ name }}:</h3>
+      <h2 class="title-font">Inside {{ name }}:</h2>
     </div>
     <!-- In this part there are visualized some cards, one for each point of interest of the itinerary -->
     <event-template
