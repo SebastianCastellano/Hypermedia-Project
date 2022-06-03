@@ -1,22 +1,37 @@
 <template>
   <div class="page container mt-5">
     <h1 class="display-4 title-font page-title">All {{serviceList[0].type}}</h1>
-    <div class="row mt-3">
-      <!-- In this part there are visualized some cards, one for each service of this type of services -->
-      <card-single-service
-        v-for="(service, serviceIndex) of serviceList"
-        class="col-sm-2 m-2"
-        :key="`service-index-${serviceIndex}`"
-        :type="service.type"
-        :name="service.name"
-        :address="service.address"
-        :times="service.times"
-      />
-    </div>
+      <div class="container-for-these-services-cards">
+          <div class="row mt-3">
+          <!-- In this part there are visualized some cards, one for each service of this type of services -->
+          <card-single-service
+          v-for="(service, serviceIndex) of serviceList"
+          class="col-sm-2 m-2"
+          :key="`service-index-${serviceIndex}`"
+          :type="service.type"
+          :name="service.name"
+          :address="service.address"
+          :times="service.times"
+          />
+        </div>
+      </div>
+    <table class="space-under-this-service">
+<tr><td></td></tr>
+</table>
   </div>
 </template>
 
 <!-- this is a service page, a page to visualize the list of services of a certain type -->
+
+<style scoped>
+.container-for-these-services-cards {
+  height: 650px;
+}
+.space-under-this-service {
+  border: 0;
+  height: calc(100vh - 980px);
+}
+</style>
 
 <script>
 import CardSingleService from '~/components/CardSingleService.vue' // The component used to visualize a card with a service

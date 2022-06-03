@@ -27,18 +27,15 @@ footer {
     position: relative;
     color: var(--color2);
     background: var(--color1);
-    margin-top: max(20vh, 200px);
+    margin-top: 100px; /* max(20vh, 200px) */
     margin-bottom: 0;
     margin-right: 0;
-    height: 10vh;
+    height: 62px; /* 10vh */
     display: flex;
   justify-content: center;
 }
 
-
-
 .vertical-center {
-  
   font-size: 1rem;
   margin: 0 0 0 2vw;
   position: absolute;
