@@ -959,7 +959,7 @@ export default async (models) => {
             image: 39,
         },
         {
-            name: "Religious & Past",
+            name: "Religion & Past",
             duration: "15 min",
             length: "1 km",
             description: "This itinerary is born with the idea of \
