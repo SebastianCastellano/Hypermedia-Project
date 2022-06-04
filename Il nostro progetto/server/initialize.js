@@ -295,11 +295,12 @@ export default async (models) => {
             date_s: "07/10/2021 - 30/06/2022",
             location: "Palazzo Te",
             price: "Free Entry", //€
-            description: "Fondazione Palazzo Te presenta l’esposizione “Antonella Gandini. In-naturale”, la rassegna raccoglie tre fotografie di grande formato dell’ultima produzione dall’artista mantovana, \
+            description: "Palazzo Te Foundation presents the exhibition “Antonella Gandini. In-natural ”. The exhibition collects three large-format photographs of the latest production by the Mantuan artist, which depict the natural elements, air, water and earth, made indistinguishable by a sort of visual mimicry. The images appear as hybrid languages ​​of nature. In fact, nature always remains the starting point for a search that leads to the unconscious: “By interpreting these photographic landscapes that challenge our senses and emotions - says the artist - we can share the infinite space and fleetingness of time. We perceive the vital energy that animates the universe, accidental disorder or the creative force of the extraordinary and the sublime. Both free us from having to describe the obviousness of reality to deliver us to the amazement of the vision ”."
+            /*"Fondazione Palazzo Te presenta l’esposizione “Antonella Gandini. In-naturale”, la rassegna raccoglie tre fotografie di grande formato dell’ultima produzione dall’artista mantovana, \
             che raffigurano gli elementi naturali, aria, acqua e terra, resi indistinguibili da una sorta di mimetismo visivo. Le immagini appaiono come ibridi linguaggi della natura. La natura, infatti, \
             rimane sempre il punto di partenza per una ricerca che sfocia nell’inconscio: “Interpretando questi paesaggi fotografici che sfidano i nostri sensi e le nostre emozioni - racconta l’artista - \
             possiamo condividere l’infinito spazio e la fugacità del tempo. Percepiamo l’energia vitale che anima l’universo il disordine accidentale o la forza creatrice dello straordinario e del sublime. \
-            Entrambe ci liberano dal dover descrivere l’ovvietà della realtà per consegnarci allo stupore della visione”.",
+            Entrambe ci liberano dal dover descrivere l’ovvietà della realtà per consegnarci allo stupore della visione”."*/,
             shortDescription: "Photographic expositions over natural elements.",
             poiId: 1,
         },
@@ -311,13 +312,14 @@ export default async (models) => {
             date_s: "10/06/2022 - 12/06/2022",
             location: "Palazzo Te",
             price: "Free Entry",
-            description: "OPEN è il festival di teatro urbano e nouveau cinque che Fondazione “Umberto Artioli” Mantova Capitale Europea dello Spettacolo organizza ogni estate a Mantova. \
+            description: 'OPEN is the urban theater and nouveau cirque festival that the “Umberto Artioli” Mantua European Capital of Entertainment Foundation organizes every summer in Mantua. OPEN is the acronym for (Other Performaces EN plein air) as it intends to bring back the open-air theater, where it was born. The festival aims to open the historic center to shows and performances that allow the public to experience some spaces of our city with the original vocation of the Theater Festival: in this way Mantua becomes an open-air stage with shows until late at night between the squares of the center, the gardens and Palazzo Te. The presence of the artists, with their shows, becomes the occasion for a beauty of entertainment, through which the public can relive the urban heritage as a space of wonder and enchantment. After the first edition, organized in 2018, every year OPEN Festival represents a new challenge, with ever richer programs and new prestigious spaces to frame the suggestive performances. During the various editions, the festival has intertwined its atmospheres with the spaces of Piazza Mantegna, Piazza Marconi, Palazzo Te, Loggia del Grano, Piazza Erbe and many others.'
+            /*"OPEN è il festival di teatro urbano e nouveau cinque che Fondazione “Umberto Artioli” Mantova Capitale Europea dello Spettacolo organizza ogni estate a Mantova. \
             OPEN è l’acronimo di (Other Performaces EN plein air) poiché intende riportare il teatro all’aperto, dove è nato. \
             Il festival si propone di aprire il centro storico a spettacoli e performance che permettono al pubblico di vivere alcuni spazi della nostra città con la vocazione originaria della Festa del teatro: \
             in questo modo Mantova diventa un palcoscenico a cielo aperto con spettacoli fino a notte fonda fra le piazze del centro, i giardini e il Palazzo Te. \
             La presenza degli artisti, con i loro spettacoli, diventa l’occasione di una bellezza dell’intrattenimento, attraverso il quale il pubblico può rivivere il patrimonio urbano come spazio di meraviglia e di incanto. \
             Dopo la prima edizione, organizzata nel 2018, ogni anno OPEN Festival rappresenta una nuova sfida, con programmi sempre più ricchi e nuovi spazi prestigiosi a fare da cornice alle suggestive performance. \
-            Durante le varie edizioni, il festival ha intrecciato le sue atmosfere con gli spazi di Piazza Mantegna,  Piazza Marconi, Palazzo Te, Loggia del Grano, Piazza Erbe e tanti altri.",
+            Durante le varie edizioni, il festival ha intrecciato le sue atmosfere con gli spazi di Piazza Mantegna,  Piazza Marconi, Palazzo Te, Loggia del Grano, Piazza Erbe e tanti altri."*/,
             shortDescription: "Urban theatre festival en plain air.",
             poiId: 1,
         },
@@ -329,11 +331,12 @@ export default async (models) => {
             date_s: "18/03/2022 - 15/06/2022",
             location: "Palazzo Ducale",
             price: "Inside the usual ticket",
-            description: "Michelangelo Buonarroti è semplicemente il “divino” Michelangelo, l’archetipo degli artisti di tutti i tempi. Grande fu la sua fama, anche in vita: nonostante la sua attività si sia concentrata su Roma e Firenze, anche la Mantova dei Gonzaga dovette fare i conti con l’ineludibile influenza di quel gigante. \
+            description: 'Michelangelo Buonarroti is simply the "divine" Michelangelo, the archetype of artists from all times. His fame was great, even in life: despite his activity being concentrated in Rome and Florence, even the Mantova of the Gonzagas had to deal with the inevitable influence of that giant. On February 22, 1527, Frederick II wrote that he had been for "many years (...) a lover of the excellent Messer Michele Angelo" and - in a significant reversal of roles - without fear of being a suppliant he asked to obtain one of his works. It did not matter which one it was, any one was enough. The exhibition "Michelangelo: the bronzes of the Passion" at Palazzo Ducale in Mantua - open from 18 March until 15 June 2022 - aims to focus attention on a little-known episode in the life of the great artist. This is the project of a "Calvary", or rather the representation of Christ on Golgotha ​​together with the two thieves; the term derives from the Latin name of the hill just outside the walls of Jerusalem, that is the place where the crucifixion took place.'
+            /* "Michelangelo Buonarroti è semplicemente il “divino” Michelangelo, l’archetipo degli artisti di tutti i tempi. Grande fu la sua fama, anche in vita: nonostante la sua attività si sia concentrata su Roma e Firenze, anche la Mantova dei Gonzaga dovette fare i conti con l’ineludibile influenza di quel gigante. \
             Il 22 febbraio del 1527 Federico II scriveva di essere da “molt’anni (…) amatore dello excellentissimo messer Michele Angelo” e - in un significativo ribaltamento di ruoli - senza paura di mostrarsi supplice chiedeva di ottenere una sua opera. \
             Non importava quale fosse, ne bastava una qualsiasi. \
             L’esposizione “Michelangelo: i bronzi della Passione” di Palazzo Ducale di Mantova - aperta dal 18 marzo fino al 15 giugno 2022 - vuole puntare l’attenzione su un episodio poco noto della vita del grande artista. \
-            Si tratta del progetto di un “Calvario”, ovvero la rappresentazione di Cristo sul Golgota assieme ai due ladroni; il termine deriva dal nome latino della collina appena fuori dalle mura di Gerusalemme, ossia il luogo sul quale si svolse la crocifissione.",
+            Si tratta del progetto di un “Calvario”, ovvero la rappresentazione di Cristo sul Golgota assieme ai due ladroni; il termine deriva dal nome latino della collina appena fuori dalle mura di Gerusalemme, ossia il luogo sul quale si svolse la crocifissione."*/,
             shortDescription: "Exposition of Michelangelo bronze statues.",
             poiId: 2,
         },
@@ -378,7 +381,7 @@ export default async (models) => {
             dateEnd: new Date(2022, 9, 25),
             date_s: "25/09/2022",
             location: "Piazza delle Erbe",
-            price: "Gratis",
+            price: "Free",
             description: "'I Treboniani' return for an incredible night in \
             Piazza delle Erbe. After some months without shows, the jazz \
             group from Mantova comes back to demonstrate what they are \
@@ -412,7 +415,7 @@ export default async (models) => {
             dateEnd: new Date(2022, 9, 31),
             date_s: "01/03/2022 - 31/09/2022",
             location: "Loggia delle Pescherie",
-            price: "Gratis",
+            price: "Free",
             description: "The most important cake of the city takes \
             its sweet spot every sunday from March 3rd 2022 to September \
             9th 2022 near Loggia delle Pescherie. Everyone will be able \
@@ -430,7 +433,7 @@ export default async (models) => {
             dateEnd: new Date(2023, 11, 1),
             date_s: "15/11/2022",
             location: "I tre laghi",
-            price: "Gratis",
+            price: "Free",
             description: "The lakes around Mantova offer the unique \
             possibility to detox from the fast pace of the modern life. \
             Enjoy a relaxing walk alongside the lakes and their nature. \
@@ -447,7 +450,7 @@ export default async (models) => {
             dateEnd: new Date(2022, 10, 31),
             date_s: "01/10/2022 - 31/10/2022",
             location: "Piazza Sordello",
-            price: "Gratis",
+            price: "Free",
             description: "October 2022 sees the birth of the the 1st \
             edition of 'Tortello Festival'. It is an occasion for \
             everyone to enjoy one of the most delicious Mantova's dish. \
@@ -582,7 +585,7 @@ export default async (models) => {
             name: "Piazza delle Erbe",
             location: "Piazza delle Erbe",
             times: "Everyday (public location)",
-            price: "Gratis (public location)",
+            price: "Free (public location)",
             description: "Cominciò a configurarsi quando la città comunale, verso la fine del XII secolo, iniziò ad espandersi oltre il Voltone di San Pietro, \
             oltre l'antica città romana che insisteva nei luoghi allora edificati dell'attuale Piazza Sordello. \
             Con il dominio prima dei Bonacolsi e dei Gonzaga successivamente, il centro amministrativo e del potere politico si sposta sulla costruenda nuova piazza San Pietro (ora Piazza Sordello). \
@@ -595,7 +598,7 @@ export default async (models) => {
             name: "Piazza Virgiliana",
             location: "Piazza Virgiliana",
             times: "Everyday (public location)",
-            price: "Gratis (public location)",
+            price: "Free (public location)",
             description: "The Piazza Virgiliana is an oblong shaped park in the center of the city. \
             It spans from a circumvailling Piazza Virgilliana street, fed from Piazza dei Filipinni by Via Virgilio, and stretching northwest towards Lago di Mezzo (part of Mincio River). \
             The park has a number of tree-lined trails, and commemorative statues, most prominent of which is a monument to Virgil with flanking fountains.",
@@ -638,7 +641,7 @@ export default async (models) => {
             name: "Piazza Sordello",
             location: "Piazza Sordello",
             times: "Everyday (public location)",
-            price: "Gratis (public location)",
+            price: "Free (public location)",
             description: "La piazza di San Pietro, sua prima denominazione, \
             fu realizzata nel 1330 dopo la demolizione di vecchie case \
             che si trovavano disposte fra due strade parallele che \
@@ -657,7 +660,7 @@ export default async (models) => {
             name: "Duomo",
             location: "Piazza Sordello",
             times: "mon-sun: 07:15-19:00",
-            price: "Gratis",
+            price: "Free",
             description: "Di origine paleocristiana, ma ricostruita \
             in età medievale (probabilmente da Matilde di Canossa), \
             la chiesa, inizialmente in stile romanico (di quest'epoca \
@@ -707,7 +710,7 @@ export default async (models) => {
             name: "Casa del Mercante",
             location: "Piazza delle Erbe, 26",
             times: "Everyday (public location)",
-            price: "Gratis (public location)",
+            price: "Free (public location)",
             description: "La costruzione su tre piani presenta una facciata\
              - al tempo ornata di piccole foglie dorate - in cotto a motivi \
              tardo gotici e orientali di gusto veneziano. \
@@ -723,7 +726,7 @@ export default async (models) => {
             name: "Loggia delle pescherie",
             location: "Via Pescheria, 20",
             times: "Everyday (public location)",
-            price: "Gratis (public location)",
+            price: "Free (public location)",
             description: "Le Pescherie di Giulio Romano (o \
             Loggia di Giulio Romano) sono un edificio storico di Mantova. \
             Edificate nel 1536 su progetto dell'architetto di palazzo Te, \
@@ -736,7 +739,7 @@ export default async (models) => {
             name: "I tre laghi",
             location: "Around the city",
             times: "Everyday (public location)",
-            price: "Gratis (public location)",
+            price: "Free (public location)",
             description: "Nei pressi di Mantova la vegetazione palustre \
             lascia il posto a tre grandi specchi d'acqua: i tre laghi \
             di Mantova, che avvolgono la città a semicerchio. \
