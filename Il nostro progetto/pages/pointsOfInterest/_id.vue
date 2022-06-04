@@ -44,10 +44,10 @@
       <p id="description">{{description}}</p>
       <div id="side">
         <!-- A list of cards of the events witch take place in this point of interest -->
-        <div class="list">
+        <div class="list events-list">
           <div v-if="associatedEventList[0]">
-            <h2 class="title-font list-title">Events hosted in {{name}}: </h2>
-            <poi-template
+            <h3 class="title-font list-title">Events hosted in {{name}}: </h3>
+            <event-side-card
             v-for="(event, eventIndex) of associatedEventList"
             :key="`event-index-${eventIndex}`"
             :eventId="event.id"
@@ -58,10 +58,10 @@
             :periodEvent="event.date_s"/>
           </div>
         </div>
-        <div class="list">
+        <div class="list itineraries-list">
           <div v-if="associatedItineraryList[0]">
-            <h2 class="title-font list-title">Itineraries including {{name}}: </h2>
-            <card-itinerary
+            <h3 class="title-font list-title">Itineraries including {{name}}: </h3>
+            <itinerary-side-card
             v-for="(itinerary, itineraryIndex) of associatedItineraryList"
             :key="`itinerary-index-${itineraryIndex}`"
             :id="itinerary.id"
@@ -72,7 +72,7 @@
             :imageUrl="itinerary.imageUrl"
             :imageAlternative="itinerary.imageAlternative"
             />
-    </div>
+          </div>
         </div>
       </div>
     </div>
@@ -93,20 +93,7 @@
       margin-left: auto;
       margin-right: auto;
 }
-
-
-
-#info > #first, #info > #second{
-  border-right-color: #ffffff;
-  border-right-style: solid;
-  border-right-width: 2px;
-}
-
-.list-title{
-    padding-top: 30px;
-  }
-
-@media screen and (min-width: 940px) {
+@media screen and (min-width: 940px){
   #descButton{
     display: none;
   }
@@ -118,6 +105,25 @@
     text-align: center;
     font-size: calc(12px + 1vh);
   }
+}
+
+@media screen and (max-width: 940px){
+  #info > div{
+    padding-left: 2vw;
+    padding-right: 2vw;
+    color: #ffffff;
+    text-align: center;
+    font-size: calc(10px + 25%);
+  }
+}
+
+#info > #first, #info > #second{
+  border-right-color: #ffffff;
+  border-right-style: solid;
+  border-right-width: 2px;
+}
+
+@media screen and (min-width: 940px) {
   .page-content{
     display: flex;
     margin-top: 7vh;
@@ -134,17 +140,16 @@
     margin-right: 5vw;
   }
 
+  .list-title{
+    margin-bottom: 20px;
+  }
+}
+
+.list{
+    margin-bottom: 40px;
 }
 
 @media screen and (max-width: 940px) {
-  #info > div{
-    padding-left: 2vw;
-    padding-right: 2vw;
-    color: #ffffff;
-    text-align: center;
-    font-size: calc(10px + 25%);
-  }
-
   .page-content{
     margin-top: 7vh;
     margin-left: 5vw;
@@ -157,6 +162,10 @@
     text-justify:distribute;
     font-size: 120%;
   }
+
+  #side{
+    margin-top: 40px;
+  }
 }
 
 #side{
@@ -166,17 +175,19 @@
 </style>
 
 <script>
-import PoiTemplate from '~/components/PoiTemplate.vue' // The component used to visualize a card with an event
+import EventSideCard from '~/components/EventSideCard.vue' // The component used to visualize a card with an event
 // import PrevNextSelector from '~/components/PrevNextSelector.vue'
 import TitleBanner from '~/components/TitleBanner.vue' // A component used to visualize the name of the point of interest,
 // a slideshow with the images of the point of interest,
 // and other essential info about the point of interest (opening times, where the point of interest is, the price)
+import ItinerarySideCard from '~/components/ItinerarySideCard.vue'
 export default {
   name: 'EventPage',
   components: {
-    PoiTemplate,
+    EventSideCard,
     // PrevNextSelector,
     TitleBanner,
+    ItinerarySideCard,
 },
   async asyncData({ route, $axios }) {
     const { id } = route.params

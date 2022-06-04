@@ -47,7 +47,7 @@
         <h2 class="title-font" id="poiTitle">The event takes place near: </h2>
         <div id="list">
           <!-- A card of the point of interest where the event takes place -->
-          <event-template
+          <poi-side-card
           :poiId="poiId"
           :thumbnailPoi="thumbnailPoi"
           :alternativeThumbPoi="alternativeThumbPoi"
@@ -154,7 +154,7 @@
 </style>
 
 <script>
-import EventTemplate from '~/components/EventTemplate.vue' // A component used to visualize a card with a point of interest
+import PoiSideCard from '~/components/PoiSideCard.vue' // A component used to visualize a card with a point of interest
 // (it is used to visualize the point of interest where the event takes place)
 import PrevNextSelector from '~/components/PrevNextSelector.vue' // the component used to visualize the next / previous event buttons
 import TitleBanner from '~/components/TitleBanner.vue' // A component used to visualize the name of the event,
@@ -162,7 +162,7 @@ import TitleBanner from '~/components/TitleBanner.vue' // A component used to vi
 export default {
   name: 'EventPage',
   components: {
-    EventTemplate,
+    PoiSideCard,
     PrevNextSelector,
     TitleBanner,
 },
