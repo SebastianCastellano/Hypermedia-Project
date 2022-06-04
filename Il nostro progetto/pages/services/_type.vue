@@ -2,7 +2,7 @@
   <div class="page container mt-5">
     <h1 class="display-4 title-font page-title">All {{serviceList[0].type}}</h1>
       <div class="container-for-these-services-cards">
-          <div class="row mt-3">
+          <div class="row mt-3 flex-container">
           <!-- In this part there are visualized some cards, one for each service of this type of services -->
           <card-single-service
           v-for="(service, serviceIndex) of serviceList"
@@ -27,6 +27,11 @@
 .container-for-these-services-cards {
   height: 650px;
 }
+.flex-container{ 
+  
+  justify-content: space-evenly;
+}
+
 .space-under-this-service {
   border: 0;
   height: calc(100vh - 980px);
