@@ -29,7 +29,7 @@
 }
 .space-under-this-service {
   border: 0;
-  height: calc(100vh - 980px);
+  height: calc(100vh - 980px + 100px);
 }
 </style>
 
