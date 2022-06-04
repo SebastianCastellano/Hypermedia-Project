@@ -1,4 +1,6 @@
 <template>
+  <!-- This component rapresent a card of a service (showing essential info about it: name, address, opening times)
+  This component is used obiously in a service type list page where are shown all services of a certain type -->
   <div class="card" style="width: 20rem">
     <div class="card-body">
       <h3 class="card-title title-font">{{ name }}</h3>
@@ -32,11 +34,6 @@ h3, h4 {
 export default {
   name: 'CardSingleServiceComponent',
   props: {
-    /* type: {
-      type: Number,
-      required: true,
-    },
-    */
     name: {
       type: String,
       required: true,
@@ -49,27 +46,6 @@ export default {
       type: String,
       required: true,
     },
-    /*
-    date: {
-      type: String,
-      required: true,
-    },
-    shortDescription: {
-      type: String,
-      required: true,
-    },
-    image: {
-      type: String,
-      required: true,
-    }, 
-    */
   },
-  /*
-  methods: {
-    goToDetails() {
-      this.$router.push(`/events/${this.id}`)
-    },
-  },
-  */
 }
 </script>

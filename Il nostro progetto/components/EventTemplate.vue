@@ -1,5 +1,7 @@
 <template>
-  <!-- Component used to visualize a card with a point of interest -->
+  <!-- Component used to visualize a card with a point of interest (showing essential info about the point of interest: image, short description)
+  This component is used in a event page to show the point of interest where the event takes place,
+  and this component is used also in an itinerary page to show all points of interest of the itinerary -->
   <div class="page container mt-5">
     <div class="poi-box">
       <nuxt-link class="flex-container" :to="'/pointsOfInterest/'+poiId">

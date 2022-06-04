@@ -1,5 +1,6 @@
 <template>
-  <!-- This is a template to visualize a card with an event -->
+  <!-- This is a component to visualize a card with an event (showing essential info about the event: image, name, date, short description)
+  This component is used in a point of interest page to show all events in that point of interest -->
   <div class="page container mt-5">
     <div class="event-box">
       <nuxt-link class="flex-container" :to="'/events/'+eventId">

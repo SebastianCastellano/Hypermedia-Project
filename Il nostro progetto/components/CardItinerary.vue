@@ -1,4 +1,7 @@
 <template>
+  <!-- This component rapresent a card of an itinerary (showing essential info about an event: image, name, duration, lenght, short description)
+  This component is used obiously in itinerary list page,
+  and it is also used in point of interest page to visualize whitch itineraries involving that point of interest -->
   <div class="page container mt-5">
     <div class="poi-box">
       <nuxt-link class="flex-container" :to="'/itineraries/' + id">
@@ -21,7 +24,6 @@
   </div>
 </template>
 
-
 <style scoped>
 a {
   text-decoration: none;
@@ -38,8 +40,6 @@ a {
 h3 {
   font-size: 1.75rem;
 }
-
-
 
 .poi-box:hover {
   background-color: var(--color1-light);

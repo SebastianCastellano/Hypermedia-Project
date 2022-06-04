@@ -1,12 +1,8 @@
 <template>
+  <!-- This component rapresent a card of a point of interest (showing essential info about an event: image, name, price, short description)
+  This component is used in point of interest list page -->
   <div class="card" style="width: 15rem">
     <nuxt-link :to="'/pointsOfInterest/'+id">
-      <!-- Better to use an img
-      <div
-        class="card-img-top card-image"
-        :style="{ 'background-image': 'url(' + image + ')' }"
-      ></div>
-      -->
       <div class="img-container">
         <img
           class="card-img-top card-image"
@@ -21,11 +17,6 @@
       </div>
     </nuxt-link>
   </div>
-      <!--
-      <nuxt-link :to="'/pointsOfInterest/'+id" class="btn btn-primary btn-orange">
-              Go to point of interest
-      </nuxt-link>
-      -->
 </template>
 
 <style scoped>

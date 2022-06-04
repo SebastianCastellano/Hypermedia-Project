@@ -1,6 +1,7 @@
 <template>
+  <!-- This component rapresent a card of an event (showing essential info about an event: image, name, date, short description)
+  This component is used in event list page (and also in summer / winter events list page) -->
   <div class="card">
-    <!-- Use a nuxt-link to make the whole card a link -->
     <nuxt-link :to="'/events/'+id">
     <div class="img-container">
       <img
@@ -33,7 +34,7 @@ a {
   /*border: 2px solid var(--color1);*/
 }
 
-.img-container{ 
+.img-container { 
   height:140px;
   }
 
@@ -64,8 +65,6 @@ a {
 </style>
 
 <script>
-// const aaa: Date
-// aaa.getMonth.toString
 export default {
   name: 'CardComponent2',
   props: {
