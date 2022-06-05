@@ -27,6 +27,8 @@
     color: black;
   }
 
+  a:hover .card{ background-color: var(--color1-light); }
+
   .card-body{
     padding: 16px;
     padding-bottom: 12px;
