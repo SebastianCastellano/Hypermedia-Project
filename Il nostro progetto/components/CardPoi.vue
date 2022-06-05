@@ -1,5 +1,5 @@
 <template>
-  <!-- This component rapresent a card of a point of interest (showing essential info about an event: image, name, price, short description)
+  <!-- This component rapresent a card of a point of interest (showing essential info about the point of interest: image, name, price, short description)
   This component is used in point of interest list page -->
   <div class="card" style="width: 15rem">
     <nuxt-link :to="'/pointsOfInterest/'+id">
