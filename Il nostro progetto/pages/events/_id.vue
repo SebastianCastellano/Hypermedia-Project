@@ -56,6 +56,16 @@
         </div>
       </div>
     </div>
+    <!-- The videos of the event -->
+    <!-- To embed a youtube video-->
+    <div class="video-visualizer">
+      <iframe
+        v-for="(video, videoIndex) of videosUrl"
+        :key="`video-index-${videoIndex}`"
+        :src="video"
+        :title="videosAlternative[videoIndex]">
+      </iframe>
+    </div>
   </div>
 </template>
 
@@ -85,6 +95,10 @@
     text-align: center;
     font-size: calc(12px + 1vh);
   }
+}
+
+.video-visualizer{
+  transform: translate(25px, 0px);
 }
 
 @media screen and (max-width: 940px){

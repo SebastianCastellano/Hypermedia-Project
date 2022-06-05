@@ -28,7 +28,6 @@
   height: 650px;
 }
 .flex-container{ 
-  
   justify-content: space-evenly;
 }
 

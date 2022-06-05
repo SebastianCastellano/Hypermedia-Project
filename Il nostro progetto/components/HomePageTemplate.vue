@@ -191,7 +191,7 @@ h1:hover{
 
 <script>
 export default {
-  name: 'CustomPage',
+  name: 'HomePageTemplate',
   layout: 'header-only',
 }
 </script>

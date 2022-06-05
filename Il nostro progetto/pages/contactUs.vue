@@ -22,7 +22,6 @@
 <style scoped>
 
 .text {
-  /*width: 50%;*/
   margin: 0 auto;
   margin-top: 25vmin;
   top: 300px;

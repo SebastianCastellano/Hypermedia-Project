@@ -6,7 +6,7 @@
   </div>
 </template>
 
-<!-- A page has an header and a footer -->
+<!-- A page, as default, has an header and a footer -->
 
 <script>
 import TheHeader from '~/components/TheHeader.vue'

@@ -3,17 +3,18 @@
   a component used in an event page or in a point of interest page to visualize the name of the event / point of interest,
   a slideshow with the images of the event / point of interest,
   and other essential info about (for example, in case of the event, when the event is, where the event is, the price) -->
+  <!-- This title banner is used also in an itinerary page -->
   <div>
     <div class="titleBanner">
       <div id="bannerText">
-        <!-- The title of the event / point of interest -->
+        <!-- The title of the event / point of interest / itinerary -->
         <h1 id="bannerTitle" class="title-font title">{{title}}</h1>
-        <!-- The content of essential info about the event / point of interest -->
+        <!-- The content of essential info about the event / point of interest / itinerary -->
         <div id="contentWrapper">
           <slot name="content"></slot>
         </div>
       </div>
-      <!-- The media related to the event / point of interest -->
+      <!-- The media related to the event / point of interest / itinerary -->
       <div id="mediaWrapper">
         <slot name="media"></slot>
       </div>

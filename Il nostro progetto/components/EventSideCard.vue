@@ -1,5 +1,6 @@
 <template>
-  <!-- Component used to visualize a card with a point of interest -->
+  <!-- This is a component to visualize a card with an event (showing essential info about the event: image, name, date, short description)
+  This component is used in a point of interest page to show all events in that point of interest -->
   <div class="card mb-3 w-100" style="max-width: 540px;">
     <nuxt-link :to="'/events/'+eventId">
       <div class="row g-0">
@@ -79,8 +80,6 @@
       padding: 10 px
     }
   }
-
-</style>
 
 </style>
 

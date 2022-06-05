@@ -1,6 +1,6 @@
 <template>
   <!-- This component rapresent a card of an event (showing essential info about an event: image, name, date, short description)
-  This component is used in event list page (and also in summer / winter events list page) -->
+  This component is used in event list page (and also in summer / winter events list pages) -->
   <div class="card">
     <nuxt-link :to="'/events/'+id">
     <div class="img-container">

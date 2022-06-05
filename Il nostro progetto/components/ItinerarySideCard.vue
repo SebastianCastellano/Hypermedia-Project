@@ -1,5 +1,6 @@
 <template>
-  <!-- Component used to visualize a card with a point of interest -->
+  <!-- This component rapresent a card of an itinerary (showing essential info about an event: image, name, duration, lenght, short description)
+  This component is used in itinerary list page -->
   <div class="card mb-3 w-100" style="max-width: 540px;">
     <nuxt-link :to="'/itineraries/'+id">
       <div class="row g-0">
@@ -82,37 +83,35 @@
 
 </style>
 
-</style>
-
 <script>
 export default {
   name: 'ItinerarySideCard',
   props: {
-    id: {
+    id: { // The id of the itinerary
       type: Number,
       required: true,
     },
-    name: {
+    name: { // The name of the itinerary
       type: String,
       required: true,
     },
-    imageUrl: {
+    imageUrl: { // An image representing the itinerary
       type: String,
       required: true,
     },
-    imageAlternative: {
+    imageAlternative: { // A string alternative to the image
       type: String,
       required: true,
     },
-    duration: {
+    duration: { // The duration of the itinerary
       type: String,
       required: true,
     },
-    length: {
+    length: { // The lenght of the itinerary
       type: String,
       required: true,
     },
-    shortDescription: {
+    shortDescription: { // A short description about the itinerary
       type: String,
       required: true,
     },

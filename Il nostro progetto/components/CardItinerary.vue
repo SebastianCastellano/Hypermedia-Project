@@ -1,7 +1,6 @@
 <template>
   <!-- This component rapresent a card of an itinerary (showing essential info about an event: image, name, duration, lenght, short description)
-  This component is used obiously in itinerary list page,
-  and it is also used in point of interest page to visualize whitch itineraries involving that point of interest -->
+  This component is used in point of interest page to visualize whitch itineraries involving that point of interest -->
   <div class="page container mt-5">
     <div class="poi-box">
       <nuxt-link class="flex-container" :to="'/itineraries/' + id">
@@ -101,31 +100,31 @@ img {
 export default {
   name: 'CardComponent',
   props: {
-    id: {
+    id: { // The id of the itinerary
       type: Number,
       required: true,
     },
-    name: {
+    name: { // The name of the itinerary
       type: String,
       required: true,
     },
-    imageUrl: {
+    imageUrl: { // An image representing the itinerary
       type: String,
       required: true,
     },
-    imageAlternative: {
+    imageAlternative: { // A string alternative to the image
       type: String,
       required: true,
     },
-    duration: {
+    duration: { // The duration of the itinerary
       type: String,
       required: true,
     },
-    length: {
+    length: { // The lenght of the itinerary
       type: String,
       required: true,
     },
-    shortDescription: {
+    shortDescription: { // A short description about the itinerary
       type: String,
       required: true,
     },

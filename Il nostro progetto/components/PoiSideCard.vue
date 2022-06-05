@@ -1,13 +1,17 @@
 <template>
-  <!-- Component used to visualize a card with a point of interest -->
+  <!-- Component used to visualize a card with a point of interest (showing essential info about the point of interest: image, name, short description) -->
+  <!-- This component is used in an event page (to visualize the point of interest where the event is hosted)
+  and in an itinerary page (to visualize the points of interest belonging to the itinerary) -->
   <nuxt-link :to="'/pointsOfInterest/'+poiId">
     <div class="card mb-3" style="max-width: 540px;">
       <div class="row g-0">
         <div class="col-md-4 img-container">
+          <!-- An image representing the point of interest -->
           <img :src="thumbnailPoi" class="img-fluid rounded-start thumbnail h-100" :alt="alternativeThumbPoi">
         </div>
         <div class="col-md-8">
           <div class="card-body">
+            <!-- Other little information about the point of interest -->
             <h5 class="card-title title-font">{{namePoi}}</h5>
             <p class="card-text">{{shortDescriptionPoi}}</p>
           </div>

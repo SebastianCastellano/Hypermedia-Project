@@ -1,8 +1,10 @@
 <template>
   <div>
+    <!-- A box with the main info about the itinerary: title, duration, lenght, starting point -->
     <title-banner :title="name">
       <template v-slot:media>
         <img id="title-image" :src="imageUrl" :alt="imageAlternative">
+        <!-- An image rapresenting the itinerary -->
       </template>
       <template v-slot:content>
         <div id="info">
@@ -25,6 +27,7 @@
       <div id="page-body">
         <p id="description">{{description}}</p>
         <iframe :src="map" title="Map of the itinerary" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <!-- The map of the itinerary -->
       </div>
       <div id="side">
         <div class="list">

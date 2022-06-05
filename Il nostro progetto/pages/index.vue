@@ -1,11 +1,11 @@
 <template>
-  <custom-page/>
+  <home-page-template/>
 </template>
 
 <!-- this is the home page -->
 
 <script>
-import CustomPage from '~/components/CustomPage.vue' // the template used for the home page
+import HomePageTemplate from '~/components/HomePageTemplate.vue' // the template used for the home page
 export default {
   name: 'IndexPage',
   head: {
@@ -20,7 +20,7 @@ export default {
   },
   layout: 'header-only', // In this specific page there is the header but not the footer
   components: {
-    CustomPage,
+    HomePageTemplate,
   },
 }
 </script>

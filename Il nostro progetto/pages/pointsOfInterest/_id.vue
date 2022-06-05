@@ -1,22 +1,5 @@
 <template>
   <div>
-    <!--<prev-next-selector v-if="idPreviousEvent==-1 && idNextEvent!=-1"
-      type="Event"
-      :nextName="nameNextEvent"
-      :nextPageUrl="'/events/'+idNextEvent"
-    />
-    <prev-next-selector v-else-if="idPreviousEvent!=-1 && idNextEvent==-1"
-      type="Event"
-      :prevName="namePreviousEvent"
-      :prevPageUrl="'/events/'+idPreviousEvent"
-    />
-    <prev-next-selector v-else-if="idPreviousEvent!=-1 && idNextEvent!=-1"
-      type="Event"
-      :prevName="namePreviousEvent"
-      :prevPageUrl="'/events/'+idPreviousEvent"
-      :nextName="nameNextEvent"
-      :nextPageUrl="'/events/'+idNextEvent"
-    />-->
     <!-- Here there are the main info of the point of interest: the name, the opening times, where the point of interest is and the price -->
     <title-banner :title="name">
       <template v-slot:media>
@@ -75,6 +58,16 @@
           </div>
         </div>
       </div>
+    </div>
+    <!-- The videos of the point of interest -->
+    <!-- To embed a youtube video-->
+    <div class="video-visualizer">
+      <iframe
+        v-for="(video, videoIndex) of videosUrl"
+        :key="`video-index-${videoIndex}`"
+        :src="video"
+        :title="videosAlternative[videoIndex]">
+      </iframe>
     </div>
   </div>
 </template>
@@ -147,6 +140,10 @@
 
 .list{
     margin-bottom: 40px;
+}
+
+.video-visualizer{
+  transform: translate(25px, 0px);
 }
 
 @media screen and (max-width: 940px) {

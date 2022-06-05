@@ -1,17 +1,15 @@
 <template>
-
-<footer>
-  <!-- This is the template of the footer -->
-  <div class="vertical-center">
-    <!-- Our info -->
-      <p class="footer-label">
-        Website for the course of Hypermedia Applications - Polimi 2021/2022 - Group SoftMath <br><font color="lightgrey">Carlo Ambrogi, Sebastian Castellano, Andrea De Bettin, Lorenzo Guerrieri</font>
-      </p>
-    <!-- --- 10612772 - Carlo Ambrogi --- 10582405 - Sebastian Castellano --- 10573185 - Andrea De Bettin --- 10571386 - Lorenzo Guerrieri
-  -->
-  </div>
-</footer>
-
+  <footer>
+    <!-- This is the template of the footer -->
+    <div class="vertical-center">
+      <!-- Our info -->
+        <p class="footer-label">
+          Website for the course of Hypermedia Applications - Polimi 2021/2022 - Group SoftMath <br><font color="lightgrey">Carlo Ambrogi, Sebastian Castellano, Andrea De Bettin, Lorenzo Guerrieri</font>
+        </p>
+      <!-- --- 10612772 - Carlo Ambrogi --- 10582405 - Sebastian Castellano --- 10573185 - Andrea De Bettin --- 10571386 - Lorenzo Guerrieri
+    -->
+    </div>
+  </footer>
 </template>
 
 <style scoped>
