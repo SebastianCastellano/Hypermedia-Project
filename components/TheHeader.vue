@@ -104,6 +104,8 @@ export default {
 </script>
 
 <style scoped>
+@import '~/static/style/main.css';
+
 nav {border-bottom: 2px solid var(--color2);}
 
 li {
@@ -117,7 +119,6 @@ li {
   }
 }
 
-@import '~/static/style/main.css';
 
 nav {border-bottom: 2px solid var(--color2);}
 a {
