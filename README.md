@@ -1,25 +1,68 @@
-# Hypermedia-Project
+# lesson15
 
- Repository for Hypermedia Applications project - Polimi 04/2022
- Group SoftMath: 10612772 - Carlo Ambrogi --- 10582405 - Sebastian Castellano --- 10573185 - Andrea De Bettin --- 10571386 - Lorenzo Guerrieri
- VisitMantova
+## Build Setup
 
-# A presentation and contribution of each group member
+```bash
+# install dependencies
+$ npm install
 
-aaaaa bbbbb ccccc dddddddd
+# serve with hot reload at localhost:3000
+$ npm run dev
 
-# How the application has been organized
+# build for production and launch server
+$ npm run build
+$ npm run start
 
-VisitMantova is a web application for an touristic center of Mantova. Are you going to visit Mantova? In VisitMantova you can find easly whitch are the next events in Mantova, witch are the most interesting point of interest to visit in Mantova, some itineraries, and you can even find a list of services in Mantova (restaurants, supermarkets, ecc).
-This web application has been written using Nuxt, a framework that permits to create both server and client of the web application (througt NodeJS) using JavaScript. The main advantage of this framework is to create some tamplates of components so that same components are reusable in different pages of the website.
-We organized the application in this way: we inizialized a PostGres database to store all useful data about events, points of interest, and other useful things, we created some apis witch are used by the pages to retrive all data to be visualized in the pages, we created also some useful components (such as cards to visualize previews of events, points of interest, ecc or such as the footer or the header) and used them more times in pages, we created some layouts to be able to decide more easly for example witch pages have the header only and witch also the footer, we used a lot of css to define the style of lables, images and other elements in the pages (to decide also fonts, distance from margins, position, and other aestetich things), and we used also JavaScript not only to write the apis but also to manage the passage of different variables between pages and components / templates.
+# generate static project
+$ npm run generate
+```
 
-# Best practicies of the framework used
+For detailed explanation on how things work, check out the [documentation](https://nuxtjs.org).
 
-We took advantage of the famework defining reusable components. We created an header with landmark links that appears in any page of our website VisitMantova, we created also a footer that appears in most pages of the website.
-We created some cards: the CardEvent component to visualize essential info about an event (image, name, date, short description) and we used it, not only in the events page list, but also in the summer / winter events page; the CardItinerary component to visualize essential info about an event (image, name, duration, lenght, short description) and it is used in a point of interest page to visualize whitch itineraries are involving that point of interest; in analogue way we created CardPoi to visualize essential info about a point of interest (image, name, price, short description) and this component is used in point of interest list page.  aaaaaaaa CardService CardSingleService EventSideCard HomePageTemplate ItinerarySideCard PoiSideCard PrevNextSelector SlideShow TitleBanner
+## Special Directories
 
-as abourt pages we created ....
+You can create the following extra directories, some of which have special behaviors. Only `pages` is required; you can delete them if you don't want to use their functionality.
 
-quale render side qq ....
+### `assets`
 
+The assets directory contains your uncompiled assets such as Stylus or Sass files, images, or fonts.
+
+More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/assets).
+
+### `components`
+
+The components directory contains your Vue.js components. Components make up the different parts of your page and can be reused and imported into your pages, layouts and even other components.
+
+More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/components).
+
+### `layouts`
+
+Layouts are a great help when you want to change the look and feel of your Nuxt app, whether you want to include a sidebar or have distinct layouts for mobile and desktop.
+
+More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/layouts).
+
+### `pages`
+
+This directory contains your application views and routes. Nuxt will read all the `*.vue` files inside this directory and setup Vue Router automatically.
+
+More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/get-started/routing).
+
+### `plugins`
+
+The plugins directory contains JavaScript plugins that you want to run before instantiating the root Vue.js Application. This is the place to add Vue plugins and to inject functions or constants. Every time you need to use `Vue.use()`, you should create a file in `plugins/` and add its path to plugins in `nuxt.config.js`.
+
+More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/plugins).
+
+### `static`
+
+This directory contains your static files. Each file inside this directory is mapped to `/`.
+
+Example: `/static/robots.txt` is mapped as `/robots.txt`.
+
+More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/static).
+
+### `store`
+
+This directory contains your Vuex store files. Creating a file in this directory automatically activates Vuex.
+
+More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/store).
