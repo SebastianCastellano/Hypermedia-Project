@@ -1,10 +1,11 @@
 <template>
   <!-- This is the slideshow, a component to visualize a slideshow of some images -->
   <div>
-    <div id="carousel" class="carousel slide carousel-fade" data-bs-ride="carousel" :style="cssProps">
+    <div id="carousel" class="carousel slide carousel-fade" data-bs-interval="false" data-bs-ride="carousel" :style="cssProps">
       <div class="carousel-indicators">
         <button type="button" data-bs-target="#carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
         <button v-for="(img, imgIndex) of imgsWithNoHead" :key="imgIndex" type="button" data-bs-target="#carousel" :data-bs-slide-to="imgIndex+1" :aria-label="'Slide '+imgIndex+2"></button>
+        <button v-for="(video, videoIndex) of videosUrl" :key="videoIndex" type="button" data-bs-target="#carousel" :data-bs-slide-to="videoIndex+imagesUrl.length" :aria-label="'Slide '+1+videoIndex+imagesUrl.length"></button>
       </div>
       <div class="carousel-inner">
         <div class="carousel-item active">
@@ -12,6 +13,13 @@
         </div>
         <div v-for="(img, imgIndex) of imgsWithNoHead" :key="imgIndex"  class="carousel-item">
           <img :src="img" class="d-block h-100" :alt="imgAlternatives[imgIndex]">
+        </div>
+        <div v-for="(video, videoIndex) of videosUrl" :key="videoIndex"  class="carousel-item">
+            <iframe
+              class="d-block h-100 w-100"
+              :src="video"
+              :title="videoAlternatives[videoIndex]">
+            </iframe>
         </div>
       </div>
       <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
@@ -35,6 +43,14 @@ export default {
       required: true,
     },
     imgAlternatives: { // An array of strings alternative to images
+      type: Array,
+      required: true,
+    },
+    videosUrl: { // An array with the images to visualize in the slideshow
+      type: Array,
+      required: true,
+    },
+    videoAlternatives: { // An array of strings alternative to images
       type: Array,
       required: true,
     },
@@ -70,6 +86,13 @@ export default {
       background-color: rgba(84, 84, 84, 0.244);
       margin-left: auto;
       margin-right: auto;
+    }
+
+    iframe{
+      margin: auto; 
+      max-width: 100%;
+      max-height: var(--carousel-height); 
+      height: var(--carousel-height) !important;
     }
 
     .carousel  .carousel-item {

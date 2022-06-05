@@ -3,7 +3,7 @@
     <!-- Here there are the main info of the point of interest: the name, the opening times, where the point of interest is and the price -->
     <title-banner :title="name">
       <template v-slot:media>
-        <slide-show :imagesUrl="imagesUrl" :imgAlternatives="imagesAlternative" height="40vh" width="71vh" :keepRatio="false" />
+        <slide-show :imagesUrl="imagesUrl" :imgAlternatives="imagesAlternative" :videosUrl="videosUrl" :videoAlternatives="videosAlternative" height="40vh" width="71vh" :keepRatio="false" />
       </template>
       <template v-slot:content>
         <div id="info">
@@ -58,16 +58,6 @@
           </div>
         </div>
       </div>
-    </div>
-    <!-- The videos of the point of interest -->
-    <!-- To embed a youtube video-->
-    <div class="video-visualizer">
-      <iframe
-        v-for="(video, videoIndex) of videosUrl"
-        :key="`video-index-${videoIndex}`"
-        :src="video"
-        :title="videosAlternative[videoIndex]">
-      </iframe>
     </div>
   </div>
 </template>
