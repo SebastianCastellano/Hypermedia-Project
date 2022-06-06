@@ -37,7 +37,7 @@ import CardEvent from '~/components/CardEvent.vue' // We are importing the compo
 export default {
   name: 'SummerEventPage',
   head: {
-    title: 'Summer events page',
+    title: 'Summer Events | VisitMantova',
     meta: [
       {
         hid: 'description',

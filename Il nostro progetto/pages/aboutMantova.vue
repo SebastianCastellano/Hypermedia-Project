@@ -149,6 +149,16 @@ p {
 <script>
 export default {
   name: 'AboutMantovaPage',
+  head: {
+    title: 'About Mantova | VisitMantova',
+    meta: [
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'Learn about the history of the city of Mantova!'
+      }
+      ],
+  },
   layout: 'header-only',
   components: {
   },
