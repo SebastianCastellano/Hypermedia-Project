@@ -61,6 +61,9 @@ iframe{
   height: 60vh;
   width: 100%;
   display: block;
+  
+  border-color: #f22222;
+  border-width: 1px !important;
 }
 
 #spacer{
