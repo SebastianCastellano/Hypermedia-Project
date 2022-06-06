@@ -37,6 +37,16 @@ import CardService from '~/components/CardService.vue' // We are importing the c
 // (in this page there are as many cards as many the different types of services)
 export default {
   name: 'ListServicePage',
+  head: {
+    title: 'Services | VisitMantova',
+    meta: [
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'Here you can find the services offered by Mantova.'
+      }
+      ],
+  },
   components: {
     CardService,
   },

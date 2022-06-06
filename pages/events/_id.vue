@@ -165,6 +165,16 @@ import TitleBanner from '~/components/TitleBanner.vue' // A component used to vi
 // a slideshow with the images of the event, and other essential info about the event (when the event is, where the event is, the price)
 export default {
   name: 'EventPage',
+  head: {
+    title: 'Event | VisitMantova',
+    meta: [
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'One of Mantova next events!'
+      }
+      ],
+  },
   components: {
     PoiSideCard,
     PrevNextSelector,

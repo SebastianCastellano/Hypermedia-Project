@@ -170,6 +170,16 @@ import TitleBanner from '~/components/TitleBanner.vue' // A component used to vi
 import ItinerarySideCard from '~/components/ItinerarySideCard.vue'
 export default {
   name: 'EventPage',
+  head: {
+    title: 'Point of Interest | VisitMantova',
+    meta: [
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'Discover one point of interest of Mantova!'
+      }
+      ],
+  },
   components: {
     EventSideCard,
     // PrevNextSelector,
