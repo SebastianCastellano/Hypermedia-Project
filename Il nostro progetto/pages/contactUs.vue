@@ -9,7 +9,7 @@
         <!-- Contact info -->
         <p>Piazza Sordello, 45, 46100 Mantova</p>
         <p><b>Mail:</b> <a href = "mailto: VisitMantova@gmail.com">VisitMantova@gmail.com</a><br>
-        <b>Tel:</b> <a href="tel:+39-362-558-932">+39 362 558932</a><br>
+        <b>Tel:</b> <a href="tel:+39-362-558-9**">+39 362 5589**</a><br>
         <b>Facebook:</b> VisitMantova <br>
         <b>Instagram:</b> @VisitMantova </p>
       </div>
