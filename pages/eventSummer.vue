@@ -37,6 +37,12 @@
   text-decoration: none;
 
 }
+
+.sub-events:hover {
+  text-decoration: underline;
+  color: black;
+}
+
 .flexbox-container {
   justify-content: space-evenly;
 }

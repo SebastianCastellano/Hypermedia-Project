@@ -40,6 +40,11 @@
   text-decoration: none;
 
 }
+
+.sub-events:hover {
+  text-decoration: underline;
+  color: black;
+}
 </style>
 
 <script>
