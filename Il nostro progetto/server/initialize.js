@@ -554,12 +554,18 @@ export default async (models) => {
             location: "Viale Te, 13",
             times: "mon: 13.00-18.30, tue-sun: 09.00-18.30",
             price: "15€",
-            description: "Palazzo Te è una villa rinascimentale collocata nell'area suburbana di Mantova. \
+            description: 'Palazzo Te is a Renaissance villa located in the suburban area of ​​Mantua. \
+            Built between 1524 and 1534 on commission of the Marquis of Mantua Federico II Gonzaga, it is the most famous work of the Italian architect and painter Giulio Romano. \
+            The complex is now the seat of the civic museum and since 1990 of the International Center of Art and Culture of Palazzo Te which organizes exhibitions of ancient and modern art and architecture. \
+            The palace is a square-plan building with a large square courtyard in the center, also once decorated with a labyrinth, \
+            with four entrances on all four sides (Giulio Romano is inspired in the layout by the Vitruvian description of the dwelling house: the Roman domus with four entrances, each on one of the four sides). \
+            The building has unusual proportions: it looks like a large, low, single-storey block whose height is about a quarter of the width.' 
+            /* "Palazzo Te è una villa rinascimentale collocata nell'area suburbana di Mantova. \
             Costruito tra il 1524 e il 1534 su commissione del marchese di Mantova Federico II Gonzaga, è l'opera più celebre dell'architetto e pittore italiano Giulio Romano. \
             Il complesso è oggi sede del museo civico e dal 1990 del Centro internazionale d'arte e di cultura di Palazzo Te che organizza mostre d'arte antica e moderna e di architettura. \
             Il palazzo è un edificio a pianta quadrata con al centro un grande cortile quadrato anch'esso, un tempo decorato con un labirinto, \
             con quattro entrate sui quattro lati (Giulio Romano si ispira nell'impianto alla descrizione vitruviana della casa di abitazione: la domus romana con quattro entrate, ciascuna su uno dei quattro lati). \
-            Il palazzo ha proporzioni insolite: si presenta come un largo e basso blocco, a un piano solo, la cui altezza è circa un quarto della larghezza.",
+            Il palazzo ha proporzioni insolite: si presenta come un largo e basso blocco, a un piano solo, la cui altezza è circa un quarto della larghezza."*/,
             shortDescription: "Renaissance villa, work of Giulio Romano.",
         },
         {
@@ -568,12 +574,17 @@ export default async (models) => {
             location: "Piazza Sordello, 40",
             times: "tue-sun: 08.15-19.15",
             price: "15€",
-            description: "Il Palazzo Ducale di Mantova, noto anche come reggia dei Gonzaga, è uno dei principali edifici storici cittadini. \
+            description:'The Ducal Palace of Mantua, also known as the Gonzaga palace, is one of the main historic buildings in the city. \
+            From 1308 it was the official residence of the lords of Mantua, the Bonacolsi, and therefore the main residence of the Gonzagas, lords, marquises and finally dukes of the Virgilian city. \
+            It housed the dominant Gonzaga of the time, his wife, the legitimate first-born son and the other legitimate children up to the age of majority as well as important guests. \
+            It assumed the name of the Royal Palace during the Austrian domination starting from the reign of Maria Theresa of Austria. \
+            Each duke wanted to add a wing for himself and his works of art, the result is an area of ​​more than 35,000 m². \
+            It has more than 500 rooms and encloses 7 gardens and 8 courtyards.' /*"Il Palazzo Ducale di Mantova, noto anche come reggia dei Gonzaga, è uno dei principali edifici storici cittadini. \
             Dal 1308 è stata la residenza ufficiale dei signori di Mantova, i Bonacolsi, e quindi la residenza principale dei Gonzaga, signori, marchesi ed infine duchi della città virgiliana. \
             Ospitava il Gonzaga dominante del tempo, sua moglie, il figlio legittimo primogenito e gli altri figli legittimi sino alla maggiore età nonché gli ospiti importanti. \
             Assunse la denominazione di Palazzo Reale durante la dominazione austriaca a partire dall'epoca di Maria Teresa d'Austria regnante. \
             Ogni duca ha voluto aggiungere un'ala per sé e per le proprie opere d'arte, il risultato è un'area di più di 35.000 m². \
-            Ha più di 500 stanze e racchiude 7 giardini e 8 cortili.",
+            Ha più di 500 stanze e racchiude 7 giardini e 8 cortili."*/,
             shortDescription: "The ancient palace of Mantova dukes.",
         },
         {
@@ -596,11 +607,16 @@ export default async (models) => {
             location: "Piazza delle Erbe",
             times: "Everyday (public location)",
             price: "Free (public location)",
-            description: "Cominciò a configurarsi quando la città comunale, verso la fine del XII secolo, iniziò ad espandersi oltre il Voltone di San Pietro, \
+            description: 'Piazza delle Erbe began to take shape when the municipal city, towards the end of the 12th century, began to expand beyond the Voltone di San Pietro, \
+            beyond the ancient Roman city that insisted in the places then built of the current Piazza Sordello. \
+            With the dominion before the Bonacolsi and later the Gonzagas, the administrative and political power center moved to the new Piazza San Pietro (now Piazza Sordello). \
+            The medieval buildings of Piazza Erbe underwent alterations and renovations over the centuries. \
+            The sequence of houses that housed the city merchants were exquisitely embellished with late Gothic and Renaissance porticoes.',
+             /*"Cominciò a configurarsi quando la città comunale, verso la fine del XII secolo, iniziò ad espandersi oltre il Voltone di San Pietro, \
             oltre l'antica città romana che insisteva nei luoghi allora edificati dell'attuale Piazza Sordello. \
             Con il dominio prima dei Bonacolsi e dei Gonzaga successivamente, il centro amministrativo e del potere politico si sposta sulla costruenda nuova piazza San Pietro (ora Piazza Sordello). \
             Gli edifici medievali di Piazza Erbe subirono nel corso dei secoli rimaneggiamenti e ristrutturazioni. \
-            La sequenza di case che ospitavano i mercanti cittadini, furono pregevolmente abbellite da portici di stile tardo gotico e rinascimentale.",
+            La sequenza di case che ospitavano i mercanti cittadini, furono pregevolmente abbellite da portici di stile tardo gotico e rinascimentale.",*/
             shortDescription: "The must-see square in Mantova.",
         },
         {
@@ -620,9 +636,12 @@ export default async (models) => {
             location: "Piazza Felice Cavallotti, 14",
             times: "thu-sun 15:00-18:00",
             price: "2.5€",
-            description: "Il Teatro Sociale di Mantova è il maggiore teatro storico situato nel Comune di Mantova; \
+            description: 'The Social Theater of Mantua is the largest historical theater located in the Municipality of Mantua; \
+            theater of tradition, is located in the historic center of the city and is owned by the Palchettisti Society. \
+            It was built between 1817 and 1822 by the well-known architect Luigi Canonica.',
+            /*"Il Teatro Sociale di Mantova è il maggiore teatro storico situato nel Comune di Mantova; \
             teatro di tradizione, si trova nel centro storico della città ed è di proprietà della Società dei Palchettisti. \
-            Venne realizzato, tra il 1817 e il 1822, dal noto architetto ticinese Luigi Canonica.",
+            Venne realizzato, tra il 1817 e il 1822, dal noto architetto ticinese Luigi Canonica.",*/
             shortDescription: "The greatest theatre in the city centre.",
         },
         {
@@ -631,7 +650,20 @@ export default async (models) => {
             location: "Via Accademia, 47",
             times: "tue-fri: 10:00-13:00 / 15:00-18:00; sat-sun: 10:00-18:00",
             price: "3€",
-            description: "Costruito tra il 1767 e il 1769, il teatro fu progettato dal parmense \
+            description: 'Built between 1767 and 1769, the theater was designed by \
+            Antonio Galli Bibiena from Parma, commissioned by the rector of the Accademia dei Timidi, \
+            Count Carlo Ottavio di Colloredo, with the aim of mainly hosting \
+            scientific meetings, but also open to plays and concerts. \
+            The theater, no longer tiered like the Renaissance ones, has a bell-shaped floor plan \
+            and is arranged on several orders of wooden boxes, according to the \
+            kind of structure invented in the seventeenth century and which by then reigned. \
+            With prodigious vivacity equal to the resources of his inspiration, the architect Bibiena \
+            fulfilled the obligation he had contracted with the Shy in 1767 in just two years : \
+            he conceived the special theater, directed the factory works and finally, with \
+            skill as a painter as well as an architect, he personally frescoed the interiors \
+            of the numerous boxes with monochrome figures, also a precious document \
+            of the artistic activity of the distinguished master.', 
+            /*"Costruito tra il 1767 e il 1769, il teatro fu progettato dal parmense \
             Antonio Galli Bibiena su commissione del rettore dell'Accademia dei Timidi, \
             conte Carlo Ottavio di Colloredo, con la finalità di ospitare principalmente \
             adunanze scientifiche, ma aperto anche a recite e concerti. \
@@ -643,7 +675,7 @@ export default async (models) => {
             ideò lo speciale teatro, ne diresse i lavori di fabbrica ed infine, con \
             abilità di pittore oltre che di architetto, affrescò personalmente gli interni \
             dei numerosi palchetti con figurazioni monocrome, anch'esse documento prezioso \
-            dell'attività artistica dell'insigne maestro.",
+            dell'attività artistica dell'insigne maestro.",*/
             shortDescription: "Theatre and arts national academy.",
         },
         {
@@ -652,7 +684,18 @@ export default async (models) => {
             location: "Piazza Sordello",
             times: "Everyday (public location)",
             price: "Free (public location)",
-            description: "La piazza di San Pietro, sua prima denominazione, \
+            description:'The square of San Pietro, its first denomination, \
+            was built in 1330 after the demolition of old houses \
+            which were located between two parallel streets that \
+            which still followed the ancient urban design of the Roman city. \
+            One street, Strada Magna, connected the vault of San Pietro with the \
+            cathedral while the other street, Strata Sanctae Mariae Matris \
+            Domini, united the church that gave it its name, to the church of \
+            Santa Croce, later incorporated into the Doge\'s Palace, which \
+            overlooked the right side of the cathedral churchyard. For centuries, \
+            the square has remained the center of political, social and \
+            religious life of Mantua.' ,
+            /*"La piazza di San Pietro, sua prima denominazione, \
             fu realizzata nel 1330 dopo la demolizione di vecchie case \
             che si trovavano disposte fra due strade parallele che \
             seguivano ancora l'antico disegno urbanistico della città romana. \
@@ -662,7 +705,7 @@ export default async (models) => {
             Santa Croce, inglobata poi nel Palazzo Ducale, che si \
             affacciava sul lato destro del sagrato del Duomo. Per secoli, \
             la piazza è rimasta il centro della vita politica, mondana e \
-            religiosa di Mantova.",
+            religiosa di Mantova.",*/
             shortDescription: "Square in front of Palazzo Ducale.",
         },
         {
@@ -671,7 +714,16 @@ export default async (models) => {
             location: "Piazza Sordello",
             times: "mon-sun: 07:15-19:00",
             price: "Free",
-            description: "Di origine paleocristiana, ma ricostruita \
+            description: 'The Duomo is of early Christian origin, but reconstructed \
+            in the Middle Ages (probably by Matilda di Canossa). \
+            The church, initially in Romanesque style (from this era \
+            is still the bell tower), was enlarged in the early 15th century \
+            century under the aegis of Francesco I Gonzaga. \
+            The cathedral was built from 1395 to 1401 on commission \
+            of Francesco IV Gonzaga and stands on the Romanesque church of \
+            San Pietro of which only some structures are preserved, namely the \
+            walls and the bell tower.',
+            /* "Di origine paleocristiana, ma ricostruita \
             in età medievale (probabilmente da Matilde di Canossa), \
             la chiesa, inizialmente in stile romanico (di quest'epoca \
             è ancora il campanile), venne ampliata agli inizi del XV \
@@ -679,7 +731,7 @@ export default async (models) => {
             Il duomo venne edificato dal 1395 al 1401 su commissione \
             di Francesco IV Gonzaga e sorge sulla chiesa romanica di \
             San Pietro di cui si conservano solo alcune strutture \
-            murarie e il campanile.",
+            murarie e il campanile.",*/
             shortDescription: "The central church of the city.",
         },
         {
@@ -688,12 +740,18 @@ export default async (models) => {
             location: "Piazza delle Erbe",
             times: "Tue-fri: 10:00-13:00 / 15:00-18:00; sat-sun 10:00-18:00",
             price: "3€",
-            description: "La Torre dell’Orologio, di impianto rettangolare \
+            description: "The Clock Tower, \
+            was built in 1472-73 to a design by Luca Fancelli upon request \
+            of the Marquis Ludovico II Gonzaga. With a rectangular layout, it is so called for the ancient \
+            watch made by Bartolomeo Manfredi. He was a mechanic, mathematician \
+            and astrologer at the Gonzaga court, also known as Bartolomeo \
+            of the Clock. The Clock was inaugurated in December 1473.",
+            /*"La Torre dell’Orologio, di impianto rettangolare \
             e costruita nel 1472-73 su progetto di Luca Fancelli su richiesta \
             del marchese Ludovico II Gonzaga, è così detta per l’antico \
             orologio realizzato da Bartolomeo Manfredi, meccanico, matematico \
             e astrologo alla corte dei Gonzaga, noto anche come Bartolomeo \
-            dell’Orologio. L’Orologio venne inaugurato nel dicembre del 1473.",
+            dell’Orologio. L’Orologio venne inaugurato nel dicembre del 1473.",*/
             shortDescription: "The clock tower wanted by Ludovico II Gonzaga.",
         },
         {
@@ -702,7 +760,18 @@ export default async (models) => {
             location: "Piazza delle Erbe",
             times: "mon-fri: 10:00-13::0, 14:00-18:00 / sat-sun 10:00-19:00",
             price: "5€",
-            description: "E' la chiesa più antica della città, \
+            description:"The oldest church in the city, \
+            founded between the end of the eleventh century and the beginning of the twelfth, perhaps \
+            at the behest of Matilde di Canossa. Inspired by the church of the \
+            Holy Sepulcher of Jerusalem and dedicated to St. Lawrence \
+            (martyred in Rome in the third century), the rotunda has a circular plan, \
+            with a gallery above it. An ambulatory precedes \
+            and surrounds the nave, characterized by ten columns and a \
+            small apse. It is built in terracotta, according to tradition \
+            Lombard period, but has two marble columns of \
+            Roman period and stone pillars of the IX-XII centuries \
+            from missing buildings.",
+            /* "E' la chiesa più antica della città, \
             fondata tra la fine del XI secolo e l'inizio del XII, forse \
             per volere di Matilde di Canossa. Ispirata alla chiesa del \
             Santo Sepolcro di Gerusalemme e dedicata a san Lorenzo \
@@ -712,7 +781,7 @@ export default async (models) => {
             piccolo abside. E' costruita in cotto, secondo la tradizione \
             lombarda del periodo, ma presenta due colonne di marmo di \
             epoca romana e pilastrini in pietra dei secoli IX-XII \
-            provenienti da edifici scomparsi.",
+            provenienti da edifici scomparsi.",*/
             shortDescription: "The oldest church in Mantova.",
         },
         {
@@ -721,14 +790,22 @@ export default async (models) => {
             location: "Piazza delle Erbe, 26",
             times: "Everyday (public location)",
             price: "Free (public location)",
-            description: "La costruzione su tre piani presenta una facciata\
+            description:"The three-storey building has a facade \
+            - originally decorated with small golden leaves - in terracotta with \
+            late gothic and oriental motifs of Venetian style. \
+            The ground floor is punctuated by a portico supported by columns \
+            in red Verona marble, on whose architraves it is possible to \
+            read the following inscriptions: (ZO) HANBONIFORT DA CONCHOREZO \
+            AFAT FAR QUESTA OPERA DELANO 1455 - IOHANESBONIFORT DE \
+            CONCORESIO HOC OPUS FIERI FECIT SUB ANNO DOMINI 1455.",
+            /* "La costruzione su tre piani presenta una facciata\
              - al tempo ornata di piccole foglie dorate - in cotto a motivi \
              tardo gotici e orientali di gusto veneziano. \
              Il piano terra è ritmato da un portico sostenuto da colonne \
              in marmo rosso di Verona, sulle cui architravi è possibile \
              leggere le seguenti iscrizioni: (ZO) HANBONIFORT DA CONCHOREZO \
              AFAT FAR QUESTA OPERA DELANO 1455 - IOHANESBONIFORT DE \
-             CONCORESIO HOC OPUS FIERI FECIT SUB ANNO DOMINI 1455.",
+             CONCORESIO HOC OPUS FIERI FECIT SUB ANNO DOMINI 1455.",*/
             shortDescription: "Mansion of Giovanni Boniforte da Concorezzo, rich mercant",
         },
         {
@@ -737,11 +814,22 @@ export default async (models) => {
             location: "Via Pescheria, 20",
             times: "Everyday (public location)",
             price: "Free (public location)",
-            description: "Le Pescherie di Giulio Romano (o \
+            description:"The Pescherie of Giulio Romano (o \
+                Loggia di Giulio Romano) are a historic building in Mantua. \
+                Built in 1536 on a project by the architect of Palazzo Te, \
+                they were dedicated to the fish trade. \
+                The building consisted of two arcades with round arches in the typical Julian ashlar, \
+                 with an overhanging attic where rectangular windows framed by pilasters open. \
+                 The fishmongers were placed on the sides of the medieval bridge that spanned the Rio,\
+                  a watercourse that crosses the city of Mantua from the lake Superiore to the lake Inferiore.", 
+                  /*"Le Pescherie di Giulio Romano (o \
             Loggia di Giulio Romano) sono un edificio storico di Mantova. \
             Edificate nel 1536 su progetto dell'architetto di palazzo Te, \
             erano dedicate al commercio del pesce. \
-            La costruzione era costituita da due porticati ad archi tondi nel tipico bugnato giuliesco, con attico sovrastante dove si aprono finestre rettangolari incorniciate da lesene. Le pescherie erano poste ai lati del ponte di epoca medievale che scavalcava il Rio, corso d'acqua che attraversa la città di Mantova dal lago Superiore al lago Inferiore. ",
+            La costruzione era costituita da due porticati ad archi tondi nel tipico bugnato giuliesco, \
+            con attico sovrastante dove si aprono finestre rettangolari incorniciate da lesene.\
+             Le pescherie erano poste ai lati del ponte di epoca medievale che scavalcava il Rio, \
+             corso d'acqua che attraversa la città di Mantova dal lago Superiore al lago Inferiore. ",*/
             shortDescription: "Large area used for trading fishes.",
         },
         {
@@ -750,7 +838,16 @@ export default async (models) => {
             location: "Around the city",
             times: "Everyday (public location)",
             price: "Free (public location)",
-            description: "Nei pressi di Mantova la vegetazione palustre \
+            description:"Marsh vegetation near Mantua \
+            gives way to three large bodies of water: the three lakes \
+            of Mantua, which envelop the city in a semicircle. \
+            Only Lake Superiore still shows marshy features, \
+            with large floating islands of Ninfea, Nannufero and Fior di Loto. \
+            Lago di Mezzo and Lago Inferiore are kept naked \
+            for navigation needs. The banks are remarkably \
+            frequented and continuous foot traffic prevents growth \
+            of spontaneous vegetation.",
+            /* "Nei pressi di Mantova la vegetazione palustre \
             lascia il posto a tre grandi specchi d'acqua: i tre laghi \
             di Mantova, che avvolgono la città a semicerchio. \
             Solo il Lago Superiore mostra ancora caratteristiche palustri, \
@@ -758,7 +855,7 @@ export default async (models) => {
             il Lago di Mezzo e il Lago Inferiore sono mantenuti nudi \
             per esigenze di navigazione. Le rive sono notevolmente \
             frequentate ed il calpestio continuo impedisce la crescita \
-            di vegetazione spontanea.",
+            di vegetazione spontanea.",*/
             shortDescription: "The three lakes surrounding Mantova.",
         },
         {
@@ -767,14 +864,22 @@ export default async (models) => {
             location: "Piazza Sordello, 27",
             times: "tue-sat: 8:15-19:00; sun: 14:00-19:00",
             price: "9€",
-            description: "Aperto nel 1998 nel sito che fu Teatro \
+            description:"Opened in 1998 on the site where there once was the Teatro \
+            di Corte of Gonzaga in the sixteenth century, and from 1896 \
+            the city silkworm market (as can be seen \
+            from the writing currently still visible on the facade), \
+            the Museo preserves the archaeological evidence of the \
+            Mantua territory and ranges from Prehistory to \
+            Protohistory, from the Neolithic to Romanization to \
+            the threshold of the Middle Ages.",
+            /* "Aperto nel 1998 nel sito che fu Teatro \
             di Corte dei Gonzaga nel Cinquecento e dal 1896 \
             mercato cittadino dei bachi da seta (come si evince \
             dalla scritta attualmente ancora visibile in facciata), \
             custodisce le testimonianze di archeologia del \
             territorio mantovano e spazia dalla Preistoria alla \
             Protostoria, dal Neolitico alla romanizzazione fino \
-            alle soglie del Medioevo.",
+            alle soglie del Medioevo.",*/
             shortDescription: "The rich archeological museum.",
         },
     ]
