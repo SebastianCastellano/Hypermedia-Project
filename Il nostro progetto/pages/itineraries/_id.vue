@@ -61,6 +61,9 @@ iframe{
   height: 60vh;
   width: 100%;
   display: block;
+  
+  border-color: #f22222;
+  border-width: 1px !important;
 }
 
 #spacer{
@@ -167,6 +170,16 @@ import TitleBanner from '~/components/TitleBanner.vue' // A component used to vi
 // (in this page we visualize as many cards as many points of interests are there in this itinerary)
 export default {
   name: 'ItineraryTemplatePage',
+  head: {
+    title: 'Itinerary | VisitMantova',
+    meta: [
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'Discover one beautiful itinerary of Mantova!'
+      }
+      ],
+  },
   components: {
     PoiSideCard,
     TitleBanner

@@ -28,6 +28,16 @@ import CardPoi from '~/components/CardPoi.vue' // We are importing the component
 // (in the points of interest list page there are multiple points of interest card: one for each point of interset)
 export default {
   name: 'ListPagePoi',
+  head: {
+    title: 'Points of Interest | VisitMantova',
+    meta: [
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'Discover Mantova beautiful points of interest!'
+      }
+      ],
+  },
   components: {
     CardPoi,
   },

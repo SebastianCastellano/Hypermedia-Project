@@ -1,6 +1,11 @@
 <template>
   <div class="page container mt-5">
     <h1 class="display-4 title-font page-title">Winter Events</h1>
+    <div class="sub-events-div">
+    <!-- there are two links to go to all events or to the summer events and apply a filter -->
+    <nuxt-link class="display-4 title-font page-title sub-events" to="/eventList">All Events</nuxt-link>
+    <nuxt-link class="display-4 title-font page-title sub-events" to="/eventSummer">Summer Events</nuxt-link>
+    </div>
     <div class="row mt-3 flexbox-container">
       <card-event
         v-for="(event, eventIndex) of eventList"
@@ -24,10 +29,21 @@
   justify-content: space-evenly;
 }
 .sub-events-div{
-  width:7cm;
-  display: block; 
-  margin:0;
-  padding: 0 !important;
+  display:flex;
+  justify-content: space-between;
+}
+.sub-events{
+  
+  font-family: var(--title-font);
+  color: #000000;
+  font-size: medium;
+  text-decoration: none;
+
+}
+
+.sub-events:hover {
+  text-decoration: underline;
+  color: black;
 }
 </style>
 
@@ -37,7 +53,7 @@ import CardEvent from '~/components/CardEvent.vue' // We are importing the compo
 export default {
   name: 'WinterEventPage',
   head: {
-    title: 'Winter events page',
+    title: 'Winter Events | VisitMantova',
     meta: [
       {
         hid: 'description',

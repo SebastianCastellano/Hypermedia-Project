@@ -42,6 +42,16 @@ import CardSingleService from '~/components/CardSingleService.vue' // The compon
 // (in this page we visualize as many cards as many services are of this specific type of services)
 export default {
   name: 'singleServicePage',
+  head: {
+    title: 'Service | VisitMantova',
+    meta: [
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'This is one service type you can find in Mantova.'
+      }
+      ],
+  },
   components: {
     CardSingleService
   },

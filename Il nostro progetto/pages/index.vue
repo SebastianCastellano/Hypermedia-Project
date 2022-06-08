@@ -9,7 +9,7 @@ import HomePageTemplate from '~/components/HomePageTemplate.vue' // the template
 export default {
   name: 'IndexPage',
   head: {
-    title: 'Home page',
+    title: 'VisitMantova',
     meta: [
       {
         hid: 'description',

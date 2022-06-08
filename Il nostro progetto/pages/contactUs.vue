@@ -65,6 +65,16 @@ h3 {
 <script>
 export default {
   name: 'ContactUsPage',
+  head: {
+    title: 'Contact Us | VisitMantova',
+    meta: [
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'Find our contact information here.'
+      }
+      ],
+  },
   layout: 'header-only',
   components: {
   },

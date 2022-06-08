@@ -26,6 +26,16 @@ import ItinerarySideCard from '~/components/ItinerarySideCard.vue'
 // (in the itineraries list page there are multiple itinerary card: one for each itinerary)
 export default {
   name: 'ListPage',
+  head: {
+    title: 'Itineraries | VisitMantova',
+    meta: [
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'Discover Mantova beautiful itineraries!'
+      }
+      ],
+  },
   components: {
     ItinerarySideCard,
   },
