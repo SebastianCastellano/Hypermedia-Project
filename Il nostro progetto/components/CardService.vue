@@ -1,6 +1,6 @@
 <template>
   <!-- This component rapresent a card of a type of service (showing the name of a type of service)
-  This component is used in itinerary services list page -->
+  This component is used in services list page -->
   <div class="card" style="width: 15rem">
     <nuxt-link :to="'/services/'+ type">
       <div class="card-body">
