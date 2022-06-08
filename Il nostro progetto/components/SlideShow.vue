@@ -1,5 +1,6 @@
 <template>
   <!-- This is the slideshow, a component to visualize a slideshow of some images -->
+  <!-- This component appears in an event page and in a point of interest page -->
   <div>
     <div id="carousel" class="carousel slide carousel-fade" data-bs-interval="false" data-bs-ride="carousel" :style="cssProps">
       <div class="carousel-indicators">
