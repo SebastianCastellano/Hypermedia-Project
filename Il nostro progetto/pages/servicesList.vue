@@ -28,7 +28,7 @@
 }
 .space-under-services {
   border: 0;
-  height: calc(100vh - 705px);
+  height: calc(100vh - 700px);
 }
 </style>
 
