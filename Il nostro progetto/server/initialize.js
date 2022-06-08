@@ -290,6 +290,7 @@ export default async (models) => {
         {
             //1
             name: "In-naturale",
+            season: "b",
             dateBegin: new Date(2021, 10, 7),
             dateEnd: new Date(2022, 6, 30),
             date_s: "07/10/2021 - 30/06/2022",
@@ -307,6 +308,7 @@ export default async (models) => {
         {
             //2
             name: "OPEN Festival",
+            season: "s",
             dateBegin: new Date(2022, 6, 10),
             dateEnd: new Date(2022, 6, 12),
             date_s: "10/06/2022 - 12/06/2022",
@@ -326,6 +328,7 @@ export default async (models) => {
         {
             //3
             name: "Michelangelo: i bronzi della Passione",
+            season: "s",
             dateBegin: new Date(2022, 3, 18),
             dateEnd: new Date(2022, 6, 15),
             date_s: "18/03/2022 - 15/06/2022",
@@ -343,6 +346,7 @@ export default async (models) => {
         {
             //4
             name: "A violin for Virgilio",
+            season: "s",
             dateBegin: new Date(2022, 4, 1),
             dateEnd: new Date(2022, 4, 1),
             date_s: "01/04/2022",
@@ -360,6 +364,7 @@ export default async (models) => {
         {
             //5
             name: "Luke Hermond: my piano life",
+            season: "s",
             dateBegin: new Date(2022, 6, 14),
             dateEnd: new Date(2022, 6, 19),
             date_s: "14/06/2022 - 19/06/2022",
@@ -377,6 +382,7 @@ export default async (models) => {
         {
             //6
             name: "Jazz concert: I Treboniani",
+            season: "w",
             dateBegin: new Date(2022, 9, 25),
             dateEnd: new Date(2022, 9, 25),
             date_s: "25/09/2022",
@@ -394,6 +400,7 @@ export default async (models) => {
         {
             //7
             name: "Art Ladies",
+            season: "w",
             dateBegin: new Date(2022, 10, 2),
             dateEnd: new Date(2023, 1, 29),
             date_s: "02/10/2022 - 29/01/2023",
@@ -411,6 +418,7 @@ export default async (models) => {
         {
             //8
             name: "Salone della Sbrisolona",
+            season: "b",
             dateBegin: new Date(2022, 3, 1),
             dateEnd: new Date(2022, 9, 31),
             date_s: "01/03/2022 - 31/09/2022",
@@ -429,6 +437,7 @@ export default async (models) => {
         {
             //9
             name: "Walk&Relax",
+            season: "w",
             dateBegin: new Date(2022, 11, 1),
             dateEnd: new Date(2023, 11, 1),
             date_s: "15/11/2022",
@@ -446,6 +455,7 @@ export default async (models) => {
         {
             //10
             name: "Tortello Festival",
+            season: "w",
             dateBegin: new Date(2022, 10, 1),
             dateEnd: new Date(2022, 10, 31),
             date_s: "01/10/2022 - 31/10/2022",

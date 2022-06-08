@@ -20,6 +20,7 @@ async function initializeDatabaseConnection() {
     // Event entity
     const Event = database.define("event", {
         name: DataTypes.STRING,
+        season: DataTypes.STRING,
         dateBegin: DataTypes.DATE,
         dateEnd: DataTypes.DATE,
         date_s: DataTypes.STRING,
@@ -374,6 +375,7 @@ async function runMainApi() {
             } // array relatedMediaList is filled with images and video related to event
             filteredEvents.push({
                 name: singleEvent.name,
+                season: singleEvent.season,
                 realDateLocalVar: singleEvent.dateBegin,
                 dateBegin: singleEvent.dateBegin.toLocaleDateString(),
                 dateEnd: singleEvent.dateEnd.toLocaleDateString(),
@@ -393,9 +395,9 @@ async function runMainApi() {
             return a.realDateLocalVar - b.realDateLocalVar;
         }) // event are ordered by date
         if(req.params.season == "winter"){
-            return res.json(filteredEvents.filter(x => (parseInt(x.dateBegin.split("/")[1]) >= 10 ||  parseInt(x.dateBegin.split("/")[1])<=3) || (parseInt(x.dateEnd.split("/")[1]) >= 10 ||  parseInt(x.dateEnd.split("/")[1])<=3)))
+            return res.json(filteredEvents.filter(x => x.season == "w" || x.season == "b"))
         }else if(req.params.season == "summer"){
-            return res.json(filteredEvents.filter(x => (parseInt(x.dateBegin.split("/")[1]) >= 4 &&  parseInt(x.dateBegin.split("/")[1])<=9) || (parseInt(x.dateEnd.split("/")[1]) >= 4 &&  parseInt(x.dateEnd.split("/")[1])<=9)))
+            return res.json(filteredEvents.filter(x => x.season == "s" || x.season == "b"))
         }else if(req.params.season == "all"){
             return res.json(filteredEvents)
         }
