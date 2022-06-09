@@ -8,8 +8,8 @@
  10573185 - Andrea De Bettin  
  10571386 - Lorenzo Guerrieri  
  
- <!-- [VisitMantova website](https://soft-math.herokuapp.com/)  -->
- <a href="https://soft-math.herokuapp.com/" target="_blank">VisitMantova website</a>
+ Our website: [VisitMantova](https://soft-math.herokuapp.com/) 
+ <!--<a href="https://soft-math.herokuapp.com/" target="_blank">VisitMantova website</a> -->
 
 # A presentation and contribution of each group member
 
