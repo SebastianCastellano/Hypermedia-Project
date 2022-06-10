@@ -1,6 +1,7 @@
 <template>
-  <!-- This component rapresent a card of an itinerary (showing essential info about an event: image, name, duration, lenght, short description)
-  This component is used in itinerary list page -->
+  <!-- This component rapresent a card of an itinerary (showing essential info about an itinerary: image, name, duration, lenght, short description)
+  This component is used in itinerary list page
+  This component is used also in point of interest page to visualize which itineraries involving that point of interest -->
   <div class="card mb-3 w-100" style="max-width: 540px;">
     <nuxt-link :to="'/itineraries/'+id">
       <div class="row g-0">

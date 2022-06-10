@@ -30,10 +30,9 @@
 .flex-container{ 
   justify-content: space-evenly;
 }
-
 .space-under-this-service {
   border: 0;
-  height: calc(100vh - 980px + 100px);
+  height: calc(100vh - 1000px);
 }
 </style>
 

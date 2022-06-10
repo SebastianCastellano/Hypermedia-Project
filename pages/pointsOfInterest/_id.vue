@@ -182,7 +182,6 @@ export default {
   },
   components: {
     EventSideCard,
-    // PrevNextSelector,
     TitleBanner,
     ItinerarySideCard,
 },

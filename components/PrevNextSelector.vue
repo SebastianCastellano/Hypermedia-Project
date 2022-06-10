@@ -1,5 +1,6 @@
 <template>
   <!-- This component is the next / previous event selector -->
+  <!-- This component is used in an event page to go to the next or to the previous event (oredered by date) -->
   <div id="selector">
     <!-- Previous event button -->
     <nuxt-link :to="prevPageUrl" v-if="prevPageUrl != null">
