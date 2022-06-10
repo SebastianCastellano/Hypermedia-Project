@@ -49,6 +49,7 @@ export default {
       }
 
       #mediaWrapper > *{
+        display: block;
         margin-top: 20px;
       }
 
