@@ -6,11 +6,11 @@
     <nuxt-link :to="'/itineraries/'+id">
       <div class="row g-0">
         <div class="col-md-4 img-container">
-          <img :src="imageUrl" class="img-fluid rounded-start thumbnail h-100" :alt="alternativeThumbEvent">
+          <img :src="imageUrl" class="img-fluid rounded-start thumbnail h-100" :alt="imageAlternative">
         </div>
         <div class="col-md-8">
           <div class="card-body">
-            <h5 class="card-title title-font">{{name}}</h5>
+            <h2 class="card-title title-font">{{name}}</h2>
             <p class="card-text text-muted itinerary-duration">{{duration}} - {{length}}</p>
             <p class="card-text itinerary-desc">{{shortDescription}}</p>
           </div>
@@ -25,6 +25,10 @@
   a{
     text-decoration: none; 
     color: black;
+  }
+
+  h2{
+    font-size: 1.1em;
   }
 
   .card:hover .row { background-color: var(--color1-light); }
@@ -64,10 +68,6 @@
 
   .card-title{
     margin: 0;
-  }
-
-  h5{
-    font-size: 1.1rem;
   }
 
   @media screen and (max-width: 426px){
